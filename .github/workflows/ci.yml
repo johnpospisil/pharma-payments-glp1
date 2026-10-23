@@ -1,0 +1,24 @@
+# Lint and unit tests. The real CMS data (~150 GB raw) is not available here;
+# tests marked `data` skip themselves, and fixture-based tests cover the pipeline logic.
+name: ci
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+      - name: Install
+        run: uv sync --frozen
+      - name: Lint
+        run: make lint
+      - name: Unit tests
+        run: make test
