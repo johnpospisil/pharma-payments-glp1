@@ -24,7 +24,7 @@ build:
 	$(PY) -m ppg.build.drug_map
 	$(PY) -m ppg.build.linkage
 	$(PY) -m ppg.build.payments
-	@echo "build: P10 panel added later"
+	$(PY) -m ppg.build.panel
 
 models:
 	@echo "models: added in P13-P19"

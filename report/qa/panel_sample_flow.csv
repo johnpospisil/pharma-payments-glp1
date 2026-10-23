@@ -1,0 +1,8 @@
+step,npis,npi_years,glp1_claims,npis_ever_glp1_paid,share_glp1_claims
+"All Part D prescribers, 2013-2024",2027245,14636994,66000355.0000,304842,1.0000
+Individuals (not organisations),2020401,14630121,66000355.0000,304842,1.0000
+"Prescribing specialty (not dentist, optometrist, pharmacist...)",1496782,11624842,65212239.0000,296527,0.9881
+Active in Part D >= 3 years,1274345,11294228,64771237.0000,275125,0.9814
+Diabetes prescriber (>= 2 years with >= 11 non-GLP-1 antidiabetic claims),427286,4168869,64356397.0000,199999,0.9751
+"  of which physicians (primary sample, D10)",280610,2922917,48966953.0000,138440,0.7419
+"  of which high-volume (median >= 250 diabetes claims/yr, D14)",79355,897181,37246900.0000,58699,0.5643

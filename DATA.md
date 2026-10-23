@@ -382,3 +382,85 @@ The speaker-vs-meals comparison (D-5) will therefore have few speaker-treated pr
 - **Victoza and Bydureon cohorts dry up after 2019,** once promotion moved to newer brands.
 - **2013–14 first payments are left-censored.** PY2013 covers Aug–Dec only, so many "2013" and "2014" first payments are really earlier exposure. This is why event cohorts start in 2015 (D6).
 - **Ozempic payments start in 2017,** before its December 2017 launch: 114 MD/DO prescribers.
+
+## 13. Prescriber × brand × year panel (P10, 2026-10-23)
+
+Code: `src/ppg/build/panel.py` (`python -m ppg.build.panel`, about 80 s, part of `make build`); tests: `tests/test_panel.py`. Tables are in `PARQUET_DIR/panel/` (git-ignored; contain NPIs). QA: [panel.json](report/qa/panel.json), [panel_sample_flow.csv](report/qa/panel_sample_flow.csv), [panel_suppression_by_brand_year.csv](report/qa/panel_suppression_by_brand_year.csv); chart: [p10_sample_flow.png](report/figures/p10_sample_flow.png).
+
+**Size:**
+- `panel_brand` has 48.3M rows: 427,286 prescribers × 14 GLP-1 brand families × years 2013–2024. Each brand's rows start at its first Part D year, or earlier if promotion started earlier.
+- `npi_year` has 14.6M rows.
+- `npi_dims` has 2.03M rows.
+
+### Sample flow
+
+Filters are on NPIs, applied in order. GLP-1 claims are observed rows, 2013–2024.
+
+| Step | Prescribers | Prescriber-years | GLP-1 claims kept | Ever paid for a GLP-1 |
+|---|---|---|---|---|
+| All Part D prescribers | 2,027,245 | 14,636,994 | 100.0% | 304,842 |
+| Individuals (not organisations) | 2,020,401 | 14,630,121 | 100.0% | 304,842 |
+| Prescribing specialty (drops dentists, optometrists, pharmacists, podiatrists…) | 1,496,782 | 11,624,842 | 98.8% | 296,527 |
+| Active in Part D ≥ 3 years | 1,274,345 | 11,294,228 | 98.1% | 275,125 |
+| **Diabetes prescriber:** ≥ 2 years with ≥ 11 non-GLP-1 antidiabetic claims (**panel**) | **427,286** | 4,168,869 | 97.5% | 199,999 |
+| … physicians (endo, primary care, cardiology, nephrology, other MD/DO): **primary event-study sample (D10)** | 280,610 | 2,922,917 | 74.2% | 138,440 |
+| … high-volume physicians (median ≥ 250 non-GLP-1 diabetes claims a year, D14) | 79,355 | 897,181 | 56.4% | 58,699 |
+
+How the filters were chosen:
+- **Diabetes load excludes GLP-1 claims,** so the sample is not selected on the outcome. It does use the whole 2013–2024 period, though; P12 decides whether to require the load before first payment instead.
+- **Specialty is the modal Part D prescriber type,** with ties going to the latest year.
+- **NPs and PAs** (146,676 prescribers in the panel) stay in for descriptive and secondary work (D10).
+
+### Suppression status of brand cells
+
+Overall: observed 3.5%, suppressed 71.8%, known zero 0.06%, absent 14.9%, pre-launch 9.7%.
+
+| Brand, year | Observed (≥ 11 claims) | Suppressed (0–10) | Observed, high-volume physicians | Suppressed, high-volume physicians |
+|---|---|---|---|---|
+| Ozempic 2019 | 3.0% | 82.8% | 10.1% | 85.7% |
+| Ozempic 2022 | 16.4% | 71.8% | 39.1% | 51.4% |
+| Ozempic 2024 | 36.3% | 47.4% | 65.3% | 20.2% |
+| Trulicity 2016 | 2.3% | 76.0% | 8.6% | 89.4% |
+| Trulicity 2019 | 11.5% | 74.2% | 35.8% | 60.0% |
+| Trulicity 2024 | 22.2% | 61.6% | 48.0% | 37.5% |
+| Victoza 2019 | 8.1% | 77.6% | 27.2% | 68.6% |
+| Mounjaro 2024 | 21.0% | 62.8% | 42.9% | 42.7% |
+| Rybelsus 2024 | 7.9% | 75.8% | 20.2% | 65.3% |
+
+- **A known zero almost never exists:** nearly every prescriber has some claims suppressed on some drug, so a missing brand row cannot be told apart from 1–10 claims. This is why the primary outcome is the binary "≥ 11 claims" (D14).
+- **The high-volume subsample lowers suppression but does not make it rare.** Ozempic 2024 drops from 47% to 20% suppressed, but Trulicity and Mounjaro stay at 38–43%.
+- **"Absent" (12–32% of cells by year)** mostly means years before a prescriber's first, or after their last, Part D year (entry, exit and moves). P12 decides whether those cells count.
+
+### Data dictionary: `panel_brand` (one row per NPI × brand × year)
+
+| Column | Meaning |
+|---|---|
+| `npi`, `year`, `brand`, `molecule`, `maker` | keys. `brand` is the Part D brand family (D15); `molecule` links Ozempic/Rybelsus/Wegovy and Mounjaro/Zepbound; `maker` is null for Tanzeum (GSK) and generic liraglutide |
+| `first_partd_year` | first year the brand appears in national Part D totals |
+| `status` | `observed` / `suppressed` / `zero_known` / `absent` / `pre_launch` (definitions in `ppg.build.panel`) |
+| `claims`, `fills`, `benes`, `cost` | the brand's Part D claims, 30-day fills, beneficiaries and cost. **NULL when suppressed or absent, never 0**; 0 only for `zero_known` and `pre_launch` |
+| `supp_cap` | when suppressed: min(10, the prescriber's total suppressed claims that year), the upper bound for the D14 bounds |
+| `contacts`, `promo_contacts`, `contacts_first_listed` | payment records naming the brand that year (D8 full credit; D16 all natures / promotional only; first-listed rule) |
+| `usd`, `usd_first_listed`, `usd_food_beverage`, `usd_speaker`, `usd_consulting`, `usd_travel`, `usd_education` | promotional $ (D8 equal split; first-listed variant; by nature group) |
+| `speaker_contacts` | speaker/faculty payments for the brand that year |
+| `first_promo_year`, `first_promo_date`, `first_year_first_listed` | **exposure (D22):** first promotional contact for the brand, over PY2013–2025; first-listed variant |
+| `first_promo_year_molecule` | first promotional contact for any brand of the same molecule (molecule-level sensitivity) |
+| `maker_contacts`, `maker_usd`, `maker_no_product_contacts` | all payments from the brand's maker that year, including no-product payments (D-2, D21) |
+| `specialty_group`, `state`, `ruca` | the prescriber's Part D specialty group, state and rural–urban code that year |
+| `tot_clms`, `dm_load` | total Part D claims; non-GLP-1 antidiabetic claims (metformin, SGLT2, DPP-4, sulfonylurea, TZD, insulin, other), observed rows only |
+| `glp1_claims_all`, `glp1_fills_all`, `glp1_contacts_all` | all GLP-1 brands combined (claims and fills from observed rows; payment contacts) |
+| `clms_statin`, `clms_anticoagulant`, `anticoag_contacts`, `anticoag_usd` | negative-control outcomes (statins, P17) and negative-control exposure (anticoagulant payments, D20) |
+
+**`npi_year`** (one row per NPI × year, every Part D prescriber) adds:
+- the prescriber type, ZIP and patient risk score and age;
+- total fills, beneficiaries and cost;
+- claims by drug class: GLP-1, the diabetes classes, statin, anticoagulant, inhaled respiratory, diabetes supplies;
+- `clms_suppressed` (the by-Provider total minus the sum of drug rows);
+- GLP-1, anticoagulant and inhaled payments at class level.
+
+**`npi_dims`** (one row per NPI) adds:
+- years active, first and last Part D year, diabetes load (years, median, total), total GLP-1 claims;
+- practice `org_pac_id` and size (DAC, October 2026 snapshot), for clustering (D-3). It is available for 60% of panel prescribers (cardiology 81%), because prescribers who retired or moved before 2026 are missing. Those without a practice are clustered alone;
+- Open Payments recipient class, and whether the Open Payments specialty agrees with Part D;
+- first payment year (any company), first GLP-1 promotional year, ever a GLP-1 speaker;
+- the filter flags `f1`–`f4`, `physician` and `high_volume`.
