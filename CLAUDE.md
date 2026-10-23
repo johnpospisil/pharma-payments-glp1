@@ -25,7 +25,7 @@ Project brief: [02-pharma-payments-glp1.md](02-pharma-payments-glp1.md) (the sou
 
 ## Working conventions
 
-- **Environment:** `uv` project venv, Python 3.12, locked in `uv.lock`. Package `ppg`, src layout as in brief §7. R (`/usr/local/bin/Rscript`) is used only to cross-check estimators (`did`, `fixest`); R package versions are recorded in `DATA.md`.
+- **Environment:** `uv` project venv, Python 3.12, locked in `uv.lock`. Package `ppg`, src layout as in brief §7. R is used only to cross-check estimators: Homebrew R 4.6.1 (arm64) at `/opt/homebrew/bin/Rscript`, with `did` 2.5.1, `fixest` 0.14.2, `HonestDiD` 0.2.8, `arrow` 25.0.1 (`/usr/local/bin/R` is an old Intel build that won't run; `/opt/homebrew/bin` comes first on PATH). Quarto 1.10.19 at `/usr/local/bin/quarto`.
 - **Dataframes:** DuckDB + Parquet for anything over 1M rows, with polars for transforms. Use pandas only where a library requires it. Never load a full Open Payments or Part D year into memory; push the work into DuckDB.
 - **Storage (decided):** raw downloads (zips/CSVs, read once in order) go on **Drive3** at `PPG_RAW_DIR` (default `/Volumes/Drive3/ppg/raw`). Working Parquet and DuckDB files go on the **internal SSD** at `PPG_DATA_DIR` (default `./data`, git-ignored). Paths come from `.env`; never hard-code them. Ingest needs Drive3 mounted (`make check-env` checks this); everything after ingest must run without it.
 - **Raw is immutable:** `raw/` is written only by `ppg.ingest.*`, with the retrieval date and SHA-256 logged in `data/reference/retrievals.csv`. Cleaning adds new columns and never overwrites source values.
