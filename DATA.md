@@ -222,3 +222,53 @@ Code: `src/ppg/ingest/quality.py` (`python -m ppg.ingest.quality`); tests: `test
 - **Usual seasonality:** December dips every year for all makers; spring 2020 COVID trough (e.g. Lilly 633 and 407 records in Apr–May 2020 vs ~23K median).
 - **Manufacturer-year jumps (> 2× change, ≥ 20K records): 237** ([op_manufacturer_jumps.csv](report/qa/op_manufacturer_jumps.csv)): 75 in 2014 (vs partial 2013), 76 in 2020–2021 (COVID and rebound); most others are corporate events (Actavis/Allergan 2015–16, Shire→Takeda 2018, Valeant 2015, Biohaven→Pfizer 2023).
 - Monthly series for the four GLP-1 makers: [op_monthly_glp1_makers.csv](report/qa/op_monthly_glp1_makers.csv); flagged months: [op_monthly_gaps.csv](report/qa/op_monthly_gaps.csv); chart: [p06_monthly_payments_glp1_makers.png](report/figures/p06_monthly_payments_glp1_makers.png).
+
+## 10. Drug-name map (P07, 2026-10-23)
+
+Code: `src/ppg/build/drug_map.py` (`python -m ppg.build.drug_map`, part of `make build`); tests: `tests/test_drug_map.py` (129, no data needed). Rules live in the code (`BRANDS`, `MOLECULES`, `ACCEPT`, `CLASS_ONLY`, `REJECT`); the CSVs are generated from them and committed after review:
+
+| File | Rows | What it is |
+|---|---|---|
+| [data/reference/drug_name_map.csv](data/reference/drug_name_map.csv) | 585 | Open Payments product string → brand, molecule, class, `is_glp1`, indication, manufacturer, match method, payers, $ and records, reviewer note. 308 in-scope strings + 277 reviewed out-of-scope strings. **Released publicly in P25.** |
+| [data/reference/partd_drug_map.csv](data/reference/partd_drug_map.csv) | 691 | Part D (`brnd_name`, `gnrc_name`) → brand family and class for GLP-1s, other diabetes drugs, diabetes supplies, statins, oral anticoagulants and inhalers |
+| [data/reference/drug_ndc_map.csv](data/reference/drug_ndc_map.csv) | 1,114 | NDC key → brand, learned from named records (≥ 95% agreement) |
+
+**How strings are matched** (first rule that applies): exact normalised name (case, ®/™, parentheses, strengths and dosage-form words removed) → whole-word brand inside a longer string → generic-molecule rule → "no product / disease state" → fuzzy spelling (flagged for review). Matching is never by substring: "Victo" also appears in PLUVICTO and in 3M's "Victory Series" orthodontic brackets.
+
+**Open Payments names are clean.** Manufacturers report from their own product lists, so 25 strings cover every GLP-1 payment: 14 brands (Ozempic, Rybelsus, Wegovy, Victoza, Saxenda, Trulicity, Mounjaro, Zepbound, Byetta, Bydureon, Adlyxin, Tanzeum, and the insulin combinations Soliqua and Xultophy) plus a Sanofi GLP-1/glucagon pipeline compound. That is **9.49M records, $452.5M** in PY2013–2025 ($426.9M promotional, D16). Methods across the map: 186 exact, 45 contains, 20 molecule, 51 non-product, 6 reviewed by hand (two misspellings found by fuzzy matching, Trajenta and Stioloto, were confirmed). Every GLP-1 string is paid by its own brand's maker.
+
+**Coverage, GLP-1 makers** (Novo Nordisk, Eli Lilly, AstraZeneca, Sanofi/Genzyme; promotional $, split equally across a record's products): [drug_map_coverage_by_year.csv](report/qa/drug_map_coverage_by_year.csv)
+
+| Year | Promo $M | Names a product | Of which resolved | GLP-1 $M | GLP-1 share of named |
+|---|---|---|---|---|---|
+| 2013 | 58 | 75.8% | 98.8% | 9.3 | 21.2% |
+| 2014 | 152 | 78.0% | 99.3% | 38.2 | 32.3% |
+| 2015 | 150 | 81.2% | 99.1% | 35.7 | 29.3% |
+| 2016 | 154 | 84.9% | 99.5% | 24.3 | 18.6% |
+| 2017 | 166 | 86.4% | 99.7% | 38.3 | 26.7% |
+| 2018 | 167 | 83.3% | 99.9% | 36.0 | 26.0% |
+| 2019 | 165 | 81.1% | 99.9% | 29.3 | 21.8% |
+| 2020 | 93 | 80.5% | 100.0% | 21.0 | 28.0% |
+| 2021 | 124 | 80.2% | 100.0% | 32.8 | 33.1% |
+| 2022 | 150 | 80.0% | 100.0% | 42.5 | 35.4% |
+| 2023 | 160 | 70.0% | 100.0% | 27.6 | 24.6% |
+| 2024 | 193 | 74.2% | 100.0% | 33.6 | 23.4% |
+| 2025 | 210 | 74.3% | 100.0% | 48.3 | 30.9% |
+
+"Resolved" = mapped to an in-scope class or reviewed by hand as out of scope. **14–30% of the makers' promotional $ names no product at all**; P09 has to decide how those payments count (manufacturer-level exposure only, D-2). GLP-1 $ by brand and year: [drug_map_glp1_by_brand_year.csv](report/qa/drug_map_glp1_by_brand_year.csv).
+
+**Hand review.** Reviewed by hand:
+- every unmapped drug/biologic string of ≥ $10K paid by a GLP-1 maker (277; oncology, immunology, rare disease, vaccines; none in scope);
+- every string of ≥ $10K from any maker whose spelling is close to a mapped brand (STELARA ≈ Steglatro, EXPAREL ≈ Xarelto, CAPLYTA ≈ Arcapta: all different drugs);
+- every string, at any $, containing a mapped brand name or a GLP-1, SGLT2, DPP-4, statin, anticoagulant or insulin stem.
+
+The remaining 4,211 unmapped drug/biologic strings of ≥ $10K are other companies' products with no such signal. The top 100 by $ are in [drug_map_unmapped_top.csv](report/qa/drug_map_unmapped_top.csv) (COMIRNATY, Rituxan, BOTOX, Herceptin…).
+
+**Traps found and handled**
+- Part D generic names are truncated to 30 characters ("Dapaglifloz Propaned/Metformin"), so the molecule rules use short stems.
+- Part D lists **insulin syringes, pen needles and pump cartridges under insulin-like generic names**: 411 rows, 54.9M claims in 2013–2024. They get their own `diabetes_supply` class, not `insulin`.
+- Look-alikes are excluded and tested: nystatin, cilastatin and pentostatin are not statins; teduglutide (Gattex, a GLP-2 analogue) is not a GLP-1; "Hylenex with Insulin" is hyaluronidase.
+- Strings that name a disease plus a product ("CANCIDAS Infectious Disease") are not "no product" strings.
+- **NDCs are unreliable inside multi-product records.** In AstraZeneca's 2013–14 records one product's NDC appears against another (Farxiga and Crestor rows carry Bydureon's code): 2,523 records conflict. NDCs are therefore used only to recover name-less product slots: 2,705 of 9,532, including 1,575 GLP-1 (Bydureon, 2013–14), flagged as `ndc`-matched.
+- Wegovy, Saxenda and Zepbound are obesity-indicated (`indication = obesity`). Part D excludes weight-loss-only use, so Saxenda has no Part D rows, while Wegovy (2023–24) and Zepbound (2024) have a few. The molecule column links Wegovy and Rybelsus to Ozempic (semaglutide) and Zepbound to Mounjaro (tirzepatide) for the molecule-level sensitivity analysis.
+- Generic liraglutide (2024) is its own Part D family, `liraglutide (generic)` (D15).

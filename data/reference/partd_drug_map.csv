@@ -1,0 +1,692 @@
+brnd_name,gnrc_name,brand_family,brand,molecule,drug_class,is_glp1,indication,manufacturer,method,area,candidates,first_year,last_year,claims
+Bevyxxa,Betrixaban Maleate,Bevyxxa,Bevyxxa,betrixaban,anticoagulant,False,,Portola,exact,,,2018,2019,36.0
+Coumadin,Warfarin Sodium,Coumadin,Coumadin,warfarin,anticoagulant,False,,Bristol Myers Squibb,exact,,,2013,2020,1894377.0
+Eliquis,Apixaban,Eliquis,Eliquis,apixaban,anticoagulant,False,,Bristol Myers Squibb / Pfizer,exact,,,2013,2024,123297195.0
+Jantoven,Warfarin Sodium,Jantoven,Jantoven,warfarin,anticoagulant,False,,Upsher-Smith,exact,,,2013,2024,6945880.0
+Pradaxa,Dabigatran Etexilate Mesylate,Pradaxa,Pradaxa,dabigatran,anticoagulant,False,,Boehringer Ingelheim,exact,,,2013,2024,9784127.0
+Savaysa,Edoxaban Tosylate,Savaysa,Savaysa,edoxaban,anticoagulant,False,,Daiichi Sankyo,exact,,,2015,2024,56935.0
+Xarelto,Rivaroxaban,Xarelto,Xarelto,rivaroxaban,anticoagulant,False,,Janssen,exact,,,2013,2024,55753167.0
+Dabigatran Etexilate,Dabigatran Etexilate Mesylate,dabigatran etexilate mesylate (generic),,dabigatran etexilate mesylate,anticoagulant,False,,,molecule,,,2022,2024,209344.0
+Warfarin Sodium,Warfarin Sodium,warfarin sodium (generic),,warfarin sodium,anticoagulant,False,,,molecule,,,2013,2024,118593072.0
+Baqsimi,Glucagon,Baqsimi,Baqsimi,glucagon (nasal),antidiabetic_other,False,,Amphastar,exact,,,2019,2024,68287.0
+Cycloset,Bromocriptine Mesylate,Cycloset,Cycloset,bromocriptine,antidiabetic_other,False,,VeroScience,exact,,,2013,2024,40564.0
+Glyset,Miglitol,Glyset,,miglitol,antidiabetic_other,False,,,minor_brand,,,2013,2021,20334.0
+Gvoke Hypopen 2-Pack,Glucagon,Gvoke,Gvoke,glucagon,antidiabetic_other,False,,Xeris,contains,,,2020,2024,84755.0
+Gvoke Hypopen 1-Pack,Glucagon,Gvoke,Gvoke,glucagon,antidiabetic_other,False,,Xeris,contains,,,2021,2024,15134.0
+Gvoke Pfs 1-Pack Syringe,Glucagon,Gvoke,Gvoke,glucagon,antidiabetic_other,False,,Xeris,contains,,,2020,2024,4585.0
+Gvoke Pfs 2-Pack Syringe,Glucagon,Gvoke,Gvoke,glucagon,antidiabetic_other,False,,Xeris,contains,,,2020,2024,1332.0
+Gvoke,Glucagon,Gvoke,Gvoke,glucagon,antidiabetic_other,False,,Xeris,exact,,,2022,2024,356.0
+Gvoke Syringe,Glucagon,Gvoke,Gvoke,glucagon,antidiabetic_other,False,,Xeris,contains,,,2019,2019,37.0
+Prandin,Repaglinide,Prandin,,repaglinide,antidiabetic_other,False,,,minor_brand,,,2013,2019,191336.0
+Precose,Acarbose,Precose,,acarbose,antidiabetic_other,False,,,minor_brand,,,2013,2018,390.0
+Starlix,Nateglinide,Starlix,,nateglinide,antidiabetic_other,False,,,minor_brand,,,2013,2021,4259.0
+Symlinpen 120,Pramlintide Acetate,Symlin,Symlin,pramlintide,antidiabetic_other,False,,AstraZeneca,exact,,,2013,2024,35309.0
+Symlinpen 60,Pramlintide Acetate,Symlin,Symlin,pramlintide,antidiabetic_other,False,,AstraZeneca,exact,,,2013,2024,8022.0
+Zegalogue Autoinjector,Dasiglucagon Hcl,Zegalogue,Zegalogue,dasiglucagon,antidiabetic_other,False,,Zealand,exact,,,2022,2024,64.0
+Acarbose,Acarbose,acarbose (generic),,acarbose,antidiabetic_other,False,,,molecule,,,2013,2024,1439860.0
+Miglitol,Miglitol,miglitol (generic),,miglitol,antidiabetic_other,False,,,molecule,,,2016,2024,5290.0
+Nateglinide,Nateglinide,nateglinide (generic),,nateglinide,antidiabetic_other,False,,,molecule,,,2013,2024,1711311.0
+Repaglinide,Repaglinide,repaglinide (generic),,repaglinide,antidiabetic_other,False,,,molecule,,,2013,2024,2618652.0
+1st Tier Unifine Pentips,"Pen Needle, Diabetic",1st Tier Unifine Pentips,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2015,2024,9850.0
+1st Tier Unifine Pentips,"Needles, Insulin Disposable",1st Tier Unifine Pentips,,"needles, insulin disposable",diabetes_supply,False,,,minor_brand,,,2013,2014,2426.0
+1st Tier Unifine Pentips Plus,"Pen Needle, Diabetic",1st Tier Unifine Pentips Plus,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2015,2024,23795.0
+1st Tier Unifine Pentips Plus,"Needles, Insulin Disposable",1st Tier Unifine Pentips Plus,,"needles, insulin disposable",diabetes_supply,False,,,minor_brand,,,2014,2014,15.0
+Advocate Pen Needle,"Pen Needle, Diabetic",Advocate Pen Needle,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2018,2024,2091.0
+Advocate Pen Needles,"Pen Needle, Diabetic",Advocate Pen Needles,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2015,2024,58912.0
+Advocate Pen Needles,"Needles, Insulin Disposable",Advocate Pen Needles,,"needles, insulin disposable",diabetes_supply,False,,,minor_brand,,,2013,2014,810.0
+Advocate Syringes,"Syringe-Needle,insulin,0.5 Ml",Advocate Syringes,,"syringe-needle,insulin,0.5 ml",diabetes_supply,False,,,minor_brand,,,2016,2024,28116.0
+Advocate Syringes,"Syringe And Needle,insulin,1ml",Advocate Syringes,,"syringe and needle,insulin,1ml",diabetes_supply,False,,,minor_brand,,,2015,2024,24257.0
+Advocate Syringes,"Syring-Needl,disp,insul,0.3 Ml",Advocate Syringes,,"syring-needl,disp,insul,0.3 ml",diabetes_supply,False,,,minor_brand,,,2016,2024,9102.0
+Advocate Syringes,"Syring W-Ndl,disp,insul,0.5 Ml",Advocate Syringes,,"syring w-ndl,disp,insul,0.5 ml",diabetes_supply,False,,,minor_brand,,,2014,2015,1155.0
+Advocate Syringes,"Syring W-Ndl,disp,insul,0.3 Ml",Advocate Syringes,,"syring w-ndl,disp,insul,0.3 ml",diabetes_supply,False,,,minor_brand,,,2014,2015,465.0
+Advocate Syringes,"Syringe & Needle,insulin,1 Ml",Advocate Syringes,,"syringe & needle,insulin,1 ml",diabetes_supply,False,,,minor_brand,,,2013,2014,181.0
+Advocate Syringes,"Syring W-Ndl,disp,insul,0.5ml",Advocate Syringes,,"syring w-ndl,disp,insul,0.5ml",diabetes_supply,False,,,minor_brand,,,2013,2013,36.0
+Aimsco Mini Ultra-Thin Ii,"Needles, Insulin Disposable",Aimsco Mini Ultra-Thin Ii,,"needles, insulin disposable",diabetes_supply,False,,,minor_brand,,,2013,2013,18.0
+Aimsco Ultra Thin Ii,"Needles, Insulin Disposable",Aimsco Ultra Thin Ii,,"needles, insulin disposable",diabetes_supply,False,,,minor_brand,,,2013,2013,82.0
+Assure Id Pen Needle,"Pen Needle, Diabetic, Safety",Assure Id Pen Needle,,"pen needle, diabetic, safety",diabetes_supply,False,,,minor_brand,,,2019,2024,282.0
+Autoshield Duo Pen Needle,"Pen Needle,dual Safety,diabetc",Autoshield Duo Pen Needle,,"pen needle,dual safety,diabetc",diabetes_supply,False,,,minor_brand,,,2015,2024,1381876.0
+Autoshield Duo Pen Needle,"Pen Needle, Diabetic, Safety",Autoshield Duo Pen Needle,,"pen needle, diabetic, safety",diabetes_supply,False,,,minor_brand,,,2014,2014,35678.0
+Autoshield Pen Needle,"Needles, Insulin Disp., Safety",Autoshield Pen Needle,,"needles, insulin disp., safety",diabetes_supply,False,,,minor_brand,,,2014,2014,4195.0
+Autoshield Pen Needle,"Pen Needle, Diabetic, Safety",Autoshield Pen Needle,,"pen needle, diabetic, safety",diabetes_supply,False,,,minor_brand,,,2015,2022,307.0
+Bd Ultra-Fine Pen Needle,"Pen Needle, Diabetic",Bd Ultra-Fine Pen Needle,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2015,2017,5452092.0
+Bd Ultra-Fine Pen Needle,"Needles, Insulin Disposable",Bd Ultra-Fine Pen Needle,,"needles, insulin disposable",diabetes_supply,False,,,minor_brand,,,2013,2014,4757717.0
+Carefine Pen Needle,"Pen Needle, Diabetic",Carefine Pen Needle,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2015,2024,1700.0
+Caretouch Pen Needle,"Pen Needle, Diabetic",Caretouch Pen Needle,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2021,2022,22.0
+Cequr Simplicity,"Bolus Insulin Pump, 200 Unit",Cequr Simplicity,,"bolus insulin pump, 200 unit",diabetes_supply,False,,,minor_brand,,,2021,2024,9886.0
+Cequr Simplicity Inserter,"Diabetic Supplies,miscell",Cequr Simplicity Inserter,,"diabetic supplies,miscell",diabetes_supply,False,,,minor_brand,,,2022,2024,145.0
+Clickfine,"Needles, Insulin Disposable",Clickfine,,"needles, insulin disposable",diabetes_supply,False,,,minor_brand,,,2013,2014,34207.0
+Clickfine,"Pen Needle, Diabetic",Clickfine,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2015,2024,30208.0
+Comfort Ez,"Pen Needle, Diabetic",Comfort Ez,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2015,2017,93356.0
+Comfort Ez,"Needles, Insulin Disposable",Comfort Ez,,"needles, insulin disposable",diabetes_supply,False,,,minor_brand,,,2013,2014,8251.0
+Comfort Ez,"Syringe-Needle,insulin,0.5 Ml",Comfort Ez,,"syringe-needle,insulin,0.5 ml",diabetes_supply,False,,,minor_brand,,,2016,2017,6656.0
+Comfort Ez,"Syringe And Needle,insulin,1ml",Comfort Ez,,"syringe and needle,insulin,1ml",diabetes_supply,False,,,minor_brand,,,2015,2017,4194.0
+Comfort Ez,"Syring W-Ndl,disp,insul,0.5 Ml",Comfort Ez,,"syring w-ndl,disp,insul,0.5 ml",diabetes_supply,False,,,minor_brand,,,2014,2015,1841.0
+Comfort Ez,"Syring-Needl,disp,insul,0.3 Ml",Comfort Ez,,"syring-needl,disp,insul,0.3 ml",diabetes_supply,False,,,minor_brand,,,2016,2017,493.0
+Comfort Ez,"Syringe & Needle,insulin,1 Ml",Comfort Ez,,"syringe & needle,insulin,1 ml",diabetes_supply,False,,,minor_brand,,,2013,2014,238.0
+Comfort Ez,"Syring W-Ndl,disp,insul,0.5ml",Comfort Ez,,"syring w-ndl,disp,insul,0.5ml",diabetes_supply,False,,,minor_brand,,,2013,2013,213.0
+Comfort Ez,"Syring W-Ndl,disp,insul,0.3 Ml",Comfort Ez,,"syring w-ndl,disp,insul,0.3 ml",diabetes_supply,False,,,minor_brand,,,2014,2015,193.0
+Comfort Ez,"Syring W-Ndl,disp,insul,0.3ml",Comfort Ez,,"syring w-ndl,disp,insul,0.3ml",diabetes_supply,False,,,minor_brand,,,2013,2013,13.0
+Comfort Ez Pen Needle,"Pen Needle, Diabetic",Comfort Ez Pen Needle,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2018,2024,1010542.0
+Comfort Ez Pro Safety Pen Ndl,"Pen Needle, Diabetic, Safety",Comfort Ez Pro Safety Pen Ndl,,"pen needle, diabetic, safety",diabetes_supply,False,,,minor_brand,,,2023,2024,2321.0
+Comfort Touch Pen Needle,"Pen Needle, Diabetic",Comfort Touch Pen Needle,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2021,2024,5315.0
+Droplet Micron Pen Needle,"Pen Needle, Diabetic",Droplet Micron Pen Needle,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2021,2024,3145.0
+Droplet Pen Needle,"Pen Needle, Diabetic",Droplet Pen Needle,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2017,2024,707010.0
+Dropsafe Pen Needle,"Pen Needle, Diabetic, Safety",Dropsafe Pen Needle,,"pen needle, diabetic, safety",diabetes_supply,False,,,minor_brand,,,2019,2024,50203.0
+Easy Comfort Pen Needle,"Pen Needle, Diabetic",Easy Comfort Pen Needle,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2018,2024,214706.0
+Easy Comfort Pen Needles,"Pen Needle, Diabetic",Easy Comfort Pen Needles,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2015,2024,347654.0
+Easy Comfort Pen Needles,"Needles, Insulin Disposable",Easy Comfort Pen Needles,,"needles, insulin disposable",diabetes_supply,False,,,minor_brand,,,2013,2014,1912.0
+Easy Comfort Safety Pen Needle,"Pen Needle, Diabetic, Safety",Easy Comfort Safety Pen Needle,,"pen needle, diabetic, safety",diabetes_supply,False,,,minor_brand,,,2024,2024,23.0
+Easy Glide Pen Needle,"Pen Needle, Diabetic",Easy Glide Pen Needle,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2018,2024,2924.0
+Easy Touch,"Syringe-Needle,insulin,0.5 Ml",Easy Touch,,"syringe-needle,insulin,0.5 ml",diabetes_supply,False,,,minor_brand,,,2016,2024,77159.0
+Easy Touch,"Syring W-Ndl,disp,insul,0.5 Ml",Easy Touch,,"syring w-ndl,disp,insul,0.5 ml",diabetes_supply,False,,,minor_brand,,,2014,2015,39451.0
+Easy Touch,"Syringe And Needle,insulin,1ml",Easy Touch,,"syringe and needle,insulin,1ml",diabetes_supply,False,,,minor_brand,,,2015,2024,31088.0
+Easy Touch,"Needles, Insulin Disposable",Easy Touch,,"needles, insulin disposable",diabetes_supply,False,,,minor_brand,,,2013,2013,23194.0
+Easy Touch,"Syring-Needl,disp,insul,0.3 Ml",Easy Touch,,"syring-needl,disp,insul,0.3 ml",diabetes_supply,False,,,minor_brand,,,2016,2024,14866.0
+Easy Touch,"Syring W-Ndl,disp,insul,0.5ml",Easy Touch,,"syring w-ndl,disp,insul,0.5ml",diabetes_supply,False,,,minor_brand,,,2013,2013,14142.0
+Easy Touch,"Syringe & Needle,insulin,1 Ml",Easy Touch,,"syringe & needle,insulin,1 ml",diabetes_supply,False,,,minor_brand,,,2013,2014,7040.0
+Easy Touch,"Syring W-Ndl,disp,insul,0.3 Ml",Easy Touch,,"syring w-ndl,disp,insul,0.3 ml",diabetes_supply,False,,,minor_brand,,,2014,2015,5675.0
+Easy Touch,"Syring W-Ndl,disp,insul,0.3ml",Easy Touch,,"syring w-ndl,disp,insul,0.3ml",diabetes_supply,False,,,minor_brand,,,2013,2013,1137.0
+Easy Touch Pen Needle,"Pen Needle, Diabetic",Easy Touch Pen Needle,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2015,2024,516730.0
+Easy Touch Pen Needle,"Needles, Insulin Disposable",Easy Touch Pen Needle,,"needles, insulin disposable",diabetes_supply,False,,,minor_brand,,,2014,2014,47990.0
+Easy Touch Safety Pen Needle,"Pen Needle, Diabetic, Safety",Easy Touch Safety Pen Needle,,"pen needle, diabetic, safety",diabetes_supply,False,,,minor_brand,,,2020,2024,6269.0
+Elite-Thin,"Syringe And Needle,insulin,1ml",Elite-Thin,,"syringe and needle,insulin,1ml",diabetes_supply,False,,,minor_brand,,,2023,2023,12.0
+Embrace Pen Needle,"Pen Needle, Diabetic",Embrace Pen Needle,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2023,2024,1604.0
+Freestyle Precision,"Syringe & Needle,insulin,1 Ml",Freestyle Precision,,"syringe & needle,insulin,1 ml",diabetes_supply,False,,,minor_brand,,,2014,2014,14.0
+Glucopro,"Syring W-Ndl,disp,insul,0.5ml",Glucopro,,"syring w-ndl,disp,insul,0.5ml",diabetes_supply,False,,,minor_brand,,,2013,2013,32.0
+Glucopro,"Syring W-Ndl,disp,insul,0.3 Ml",Glucopro,,"syring w-ndl,disp,insul,0.3 ml",diabetes_supply,False,,,minor_brand,,,2014,2015,25.0
+Healthwise Pen Needle,"Pen Needle, Diabetic",Healthwise Pen Needle,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2022,2022,188.0
+Healthy Accents Unifine Pentip,"Pen Needle, Diabetic",Healthy Accents Unifine Pentip,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2015,2021,9930.0
+Healthy Accents Unifine Pentip,"Needles, Insulin Disposable",Healthy Accents Unifine Pentip,,"needles, insulin disposable",diabetes_supply,False,,,minor_brand,,,2013,2014,1745.0
+Healthy Accents Unifine Pentip,"Needles, Insulin Disp., Safety",Healthy Accents Unifine Pentip,,"needles, insulin disp., safety",diabetes_supply,False,,,minor_brand,,,2013,2013,11.0
+In Control Pen Needle,"Needles, Insulin Disposable",In Control Pen Needle,,"needles, insulin disposable",diabetes_supply,False,,,minor_brand,,,2013,2014,10742.0
+Incontrol,"Needles, Insulin Disposable",Incontrol,,"needles, insulin disposable",diabetes_supply,False,,,minor_brand,,,2013,2014,761.0
+Incontrol Pen Needle,"Pen Needle, Diabetic",Incontrol Pen Needle,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2015,2024,98151.0
+Inpen (For Humalog),"Insulin Pen,reusable,bt Lispro",Inpen (For Humalog),,"insulin pen,reusable,bt lispro",diabetes_supply,False,,,minor_brand,,,2022,2023,121.0
+Inpen (For Humalog),Insulin Admin. Supplies,Inpen (For Humalog),,insulin admin. supplies,diabetes_supply,False,,,minor_brand,,,2019,2021,52.0
+Inpen (For Novolog Or Fiasp),"Insulin Pen,reusable,bt,aspart",Inpen (For Novolog Or Fiasp),,"insulin pen,reusable,bt,aspart",diabetes_supply,False,,,minor_brand,,,2022,2023,41.0
+Inpen (For Novolog Or Fiasp),Insulin Admin. Supplies,Inpen (For Novolog Or Fiasp),,insulin admin. supplies,diabetes_supply,False,,,minor_brand,,,2021,2021,23.0
+Insumed,"Syring-Needl,disp,insul,0.3 Ml",Insumed,,"syring-needl,disp,insul,0.3 ml",diabetes_supply,False,,,minor_brand,,,2016,2024,363.0
+Insumed,"Syring W-Ndl,disp,insul,0.3 Ml",Insumed,,"syring w-ndl,disp,insul,0.3 ml",diabetes_supply,False,,,minor_brand,,,2014,2015,158.0
+Insumed,"Syring W-Ndl,disp,insul,0.3ml",Insumed,,"syring w-ndl,disp,insul,0.3ml",diabetes_supply,False,,,minor_brand,,,2013,2013,59.0
+Insupen,"Pen Needle, Diabetic",Insupen,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2015,2024,15552.0
+Insupen,"Needles, Insulin Disposable",Insupen,,"needles, insulin disposable",diabetes_supply,False,,,minor_brand,,,2013,2014,6042.0
+Insupen Pen Needle,"Pen Needle, Diabetic",Insupen Pen Needle,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2024,2024,1004.0
+Integra Syringe,"Syringe & Needle,insulin,1 Ml",Integra Syringe,,"syringe & needle,insulin,1 ml",diabetes_supply,False,,,minor_brand,,,2013,2014,822.0
+Lite Touch,"Pen Needle, Diabetic",Lite Touch,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2015,2024,12275.0
+Lite Touch,"Syringe And Needle,insulin,1ml",Lite Touch,,"syringe and needle,insulin,1ml",diabetes_supply,False,,,minor_brand,,,2015,2023,2385.0
+Lite Touch,"Needles, Insulin Disposable",Lite Touch,,"needles, insulin disposable",diabetes_supply,False,,,minor_brand,,,2013,2014,1995.0
+Lite Touch,"Syring W-Ndl,disp,insul,0.5 Ml",Lite Touch,,"syring w-ndl,disp,insul,0.5 ml",diabetes_supply,False,,,minor_brand,,,2014,2015,1764.0
+Lite Touch,"Syringe-Needle,insulin,0.5 Ml",Lite Touch,,"syringe-needle,insulin,0.5 ml",diabetes_supply,False,,,minor_brand,,,2016,2023,1590.0
+Lite Touch,"Syringe & Needle,insulin,1 Ml",Lite Touch,,"syringe & needle,insulin,1 ml",diabetes_supply,False,,,minor_brand,,,2013,2014,1569.0
+Lite Touch,"Syring W-Ndl,disp,insul,0.5ml",Lite Touch,,"syring w-ndl,disp,insul,0.5ml",diabetes_supply,False,,,minor_brand,,,2013,2013,947.0
+Lite Touch,"Syring W-Ndl,disp,insul,0.3 Ml",Lite Touch,,"syring w-ndl,disp,insul,0.3 ml",diabetes_supply,False,,,minor_brand,,,2014,2015,518.0
+Lite Touch,"Syring-Needl,disp,insul,0.3 Ml",Lite Touch,,"syring-needl,disp,insul,0.3 ml",diabetes_supply,False,,,minor_brand,,,2016,2020,301.0
+Lite Touch,"Syring W-Ndl,disp,insul,0.3ml",Lite Touch,,"syring w-ndl,disp,insul,0.3ml",diabetes_supply,False,,,minor_brand,,,2013,2013,135.0
+Luer-Lok Syringe,"Syringe,insulin,needless 1 Ml",Luer-Lok Syringe,,"syringe,insulin,needless 1 ml",diabetes_supply,False,,,minor_brand,,,2020,2022,27.0
+Maxi-Comfort,"Syringe And Needle,insulin,1ml",Maxi-Comfort,,"syringe and needle,insulin,1ml",diabetes_supply,False,,,minor_brand,,,2015,2021,250.0
+Maxi-Comfort,"Syringe-Needle,insulin,0.5 Ml",Maxi-Comfort,,"syringe-needle,insulin,0.5 ml",diabetes_supply,False,,,minor_brand,,,2016,2016,12.0
+Maxi-Comfort,"Syring W-Ndl,disp,insul,0.5 Ml",Maxi-Comfort,,"syring w-ndl,disp,insul,0.5 ml",diabetes_supply,False,,,minor_brand,,,2015,2015,11.0
+Maxicomfort Ii Pen Needle,"Pen Needle, Diabetic",Maxicomfort Ii Pen Needle,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2020,2024,234.0
+Mini Pen Needle,"Pen Needle, Diabetic",Mini Pen Needle,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2022,2024,1938.0
+Mini Ultra-Thin Ii,"Pen Needle, Diabetic",Mini Ultra-Thin Ii,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2015,2024,2547.0
+Mini Ultra-Thin Ii,"Needles, Insulin Disposable",Mini Ultra-Thin Ii,,"needles, insulin disposable",diabetes_supply,False,,,minor_brand,,,2013,2014,304.0
+Monoject,"Syringe-Needle,insulin,0.5 Ml",Monoject,,"syringe-needle,insulin,0.5 ml",diabetes_supply,False,,,minor_brand,,,2016,2024,241.0
+Nano 2nd Gen Pen Needle,"Pen Needle, Diabetic",Nano 2nd Gen Pen Needle,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2019,2024,3800648.0
+Needles,"Pen Needle, Diabetic",Needles,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2019,2019,11.0
+Novofine,"Pen Needle, Diabetic",Novofine,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2015,2020,160440.0
+Novofine,"Needles, Insulin Disposable",Novofine,,"needles, insulin disposable",diabetes_supply,False,,,minor_brand,,,2013,2014,138452.0
+Novofine 32,"Pen Needle, Diabetic",Novofine 32,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2015,2024,678824.0
+Novofine 32,"Needles, Insulin Disposable",Novofine 32,,"needles, insulin disposable",diabetes_supply,False,,,minor_brand,,,2013,2014,228558.0
+Novofine Autocover,"Pen Needle, Diabetic, Safety",Novofine Autocover,,"pen needle, diabetic, safety",diabetes_supply,False,,,minor_brand,,,2015,2024,1194270.0
+Novofine Autocover,"Needles, Insulin Disp., Safety",Novofine Autocover,,"needles, insulin disp., safety",diabetes_supply,False,,,minor_brand,,,2013,2014,170471.0
+Novofine Plus,"Pen Needle, Diabetic",Novofine Plus,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2015,2024,72135.0
+Novopen Echo,Insulin Admin. Supplies,Novopen Echo,,insulin admin. supplies,diabetes_supply,False,,,minor_brand,,,2020,2020,14.0
+Novotwist,"Pen Needle, Diabetic",Novotwist,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2015,2023,64359.0
+Novotwist,"Needles, Insulin Disposable",Novotwist,,"needles, insulin disposable",diabetes_supply,False,,,minor_brand,,,2013,2014,26389.0
+Omnipod,Insulin Pump Cartridge,Omnipod,,insulin pump cartridge,diabetes_supply,False,,,minor_brand,,,2015,2020,15621.0
+Omnipod,Subcutaneous Insulin Pump,Omnipod,,subcutaneous insulin pump,diabetes_supply,False,,,minor_brand,,,2018,2019,336.0
+Omnipod 5 Dexg7g6 Intro(Gen 5),"Insulin Pmp Cart,aut,g6/7,cntr",Omnipod 5 Dexg7g6 Intro(Gen 5),,"insulin pmp cart,aut,g6/7,cntr",diabetes_supply,False,,,minor_brand,,,2024,2024,3240.0
+Omnipod 5 Dexg7g6 Pods (Gen 5),"Insulin Pump Cart,auto,bt,g6/7",Omnipod 5 Dexg7g6 Pods (Gen 5),,"insulin pump cart,auto,bt,g6/7",diabetes_supply,False,,,minor_brand,,,2024,2024,178561.0
+Omnipod 5 G6 Intro Kit (Gen 5),"Insulin Pump Cart,auto,bt/Cntr",Omnipod 5 G6 Intro Kit (Gen 5),,"insulin pump cart,auto,bt/cntr",diabetes_supply,False,,,minor_brand,,,2022,2023,5859.0
+Omnipod 5 G6 Pods (Gen 5),"Insulin Pump Cart,automated,bt",Omnipod 5 G6 Pods (Gen 5),,"insulin pump cart,automated,bt",diabetes_supply,False,,,minor_brand,,,2022,2023,112480.0
+Omnipod Classic,"Insulin Pump Cart,cont Inf,rf",Omnipod Classic,,"insulin pump cart,cont inf,rf",diabetes_supply,False,,,minor_brand,,,2021,2021,4250.0
+Omnipod Classic Pods (Gen 3),"Insulin Pump Cart,cont Inf,rf",Omnipod Classic Pods (Gen 3),,"insulin pump cart,cont inf,rf",diabetes_supply,False,,,minor_brand,,,2022,2024,4365.0
+Omnipod Dash,"Insulin Pump Cart,cont Inf,bt",Omnipod Dash,,"insulin pump cart,cont inf,bt",diabetes_supply,False,,,minor_brand,,,2021,2021,47265.0
+Omnipod Dash 5 Pack Pod,Insulin Pump Cartridge,Omnipod Dash 5 Pack Pod,,insulin pump cartridge,diabetes_supply,False,,,minor_brand,,,2019,2020,23738.0
+Omnipod Dash Pods (Gen 4),"Insulin Pump Cart,cont Inf,bt",Omnipod Dash Pods (Gen 4),,"insulin pump cart,cont inf,bt",diabetes_supply,False,,,minor_brand,,,2022,2024,129565.0
+Pen Needle,"Pen Needle, Diabetic",Pen Needle,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2015,2024,687321.0
+Pen Needle,"Needles, Insulin Disposable",Pen Needle,,"needles, insulin disposable",diabetes_supply,False,,,minor_brand,,,2013,2014,80354.0
+Pen Needle,"Pen Needle, Diabetic, Safety",Pen Needle,,"pen needle, diabetic, safety",diabetes_supply,False,,,minor_brand,,,2013,2013,33593.0
+Pen Needle,"Needles, Insulin Disp., Safety",Pen Needle,,"needles, insulin disp., safety",diabetes_supply,False,,,minor_brand,,,2013,2014,4302.0
+Pen Needles,"Pen Needle, Diabetic",Pen Needles,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2015,2024,378390.0
+Pen Needles,"Needles, Insulin Disposable",Pen Needles,,"needles, insulin disposable",diabetes_supply,False,,,minor_brand,,,2013,2014,37320.0
+Pentips,"Pen Needle, Diabetic",Pentips,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2017,2023,73478.0
+Pentips Pen Needle,"Pen Needle, Diabetic",Pentips Pen Needle,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2024,2024,9891.0
+Pip Pen Needle,"Pen Needle, Diabetic",Pip Pen Needle,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2024,2024,53.0
+Precision,"Syringe & Needle,insulin,1 Ml",Precision,,"syringe & needle,insulin,1 ml",diabetes_supply,False,,,minor_brand,,,2013,2014,101.0
+Precision,"Syring W-Ndl,disp,insul,0.5ml",Precision,,"syring w-ndl,disp,insul,0.5ml",diabetes_supply,False,,,minor_brand,,,2013,2013,76.0
+Precision,"Syringe And Needle,insulin,1ml",Precision,,"syringe and needle,insulin,1ml",diabetes_supply,False,,,minor_brand,,,2018,2022,73.0
+Precision,"Syring W-Ndl,disp,insul,0.3 Ml",Precision,,"syring w-ndl,disp,insul,0.3 ml",diabetes_supply,False,,,minor_brand,,,2014,2015,30.0
+Precision,"Syring W-Ndl,disp,insul,0.5 Ml",Precision,,"syring w-ndl,disp,insul,0.5 ml",diabetes_supply,False,,,minor_brand,,,2014,2014,28.0
+Precision,"Syring W-Ndl,disp,insul,0.3ml",Precision,,"syring w-ndl,disp,insul,0.3ml",diabetes_supply,False,,,minor_brand,,,2013,2013,25.0
+Precision,"Syringe-Needle,insulin,0.5 Ml",Precision,,"syringe-needle,insulin,0.5 ml",diabetes_supply,False,,,minor_brand,,,2016,2017,24.0
+Pro Comfort Pen Needle,"Pen Needle, Diabetic",Pro Comfort Pen Needle,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2017,2024,25271.0
+Prodigy Pen Needle,"Needles, Insulin Disposable",Prodigy Pen Needle,,"needles, insulin disposable",diabetes_supply,False,,,minor_brand,,,2013,2014,222.0
+Prodigy Pen Needle,"Needles, Insulin Disp., Safety",Prodigy Pen Needle,,"needles, insulin disp., safety",diabetes_supply,False,,,minor_brand,,,2013,2014,29.0
+Pure Comfort Pen Needle,"Pen Needle, Diabetic",Pure Comfort Pen Needle,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2020,2024,177.0
+Pure Comfort Safety Pen Needle,"Pen Needle, Diabetic, Safety",Pure Comfort Safety Pen Needle,,"pen needle, diabetic, safety",diabetes_supply,False,,,minor_brand,,,2024,2024,124.0
+Raya Sure Pen Needle,"Pen Needle, Diabetic",Raya Sure Pen Needle,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2023,2023,50.0
+Relion Pen Needles,"Pen Needle, Diabetic",Relion Pen Needles,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2015,2017,2171.0
+Relion Pen Needles,"Needles, Insulin Disposable",Relion Pen Needles,,"needles, insulin disposable",diabetes_supply,False,,,minor_brand,,,2013,2014,842.0
+Safety Pen Needle,"Pen Needle, Diabetic, Safety",Safety Pen Needle,,"pen needle, diabetic, safety",diabetes_supply,False,,,minor_brand,,,2022,2023,1716.0
+Safetyglide Syringe,"Syringe And Needle,insulin,1ml",Safetyglide Syringe,,"syringe and needle,insulin,1ml",diabetes_supply,False,,,minor_brand,,,2018,2024,215.0
+Securesafe Pen Needle,"Pen Needle, Diabetic, Safety",Securesafe Pen Needle,,"pen needle, diabetic, safety",diabetes_supply,False,,,minor_brand,,,2021,2024,14119.0
+Sky Safety Pen Needle,"Pen Needle, Diabetic, Safety",Sky Safety Pen Needle,,"pen needle, diabetic, safety",diabetes_supply,False,,,minor_brand,,,2024,2024,12.0
+Sure Comfort,"Syringe-Needle,insulin,0.5 Ml",Sure Comfort,,"syringe-needle,insulin,0.5 ml",diabetes_supply,False,,,minor_brand,,,2016,2024,415481.0
+Sure Comfort,"Syringe And Needle,insulin,1ml",Sure Comfort,,"syringe and needle,insulin,1ml",diabetes_supply,False,,,minor_brand,,,2015,2024,369448.0
+Sure Comfort,"Pen Needle, Diabetic",Sure Comfort,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2015,2024,333447.0
+Sure Comfort,"Syring W-Ndl,disp,insul,0.5 Ml",Sure Comfort,,"syring w-ndl,disp,insul,0.5 ml",diabetes_supply,False,,,minor_brand,,,2014,2015,158019.0
+Sure Comfort,"Syring-Needl,disp,insul,0.3 Ml",Sure Comfort,,"syring-needl,disp,insul,0.3 ml",diabetes_supply,False,,,minor_brand,,,2016,2024,102758.0
+Sure Comfort,"Syringe & Needle,insulin,1 Ml",Sure Comfort,,"syringe & needle,insulin,1 ml",diabetes_supply,False,,,minor_brand,,,2013,2014,96800.0
+Sure Comfort,"Syring W-Ndl,disp,insul,0.5ml",Sure Comfort,,"syring w-ndl,disp,insul,0.5ml",diabetes_supply,False,,,minor_brand,,,2013,2013,88965.0
+Sure Comfort,"Needles, Insulin Disposable",Sure Comfort,,"needles, insulin disposable",diabetes_supply,False,,,minor_brand,,,2013,2014,66082.0
+Sure Comfort,"Syring W-Ndl,disp,insul,0.3 Ml",Sure Comfort,,"syring w-ndl,disp,insul,0.3 ml",diabetes_supply,False,,,minor_brand,,,2014,2015,24883.0
+Sure Comfort,"Syring W-Ndl,disp,insul,0.3ml",Sure Comfort,,"syring w-ndl,disp,insul,0.3ml",diabetes_supply,False,,,minor_brand,,,2013,2013,9335.0
+Sure Comfort Pen Needle,"Pen Needle, Diabetic",Sure Comfort Pen Needle,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2022,2024,127253.0
+Sure Comfort Safety Pen Needle,"Pen Needle, Diabetic, Safety",Sure Comfort Safety Pen Needle,,"pen needle, diabetic, safety",diabetes_supply,False,,,minor_brand,,,2024,2024,26.0
+Sure-Fine Pen Needles,"Needles, Insulin Disposable",Sure-Fine Pen Needles,,"needles, insulin disposable",diabetes_supply,False,,,minor_brand,,,2013,2014,335.0
+Sure-Fine Pen Needles,"Pen Needle, Diabetic",Sure-Fine Pen Needles,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2015,2021,306.0
+Techlite Pen Needle,"Pen Needle, Diabetic",Techlite Pen Needle,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2017,2024,166011.0
+Topcare Clickfine,"Pen Needle, Diabetic",Topcare Clickfine,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2015,2022,236.0
+Topcare Clickfine,"Needles, Insulin Disposable",Topcare Clickfine,,"needles, insulin disposable",diabetes_supply,False,,,minor_brand,,,2013,2014,159.0
+Topcare Ultra Comfort,"Syringe & Needle,insulin,1 Ml",Topcare Ultra Comfort,,"syringe & needle,insulin,1 ml",diabetes_supply,False,,,minor_brand,,,2013,2014,133.0
+Topcare Ultra Comfort,"Syring W-Ndl,disp,insul,0.5 Ml",Topcare Ultra Comfort,,"syring w-ndl,disp,insul,0.5 ml",diabetes_supply,False,,,minor_brand,,,2014,2015,116.0
+Topcare Ultra Comfort,"Syringe And Needle,insulin,1ml",Topcare Ultra Comfort,,"syringe and needle,insulin,1ml",diabetes_supply,False,,,minor_brand,,,2015,2017,103.0
+Topcare Ultra Comfort,"Syring W-Ndl,disp,insul,0.5ml",Topcare Ultra Comfort,,"syring w-ndl,disp,insul,0.5ml",diabetes_supply,False,,,minor_brand,,,2013,2013,75.0
+Topcare Ultra Comfort,"Syring W-Ndl,disp,insul,0.3 Ml",Topcare Ultra Comfort,,"syring w-ndl,disp,insul,0.3 ml",diabetes_supply,False,,,minor_brand,,,2014,2014,27.0
+Topcare Ultra Comfort,"Syring W-Ndl,disp,insul,0.3ml",Topcare Ultra Comfort,,"syring w-ndl,disp,insul,0.3ml",diabetes_supply,False,,,minor_brand,,,2013,2013,24.0
+Topcare Ultra Comfort,"Syringe-Needle,insulin,0.5 Ml",Topcare Ultra Comfort,,"syringe-needle,insulin,0.5 ml",diabetes_supply,False,,,minor_brand,,,2016,2016,11.0
+True Comfort Pro Pen Needle,"Pen Needle, Diabetic",True Comfort Pro Pen Needle,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2022,2024,1543.0
+True Comfort Safety Pen Needle,"Pen Needle, Diabetic, Safety",True Comfort Safety Pen Needle,,"pen needle, diabetic, safety",diabetes_supply,False,,,minor_brand,,,2023,2024,9466.0
+Trueplus Pen Needle,"Pen Needle, Diabetic",Trueplus Pen Needle,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2017,2024,432048.0
+Ulticare,"Needles, Insulin Disposable",Ulticare,,"needles, insulin disposable",diabetes_supply,False,,,minor_brand,,,2013,2014,101990.0
+Ulticare,"Pen Needle, Diabetic",Ulticare,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2015,2015,72289.0
+Ulticare,"Syringe And Needle,insulin,1ml",Ulticare,,"syringe and needle,insulin,1ml",diabetes_supply,False,,,minor_brand,,,2015,2024,14128.0
+Ulticare,"Syringe-Needle,insulin,0.5 Ml",Ulticare,,"syringe-needle,insulin,0.5 ml",diabetes_supply,False,,,minor_brand,,,2016,2024,8674.0
+Ulticare,"Syring W-Ndl,disp,insul,0.5 Ml",Ulticare,,"syring w-ndl,disp,insul,0.5 ml",diabetes_supply,False,,,minor_brand,,,2014,2015,6207.0
+Ulticare,"Syringe & Needle,insulin,1 Ml",Ulticare,,"syringe & needle,insulin,1 ml",diabetes_supply,False,,,minor_brand,,,2013,2014,5697.0
+Ulticare,"Syring W-Ndl,disp,insul,0.5ml",Ulticare,,"syring w-ndl,disp,insul,0.5ml",diabetes_supply,False,,,minor_brand,,,2013,2013,3410.0
+Ulticare,"Syring-Needl,disp,insul,0.3 Ml",Ulticare,,"syring-needl,disp,insul,0.3 ml",diabetes_supply,False,,,minor_brand,,,2016,2024,3304.0
+Ulticare,"Syring W-Ndl,disp,insul,0.3 Ml",Ulticare,,"syring w-ndl,disp,insul,0.3 ml",diabetes_supply,False,,,minor_brand,,,2014,2015,1213.0
+Ulticare,"Syring W-Ndl,disp,insul,0.3ml",Ulticare,,"syring w-ndl,disp,insul,0.3ml",diabetes_supply,False,,,minor_brand,,,2013,2013,518.0
+Ulticare,"Syr,ndl,insulin,1ml-Sharps Bin",Ulticare,,"syr,ndl,insulin,1ml-sharps bin",diabetes_supply,False,,,minor_brand,,,2015,2019,346.0
+Ulticare,"Syr-Nd,ins,0.5/Container,empty",Ulticare,,"syr-nd,ins,0.5/container,empty",diabetes_supply,False,,,minor_brand,,,2014,2017,243.0
+Ulticare,"Syrnge&needle,insln,1ml&sharps",Ulticare,,"syrnge&needle,insln,1ml&sharps",diabetes_supply,False,,,minor_brand,,,2013,2014,131.0
+Ulticare,"Syr-Nd,ins,0.3/Container,empty",Ulticare,,"syr-nd,ins,0.3/container,empty",diabetes_supply,False,,,minor_brand,,,2015,2018,116.0
+Ulticare,"Syrg-Nd,ins,0.5/Container",Ulticare,,"syrg-nd,ins,0.5/container",diabetes_supply,False,,,minor_brand,,,2013,2013,52.0
+Ulticare,"Syrg-Nd,ins,0.3/Container",Ulticare,,"syrg-nd,ins,0.3/container",diabetes_supply,False,,,minor_brand,,,2013,2013,12.0
+Ulticare Pen Needle,"Pen Needle, Diabetic",Ulticare Pen Needle,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2016,2024,1120502.0
+Ulticare Safety Pen Needle,"Pen Needle, Diabetic, Safety",Ulticare Safety Pen Needle,,"pen needle, diabetic, safety",diabetes_supply,False,,,minor_brand,,,2021,2024,3081.0
+Ultiguard Safe Pack,"Pen Needle, Diabetic,disp Unit",Ultiguard Safe Pack,,"pen needle, diabetic,disp unit",diabetes_supply,False,,,minor_brand,,,2020,2020,335.0
+Ultiguard Safepack-Pen Needle,"Pen Needle, Diabetic,disp Unit",Ultiguard Safepack-Pen Needle,,"pen needle, diabetic,disp unit",diabetes_supply,False,,,minor_brand,,,2021,2024,5205.0
+Ultilet Pen Needle,"Pen Needle, Diabetic",Ultilet Pen Needle,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2019,2019,14.0
+Ultra Comfort,"Syringe & Needle,insulin,1 Ml",Ultra Comfort,,"syringe & needle,insulin,1 ml",diabetes_supply,False,,,minor_brand,,,2013,2014,35779.0
+Ultra Comfort,"Syring W-Ndl,disp,insul,0.5 Ml",Ultra Comfort,,"syring w-ndl,disp,insul,0.5 ml",diabetes_supply,False,,,minor_brand,,,2014,2015,20832.0
+Ultra Comfort,"Syringe And Needle,insulin,1ml",Ultra Comfort,,"syringe and needle,insulin,1ml",diabetes_supply,False,,,minor_brand,,,2015,2024,20761.0
+Ultra Comfort,"Syring W-Ndl,disp,insul,0.5ml",Ultra Comfort,,"syring w-ndl,disp,insul,0.5ml",diabetes_supply,False,,,minor_brand,,,2013,2013,19844.0
+Ultra Comfort,"Syringe-Needle,insulin,0.5 Ml",Ultra Comfort,,"syringe-needle,insulin,0.5 ml",diabetes_supply,False,,,minor_brand,,,2016,2023,7355.0
+Ultra Comfort,"Syr W-Ndl,ins 0.3 Ml Half Mark",Ultra Comfort,,"syr w-ndl,ins 0.3 ml half mark",diabetes_supply,False,,,minor_brand,,,2013,2015,4476.0
+Ultra Comfort,"Syring W-Ndl,disp,insul,0.3 Ml",Ultra Comfort,,"syring w-ndl,disp,insul,0.3 ml",diabetes_supply,False,,,minor_brand,,,2014,2015,719.0
+Ultra Comfort,"Syring W-Ndl,disp,insul,0.3ml",Ultra Comfort,,"syring w-ndl,disp,insul,0.3ml",diabetes_supply,False,,,minor_brand,,,2013,2013,492.0
+Ultra Comfort,"Syring-Needl,disp,insul,0.3 Ml",Ultra Comfort,,"syring-needl,disp,insul,0.3 ml",diabetes_supply,False,,,minor_brand,,,2016,2020,439.0
+Ultra Comfort,"Syrge-Ndl,ins 0.3 Ml Half Mark",Ultra Comfort,,"syrge-ndl,ins 0.3 ml half mark",diabetes_supply,False,,,minor_brand,,,2016,2021,239.0
+Ultra Comfort,"Syringe W-Ndl, Disp., Insulin",Ultra Comfort,,"syringe w-ndl, disp., insulin",diabetes_supply,False,,,minor_brand,,,2014,2016,22.0
+Ultra Flo Pen Needle,"Pen Needle, Diabetic",Ultra Flo Pen Needle,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2021,2024,1592.0
+Ultra Thin,"Pen Needle, Diabetic",Ultra Thin,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2019,2024,2434.0
+Ultra-Fine Micro Pen Needle,"Pen Needle, Diabetic",Ultra-Fine Micro Pen Needle,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2018,2024,129420.0
+Ultra-Fine Mini Pen Needle,"Pen Needle, Diabetic",Ultra-Fine Mini Pen Needle,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2017,2024,3822383.0
+Ultra-Fine Nano Pen Needle,"Pen Needle, Diabetic",Ultra-Fine Nano Pen Needle,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2017,2024,4649335.0
+Ultra-Fine Original Pen Needle,"Pen Needle, Diabetic",Ultra-Fine Original Pen Needle,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2017,2024,117929.0
+Ultra-Fine Short Pen Needle,"Pen Needle, Diabetic",Ultra-Fine Short Pen Needle,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2017,2024,3529467.0
+Ultra-Thin Ii,"Syringe And Needle,insulin,1ml",Ultra-Thin Ii,,"syringe and needle,insulin,1ml",diabetes_supply,False,,,minor_brand,,,2015,2024,3998.0
+Ultra-Thin Ii,"Pen Needle, Diabetic",Ultra-Thin Ii,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2015,2023,2475.0
+Ultra-Thin Ii,"Syringe-Needle,insulin,0.5 Ml",Ultra-Thin Ii,,"syringe-needle,insulin,0.5 ml",diabetes_supply,False,,,minor_brand,,,2016,2024,2259.0
+Ultra-Thin Ii,"Syring W-Ndl,disp,insul,0.5 Ml",Ultra-Thin Ii,,"syring w-ndl,disp,insul,0.5 ml",diabetes_supply,False,,,minor_brand,,,2014,2015,1745.0
+Ultra-Thin Ii,"Syring W-Ndl,disp,insul,0.5ml",Ultra-Thin Ii,,"syring w-ndl,disp,insul,0.5ml",diabetes_supply,False,,,minor_brand,,,2013,2013,843.0
+Ultra-Thin Ii,"Syringe & Needle,insulin,1 Ml",Ultra-Thin Ii,,"syringe & needle,insulin,1 ml",diabetes_supply,False,,,minor_brand,,,2013,2014,560.0
+Ultra-Thin Ii,"Syring-Needl,disp,insul,0.3 Ml",Ultra-Thin Ii,,"syring-needl,disp,insul,0.3 ml",diabetes_supply,False,,,minor_brand,,,2016,2024,486.0
+Ultra-Thin Ii,"Needles, Insulin Disposable",Ultra-Thin Ii,,"needles, insulin disposable",diabetes_supply,False,,,minor_brand,,,2013,2014,251.0
+Ultra-Thin Ii,"Syring W-Ndl,disp,insul,0.3 Ml",Ultra-Thin Ii,,"syring w-ndl,disp,insul,0.3 ml",diabetes_supply,False,,,minor_brand,,,2014,2015,199.0
+Ultra-Thin Ii,"Syring W-Ndl,disp,insul,0.3ml",Ultra-Thin Ii,,"syring w-ndl,disp,insul,0.3ml",diabetes_supply,False,,,minor_brand,,,2013,2013,93.0
+Ultracare Pen Needle,"Pen Needle, Diabetic",Ultracare Pen Needle,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2019,2024,92507.0
+Ultracomfort,"Syrnge&needle,insln,1ml&sharps",Ultracomfort,,"syrnge&needle,insln,1ml&sharps",diabetes_supply,False,,,minor_brand,,,2013,2014,41.0
+Ultracomfort,"Pen Needle, Diabetic",Ultracomfort,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2015,2015,11.0
+Unifine Pentips,"Pen Needle, Diabetic",Unifine Pentips,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2015,2024,1109932.0
+Unifine Pentips,"Needles, Insulin Disposable",Unifine Pentips,,"needles, insulin disposable",diabetes_supply,False,,,minor_brand,,,2013,2014,253161.0
+Unifine Pentips Maxflow,"Pen Needle, Diabetic",Unifine Pentips Maxflow,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2021,2022,61.0
+Unifine Pentips Plus,"Pen Needle, Diabetic",Unifine Pentips Plus,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2015,2024,176458.0
+Unifine Pentips Plus,"Pen Needle, Diabetic,disp Unit",Unifine Pentips Plus,,"pen needle, diabetic,disp unit",diabetes_supply,False,,,minor_brand,,,2013,2014,1866.0
+Unifine Pentips Plus,"Needles, Insulin Disposable",Unifine Pentips Plus,,"needles, insulin disposable",diabetes_supply,False,,,minor_brand,,,2013,2014,1855.0
+Unifine Safecontrol,"Pen Needle,dual Safety,diabetc",Unifine Safecontrol,,"pen needle,dual safety,diabetc",diabetes_supply,False,,,minor_brand,,,2020,2023,20072.0
+Unifine Safecontrol Pen Needle,"Pen Needle,dual Safety,diabetc",Unifine Safecontrol Pen Needle,,"pen needle,dual safety,diabetc",diabetes_supply,False,,,minor_brand,,,2024,2024,12988.0
+Unifine Safecontrol Pen Needle,"Pen Needle, Diabetic",Unifine Safecontrol Pen Needle,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2024,2024,73.0
+Unifine Ultra Pen Needle,"Pen Needle, Diabetic",Unifine Ultra Pen Needle,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2022,2024,391.0
+V-Go 20,"Sub-Q Insulin Device, 20 Unit",V-Go 20,,"sub-q insulin device, 20 unit",diabetes_supply,False,,,minor_brand,,,2018,2024,58124.0
+V-Go 30,"Sub-Q Insulin Device, 30 Unit",V-Go 30,,"sub-q insulin device, 30 unit",diabetes_supply,False,,,minor_brand,,,2018,2024,53957.0
+V-Go 40,"Sub-Q Insulin Device, 40 Unit",V-Go 40,,"sub-q insulin device, 40 unit",diabetes_supply,False,,,minor_brand,,,2018,2024,87149.0
+Vanishpoint,"Syringe And Needle,insulin,1ml",Vanishpoint,,"syringe and needle,insulin,1ml",diabetes_supply,False,,,minor_brand,,,2015,2024,5652.0
+Vanishpoint,"Syringe & Needle,insulin,1 Ml",Vanishpoint,,"syringe & needle,insulin,1 ml",diabetes_supply,False,,,minor_brand,,,2013,2014,2508.0
+Vanishpoint,"Syringe-Needle,insulin,0.5 Ml",Vanishpoint,,"syringe-needle,insulin,0.5 ml",diabetes_supply,False,,,minor_brand,,,2016,2024,684.0
+Vanishpoint,"Syring W-Ndl,disp,insul,0.5ml",Vanishpoint,,"syring w-ndl,disp,insul,0.5ml",diabetes_supply,False,,,minor_brand,,,2013,2013,535.0
+Vanishpoint,"Syring W-Ndl,disp,insul,0.5 Ml",Vanishpoint,,"syring w-ndl,disp,insul,0.5 ml",diabetes_supply,False,,,minor_brand,,,2014,2014,325.0
+Verifine Plus Pen Needle,"Pen Needle, Diabetic",Verifine Plus Pen Needle,,"pen needle, diabetic",diabetes_supply,False,,,minor_brand,,,2024,2024,14.0
+Vgo 20,"Sub-Q Insulin Device, 20 Unit",Vgo 20,,"sub-q insulin device, 20 unit",diabetes_supply,False,,,minor_brand,,,2013,2017,21847.0
+Vgo 30,"Sub-Q Insulin Device, 30 Unit",Vgo 30,,"sub-q insulin device, 30 unit",diabetes_supply,False,,,minor_brand,,,2013,2017,22362.0
+Vgo 40,"Sub-Q Insulin Device, 40 Unit",Vgo 40,,"sub-q insulin device, 40 unit",diabetes_supply,False,,,minor_brand,,,2013,2017,40973.0
+Insulin Pen Needle,"Needles, Insulin Disposable","needles, insulin disposable (generic)",,"needles, insulin disposable",diabetes_supply,False,,,molecule,,,2013,2014,83.0
+Insulin Pen Needle,"Pen Needle, Diabetic","pen needle, diabetic (generic)",,"pen needle, diabetic",diabetes_supply,False,,,molecule,,,2015,2024,300.0
+Insulin Syringe,"Syr W-Ndl,ins 0.3 Ml Half Mark","syr w-ndl,ins 0.3 ml half mark (generic)",,"syr w-ndl,ins 0.3 ml half mark",diabetes_supply,False,,,molecule,,,2013,2015,20151.0
+Veo Insulin Syringe,"Syrge-Ndl,ins 0.3 Ml Half Mark","syrge-ndl,ins 0.3 ml half mark (generic)",,"syrge-ndl,ins 0.3 ml half mark",diabetes_supply,False,,,molecule,,,2018,2024,77911.0
+Insulin Syringe,"Syrge-Ndl,ins 0.3 Ml Half Mark","syrge-ndl,ins 0.3 ml half mark (generic)",,"syrge-ndl,ins 0.3 ml half mark",diabetes_supply,False,,,molecule,,,2016,2024,39830.0
+Techlite Insulin Syringe,"Syrge-Ndl,ins 0.3 Ml Half Mark","syrge-ndl,ins 0.3 ml half mark (generic)",,"syrge-ndl,ins 0.3 ml half mark",diabetes_supply,False,,,molecule,,,2018,2024,1163.0
+Ulticare Insulin Syringe,"Syrge-Ndl,ins 0.3 Ml Half Mark","syrge-ndl,ins 0.3 ml half mark (generic)",,"syrge-ndl,ins 0.3 ml half mark",diabetes_supply,False,,,molecule,,,2017,2024,262.0
+Droplet Insulin Syringe,"Syrge-Ndl,ins 0.5 Ml Half Mark","syrge-ndl,ins 0.5 ml half mark (generic)",,"syrge-ndl,ins 0.5 ml half mark",diabetes_supply,False,,,molecule,,,2019,2024,4374.0
+Techlite Insulin Syringe,"Syrge-Ndl,ins 0.5 Ml Half Mark","syrge-ndl,ins 0.5 ml half mark (generic)",,"syrge-ndl,ins 0.5 ml half mark",diabetes_supply,False,,,molecule,,,2019,2024,516.0
+Insulin Syringe,"Syring W-Ndl,disp,insul,0.3 Ml","syring w-ndl,disp,insul,0.3 ml (generic)",,"syring w-ndl,disp,insul,0.3 ml",diabetes_supply,False,,,molecule,,,2014,2015,324975.0
+Monoject Insulin Syringe,"Syring W-Ndl,disp,insul,0.3 Ml","syring w-ndl,disp,insul,0.3 ml (generic)",,"syring w-ndl,disp,insul,0.3 ml",diabetes_supply,False,,,molecule,,,2014,2015,2153.0
+Trueplus Insulin Syringe,"Syring W-Ndl,disp,insul,0.3 Ml","syring w-ndl,disp,insul,0.3 ml (generic)",,"syring w-ndl,disp,insul,0.3 ml",diabetes_supply,False,,,molecule,,,2014,2015,1990.0
+Safetyglide Insulin Syringe,"Syring W-Ndl,disp,insul,0.3 Ml","syring w-ndl,disp,insul,0.3 ml (generic)",,"syring w-ndl,disp,insul,0.3 ml",diabetes_supply,False,,,molecule,,,2014,2015,1960.0
+Sure-Ject Insulin Syringe,"Syring W-Ndl,disp,insul,0.3 Ml","syring w-ndl,disp,insul,0.3 ml (generic)",,"syring w-ndl,disp,insul,0.3 ml",diabetes_supply,False,,,molecule,,,2014,2015,487.0
+Ultilet Insulin Syringe,"Syring W-Ndl,disp,insul,0.3 Ml","syring w-ndl,disp,insul,0.3 ml (generic)",,"syring w-ndl,disp,insul,0.3 ml",diabetes_supply,False,,,molecule,,,2014,2015,383.0
+Easy Touch Insulin Syringe,"Syring W-Ndl,disp,insul,0.3 Ml","syring w-ndl,disp,insul,0.3 ml (generic)",,"syring w-ndl,disp,insul,0.3 ml",diabetes_supply,False,,,molecule,,,2014,2015,306.0
+Prodigy Insulin Syringe,"Syring W-Ndl,disp,insul,0.3 Ml","syring w-ndl,disp,insul,0.3 ml (generic)",,"syring w-ndl,disp,insul,0.3 ml",diabetes_supply,False,,,molecule,,,2014,2015,27.0
+Bd Insulin Syringe Micro-Fine,"Syring W-Ndl,disp,insul,0.3 Ml","syring w-ndl,disp,insul,0.3 ml (generic)",,"syring w-ndl,disp,insul,0.3 ml",diabetes_supply,False,,,molecule,,,2014,2014,15.0
+Bd Insulin Syringe Ult-Fine Ii,"Syring W-Ndl,disp,insul,0.3 Ml","syring w-ndl,disp,insul,0.3 ml (generic)",,"syring w-ndl,disp,insul,0.3 ml",diabetes_supply,False,,,molecule,,,2014,2014,12.0
+Insulin Syringe,"Syring W-Ndl,disp,insul,0.3ml","syring w-ndl,disp,insul,0.3ml (generic)",,"syring w-ndl,disp,insul,0.3ml",diabetes_supply,False,,,molecule,,,2013,2013,186965.0
+Monoject Insulin Syringe,"Syring W-Ndl,disp,insul,0.3ml","syring w-ndl,disp,insul,0.3ml (generic)",,"syring w-ndl,disp,insul,0.3ml",diabetes_supply,False,,,molecule,,,2013,2013,1555.0
+Safetyglide Insulin Syringe,"Syring W-Ndl,disp,insul,0.3ml","syring w-ndl,disp,insul,0.3ml (generic)",,"syring w-ndl,disp,insul,0.3ml",diabetes_supply,False,,,molecule,,,2013,2013,821.0
+Trueplus Insulin Syringe,"Syring W-Ndl,disp,insul,0.3ml","syring w-ndl,disp,insul,0.3ml (generic)",,"syring w-ndl,disp,insul,0.3ml",diabetes_supply,False,,,molecule,,,2013,2013,267.0
+Ultilet Insulin Syringe,"Syring W-Ndl,disp,insul,0.3ml","syring w-ndl,disp,insul,0.3ml (generic)",,"syring w-ndl,disp,insul,0.3ml",diabetes_supply,False,,,molecule,,,2013,2013,163.0
+Sure-Ject Insulin Syringe,"Syring W-Ndl,disp,insul,0.3ml","syring w-ndl,disp,insul,0.3ml (generic)",,"syring w-ndl,disp,insul,0.3ml",diabetes_supply,False,,,molecule,,,2013,2013,101.0
+Prodigy Insulin Syringe,"Syring W-Ndl,disp,insul,0.3ml","syring w-ndl,disp,insul,0.3ml (generic)",,"syring w-ndl,disp,insul,0.3ml",diabetes_supply,False,,,molecule,,,2013,2013,39.0
+Bd Insulin Syringe Micro-Fine,"Syring W-Ndl,disp,insul,0.3ml","syring w-ndl,disp,insul,0.3ml (generic)",,"syring w-ndl,disp,insul,0.3ml",diabetes_supply,False,,,molecule,,,2013,2013,37.0
+Bd Insulin Syringe Ult-Fine Ii,"Syring W-Ndl,disp,insul,0.3ml","syring w-ndl,disp,insul,0.3ml (generic)",,"syring w-ndl,disp,insul,0.3ml",diabetes_supply,False,,,molecule,,,2013,2013,37.0
+Easy Touch Insulin Syringe,"Syring W-Ndl,disp,insul,0.3ml","syring w-ndl,disp,insul,0.3ml (generic)",,"syring w-ndl,disp,insul,0.3ml",diabetes_supply,False,,,molecule,,,2013,2013,35.0
+Bd Insulin Syringe Ultra-Fine,"Syring W-Ndl,disp,insul,0.3ml","syring w-ndl,disp,insul,0.3ml (generic)",,"syring w-ndl,disp,insul,0.3ml",diabetes_supply,False,,,molecule,,,2013,2013,11.0
+Insulin Syringe,"Syring W-Ndl,disp,insul,0.5 Ml","syring w-ndl,disp,insul,0.5 ml (generic)",,"syring w-ndl,disp,insul,0.5 ml",diabetes_supply,False,,,molecule,,,2014,2015,1589532.0
+Monoject Insulin Syringe,"Syring W-Ndl,disp,insul,0.5 Ml","syring w-ndl,disp,insul,0.5 ml (generic)",,"syring w-ndl,disp,insul,0.5 ml",diabetes_supply,False,,,molecule,,,2014,2015,41989.0
+Trueplus Insulin Syringe,"Syring W-Ndl,disp,insul,0.5 Ml","syring w-ndl,disp,insul,0.5 ml (generic)",,"syring w-ndl,disp,insul,0.5 ml",diabetes_supply,False,,,molecule,,,2014,2015,26211.0
+Easy Comfort Insulin Syringe,"Syring W-Ndl,disp,insul,0.5 Ml","syring w-ndl,disp,insul,0.5 ml (generic)",,"syring w-ndl,disp,insul,0.5 ml",diabetes_supply,False,,,molecule,,,2014,2015,4024.0
+Easy Touch Insulin Syringe,"Syring W-Ndl,disp,insul,0.5 Ml","syring w-ndl,disp,insul,0.5 ml (generic)",,"syring w-ndl,disp,insul,0.5 ml",diabetes_supply,False,,,molecule,,,2014,2015,1001.0
+Safetyglide Insulin Syringe,"Syring W-Ndl,disp,insul,0.5 Ml","syring w-ndl,disp,insul,0.5 ml (generic)",,"syring w-ndl,disp,insul,0.5 ml",diabetes_supply,False,,,molecule,,,2014,2015,946.0
+Prodigy Insulin Syringe,"Syring W-Ndl,disp,insul,0.5 Ml","syring w-ndl,disp,insul,0.5 ml (generic)",,"syring w-ndl,disp,insul,0.5 ml",diabetes_supply,False,,,molecule,,,2014,2015,478.0
+Terumo Insulin Syringe,"Syring W-Ndl,disp,insul,0.5 Ml","syring w-ndl,disp,insul,0.5 ml (generic)",,"syring w-ndl,disp,insul,0.5 ml",diabetes_supply,False,,,molecule,,,2014,2015,244.0
+Bd Insulin Syringe Micro-Fine,"Syring W-Ndl,disp,insul,0.5 Ml","syring w-ndl,disp,insul,0.5 ml (generic)",,"syring w-ndl,disp,insul,0.5 ml",diabetes_supply,False,,,molecule,,,2014,2015,211.0
+Sure-Ject Insulin Syringe,"Syring W-Ndl,disp,insul,0.5 Ml","syring w-ndl,disp,insul,0.5 ml (generic)",,"syring w-ndl,disp,insul,0.5 ml",diabetes_supply,False,,,molecule,,,2014,2015,174.0
+Ultilet Insulin Syringe,"Syring W-Ndl,disp,insul,0.5 Ml","syring w-ndl,disp,insul,0.5 ml (generic)",,"syring w-ndl,disp,insul,0.5 ml",diabetes_supply,False,,,molecule,,,2014,2015,139.0
+Thinpro Insulin Syringe,"Syring W-Ndl,disp,insul,0.5 Ml","syring w-ndl,disp,insul,0.5 ml (generic)",,"syring w-ndl,disp,insul,0.5 ml",diabetes_supply,False,,,molecule,,,2014,2015,35.0
+Insulin Syringe,"Syring W-Ndl,disp,insul,0.5ml","syring w-ndl,disp,insul,0.5ml (generic)",,"syring w-ndl,disp,insul,0.5ml",diabetes_supply,False,,,molecule,,,2013,2013,930181.0
+Monoject Insulin Syringe,"Syring W-Ndl,disp,insul,0.5ml","syring w-ndl,disp,insul,0.5ml (generic)",,"syring w-ndl,disp,insul,0.5ml",diabetes_supply,False,,,molecule,,,2013,2013,27779.0
+Trueplus Insulin Syringe,"Syring W-Ndl,disp,insul,0.5ml","syring w-ndl,disp,insul,0.5ml (generic)",,"syring w-ndl,disp,insul,0.5ml",diabetes_supply,False,,,molecule,,,2013,2013,4934.0
+Safetyglide Insulin Syringe,"Syring W-Ndl,disp,insul,0.5ml","syring w-ndl,disp,insul,0.5ml (generic)",,"syring w-ndl,disp,insul,0.5ml",diabetes_supply,False,,,molecule,,,2013,2013,435.0
+Prodigy Insulin Syringe,"Syring W-Ndl,disp,insul,0.5ml","syring w-ndl,disp,insul,0.5ml (generic)",,"syring w-ndl,disp,insul,0.5ml",diabetes_supply,False,,,molecule,,,2013,2013,322.0
+Ultilet Insulin Syringe,"Syring W-Ndl,disp,insul,0.5ml","syring w-ndl,disp,insul,0.5ml (generic)",,"syring w-ndl,disp,insul,0.5ml",diabetes_supply,False,,,molecule,,,2013,2013,277.0
+Sure-Ject Insulin Syringe,"Syring W-Ndl,disp,insul,0.5ml","syring w-ndl,disp,insul,0.5ml (generic)",,"syring w-ndl,disp,insul,0.5ml",diabetes_supply,False,,,molecule,,,2013,2013,276.0
+Easy Touch Insulin Syringe,"Syring W-Ndl,disp,insul,0.5ml","syring w-ndl,disp,insul,0.5ml (generic)",,"syring w-ndl,disp,insul,0.5ml",diabetes_supply,False,,,molecule,,,2013,2013,177.0
+Terumo Insulin Syringe,"Syring W-Ndl,disp,insul,0.5ml","syring w-ndl,disp,insul,0.5ml (generic)",,"syring w-ndl,disp,insul,0.5ml",diabetes_supply,False,,,molecule,,,2013,2013,168.0
+Easy Comfort Insulin Syringe,"Syring W-Ndl,disp,insul,0.5ml","syring w-ndl,disp,insul,0.5ml (generic)",,"syring w-ndl,disp,insul,0.5ml",diabetes_supply,False,,,molecule,,,2013,2013,69.0
+Thinpro Insulin Syringe,"Syring W-Ndl,disp,insul,0.5ml","syring w-ndl,disp,insul,0.5ml (generic)",,"syring w-ndl,disp,insul,0.5ml",diabetes_supply,False,,,molecule,,,2013,2013,67.0
+Bd Insulin Syringe Micro-Fine,"Syring W-Ndl,disp,insul,0.5ml","syring w-ndl,disp,insul,0.5ml (generic)",,"syring w-ndl,disp,insul,0.5ml",diabetes_supply,False,,,molecule,,,2013,2013,11.0
+Insulin Syringe,"Syring W-O Ndl,disp,insul, 1ml","syring w-o ndl,disp,insul, 1ml (generic)",,"syring w-o ndl,disp,insul, 1ml",diabetes_supply,False,,,molecule,,,2013,2013,23.0
+Insulin Syringe,"Syring-Needl,disp,insul,0.3 Ml","syring-needl,disp,insul,0.3 ml (generic)",,"syring-needl,disp,insul,0.3 ml",diabetes_supply,False,,,molecule,,,2016,2024,571262.0
+Trueplus Insulin Syringe,"Syring-Needl,disp,insul,0.3 Ml","syring-needl,disp,insul,0.3 ml (generic)",,"syring-needl,disp,insul,0.3 ml",diabetes_supply,False,,,molecule,,,2016,2024,45173.0
+Veo Insulin Syringe,"Syring-Needl,disp,insul,0.3 Ml","syring-needl,disp,insul,0.3 ml (generic)",,"syring-needl,disp,insul,0.3 ml",diabetes_supply,False,,,molecule,,,2018,2024,28069.0
+Comfort Ez Insulin Syringe,"Syring-Needl,disp,insul,0.3 Ml","syring-needl,disp,insul,0.3 ml (generic)",,"syring-needl,disp,insul,0.3 ml",diabetes_supply,False,,,molecule,,,2018,2024,6401.0
+Safetyglide Insulin Syringe,"Syring-Needl,disp,insul,0.3 Ml","syring-needl,disp,insul,0.3 ml (generic)",,"syring-needl,disp,insul,0.3 ml",diabetes_supply,False,,,molecule,,,2016,2021,4475.0
+Monoject Insulin Syringe,"Syring-Needl,disp,insul,0.3 Ml","syring-needl,disp,insul,0.3 ml (generic)",,"syring-needl,disp,insul,0.3 ml",diabetes_supply,False,,,molecule,,,2016,2024,2231.0
+Sure-Ject Insulin Syringe,"Syring-Needl,disp,insul,0.3 Ml","syring-needl,disp,insul,0.3 ml (generic)",,"syring-needl,disp,insul,0.3 ml",diabetes_supply,False,,,molecule,,,2016,2023,1816.0
+Easy Touch Insulin Syringe,"Syring-Needl,disp,insul,0.3 Ml","syring-needl,disp,insul,0.3 ml (generic)",,"syring-needl,disp,insul,0.3 ml",diabetes_supply,False,,,molecule,,,2016,2024,1362.0
+Droplet Insulin Syringe,"Syring-Needl,disp,insul,0.3 Ml","syring-needl,disp,insul,0.3 ml (generic)",,"syring-needl,disp,insul,0.3 ml",diabetes_supply,False,,,molecule,,,2020,2024,1069.0
+Ultracare Insulin Syringe,"Syring-Needl,disp,insul,0.3 Ml","syring-needl,disp,insul,0.3 ml (generic)",,"syring-needl,disp,insul,0.3 ml",diabetes_supply,False,,,molecule,,,2019,2023,451.0
+Ulticare Insulin Syringe,"Syring-Needl,disp,insul,0.3 Ml","syring-needl,disp,insul,0.3 ml (generic)",,"syring-needl,disp,insul,0.3 ml",diabetes_supply,False,,,molecule,,,2018,2024,304.0
+Bd Insulin Syringe Ult-Fine Ii,"Syring-Needl,disp,insul,0.3 Ml","syring-needl,disp,insul,0.3 ml (generic)",,"syring-needl,disp,insul,0.3 ml",diabetes_supply,False,,,molecule,,,2016,2024,217.0
+Litetouch Insulin Syringe,"Syring-Needl,disp,insul,0.3 Ml","syring-needl,disp,insul,0.3 ml (generic)",,"syring-needl,disp,insul,0.3 ml",diabetes_supply,False,,,molecule,,,2017,2020,147.0
+Easy Comfort Insulin Syringe,"Syring-Needl,disp,insul,0.3 Ml","syring-needl,disp,insul,0.3 ml (generic)",,"syring-needl,disp,insul,0.3 ml",diabetes_supply,False,,,molecule,,,2017,2020,100.0
+Easy Glide Insulin Syringe,"Syring-Needl,disp,insul,0.3 Ml","syring-needl,disp,insul,0.3 ml (generic)",,"syring-needl,disp,insul,0.3 ml",diabetes_supply,False,,,molecule,,,2023,2023,81.0
+Sure Comfort Insulin Syringe,"Syring-Needl,disp,insul,0.3 Ml","syring-needl,disp,insul,0.3 ml (generic)",,"syring-needl,disp,insul,0.3 ml",diabetes_supply,False,,,molecule,,,2022,2024,53.0
+Bd Insulin Syringe Ultra-Fine,"Syring-Needl,disp,insul,0.3 Ml","syring-needl,disp,insul,0.3 ml (generic)",,"syring-needl,disp,insul,0.3 ml",diabetes_supply,False,,,molecule,,,2016,2017,23.0
+Insulin Syringe,"Syringe & Needle,insulin,1 Ml","syringe & needle,insulin,1 ml (generic)",,"syringe & needle,insulin,1 ml",diabetes_supply,False,,,molecule,,,2013,2014,1538770.0
+Monoject Insulin Syringe,"Syringe & Needle,insulin,1 Ml","syringe & needle,insulin,1 ml (generic)",,"syringe & needle,insulin,1 ml",diabetes_supply,False,,,molecule,,,2013,2014,12156.0
+Easy-Touch Insulin Syringe,"Syringe & Needle,insulin,1 Ml","syringe & needle,insulin,1 ml (generic)",,"syringe & needle,insulin,1 ml",diabetes_supply,False,,,molecule,,,2013,2014,10217.0
+Trueplus Insulin Syringe,"Syringe & Needle,insulin,1 Ml","syringe & needle,insulin,1 ml (generic)",,"syringe & needle,insulin,1 ml",diabetes_supply,False,,,molecule,,,2013,2014,4834.0
+Sure-Ject Insulin Syringe,"Syringe & Needle,insulin,1 Ml","syringe & needle,insulin,1 ml (generic)",,"syringe & needle,insulin,1 ml",diabetes_supply,False,,,molecule,,,2013,2014,862.0
+Easy Touch Insulin Syringe,"Syringe & Needle,insulin,1 Ml","syringe & needle,insulin,1 ml (generic)",,"syringe & needle,insulin,1 ml",diabetes_supply,False,,,molecule,,,2013,2014,811.0
+Ultilet Insulin Syringe,"Syringe & Needle,insulin,1 Ml","syringe & needle,insulin,1 ml (generic)",,"syringe & needle,insulin,1 ml",diabetes_supply,False,,,molecule,,,2013,2014,454.0
+Terumo Insulin Syringe,"Syringe & Needle,insulin,1 Ml","syringe & needle,insulin,1 ml (generic)",,"syringe & needle,insulin,1 ml",diabetes_supply,False,,,molecule,,,2013,2014,338.0
+Easy Comfort Insulin Syringe,"Syringe & Needle,insulin,1 Ml","syringe & needle,insulin,1 ml (generic)",,"syringe & needle,insulin,1 ml",diabetes_supply,False,,,molecule,,,2013,2014,335.0
+Prodigy Insulin Syringe,"Syringe & Needle,insulin,1 Ml","syringe & needle,insulin,1 ml (generic)",,"syringe & needle,insulin,1 ml",diabetes_supply,False,,,molecule,,,2013,2014,178.0
+Thinpro Insulin Syringe,"Syringe & Needle,insulin,1 Ml","syringe & needle,insulin,1 ml (generic)",,"syringe & needle,insulin,1 ml",diabetes_supply,False,,,molecule,,,2013,2014,146.0
+Bd Insulin Syringe Ult-Fine Ii,"Syringe & Needle,insulin,1 Ml","syringe & needle,insulin,1 ml (generic)",,"syringe & needle,insulin,1 ml",diabetes_supply,False,,,molecule,,,2013,2014,59.0
+Bd Insulin Syringe,"Syringe & Needle,insulin,1 Ml","syringe & needle,insulin,1 ml (generic)",,"syringe & needle,insulin,1 ml",diabetes_supply,False,,,molecule,,,2013,2014,33.0
+Insulin Syringe,"Syringe And Needle,insulin,1ml","syringe and needle,insulin,1ml (generic)",,"syringe and needle,insulin,1ml",diabetes_supply,False,,,molecule,,,2015,2024,3387111.0
+Veo Insulin Syringe,"Syringe And Needle,insulin,1ml","syringe and needle,insulin,1ml (generic)",,"syringe and needle,insulin,1ml",diabetes_supply,False,,,molecule,,,2018,2024,311374.0
+Trueplus Insulin Syringe,"Syringe And Needle,insulin,1ml","syringe and needle,insulin,1ml (generic)",,"syringe and needle,insulin,1ml",diabetes_supply,False,,,molecule,,,2015,2024,156614.0
+Easy-Touch Insulin Syringe,"Syringe And Needle,insulin,1ml","syringe and needle,insulin,1ml (generic)",,"syringe and needle,insulin,1ml",diabetes_supply,False,,,molecule,,,2015,2024,56726.0
+Comfort Ez Insulin Syringe,"Syringe And Needle,insulin,1ml","syringe and needle,insulin,1ml (generic)",,"syringe and needle,insulin,1ml",diabetes_supply,False,,,molecule,,,2018,2024,41101.0
+Easy Comfort Insulin Syringe,"Syringe And Needle,insulin,1ml","syringe and needle,insulin,1ml (generic)",,"syringe and needle,insulin,1ml",diabetes_supply,False,,,molecule,,,2015,2024,28889.0
+Monoject Insulin Syringe,"Syringe And Needle,insulin,1ml","syringe and needle,insulin,1ml (generic)",,"syringe and needle,insulin,1ml",diabetes_supply,False,,,molecule,,,2015,2024,18821.0
+Safetyglide Insulin Syringe,"Syringe And Needle,insulin,1ml","syringe and needle,insulin,1ml (generic)",,"syringe and needle,insulin,1ml",diabetes_supply,False,,,molecule,,,2018,2024,15381.0
+Droplet Insulin Syringe,"Syringe And Needle,insulin,1ml","syringe and needle,insulin,1ml (generic)",,"syringe and needle,insulin,1ml",diabetes_supply,False,,,molecule,,,2020,2024,11576.0
+Easy Touch Insulin Syringe,"Syringe And Needle,insulin,1ml","syringe and needle,insulin,1ml (generic)",,"syringe and needle,insulin,1ml",diabetes_supply,False,,,molecule,,,2015,2024,3246.0
+Ulticare Insulin Syringe,"Syringe And Needle,insulin,1ml","syringe and needle,insulin,1ml (generic)",,"syringe and needle,insulin,1ml",diabetes_supply,False,,,molecule,,,2017,2024,1717.0
+Ultracare Insulin Syringe,"Syringe And Needle,insulin,1ml","syringe and needle,insulin,1ml (generic)",,"syringe and needle,insulin,1ml",diabetes_supply,False,,,molecule,,,2019,2024,1716.0
+Sure Comfort Insulin Syringe,"Syringe And Needle,insulin,1ml","syringe and needle,insulin,1ml (generic)",,"syringe and needle,insulin,1ml",diabetes_supply,False,,,molecule,,,2018,2023,886.0
+Techlite Insulin Syringe,"Syringe And Needle,insulin,1ml","syringe and needle,insulin,1ml (generic)",,"syringe and needle,insulin,1ml",diabetes_supply,False,,,molecule,,,2019,2024,670.0
+Sure-Ject Insulin Syringe,"Syringe And Needle,insulin,1ml","syringe and needle,insulin,1ml (generic)",,"syringe and needle,insulin,1ml",diabetes_supply,False,,,molecule,,,2015,2020,402.0
+Bd Insulin Syringe Ult-Fine Ii,"Syringe And Needle,insulin,1ml","syringe and needle,insulin,1ml (generic)",,"syringe and needle,insulin,1ml",diabetes_supply,False,,,molecule,,,2015,2021,375.0
+Ultilet Insulin Syringe,"Syringe And Needle,insulin,1ml","syringe and needle,insulin,1ml (generic)",,"syringe and needle,insulin,1ml",diabetes_supply,False,,,molecule,,,2015,2018,322.0
+Prodigy Insulin Syringe,"Syringe And Needle,insulin,1ml","syringe and needle,insulin,1ml (generic)",,"syringe and needle,insulin,1ml",diabetes_supply,False,,,molecule,,,2015,2018,128.0
+Bd Insulin Syringe,"Syringe And Needle,insulin,1ml","syringe and needle,insulin,1ml (generic)",,"syringe and needle,insulin,1ml",diabetes_supply,False,,,molecule,,,2016,2023,95.0
+Pro Comfort Insulin Syringe,"Syringe And Needle,insulin,1ml","syringe and needle,insulin,1ml (generic)",,"syringe and needle,insulin,1ml",diabetes_supply,False,,,molecule,,,2019,2020,91.0
+Terumo Insulin Syringe,"Syringe And Needle,insulin,1ml","syringe and needle,insulin,1ml (generic)",,"syringe and needle,insulin,1ml",diabetes_supply,False,,,molecule,,,2015,2016,81.0
+Thinpro Insulin Syringe,"Syringe And Needle,insulin,1ml","syringe and needle,insulin,1ml (generic)",,"syringe and needle,insulin,1ml",diabetes_supply,False,,,molecule,,,2015,2015,76.0
+Healthwise Insulin Syringe,"Syringe And Needle,insulin,1ml","syringe and needle,insulin,1ml (generic)",,"syringe and needle,insulin,1ml",diabetes_supply,False,,,molecule,,,2020,2023,47.0
+Bd Insulin Syringe Micro-Fine,"Syringe And Needle,insulin,1ml","syringe and needle,insulin,1ml (generic)",,"syringe and needle,insulin,1ml",diabetes_supply,False,,,molecule,,,2018,2018,37.0
+Easy Glide Insulin Syringe,"Syringe And Needle,insulin,1ml","syringe and needle,insulin,1ml (generic)",,"syringe and needle,insulin,1ml",diabetes_supply,False,,,molecule,,,2022,2024,37.0
+True Comfort Pro Ins Syringe,"Syringe And Needle,insulin,1ml","syringe and needle,insulin,1ml (generic)",,"syringe and needle,insulin,1ml",diabetes_supply,False,,,molecule,,,2023,2023,28.0
+Litetouch Insulin Syringe,"Syringe And Needle,insulin,1ml","syringe and needle,insulin,1ml (generic)",,"syringe and needle,insulin,1ml",diabetes_supply,False,,,molecule,,,2018,2018,13.0
+Insulin Syringe,"Syringe W-Ndl, Disp,insul,2 Ml","syringe w-ndl, disp,insul,2 ml (generic)",,"syringe w-ndl, disp,insul,2 ml",diabetes_supply,False,,,molecule,,,2016,2020,106.0
+Monoject Insulin Safety Syrng,"Syringe W-Ndl, Disp., Insulin","syringe w-ndl, disp., insulin (generic)",,"syringe w-ndl, disp., insulin",diabetes_supply,False,,,molecule,,,2013,2016,57438.0
+Insulin Syringe,"Syringe W-Ndl, Disp., Insulin","syringe w-ndl, disp., insulin (generic)",,"syringe w-ndl, disp., insulin",diabetes_supply,False,,,molecule,,,2014,2016,521.0
+Insulin Syringe,"Syringe W-O Needl,insulin,1 Ml","syringe w-o needl,insulin,1 ml (generic)",,"syringe w-o needl,insulin,1 ml",diabetes_supply,False,,,molecule,,,2014,2016,126.0
+Monoject Insulin Safety Syrng,"Syringe With Needle, Insulin","syringe with needle, insulin (generic)",,"syringe with needle, insulin",diabetes_supply,False,,,molecule,,,2017,2024,48118.0
+Insulin Syringe,"Syringe With Needle, Insulin","syringe with needle, insulin (generic)",,"syringe with needle, insulin",diabetes_supply,False,,,molecule,,,2017,2020,552.0
+Insulin Syringe U-500,"Syringe,insul U-500,ndl,0.5ml","syringe,insul u-500,ndl,0.5ml (generic)",,"syringe,insul u-500,ndl,0.5ml",diabetes_supply,False,,,molecule,,,2017,2024,7782.0
+Insulin Syringe,"Syringe,insulin,needless 1 Ml","syringe,insulin,needless 1 ml (generic)",,"syringe,insulin,needless 1 ml",diabetes_supply,False,,,molecule,,,2017,2023,118.0
+Magellan Insulin Safety Syrng,"Syringe,needle,insuln,safe,1ml","syringe,needle,insuln,safe,1ml (generic)",,"syringe,needle,insuln,safe,1ml",diabetes_supply,False,,,molecule,,,2013,2024,20705.0
+Safetyglide Insulin Syringe,"Syringe,needle,insuln,safe,1ml","syringe,needle,insuln,safe,1ml (generic)",,"syringe,needle,insuln,safe,1ml",diabetes_supply,False,,,molecule,,,2019,2024,3548.0
+Easy Touch Insulin Safety,"Syringe,needle,insuln,safe,1ml","syringe,needle,insuln,safe,1ml (generic)",,"syringe,needle,insuln,safe,1ml",diabetes_supply,False,,,molecule,,,2013,2023,1744.0
+Assure Id Insulin Safety,"Syringe,needle,insuln,safe,1ml","syringe,needle,insuln,safe,1ml (generic)",,"syringe,needle,insuln,safe,1ml",diabetes_supply,False,,,molecule,,,2015,2019,504.0
+Easy Touch Sheathlock Insulin,"Syringe,needle,insuln,safe,1ml","syringe,needle,insuln,safe,1ml (generic)",,"syringe,needle,insuln,safe,1ml",diabetes_supply,False,,,molecule,,,2016,2021,475.0
+Easy Touch Fliplock Insulin,"Syringe,needle,insuln,safe,1ml","syringe,needle,insuln,safe,1ml (generic)",,"syringe,needle,insuln,safe,1ml",diabetes_supply,False,,,molecule,,,2017,2019,78.0
+Magellan Insulin Syringe,"Syringe,needle,insuln,sf 0.5ml","syringe,needle,insuln,sf 0.5ml (generic)",,"syringe,needle,insuln,sf 0.5ml",diabetes_supply,False,,,molecule,,,2014,2022,10862.0
+Assure Id Insulin Safety,"Syringe,needle,insuln,sf 0.5ml","syringe,needle,insuln,sf 0.5ml (generic)",,"syringe,needle,insuln,sf 0.5ml",diabetes_supply,False,,,molecule,,,2014,2021,4146.0
+Easy Touch Insulin Safety,"Syringe,needle,insuln,sf 0.5ml","syringe,needle,insuln,sf 0.5ml (generic)",,"syringe,needle,insuln,sf 0.5ml",diabetes_supply,False,,,molecule,,,2013,2024,2523.0
+Safetyglide Insulin Syringe,"Syringe,needle,insuln,sf 0.5ml","syringe,needle,insuln,sf 0.5ml (generic)",,"syringe,needle,insuln,sf 0.5ml",diabetes_supply,False,,,molecule,,,2018,2024,2205.0
+Magellan Insulin Safety Syrng,"Syringe,needle,insuln,sf 0.5ml","syringe,needle,insuln,sf 0.5ml (generic)",,"syringe,needle,insuln,sf 0.5ml",diabetes_supply,False,,,molecule,,,2013,2023,582.0
+Safetyglide Insulin Syringe,"Syringe,needle,insuln,sf,0.3ml","syringe,needle,insuln,sf,0.3ml (generic)",,"syringe,needle,insuln,sf,0.3ml",diabetes_supply,False,,,molecule,,,2021,2024,821.0
+Insulin Syringe,"Syringe-Needle,insulin,0.5 Ml","syringe-needle,insulin,0.5 ml (generic)",,"syringe-needle,insulin,0.5 ml",diabetes_supply,False,,,molecule,,,2016,2024,2386036.0
+Veo Insulin Syringe,"Syringe-Needle,insulin,0.5 Ml","syringe-needle,insulin,0.5 ml (generic)",,"syringe-needle,insulin,0.5 ml",diabetes_supply,False,,,molecule,,,2018,2024,640796.0
+Trueplus Insulin Syringe,"Syringe-Needle,insulin,0.5 Ml","syringe-needle,insulin,0.5 ml (generic)",,"syringe-needle,insulin,0.5 ml",diabetes_supply,False,,,molecule,,,2016,2024,212441.0
+Monoject Insulin Syringe,"Syringe-Needle,insulin,0.5 Ml","syringe-needle,insulin,0.5 ml (generic)",,"syringe-needle,insulin,0.5 ml",diabetes_supply,False,,,molecule,,,2016,2024,56819.0
+Easy Comfort Insulin Syringe,"Syringe-Needle,insulin,0.5 Ml","syringe-needle,insulin,0.5 ml (generic)",,"syringe-needle,insulin,0.5 ml",diabetes_supply,False,,,molecule,,,2016,2024,48189.0
+Comfort Ez Insulin Syringe,"Syringe-Needle,insulin,0.5 Ml","syringe-needle,insulin,0.5 ml (generic)",,"syringe-needle,insulin,0.5 ml",diabetes_supply,False,,,molecule,,,2018,2024,43544.0
+Safetyglide Insulin Syringe,"Syringe-Needle,insulin,0.5 Ml","syringe-needle,insulin,0.5 ml (generic)",,"syringe-needle,insulin,0.5 ml",diabetes_supply,False,,,molecule,,,2016,2024,11757.0
+Ultracare Insulin Syringe,"Syringe-Needle,insulin,0.5 Ml","syringe-needle,insulin,0.5 ml (generic)",,"syringe-needle,insulin,0.5 ml",diabetes_supply,False,,,molecule,,,2019,2024,2849.0
+Easy Touch Insulin Syringe,"Syringe-Needle,insulin,0.5 Ml","syringe-needle,insulin,0.5 ml (generic)",,"syringe-needle,insulin,0.5 ml",diabetes_supply,False,,,molecule,,,2016,2024,2597.0
+Ulticare Insulin Syringe,"Syringe-Needle,insulin,0.5 Ml","syringe-needle,insulin,0.5 ml (generic)",,"syringe-needle,insulin,0.5 ml",diabetes_supply,False,,,molecule,,,2017,2024,1528.0
+Bd Insulin Syringe Ult-Fine Ii,"Syringe-Needle,insulin,0.5 Ml","syringe-needle,insulin,0.5 ml (generic)",,"syringe-needle,insulin,0.5 ml",diabetes_supply,False,,,molecule,,,2016,2024,1081.0
+Bd Insulin Syringe Ultra-Fine,"Syringe-Needle,insulin,0.5 Ml","syringe-needle,insulin,0.5 ml (generic)",,"syringe-needle,insulin,0.5 ml",diabetes_supply,False,,,molecule,,,2017,2024,282.0
+Terumo Insulin Syringe,"Syringe-Needle,insulin,0.5 Ml","syringe-needle,insulin,0.5 ml (generic)",,"syringe-needle,insulin,0.5 ml",diabetes_supply,False,,,molecule,,,2016,2023,220.0
+Sure-Ject Insulin Syringe,"Syringe-Needle,insulin,0.5 Ml","syringe-needle,insulin,0.5 ml (generic)",,"syringe-needle,insulin,0.5 ml",diabetes_supply,False,,,molecule,,,2017,2023,202.0
+Easy Glide Insulin Syringe,"Syringe-Needle,insulin,0.5 Ml","syringe-needle,insulin,0.5 ml (generic)",,"syringe-needle,insulin,0.5 ml",diabetes_supply,False,,,molecule,,,2021,2024,169.0
+Prodigy Insulin Syringe,"Syringe-Needle,insulin,0.5 Ml","syringe-needle,insulin,0.5 ml (generic)",,"syringe-needle,insulin,0.5 ml",diabetes_supply,False,,,molecule,,,2016,2024,163.0
+True Comfort Pro Ins Syringe,"Syringe-Needle,insulin,0.5 Ml","syringe-needle,insulin,0.5 ml (generic)",,"syringe-needle,insulin,0.5 ml",diabetes_supply,False,,,molecule,,,2022,2023,87.0
+Litetouch Insulin Syringe,"Syringe-Needle,insulin,0.5 Ml","syringe-needle,insulin,0.5 ml (generic)",,"syringe-needle,insulin,0.5 ml",diabetes_supply,False,,,molecule,,,2017,2021,79.0
+Bd Insulin Syringe Micro-Fine,"Syringe-Needle,insulin,0.5 Ml","syringe-needle,insulin,0.5 ml (generic)",,"syringe-needle,insulin,0.5 ml",diabetes_supply,False,,,molecule,,,2016,2020,74.0
+Sure Comfort Insulin Syringe,"Syringe-Needle,insulin,0.5 Ml","syringe-needle,insulin,0.5 ml (generic)",,"syringe-needle,insulin,0.5 ml",diabetes_supply,False,,,molecule,,,2019,2024,73.0
+Healthwise Insulin Syringe,"Syringe-Needle,insulin,0.5 Ml","syringe-needle,insulin,0.5 ml (generic)",,"syringe-needle,insulin,0.5 ml",diabetes_supply,False,,,molecule,,,2022,2022,17.0
+Exel Insulin Syringe,"Syringe-Needle,insulin,0.5 Ml","syringe-needle,insulin,0.5 ml (generic)",,"syringe-needle,insulin,0.5 ml",diabetes_supply,False,,,molecule,,,2022,2022,12.0
+Ultilet Insulin Syringe,"Syringe-Needle,insulin,0.5 Ml","syringe-needle,insulin,0.5 ml (generic)",,"syringe-needle,insulin,0.5 ml",diabetes_supply,False,,,molecule,,,2017,2017,12.0
+Janumet,Sitagliptin Phos/Metformin Hcl,Janumet,Janumet,sitagliptin/metformin,dpp4,False,,Merck,exact,,,2013,2024,8612160.0
+Janumet Xr,Sitagliptin Phos/Metformin Hcl,Janumet,Janumet,sitagliptin/metformin,dpp4,False,,Merck,exact,,,2013,2024,2673562.0
+Januvia,Sitagliptin Phosphate,Januvia,Januvia,sitagliptin,dpp4,False,,Merck,exact,,,2013,2024,48603773.0
+Jentadueto,Linagliptin/Metformin Hcl,Jentadueto,Jentadueto,linagliptin/metformin,dpp4,False,,Boehringer Ingelheim / Eli Lilly,exact,,,2013,2024,825772.0
+Jentadueto Xr,Linagliptin/Metformin Hcl,Jentadueto,Jentadueto,linagliptin/metformin,dpp4,False,,Boehringer Ingelheim / Eli Lilly,exact,,,2017,2024,103039.0
+Juvisync,Sitagliptin/Simvastatin,Juvisync,Juvisync,sitagliptin/simvastatin,dpp4,False,,Merck,exact,,,2013,2014,890.0
+Kazano,Alogliptin Benz/Metformin Hcl,Kazano,Kazano,alogliptin/metformin,dpp4,False,,Takeda,exact,,,2013,2023,8308.0
+Kombiglyze Xr,Saxagliptin Hcl/Metformin Hcl,Kombiglyze,Kombiglyze,saxagliptin/metformin,dpp4,False,,AstraZeneca,exact,,,2013,2024,637069.0
+Nesina,Alogliptin Benzoate,Nesina,Nesina,alogliptin,dpp4,False,,Takeda,exact,,,2013,2024,20071.0
+Onglyza,Saxagliptin Hcl,Onglyza,Onglyza,saxagliptin,dpp4,False,,AstraZeneca,exact,,,2013,2024,2660779.0
+Oseni,Alogliptin Benz/Pioglitazone,Oseni,Oseni,alogliptin/pioglitazone,dpp4,False,,Takeda,exact,,,2014,2023,21875.0
+Oseni,Alogliptin Benz/Pioglitzone,Oseni,Oseni,alogliptin/pioglitazone,dpp4,False,,Takeda,exact,,,2013,2013,109.0
+Tradjenta,Linagliptin,Tradjenta,Tradjenta,linagliptin,dpp4,False,,Boehringer Ingelheim / Eli Lilly,exact,,,2013,2024,14142479.0
+Alogliptin-Metformin,Alogliptin Benz/Metformin Hcl,alogliptin benz/metformin hcl (generic),,alogliptin benz/metformin hcl,dpp4,False,,,molecule,,,2016,2024,13787.0
+Alogliptin-Pioglitazone,Alogliptin Benz/Pioglitazone,alogliptin benz/pioglitazone (generic),,alogliptin benz/pioglitazone,dpp4,False,,,molecule,,,2016,2024,9619.0
+Alogliptin,Alogliptin Benzoate,alogliptin benzoate (generic),,alogliptin benzoate,dpp4,False,,,molecule,,,2016,2024,257509.0
+Saxagliptin Hcl,Saxagliptin Hcl,saxagliptin hcl (generic),,saxagliptin hcl,dpp4,False,,,molecule,,,2023,2024,11389.0
+Saxagliptin-Metformin Er,Saxagliptin Hcl/Metformin Hcl,saxagliptin hcl/metformin hcl (generic),,saxagliptin hcl/metformin hcl,dpp4,False,,,molecule,,,2023,2024,1534.0
+Sitagliptin,Sitagliptin,sitagliptin (generic),,sitagliptin,dpp4,False,,,molecule,,,2024,2024,1688.0
+Adlyxin,Lixisenatide,Adlyxin,Adlyxin,lixisenatide,glp1,True,t2d,Sanofi,exact,,,2017,2022,177.0
+Bydureon Pen,Exenatide Microspheres,Bydureon,Bydureon,exenatide extended-release,glp1,True,t2d,AstraZeneca,exact,,,2014,2022,926806.0
+Bydureon Bcise,Exenatide Microspheres,Bydureon,Bydureon,exenatide extended-release,glp1,True,t2d,AstraZeneca,exact,,,2018,2024,908117.0
+Bydureon,Exenatide Microspheres,Bydureon,Bydureon,exenatide extended-release,glp1,True,t2d,AstraZeneca,exact,,,2013,2020,375531.0
+Byetta,Exenatide,Byetta,Byetta,exenatide,glp1,True,t2d,AstraZeneca,exact,,,2013,2024,532198.0
+Mounjaro,Tirzepatide,Mounjaro,Mounjaro,tirzepatide,glp1,True,t2d,Eli Lilly,exact,,,2022,2024,6255962.0
+Ozempic,Semaglutide,Ozempic,Ozempic,semaglutide,glp1,True,t2d,Novo Nordisk,exact,,,2018,2024,22434030.0
+Rybelsus,Semaglutide,Rybelsus,Rybelsus,semaglutide,glp1,True,t2d,Novo Nordisk,exact,,,2020,2024,2353850.0
+Tanzeum,Albiglutide,Tanzeum,Tanzeum,albiglutide,glp1,True,t2d,GlaxoSmithKline,exact,,,2014,2018,83056.0
+Trulicity,Dulaglutide,Trulicity,Trulicity,dulaglutide,glp1,True,t2d,Eli Lilly,exact,,,2015,2024,22588130.0
+Victoza 3-Pak,Liraglutide,Victoza,Victoza,liraglutide,glp1,True,t2d,Novo Nordisk,exact,,,2013,2024,6393153.0
+Victoza 2-Pak,Liraglutide,Victoza,Victoza,liraglutide,glp1,True,t2d,Novo Nordisk,exact,,,2013,2024,2120183.0
+Wegovy,Semaglutide,Wegovy,Wegovy,semaglutide,glp1,True,obesity,Novo Nordisk,exact,,,2023,2024,76202.0
+Zepbound,Tirzepatide,Zepbound,Zepbound,tirzepatide,glp1,True,obesity,Eli Lilly,exact,,,2024,2024,14.0
+Liraglutide,Liraglutide,liraglutide (generic),,liraglutide,glp1,True,,,molecule,,,2024,2024,14832.0
+Soliqua 100-33,Insulin Glargine/Lixisenatide,Soliqua,Soliqua,insulin glargine/lixisenatide,glp1_insulin_combo,True,t2d,Sanofi,exact,,,2017,2024,767613.0
+Xultophy 100-3.6,Insulin Degludec/Liraglutide,Xultophy,Xultophy,insulin degludec/liraglutide,glp1_insulin_combo,True,t2d,Novo Nordisk,exact,,,2017,2024,170501.0
+Advair Diskus,Fluticasone/Salmeterol,Advair,Advair,fluticasone/salmeterol,inhaled_respiratory,False,,GlaxoSmithKline,exact,,,2013,2017,25602965.0
+Advair Diskus,Fluticasone Propion/Salmeterol,Advair,Advair,fluticasone/salmeterol,inhaled_respiratory,False,,GlaxoSmithKline,exact,,,2018,2024,10906591.0
+Advair Hfa,Fluticasone Propion/Salmeterol,Advair,Advair,fluticasone/salmeterol,inhaled_respiratory,False,,GlaxoSmithKline,exact,,,2018,2024,2196255.0
+Advair Hfa,Fluticasone/Salmeterol,Advair,Advair,fluticasone/salmeterol,inhaled_respiratory,False,,GlaxoSmithKline,exact,,,2013,2017,1084027.0
+Airduo Respiclick,Fluticasone Propion/Salmeterol,AirDuo,AirDuo,fluticasone/salmeterol,inhaled_respiratory,False,,Teva,contains,,,2018,2024,215.0
+Airduo Digihaler,Fluticasone Propion/Salmeterol,AirDuo,AirDuo,fluticasone/salmeterol,inhaled_respiratory,False,,Teva,contains,,,2021,2023,111.0
+Airsupra,Albuterol Sulfate/Budesonide,Airsupra,Airsupra,albuterol/budesonide,inhaled_respiratory,False,,AstraZeneca,exact,,,2024,2024,9883.0
+Alvesco,Ciclesonide,Alvesco,Alvesco,ciclesonide,inhaled_respiratory,False,,Covis,exact,,,2013,2024,1122636.0
+Anoro Ellipta,Umeclidinium Brm/Vilanterol Tr,Anoro,Anoro,umeclidinium/vilanterol,inhaled_respiratory,False,,GlaxoSmithKline,exact,,,2014,2024,9665553.0
+Arcapta Neohaler,Indacaterol Maleate,Arcapta,Arcapta,indacaterol,inhaled_respiratory,False,,Novartis / Sunovion,contains,,,2013,2020,25749.0
+Armonair Digihaler,Fluticasone Propionate,ArmonAir,ArmonAir,fluticasone propionate,inhaled_respiratory,False,,Teva,contains,,,2021,2023,94.0
+Armonair Respiclick,Fluticasone Propionate,ArmonAir,ArmonAir,fluticasone propionate,inhaled_respiratory,False,,Teva,contains,,,2018,2018,11.0
+Arnuity Ellipta,Fluticasone Furoate,Arnuity,Arnuity,fluticasone furoate,inhaled_respiratory,False,,GlaxoSmithKline,exact,,,2015,2024,1489723.0
+Asmanex,Mometasone Furoate,Asmanex,Asmanex,mometasone,inhaled_respiratory,False,,Merck / Organon,exact,,,2013,2024,678705.0
+Asmanex Hfa,Mometasone Furoate,Asmanex,Asmanex,mometasone,inhaled_respiratory,False,,Merck / Organon,exact,,,2015,2024,57409.0
+Bevespi Aerosphere,Glycopyrrolate/Formoterol Fum,Bevespi,Bevespi,glycopyrrolate/formoterol,inhaled_respiratory,False,,AstraZeneca,exact,,,2017,2024,522404.0
+Breo Ellipta,Fluticasone/Vilanterol,Breo,Breo,fluticasone furoate/vilanterol,inhaled_respiratory,False,,GlaxoSmithKline,exact,,,2013,2024,19761635.0
+Breztri Aerosphere,Budesonide/Glycopyr/Formoterol,Breztri,Breztri,budesonide/glycopyrrolate/formoterol,inhaled_respiratory,False,,AstraZeneca,exact,,,2020,2024,2530376.0
+Combivent Respimat,Ipratropium/Albuterol Sulfate,Combivent,Combivent,ipratropium/albuterol,inhaled_respiratory,False,,Boehringer Ingelheim,exact,,,2013,2024,7804923.0
+Combivent,Ipratropium/Albuterol Sulfate,Combivent,Combivent,ipratropium/albuterol,inhaled_respiratory,False,,Boehringer Ingelheim,exact,,,2013,2014,345270.0
+Duaklir Pressair,Aclidinium Brom/Formoterol Fum,Duaklir,Duaklir,aclidinium/formoterol,inhaled_respiratory,False,,AstraZeneca / Covis,contains,,,2020,2023,127.0
+Dulera,Mometasone/Formoterol,Dulera,Dulera,mometasone/formoterol,inhaled_respiratory,False,,Merck / Organon,exact,,,2013,2024,2834155.0
+Flovent Hfa,Fluticasone Propionate,Flovent,Flovent,fluticasone propionate,inhaled_respiratory,False,,GlaxoSmithKline,exact,,,2013,2024,6843119.0
+Flovent Diskus,Fluticasone Propionate,Flovent,Flovent,fluticasone propionate,inhaled_respiratory,False,,GlaxoSmithKline,exact,,,2013,2024,542861.0
+Incruse Ellipta,Umeclidinium Bromide,Incruse,Incruse,umeclidinium,inhaled_respiratory,False,,GlaxoSmithKline,exact,,,2015,2024,7087734.0
+Lonhala Magnair Refill,Glycopyrrolate/Neb.Accessories,Lonhala,Lonhala,glycopyrrolate,inhaled_respiratory,False,,Sunovion,contains,,,2018,2023,32014.0
+Lonhala Magnair Starter,Glycopyrrol/Nebulizer/Accessor,Lonhala,Lonhala,glycopyrrolate,inhaled_respiratory,False,,Sunovion,contains,,,2018,2023,2350.0
+Proair Hfa,Albuterol Sulfate,ProAir,ProAir,albuterol,inhaled_respiratory,False,,Teva,exact,,,2013,2023,42111199.0
+Proair Respiclick,Albuterol Sulfate,ProAir,ProAir,albuterol,inhaled_respiratory,False,,Teva,contains,,,2015,2024,350549.0
+Proair Digihaler,Albuterol Sulfate,ProAir,ProAir,albuterol,inhaled_respiratory,False,,Teva,contains,,,2021,2024,447.0
+Pulmicort Flexhaler,Budesonide,Pulmicort,Pulmicort,budesonide,inhaled_respiratory,False,,AstraZeneca,contains,,,2013,2024,497150.0
+Pulmicort,Budesonide,Pulmicort,Pulmicort,budesonide,inhaled_respiratory,False,,AstraZeneca,exact,,,2013,2024,12754.0
+Qvar,Beclomethasone Dipropionate,Qvar,Qvar,beclomethasone,inhaled_respiratory,False,,Teva,exact,,,2013,2019,2742577.0
+Qvar Redihaler,Beclomethasone Dipropionate,Qvar,Qvar,beclomethasone,inhaled_respiratory,False,,Teva,contains,,,2018,2024,443517.0
+Seebri Neohaler,Glycopyrrolate,Seebri,Seebri,glycopyrrolate,inhaled_respiratory,False,,Novartis / Sunovion,contains,,,2018,2021,679.0
+Spiriva,Tiotropium Bromide,Spiriva,Spiriva,tiotropium,inhaled_respiratory,False,,Boehringer Ingelheim,exact,,,2013,2021,27676476.0
+Spiriva Respimat,Tiotropium Bromide,Spiriva,Spiriva,tiotropium,inhaled_respiratory,False,,Boehringer Ingelheim,exact,,,2015,2024,8037732.0
+Spiriva Handihaler,Tiotropium Bromide,Spiriva,Spiriva,tiotropium,inhaled_respiratory,False,,Boehringer Ingelheim,exact,,,2022,2024,1642995.0
+Stiolto Respimat,Tiotropium Br/Olodaterol Hcl,Stiolto,Stiolto,tiotropium/olodaterol,inhaled_respiratory,False,,Boehringer Ingelheim,exact,,,2015,2024,2958067.0
+Striverdi Respimat,Olodaterol Hcl,Striverdi,Striverdi,olodaterol,inhaled_respiratory,False,,Boehringer Ingelheim,exact,,,2015,2024,25126.0
+Symbicort,Budesonide/Formoterol Fumarate,Symbicort,Symbicort,budesonide/formoterol,inhaled_respiratory,False,,AstraZeneca,exact,,,2013,2024,36529247.0
+Trelegy Ellipta,Fluticasone/Umeclidin/Vilanter,Trelegy,Trelegy,fluticasone furoate/umeclidinium/vilanterol,inhaled_respiratory,False,,GlaxoSmithKline,exact,,,2018,2024,19324682.0
+Tudorza Pressair,Aclidinium Bromide,Tudorza,Tudorza,aclidinium,inhaled_respiratory,False,,AstraZeneca / Covis,contains,,,2013,2024,624454.0
+Utibron Neohaler,Indacaterol/Glycopyrrolate,Utibron,Utibron,indacaterol/glycopyrrolate,inhaled_respiratory,False,,Novartis / Sunovion,contains,,,2017,2020,4532.0
+Ventolin Hfa,Albuterol Sulfate,Ventolin,Ventolin,albuterol,inhaled_respiratory,False,,GlaxoSmithKline,exact,,,2013,2024,42363035.0
+Wixela Inhub,Fluticasone Propion/Salmeterol,Wixela,Wixela,fluticasone/salmeterol,inhaled_respiratory,False,,Viatris,contains,,,2019,2024,3823811.0
+Yupelri,Revefenacin,Yupelri,Yupelri,revefenacin,inhaled_respiratory,False,,Viatris / Theravance,exact,,,2019,2024,4795.0
+Admelog Solostar,Insulin Lispro,Admelog,Admelog,insulin lispro,insulin,False,,Sanofi,exact,,,2018,2024,108814.0
+Admelog,Insulin Lispro,Admelog,Admelog,insulin lispro,insulin,False,,Sanofi,exact,,,2018,2024,38806.0
+Afrezza,"Insulin Regular, Human",Afrezza,Afrezza,inhaled insulin,insulin,False,,MannKind,exact,,,2015,2024,33979.0
+Apidra Solostar,Insulin Glulisine,Apidra,Apidra,insulin glulisine,insulin,False,,Sanofi,exact,,,2013,2024,87048.0
+Apidra,Insulin Glulisine,Apidra,Apidra,insulin glulisine,insulin,False,,Sanofi,exact,,,2013,2024,66139.0
+Basaglar Kwikpen U-100,"Insulin Glargine,hum.Rec.Anlog",Basaglar,Basaglar,insulin glargine,insulin,False,,Eli Lilly,exact,,,2017,2024,8500822.0
+Basaglar Tempo Pen U-100,"Insulin Glargine,hum.Rec.Anlog",Basaglar,Basaglar,insulin glargine,insulin,False,,Eli Lilly,exact,,,2024,2024,80.0
+Fiasp Flextouch,Insulin Aspart (Niacinamide),Fiasp,Fiasp,insulin aspart,insulin,False,,Novo Nordisk,exact,,,2018,2024,356281.0
+Fiasp,Insulin Aspart (Niacinamide),Fiasp,Fiasp,insulin aspart,insulin,False,,Novo Nordisk,exact,,,2018,2024,53262.0
+Fiasp Penfill,Insulin Aspart (Niacinamide),Fiasp,Fiasp,insulin aspart,insulin,False,,Novo Nordisk,contains,,,2020,2024,1148.0
+Humalog,Insulin Lispro,Humalog,Humalog,insulin lispro,insulin,False,,Eli Lilly,exact,,,2013,2024,9804217.0
+Humalog Kwikpen U-100,Insulin Lispro,Humalog,Humalog,insulin lispro,insulin,False,,Eli Lilly,exact,,,2015,2024,9754243.0
+Humalog Mix 75-25 Kwikpen,Insulin Lispro Protamin/Lispro,Humalog,Humalog,insulin lispro,insulin,False,,Eli Lilly,exact,,,2015,2024,1479196.0
+Humalog Mix 75-25,Insulin Npl/Insulin Lispro,Humalog,Humalog,insulin lispro,insulin,False,,Eli Lilly,exact,,,2013,2014,686725.0
+Humalog Mix 75-25,Insulin Lispro Protamin/Lispro,Humalog,Humalog,insulin lispro,insulin,False,,Eli Lilly,exact,,,2015,2024,674038.0
+Humalog Kwikpen U-200,Insulin Lispro,Humalog,Humalog,insulin lispro,insulin,False,,Eli Lilly,exact,,,2015,2024,443040.0
+Humalog Mix 50-50 Kwikpen,Insulin Lispro Protamin/Lispro,Humalog,Humalog,insulin lispro,insulin,False,,Eli Lilly,exact,,,2015,2024,107936.0
+Humalog Mix 50-50,Insulin Npl/Insulin Lispro,Humalog,Humalog,insulin lispro,insulin,False,,Eli Lilly,exact,,,2013,2014,75787.0
+Humalog Mix 50-50,Insulin Lispro Protamin/Lispro,Humalog,Humalog,insulin lispro,insulin,False,,Eli Lilly,exact,,,2015,2023,68981.0
+Humalog Junior Kwikpen,Insulin Lispro,Humalog,Humalog,insulin lispro,insulin,False,,Eli Lilly,contains,,,2018,2024,11610.0
+Humalog Tempo Pen U-100,Insulin Lispro,Humalog,Humalog,insulin lispro,insulin,False,,Eli Lilly,exact,,,2023,2024,110.0
+Humulin N,Insulin Nph Human Isophane,Humulin,Humulin,human insulin,insulin,False,,Eli Lilly,contains,,,2014,2024,3898968.0
+Humulin 70-30,Insulin Nph Hum/Reg Insulin Hm,Humulin,Humulin,human insulin,insulin,False,,Eli Lilly,exact,,,2014,2024,2949700.0
+Humulin R,"Insulin Regular, Human",Humulin,Humulin,human insulin,insulin,False,,Eli Lilly,contains,,,2013,2024,2558900.0
+Humulin R U-500 Kwikpen,"Insulin Regular, Human",Humulin,Humulin,human insulin,insulin,False,,Eli Lilly,contains,,,2016,2024,709435.0
+Humulin N Kwikpen,Insulin Nph Human Isophane,Humulin,Humulin,human insulin,insulin,False,,Eli Lilly,contains,,,2014,2024,656612.0
+Humulin 70/30 Kwikpen,Insulin Nph Hum/Reg Insulin Hm,Humulin,Humulin,human insulin,insulin,False,,Eli Lilly,exact,,,2014,2024,580542.0
+Humulin 70-30,Hum Insulin Nph/Reg Insulin Hm,Humulin,Humulin,human insulin,insulin,False,,Eli Lilly,exact,,,2013,2013,528411.0
+Humulin N,"Nph, Human Insulin Isophane",Humulin,Humulin,human insulin,insulin,False,,Eli Lilly,contains,,,2013,2013,527016.0
+Humulin R U-500,"Insulin Regular, Human",Humulin,Humulin,human insulin,insulin,False,,Eli Lilly,contains,,,2015,2024,322363.0
+Lantus Solostar,"Insulin Glargine,hum.Rec.Anlog",Lantus,Lantus,insulin glargine,insulin,False,,Sanofi,exact,,,2013,2024,49975486.0
+Lantus,"Insulin Glargine,hum.Rec.Anlog",Lantus,Lantus,insulin glargine,insulin,False,,Sanofi,exact,,,2013,2024,25890080.0
+Levemir Flextouch,Insulin Detemir,Levemir,Levemir,insulin detemir,insulin,False,,Novo Nordisk,exact,,,2014,2024,15512110.0
+Levemir,Insulin Detemir,Levemir,Levemir,insulin detemir,insulin,False,,Novo Nordisk,exact,,,2013,2024,6636399.0
+Levemir Flexpen,Insulin Detemir,Levemir,Levemir,insulin detemir,insulin,False,,Novo Nordisk,exact,,,2013,2024,3469404.0
+Lyumjev Kwikpen U-100,Insulin Lispro-Aabc,Lyumjev,Lyumjev,insulin lispro-aabc,insulin,False,,Eli Lilly,exact,,,2021,2024,68565.0
+Lyumjev,Insulin Lispro-Aabc,Lyumjev,Lyumjev,insulin lispro-aabc,insulin,False,,Eli Lilly,exact,,,2021,2024,12775.0
+Lyumjev Kwikpen U-200,Insulin Lispro-Aabc,Lyumjev,Lyumjev,insulin lispro-aabc,insulin,False,,Eli Lilly,exact,,,2021,2024,5715.0
+Lyumjev Tempo Pen U-100,Insulin Lispro-Aabc,Lyumjev,Lyumjev,insulin lispro-aabc,insulin,False,,Eli Lilly,exact,,,2023,2024,25.0
+Myxredlin,Insulin Regular In 0.9 % Nacl,Myxredlin,,insulin regular in 0.9 % nacl,insulin,False,,,minor_brand,,,2022,2022,12.0
+Novolog Flexpen,Insulin Aspart,NovoLog,NovoLog,insulin aspart,insulin,False,,Novo Nordisk,exact,,,2013,2024,18800305.0
+Novolog,Insulin Aspart,NovoLog,NovoLog,insulin aspart,insulin,False,,Novo Nordisk,exact,,,2013,2024,9314722.0
+Novolog Mix 70-30 Flexpen,Insulin Aspart Prot/Insuln Asp,NovoLog,NovoLog,insulin aspart,insulin,False,,Novo Nordisk,exact,,,2016,2024,1976814.0
+Novolog Mix 70-30 Flexpen,Insuln Asp Prt/Insulin Aspart,NovoLog,NovoLog,insulin aspart,insulin,False,,Novo Nordisk,exact,,,2013,2014,771597.0
+Novolog Mix 70-30,Insulin Aspart Prot/Insuln Asp,NovoLog,NovoLog,insulin aspart,insulin,False,,Novo Nordisk,exact,,,2016,2024,570815.0
+Novolog Mix 70-30,Insuln Asp Prt/Insulin Aspart,NovoLog,NovoLog,insulin aspart,insulin,False,,Novo Nordisk,exact,,,2013,2014,506417.0
+Novolog Mix 70-30 Flexpen,Insulin Aspart Protam & Aspart,NovoLog,NovoLog,insulin aspart,insulin,False,,Novo Nordisk,exact,,,2015,2015,366211.0
+Novolog Mix 70-30,Insulin Aspart Protam & Aspart,NovoLog,NovoLog,insulin aspart,insulin,False,,Novo Nordisk,exact,,,2015,2015,187324.0
+Novolog Penfill,Insulin Aspart,NovoLog,NovoLog,insulin aspart,insulin,False,,Novo Nordisk,contains,,,2021,2024,7121.0
+Novolin 70-30,Insulin Nph Hum/Reg Insulin Hm,Novolin,Novolin,human insulin,insulin,False,,Novo Nordisk,exact,,,2014,2024,3062995.0
+Novolin R,"Insulin Regular, Human",Novolin,Novolin,human insulin,insulin,False,,Novo Nordisk,contains,,,2013,2024,2200564.0
+Novolin N,Insulin Nph Human Isophane,Novolin,Novolin,human insulin,insulin,False,,Novo Nordisk,contains,,,2014,2024,1568446.0
+Novolin 70-30,Hum Insulin Nph/Reg Insulin Hm,Novolin,Novolin,human insulin,insulin,False,,Novo Nordisk,exact,,,2013,2013,532264.0
+Novolin N,"Nph, Human Insulin Isophane",Novolin,Novolin,human insulin,insulin,False,,Novo Nordisk,contains,,,2013,2013,276711.0
+Novolin 70-30 Flexpen,Insulin Nph Hum/Reg Insulin Hm,Novolin,Novolin,human insulin,insulin,False,,Novo Nordisk,exact,,,2019,2024,214841.0
+Novolin R Flexpen,"Insulin Regular, Human",Novolin,Novolin,human insulin,insulin,False,,Novo Nordisk,contains,,,2020,2024,66385.0
+Novolin N Flexpen,Insulin Nph Human Isophane,Novolin,Novolin,human insulin,insulin,False,,Novo Nordisk,contains,,,2020,2024,52424.0
+Rezvoglar Kwikpen,Insulin Glargine-Aglr,Rezvoglar,Rezvoglar,insulin glargine-aglr,insulin,False,,Eli Lilly,exact,,,2023,2024,3577.0
+Semglee (Yfgn) Pen,Insulin Glargine-Yfgn,Semglee,Semglee,insulin glargine-yfgn,insulin,False,,Biocon / Viatris,exact,,,2021,2024,80461.0
+Semglee Pen,"Insulin Glargine,hum.Rec.Anlog",Semglee,Semglee,insulin glargine-yfgn,insulin,False,,Biocon / Viatris,exact,,,2020,2022,30897.0
+Semglee (Yfgn),Insulin Glargine-Yfgn,Semglee,Semglee,insulin glargine-yfgn,insulin,False,,Biocon / Viatris,exact,,,2022,2024,6884.0
+Semglee,"Insulin Glargine,hum.Rec.Anlog",Semglee,Semglee,insulin glargine-yfgn,insulin,False,,Biocon / Viatris,exact,,,2020,2022,5150.0
+Toujeo Solostar,"Insulin Glargine,hum.Rec.Anlog",Toujeo,Toujeo,insulin glargine,insulin,False,,Sanofi,exact,,,2015,2024,4975368.0
+Toujeo Max Solostar,"Insulin Glargine,hum.Rec.Anlog",Toujeo,Toujeo,insulin glargine,insulin,False,,Sanofi,contains,,,2018,2024,1050873.0
+Tresiba Flextouch U-100,Insulin Degludec,Tresiba,Tresiba,insulin degludec,insulin,False,,Novo Nordisk,exact,,,2016,2024,4689474.0
+Tresiba Flextouch U-200,Insulin Degludec,Tresiba,Tresiba,insulin degludec,insulin,False,,Novo Nordisk,exact,,,2016,2024,4536955.0
+Tresiba,Insulin Degludec,Tresiba,Tresiba,insulin degludec,insulin,False,,Novo Nordisk,exact,,,2019,2024,53772.0
+Insulin Aspart Flexpen,Insulin Aspart,insulin aspart (generic),,insulin aspart,insulin,False,,,molecule,,,2020,2024,442737.0
+Insulin Aspart,Insulin Aspart,insulin aspart (generic),,insulin aspart,insulin,False,,,molecule,,,2020,2024,108918.0
+Insulin Aspart Penfill,Insulin Aspart,insulin aspart (generic),,insulin aspart,insulin,False,,,molecule,,,2021,2024,228.0
+Insulin Aspart Prot Mix 70-30,Insulin Aspart Prot/Insuln Asp,insulin aspart prot/insuln asp (generic),,insulin aspart prot/insuln asp,insulin,False,,,molecule,,,2021,2024,41143.0
+Insulin Aspart Prot-Insuln Asp,Insulin Aspart Prot/Insuln Asp,insulin aspart prot/insuln asp (generic),,insulin aspart prot/insuln asp,insulin,False,,,molecule,,,2020,2020,3790.0
+Insulin Degludec Pen (U-100),Insulin Degludec,insulin degludec (generic),,insulin degludec,insulin,False,,,molecule,,,2022,2024,13478.0
+Insulin Degludec Pen (U-200),Insulin Degludec,insulin degludec (generic),,insulin degludec,insulin,False,,,molecule,,,2022,2024,8958.0
+Insulin Degludec,Insulin Degludec,insulin degludec (generic),,insulin degludec,insulin,False,,,molecule,,,2023,2024,650.0
+Insulin Glargine Solostar,"Insulin Glargine,hum.Rec.Anlog","insulin glargine,hum.rec.anlog (generic)",,"insulin glargine,hum.rec.anlog",insulin,False,,,molecule,,,2022,2024,42530.0
+Insulin Glargine,"Insulin Glargine,hum.Rec.Anlog","insulin glargine,hum.rec.anlog (generic)",,"insulin glargine,hum.rec.anlog",insulin,False,,,molecule,,,2022,2024,25640.0
+Insulin Glargine Max Solostar,"Insulin Glargine,hum.Rec.Anlog","insulin glargine,hum.rec.anlog (generic)",,"insulin glargine,hum.rec.anlog",insulin,False,,,molecule,,,2024,2024,741.0
+Insulin Glargine-Yfgn,Insulin Glargine-Yfgn,insulin glargine-yfgn (generic),,insulin glargine-yfgn,insulin,False,,,molecule,,,2021,2024,602067.0
+Insulin Lispro Kwikpen U-100,Insulin Lispro,insulin lispro (generic),,insulin lispro,insulin,False,,,molecule,,,2019,2024,1869836.0
+Insulin Lispro,Insulin Lispro,insulin lispro (generic),,insulin lispro,insulin,False,,,molecule,,,2019,2024,569303.0
+Insulin Lispro Junior Kwikpen,Insulin Lispro,insulin lispro (generic),,insulin lispro,insulin,False,,,molecule,,,2020,2024,2829.0
+Insulin Lispro Protamine Mix,Insulin Lispro Protamin/Lispro,insulin lispro protamin/lispro (generic),,insulin lispro protamin/lispro,insulin,False,,,molecule,,,2020,2024,60714.0
+Fortamet,Metformin Hcl,Fortamet,,metformin hcl,metformin,False,,,minor_brand,,,2013,2018,5188.0
+Glucophage,Metformin Hcl,Glucophage,Glucophage,metformin,metformin,False,,Bristol Myers Squibb,exact,,,2013,2019,32326.0
+Glucophage Xr,Metformin Hcl,Glucophage,Glucophage,metformin,metformin,False,,Bristol Myers Squibb,exact,,,2013,2020,22837.0
+Glumetza,Metformin Hcl,Glumetza,Glumetza,metformin,metformin,False,,Salix,exact,,,2013,2024,79630.0
+Prandimet,Repaglinide/Metformin Hcl,Prandimet,,repaglinide/metformin hcl,metformin,False,,,minor_brand,,,2013,2016,1428.0
+Riomet,Metformin Hcl,Riomet,Riomet,metformin,metformin,False,,Sun,exact,,,2013,2021,11030.0
+Metformin Hcl,Metformin Hcl,metformin hcl (generic),,metformin hcl,metformin,False,,,molecule,,,2013,2024,283357171.0
+Metformin Hcl Er,Metformin Hcl,metformin hcl (generic),,metformin hcl,metformin,False,,,molecule,,,2013,2024,74218670.0
+Metformin Er Gastric,Metformin Hcl,metformin hcl (generic),,metformin hcl,metformin,False,,,molecule,,,2018,2024,323954.0
+Metformin Er Osmotic,Metformin Hcl,metformin hcl (generic),,metformin hcl,metformin,False,,,molecule,,,2018,2024,144595.0
+Repaglinide-Metformin Hcl,Repaglinide/Metformin Hcl,repaglinide/metformin hcl (generic),,repaglinide/metformin hcl,metformin,False,,,molecule,,,2016,2016,70.0
+Farxiga,Dapagliflozin Propanediol,Farxiga,Farxiga,dapagliflozin,sglt2,False,,AstraZeneca,exact,,,2014,2024,13979954.0
+Glyxambi,Empagliflozin/Linagliptin,Glyxambi,Glyxambi,empagliflozin/linagliptin,sglt2,False,,Boehringer Ingelheim / Eli Lilly,exact,,,2015,2024,397157.0
+Inpefa,Sotagliflozin,Inpefa,Inpefa,sotagliflozin,sglt2,False,,Lexicon,exact,,,2023,2024,4616.0
+Invokamet,Canagliflozin/Metformin Hcl,Invokamet,Invokamet,canagliflozin/metformin,sglt2,False,,Janssen,exact,,,2014,2024,237412.0
+Invokamet Xr,Canagliflozin/Metformin Hcl,Invokamet,Invokamet,canagliflozin/metformin,sglt2,False,,Janssen,exact,,,2017,2024,65178.0
+Invokana,Canagliflozin,Invokana,Invokana,canagliflozin,sglt2,False,,Janssen,exact,,,2013,2024,5008704.0
+Jardiance,Empagliflozin,Jardiance,Jardiance,empagliflozin,sglt2,False,,Boehringer Ingelheim / Eli Lilly,exact,,,2014,2024,31432463.0
+Qtern,Dapagliflozin/Saxagliptin Hcl,Qtern,Qtern,dapagliflozin/saxagliptin,sglt2,False,,AstraZeneca,exact,,,2018,2024,4762.0
+Segluromet,Ertugliflozin/Metformin,Segluromet,Segluromet,ertugliflozin/metformin,sglt2,False,,Merck,exact,,,2019,2024,2441.0
+Steglatro,Ertugliflozin Pidolate,Steglatro,Steglatro,ertugliflozin,sglt2,False,,Merck,exact,,,2018,2024,61394.0
+Steglujan,Ertugliflozin/Sitagliptin Phos,Steglujan,Steglujan,ertugliflozin/sitagliptin,sglt2,False,,Merck,exact,,,2022,2024,1149.0
+Steglujan,Ertugliflozin/Sitagliptin,Steglujan,Steglujan,ertugliflozin/sitagliptin,sglt2,False,,Merck,exact,,,2019,2021,695.0
+Synjardy Xr,Empagliflozin/Metformin Hcl,Synjardy,Synjardy,empagliflozin/metformin,sglt2,False,,Boehringer Ingelheim / Eli Lilly,exact,,,2017,2024,750320.0
+Synjardy,Empagliflozin/Metformin Hcl,Synjardy,Synjardy,empagliflozin/metformin,sglt2,False,,Boehringer Ingelheim / Eli Lilly,exact,,,2015,2024,424551.0
+Trijardy Xr,Empaglifloz/Linaglip/Metformin,Trijardy,Trijardy,empagliflozin/linagliptin/metformin,sglt2,False,,Boehringer Ingelheim / Eli Lilly,exact,,,2020,2024,186491.0
+Xigduo Xr,Dapagliflozin/Metformin Hcl,Xigduo,Xigduo,dapagliflozin/metformin,sglt2,False,,AstraZeneca,exact,,,2015,2022,332905.0
+Xigduo Xr,Dapaglifloz Propaned/Metformin,Xigduo,Xigduo,dapagliflozin/metformin,sglt2,False,,AstraZeneca,exact,,,2023,2024,271542.0
+Dapagliflozin-Metformin Er,Dapaglifloz Propaned/Metformin,dapaglifloz propaned/metformin (generic),,dapaglifloz propaned/metformin,sglt2,False,,,molecule,,,2024,2024,4577.0
+Dapagliflozin,Dapagliflozin Propanediol,dapagliflozin propanediol (generic),,dapagliflozin propanediol,sglt2,False,,,molecule,,,2024,2024,163969.0
+Advicor,Niacin/Lovastatin,Advicor,Advicor,niacin/lovastatin,statin,False,,AbbVie,exact,,,2013,2015,18309.0
+Altoprev,Lovastatin,Altoprev,Altoprev,lovastatin,statin,False,,Covis,exact,,,2013,2024,5851.0
+Atorvaliq,Atorvastatin Calcium,Atorvaliq,Atorvaliq,atorvastatin,statin,False,,CMP Pharma,exact,,,2024,2024,666.0
+Caduet,Amlodipine/Atorvastatin,Caduet,Caduet,amlodipine/atorvastatin,statin,False,,Pfizer / Viatris,exact,,,2013,2024,13389.0
+Crestor,Rosuvastatin Calcium,Crestor,Crestor,rosuvastatin,statin,False,,AstraZeneca,exact,,,2013,2024,31573697.0
+Ezallor Sprinkle,Rosuvastatin Calcium,Ezallor,Ezallor,rosuvastatin,statin,False,,Sun,exact,,,2019,2023,2926.0
+Lescol Xl,Fluvastatin Sodium,Lescol,Lescol,fluvastatin,statin,False,,Novartis,exact,,,2013,2024,66582.0
+Lescol,Fluvastatin Sodium,Lescol,Lescol,fluvastatin,statin,False,,Novartis,exact,,,2013,2016,2679.0
+Lipitor,Atorvastatin Calcium,Lipitor,Lipitor,atorvastatin,statin,False,,Pfizer / Viatris,exact,,,2013,2024,402756.0
+Liptruzet,Ezetimibe/Atorvastatin Calcium,Liptruzet,Liptruzet,ezetimibe/atorvastatin,statin,False,,Merck,exact,,,2013,2014,533.0
+Livalo,Pitavastatin Calcium,Livalo,Livalo,pitavastatin,statin,False,,Kowa,exact,,,2013,2024,1833966.0
+Mevacor,Lovastatin,Mevacor,Mevacor,lovastatin,statin,False,,Merck,exact,,,2013,2013,12.0
+Pravachol,Pravastatin Sodium,Pravachol,Pravachol,pravastatin,statin,False,,Bristol Myers Squibb,exact,,,2013,2021,14554.0
+Roszet,Ezetimibe/Rosuvastatin Calcium,Roszet,Roszet,ezetimibe/rosuvastatin,statin,False,,Althera,exact,,,2022,2022,107.0
+Simcor,Niacin/Simvastatin,Simcor,Simcor,niacin/simvastatin,statin,False,,AbbVie,exact,,,2013,2016,62964.0
+Vytorin,Ezetimibe/Simvastatin,Vytorin,Vytorin,ezetimibe/simvastatin,statin,False,,Merck / Organon,exact,,,2013,2024,2519178.0
+Zocor,Simvastatin,Zocor,Zocor,simvastatin,statin,False,,Merck / Organon,exact,,,2013,2024,37384.0
+Zypitamag,Pitavastatin Magnesium,Zypitamag,Zypitamag,pitavastatin,statin,False,,Medicure,exact,,,2019,2024,4044.0
+Amlodipine-Atorvastatin,Amlodipine/Atorvastatin,amlodipine/atorvastatin (generic),,amlodipine/atorvastatin,statin,False,,,molecule,,,2013,2024,418129.0
+Atorvastatin Calcium,Atorvastatin Calcium,atorvastatin calcium (generic),,atorvastatin calcium,statin,False,,,molecule,,,2013,2024,614249892.0
+Rosuvastatin-Ezetimibe,Ezetimibe/Rosuvastatin Calcium,ezetimibe/rosuvastatin calcium (generic),,ezetimibe/rosuvastatin calcium,statin,False,,,molecule,,,2022,2022,96.0
+Ezetimibe-Simvastatin,Ezetimibe/Simvastatin,ezetimibe/simvastatin (generic),,ezetimibe/simvastatin,statin,False,,,molecule,,,2017,2024,674540.0
+Fluvastatin Sodium,Fluvastatin Sodium,fluvastatin sodium (generic),,fluvastatin sodium,statin,False,,,molecule,,,2013,2024,96568.0
+Fluvastatin Er,Fluvastatin Sodium,fluvastatin sodium (generic),,fluvastatin sodium,statin,False,,,molecule,,,2015,2024,35133.0
+Lovastatin,Lovastatin,lovastatin (generic),,lovastatin,statin,False,,,molecule,,,2013,2024,45686662.0
+Pitavastatin Calcium,Pitavastatin Calcium,pitavastatin calcium (generic),,pitavastatin calcium,statin,False,,,molecule,,,2023,2024,65773.0
+Pravastatin Sodium,Pravastatin Sodium,pravastatin sodium (generic),,pravastatin sodium,statin,False,,,molecule,,,2013,2024,140122428.0
+Rosuvastatin Calcium,Rosuvastatin Calcium,rosuvastatin calcium (generic),,rosuvastatin calcium,statin,False,,,molecule,,,2016,2024,142672354.0
+Simvastatin,Simvastatin,simvastatin (generic),,simvastatin,statin,False,,,molecule,,,2013,2024,286664882.0
+Amaryl,Glimepiride,Amaryl,Amaryl,glimepiride,sulfonylurea,False,,Sanofi,exact,,,2013,2023,15590.0
+Diabeta,Glyburide,Diabeta,,glyburide,sulfonylurea,False,,,minor_brand,,,2013,2015,584.0
+Glucotrol Xl,Glipizide,Glucotrol,Glucotrol,glipizide,sulfonylurea,False,,Pfizer,exact,,,2013,2024,17168.0
+Glucotrol,Glipizide,Glucotrol,Glucotrol,glipizide,sulfonylurea,False,,Pfizer,exact,,,2013,2021,3282.0
+Glucovance,Glyburide/Metformin Hcl,Glucovance,,glyburide/metformin hcl,sulfonylurea,False,,,minor_brand,,,2013,2018,5610.0
+Glynase,"Glyburide,micronized",Glynase,,"glyburide,micronized",sulfonylurea,False,,,minor_brand,,,2013,2021,374.0
+Chlorpropamide,Chlorpropamide,chlorpropamide (generic),,chlorpropamide,sulfonylurea,False,,,molecule,,,2013,2018,3143.0
+Glimepiride,Glimepiride,glimepiride (generic),,glimepiride,sulfonylurea,False,,,molecule,,,2013,2024,62972099.0
+Glipizide,Glipizide,glipizide (generic),,glipizide,sulfonylurea,False,,,molecule,,,2013,2024,55927147.0
+Glipizide Er,Glipizide,glipizide (generic),,glipizide,sulfonylurea,False,,,molecule,,,2013,2024,25830354.0
+Glipizide Xl,Glipizide,glipizide (generic),,glipizide,sulfonylurea,False,,,molecule,,,2013,2024,5219919.0
+Glipizide-Metformin,Glipizide/Metformin Hcl,glipizide/metformin hcl (generic),,glipizide/metformin hcl,sulfonylurea,False,,,molecule,,,2013,2024,2277959.0
+Glyburide,Glyburide,glyburide (generic),,glyburide,sulfonylurea,False,,,molecule,,,2013,2024,4540505.0
+Glyburide Micronized,"Glyburide,micronized","glyburide,micronized (generic)",,"glyburide,micronized",sulfonylurea,False,,,molecule,,,2013,2024,202285.0
+Glyburide-Metformin Hcl,Glyburide/Metformin Hcl,glyburide/metformin hcl (generic),,glyburide/metformin hcl,sulfonylurea,False,,,molecule,,,2013,2024,1644762.0
+Tolazamide,Tolazamide,tolazamide (generic),,tolazamide,sulfonylurea,False,,,molecule,,,2013,2019,2389.0
+Tolbutamide,Tolbutamide,tolbutamide (generic),,tolbutamide,sulfonylurea,False,,,molecule,,,2013,2020,3799.0
+Actoplus Met,Pioglitazone Hcl/Metformin Hcl,Actoplus Met,Actoplus Met,pioglitazone/metformin,tzd,False,,Takeda,exact,,,2013,2024,7324.0
+Actoplus Met Xr,Pioglitazone Hcl/Metformin Hcl,Actoplus Met,Actoplus Met,pioglitazone/metformin,tzd,False,,Takeda,exact,,,2013,2018,4571.0
+Actos,Pioglitazone Hcl,Actos,Actos,pioglitazone,tzd,False,,Takeda,exact,,,2013,2024,42017.0
+Avandamet,Rosiglitazone/Metformin Hcl,Avandamet,,rosiglitazone/metformin hcl,tzd,False,,,minor_brand,,,2013,2014,307.0
+Avandaryl,Rosiglitazone/Glimepiride,Avandaryl,,rosiglitazone/glimepiride,tzd,False,,,minor_brand,,,2013,2014,83.0
+Avandia,Rosiglitazone Maleate,Avandia,Avandia,rosiglitazone,tzd,False,,GlaxoSmithKline,exact,,,2013,2021,7288.0
+Duetact,Pioglitazone Hcl/Glimepiride,Duetact,Duetact,pioglitazone/glimepiride,tzd,False,,Takeda,exact,,,2013,2020,2484.0
+Pioglitazone Hcl,Pioglitazone Hcl,pioglitazone hcl (generic),,pioglitazone hcl,tzd,False,,,molecule,,,2013,2024,28362377.0
+Pioglitazone-Glimepiride,Pioglitazone Hcl/Glimepiride,pioglitazone hcl/glimepiride (generic),,pioglitazone hcl/glimepiride,tzd,False,,,molecule,,,2013,2024,20743.0
+Pioglitazone-Metformin,Pioglitazone Hcl/Metformin Hcl,pioglitazone hcl/metformin hcl (generic),,pioglitazone hcl/metformin hcl,tzd,False,,,molecule,,,2013,2024,644257.0

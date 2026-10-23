@@ -1,0 +1,101 @@
+raw_name,kinds,records,usd,promo_usd,payers
+COMIRNATY,Biological/Drug,278735,1781416324,2715213,"ARRAY BIOPHARMA INC | BioNTech SE | HOSPIRA, INC. | PBG PUERTO RICO LLC | PFIZER INC. | PFIZER INTERNATIONAL LLC | Pfizer Inc."
+Rituxan,Biological/Drug,137771,355935736,6408510,"Biogen, Inc. | Celgene Corporation | Chugai Pharmaceutical Co., Ltd. | F. Hoffmann-La Roche AG | Genentech USA, Inc. | Genentech, Inc. | Hoffmann-La Roche Limited | Roche Products Limited"
+Arthrex,Biological/Device,8628,301474717,850075,"Arthrex, Inc."
+BOTOX,Biological/Drug,785796,253248850,122302548,"ABBVIE INC. | AbbVie Inc. | Actavis Pharma Inc | Allergan Inc. | Allergan, Inc."
+Herceptin,Biological/Drug,24151,237668899,1863360,"Chugai Pharmaceutical Co., Ltd. | F. Hoffmann-La Roche AG | Genentech USA, Inc. | Genentech, Inc. | Hoffmann-La Roche Limited | Roche Products Limited"
+Avastin,Biological/Drug,114067,233852994,16491862,"Chugai Pharmaceutical Co., Ltd. | F. Hoffmann-La Roche AG | Genentech USA, Inc. | Genentech, Inc. | Hoffmann-La Roche Limited | Roche Products Limited"
+Tecentriq,Biological,16192,185185612,1448898,"Chugai Pharmaceutical Co., Ltd. | F. Hoffmann-La Roche AG | Genentech USA, Inc. | Genentech, Inc. | Hoffmann-La Roche Limited | Roche Products Limited"
+TECENTRIQ,Biological/Drug,65209,172346577,13658016,"Chugai Pharmaceutical Co., Ltd. | F. Hoffmann-La Roche AG | Genentech USA, Inc. | Genentech, Inc. | Hoffmann-La Roche Limited | Roche Products Limited"
+Perjeta,Biological/Drug,83243,146664127,7828565,"Chugai Pharmaceutical Co., Ltd. | F. Hoffmann-La Roche AG | Genentech USA, Inc. | Genentech, Inc. | Hoffmann-La Roche Limited | Roche Products Limited"
+VRAYLAR,Drug,2403504,141848065,141816715,"ABBVIE INC. | AbbVie Inc. | Actavis Pharma Inc | Allergan Inc. | Allergan, Inc."
+ENTYVIO,Biological/Drug,248505,132243696,14048771,"Millennium Pharmaceuticals, Inc. | Shire North American Group Inc | Takeda Pharmaceutical Company, Limited | Takeda Pharmaceuticals America, Inc. | Takeda Pharmaceuticals U.S.A., Inc."
+PLUVICTO,Drug,37582,129987892,129851159,Advanced Accelerator Applications | NOVARTIS PHARMACEUTICALS CORPORATION | Novartis Pharma AG | Novartis Pharmaceuticals Corporation
+Lucentis,Biological/Drug,49813,121854367,18185838,"F. Hoffmann-La Roche AG | Genentech USA, Inc. | Genentech, Inc. | Hoffmann-La Roche Limited | Novartis Pharma AG | Roche TCRC, Inc."
+OCREVUS,Biological,60791,120110888,16606818,"F. Hoffmann-La Roche AG | Genentech USA, Inc. | Genentech, Inc. | Hoffmann-La Roche Limited | Roche Products Limited"
+Xolair,Biological/Drug,152538,116927749,17765171,"F. Hoffmann-La Roche AG | Genentech USA, Inc. | Genentech, Inc. | Hoffmann-La Roche Limited | Novartis Pharma AG | Novartis Pharmaceuticals Corporation | Roche Products Limited"
+Actemra,Biological/Drug,130402,106650622,9991614,"Chugai Pharmaceutical Co., Ltd. | F. Hoffmann-La Roche AG | Genentech USA, Inc. | Genentech, Inc. | Hoffmann-La Roche Limited | Roche Products Limited"
+XIFAXAN,Drug,1010702,92154601,33991940,"Bausch & Lomb Americas Inc. | Bausch Health US, LLC | Ortho Dermatologics, a division of Bausch Health US, LLC | Salix Pharmaceuticals, Ltd | Salix Pharmaceuticals, a division of Bausch Health US, LLC | Valeant Pharmaceuticals North America LLC"
+Otezla,Biological/Drug,775289,88345332,88294491,"Amgen Inc. | Celgene Corporation | E.R. Squibb & Sons, L.L.C."
+Humira,Biological/Drug,806615,87003031,85536525,"AbbVie Inc. | AbbVie, Inc. | Abbvie, Inc."
+RINVOQ,Biological/Drug,1061753,79614027,76026871,ABBVIE INC. | AbbVie Inc.
+Repatha,Biological/Drug,1641634,78682188,77749107,Amgen Inc.
+KEYTRUDA,Biological/Drug,328171,78362978,76881199,"COMSORT, Inc | Merck Sharp & Dohme Corporation | Merck Sharp & Dohme LLC"
+INGREZZA,Drug,497407,77136819,76911069,"Neurocrine BioSciences, Inc. | Neurocrine Biosciences, Inc."
+REXULTI,Drug,1104131,74178136,74113516,"H. Lundbeck A S | Lundbeck LLC | Otsuka America Pharmaceutical, Inc. | Otsuka Pharmaceutical Co., Ltd. | Otsuka Pharmaceutical Development & Commercialization, Inc."
+TREMFYA,Drug,764120,73649549,73455549,"Actelion Pharmaceuticals US, Inc. | Janssen Biotech, Inc. | Janssen Global Services, LLC | Janssen Pharmaceuticals, Inc | Janssen Research & Development, LLC | Janssen Scientific Affairs, LLC | Johnson & Johnson Health Care Systems Inc. | Johnson & Johnson Vision Care, Inc."
+ACTHAR,Biological/Drug,452419,69169052,68522709,Mallinckrodt Enterprises LLC | Mallinckrodt Hospital Products Inc. | Mallinckrodt LLC | Questcor Pharmaceuticals
+ENTRESTO,Drug,1177874,69007542,67737321,NOVARTIS PHARMACEUTICALS CORPORATION | Novartis Pharma AG | Novartis Pharmaceuticals Corporation
+UBRELVY,Drug,1524639,68726689,68590439,"ABBVIE INC. | AbbVie Inc. | Allergan Inc. | Allergan, Inc."
+SKYRIZI,Biological/Drug,1072632,62446960,60149747,ABBVIE INC. | AbbVie Inc.
+BOTOX COSMETIC,Biological,56784,54024927,14017497,"Allergan Inc. | Allergan, Inc."
+ALLODERM,Device/Drug,60729,51085929,13703212,"ABBVIE INC. | AbbVie Inc. | Allergan Inc. | Allergan, Inc. | BioHorizons Implant Systems, Inc. | KCI USA, Inc | LIFECELL CORPORATION | LifeCell Corporation"
+KNEES,Device/Drug,35391,49633604,9451778,"MicroPort Orthopedics Inc | Stryker Corporation | WRIGHT MEDICAL TECHNOLOGY, INC. | Wright Medical Technology, Inc. | Zimmer Biomet Holdings, Inc."
+ABILIFY MAINTENA,Drug,429476,48543278,48201672,"H. Lundbeck A S | Lundbeck LLC | Otsuka America Pharmaceutical, Inc. | Otsuka Pharmaceutical Co., Ltd. | Otsuka Pharmaceutical Development & Commercialization, Inc."
+COSENTYX,Biological/Drug,608022,47494765,47216115,NOVARTIS PHARMACEUTICALS CORPORATION | Novartis Pharma AG | Novartis Pharmaceuticals Corporation
+OPDIVO,Biological/Drug,274373,46121846,44807042,"Celgene Corporation | E.R. Squibb & Sons, L.L.C."
+LATUDA,Drug,471977,42576043,42250157,"Sumitomo Pharma America, Inc. | Sumitomo Pharma Co., Ltd. | Sunovion Pharmaceuticals Inc."
+HIPS,Device/Drug,32405,42397252,11506435,"MicroPort Orthopedics Inc | Stryker Corporation | WRIGHT MEDICAL TECHNOLOGY, INC. | Wright Medical Technology, Inc. | Zimmer Biomet Holdings, Inc."
+Vascepa,Drug,778918,40318279,40166130,"Amarin Pharma Inc. | Amarin Pharma, Inc. | Kowa Pharmaceuticals America, Inc."
+KRYSTEXXA,Biological/Drug,249318,39637367,37405173,Amgen Inc. | Crealta Pharmaceuticals LLC | Horizon Pharma Rheumatology LLC | Horizon Pharma plc | Horizon Therapeutics plc
+Product Portfolio,Biological/Device,17377,38950506,7474432,"Lima USA, Inc. | Limacorporate S.p.A. | Paragon 28, Inc. | Zimmer Biomet Holdings, Inc."
+XELJANZ,Drug,425469,38701819,37971707,"PBG PUERTO RICO LLC | PFIZER CHILE S.A. | PFIZER INC. | PFIZER INTERNATIONAL LLC | PFIZER PHARMACEUTICALS KOREA LIMITED | PFIZER PHARMACEUTICALS LLC | Pfizer Inc. | Pfizer International LLC | Pfizer Pharmaceuticals LLC | Takeda Pharmaceutical Company, Limited | WHITEHALL INTERNATIONAL INC"
+JUXTAPID,Drug,18579,38525741,1721046,"Aegerion Pharmaceuticals, Inc. | Amryt Pharma Holdings Ltd | Chiesi USA, Inc."
+VONVENDI,Biological,1263,38202553,405485,"Baxalta US Inc | Shire North American Group Inc | Takeda Pharmaceuticals U.S.A., Inc."
+Kerendia,Drug,613653,35615072,35381307,Bayer HealthCare Pharmaceuticals Inc. | Bayer Healthcare LLC | Bayer Healthcare Pharmaceuticals Inc. | Bayer Puerto Rico Inc.
+OTHER,Device/Drug,41585,35338544,21450435,"BOSTON SCIENTIFIC CORPORATION | Boston Scientific Corporation | CARDIVA MEDICAL, INC. | Edwards Lifesciences Corporation | EndoChoice, Inc. | Kerr Corporation | Lundbeck LLC | Seattle Genetics, Inc. | Stryker Corporation | Varian Medical Systems, Inc."
+SOLIRIS,Biological/Drug,129585,34997549,32972489,"Alexion Pharmaceuticals, Inc."
+Epclusa,Drug,63754,34922212,34901312,"Gilead Sciences Inc | Gilead Sciences, Inc."
+AUSTEDO,Drug,247772,34135422,33997652,"Teva Pharmaceuticals USA, Inc."
+Auvelity,Drug,242946,33688156,33666156,"Axsome Therapeutics, Inc."
+Trauma,Biological/Device,25347,33607382,7445600,"Biomet Biologics, LLC | Biomet Europe, Ltd | Biomet Orthopedics, LLC | Biomet Sports Medicine, LLC | Biomet Trauma, LLC | DePuy Institute, LLC | DePuy Orthopaedics Inc. | DePuy Synthes Products LLC | DePuy Synthes Sales Inc. | Exactech, Inc. | Globus Medical, Inc. | Janssen Pharmaceuticals, Inc | Johnson and Johnson International | Orthofix Medical, Inc. | Paragon 28, Inc. | Stryker Corporation | Synthes USA Products LLC | Zimmer Biomet Holdings, Inc. | Zimmer Holding Inc"
+NUCALA,Biological/Drug,466818,33453723,33379092,"GlaxoSmithKline, LLC."
+Kadcyla,Biological/Drug,54693,33121810,3235464,"Chugai Pharmaceutical Co., Ltd. | F. Hoffmann-La Roche AG | Genentech USA, Inc. | Genentech, Inc. | Hoffmann-La Roche Limited | Roche Products Limited"
+Prolia,Biological/Drug,1043006,33099174,32737892,"Amgen Inc. | Medtronic Sofamor Danek USA, Inc."
+SABRIL,Drug,13062,32647859,3017294,Lundbeck LLC
+NUPLAZID,Drug,187292,32611060,31513528,ACADIA Pharmaceuticals Inc
+NURTEC ODT,Drug,1095728,32395814,32133264,"ARRAY BIOPHARMA INC | BIOHAVEN PHARMACEUTICAL HOLDING COMPANY LTD. | Biohaven Pharmaceutical Holding Company Ltd. | Biohaven Pharmaceuticals, Inc. | PBG PUERTO RICO LLC | PFIZER CHILE S.A. | PFIZER INC. | PFIZER INTERNATIONAL LLC | PFIZER S.A. | Pfizer Inc. | WHITEHALL INTERNATIONAL INC"
+COPAXONE,Drug,153992,32352974,32352958,"Teva Pharmaceuticals USA, Inc."
+LINZESS,Drug,1026985,32016207,31864560,"ABBVIE INC. | AbbVie Inc. | Actavis Pharma Inc | Allergan Inc. | Allergan, Inc. | FOREST PHARMACEUTICALS, INC. | FOREST RESEARCH INSTITUTE, INC. | Ironwood Pharmaceuticals, Inc"
+LUTATHERA,Drug,19256,30557835,30424031,Advanced Accelerator Applications | NOVARTIS PHARMACEUTICALS CORPORATION | Novartis Pharmaceuticals Corporation
+JAKAFI,Drug,134670,29831976,28791565,Incyte Corporation | NOVARTIS PHARMACEUTICALS CORPORATION | Novartis Pharma AG | Novartis Pharmaceuticals Corporation
+GILENYA,Drug,145269,28927132,28740107,NOVARTIS PHARMACEUTICALS CORPORATION | Novartis Pharma AG | Novartis Pharmaceuticals Corporation
+AEQUALIS,Device/Drug,3781,28305128,5003093,"Stryker Corporation | WRIGHT MEDICAL TECHNOLOGY, INC. | Wright Medical Technology, Inc."
+TECFIDERA,Drug,258301,28260141,28250141,"Biogen Idec Inc. | Biogen, Inc."
+Sports Medicine,Device/Drug,10377,28257504,6475011,"Anika Therapeutics, Inc. | Biomet Biologics, LLC | Biomet Orthopedics, LLC | Biomet Sports Medicine, LLC | Biomet Trauma, LLC | DePuy Institute, LLC | DePuy Mitek LLC | DePuy Orthopaedics Inc. | DePuy Synthes Products LLC | DePuy Synthes Sales Inc. | OrthoPediatrics Corp. | Zimmer Biomet Holdings, Inc."
+QULIPTA,Drug,1027590,27600779,27540879,"ABBVIE INC. | AbbVie Inc. | Allergan, Inc."
+Non-Covered Product,Device/Drug,19122,27059466,22409081,"Chugai Pharmaceutical Co., Ltd. | F. Hoffmann-La Roche AG | Genentech USA, Inc. | Genentech, Inc. | Hoffmann-La Roche Inc. | Hoffmann-La Roche Limited | NxStage Medical, Inc. | Roche Products Limited | Roche TCRC, Inc."
+NEXPLANON,Drug,241451,26943904,26900602,"COMSORT, Inc | Merck Sharp & Dohme Corporation | Organon LLC | Organon Llc"
+Bimzelx,Biological/Drug,203498,26781795,26781795,"UCB Biosciences Inc. | UCB SA | UCB, Inc."
+Mavenclad,Biological/Drug,54695,26714269,26713034,"EMD Serono Research & Development Institute | EMD Serono, Inc. | Merck KGaA"
+Belviq,Drug,114765,26352054,26336229,EISAI INC. | Eisai Inc.
+LYBALVI,Drug,655868,26291674,26285054,"Alkermes, Inc."
+Aimovig,Biological,393781,26268157,25878282,Amgen Inc.
+XIIDRA,Drug,338354,26122296,26112657,Bausch & Lomb Americas Inc. | NOVARTIS PHARMACEUTICALS CORPORATION | Novartis Pharmaceuticals Corporation | Shire North American Group Inc
+SIR-Spheres Microspheres,Device/Drug,64914,25897279,25897279,Sirtex Medical Inc
+Enbrel,Biological/Drug,426736,25035226,24695770,Amgen Inc.
+Trintellix,Drug,357834,24438214,24438214,"Lundbeck LLC | Takeda Development Center Americas, Inc. | Takeda Pharmaceuticals America, Inc. | Takeda Pharmaceuticals Puerto Rico LLC | Takeda Pharmaceuticals U.S.A., Inc."
+TYSABRI,Biological/Drug,254436,24283436,24281936,"Biogen Idec Inc. | Biogen, Inc."
+OFEV,Drug,226251,23465748,23315565,"Boehringer Ingelheim (China) Investment Co., Ltd. | Boehringer Ingelheim (Phil.) Inc. | Boehringer Ingelheim Canada Ltd.Ltee | Boehringer Ingelheim Do Brasil Quimica e Farmaceutical Ltda. | Boehringer Ingelheim Espana S.A. | Boehringer Ingelheim France S.A.S. | Boehringer Ingelheim Hong Kong Ltd. | Boehringer Ingelheim India Pvt. Ltd. | Boehringer Ingelheim International GmbH | Boehringer Ingelheim Italia S.p.A. | Boehringer Ingelheim Korea LTD. | Boehringer Ingelheim MENA (Scientific Office) FZ-LLC | Boehringer Ingelheim Malaysia Sdn. Bhd. | Boehringer Ingelheim Mexico SA de CV | Boehringer Ingelheim Pharma GmbH & Co.KG | Boehringer Ingelheim Pharmaceuticals, Inc. | Boehringer Ingelheim Pty Ltd | Boehringer Ingelheim RCV GmbH & Co KG | Boehringer Ingelheim Singapore Pte. Ltd. | Boehringer Ingelheim Taiwan Ltd. | Nippon Boehringer Ingelheim Co., Ltd."
+Revlimid,Drug,90782,23327763,19010810,"Celgene Corporation | E.R. Squibb & Sons, L.L.C."
+UPLIZNA,Biological/Drug,55885,23068434,14446066,Amgen Inc. | Horizon Therapeutics plc
+ZEPOSIA,Drug,224118,22895351,22671526,"Celgene Corporation | E.R. Squibb & Sons, L.L.C."
+EUCRISA,Drug,595688,21767558,21630030,"Anacor Pharmaceuticals, Inc. | HOSPIRA, INC. | PBG PUERTO RICO LLC | PFIZER INC. | PFIZER PHARMACEUTICALS LLC | Pfizer Inc. | WHITEHALL INTERNATIONAL INC"
+BRINTELLIX,Drug,141779,21450435,21449185,"H. Lundbeck A S | Lundbeck LLC | Takeda Pharmaceuticals America, Inc."
+XTANDI,Drug,300664,20787928,20335462,"ARRAY BIOPHARMA INC | Astellas Pharma Europe BV | Astellas Pharma Global Development | Astellas Pharma Inc | Astellas Pharma US Inc | Astellas Scientific and Medical Affairs | HOSPIRA, INC. | MEDIVATION FIELD SOLUTIONS LLC | MEDIVATION INC. | MEDIVATION SERVICES LLC | Medivation Inc. | PBG PUERTO RICO LLC | PFIZER INC. | PFIZER PHARMACEUTICALS LLC | Pfizer Inc."
+Kyprolis,Biological/Drug,78449,20606439,20152411,"Amgen Inc. | Onyx Pharmaceuticals, Inc., an Amgen subsidiary"
+ARISTADA,Drug,1199514,20306527,20279447,"Alkermes, Inc."
+TEPEZZA,Biological/Drug,108961,20258158,19385153,Amgen Inc. | Horizon Therapeutics plc
+XIFIXAN,Drug,11106,20201376,177750,"Salix Pharmaceuticals, a division of Bausch Health US, LLC | Valeant Pharmaceuticals North America LLC"
+Lenvima,Drug,113179,19775530,18552082,"EISAI CO., LTD. | EISAI INC. | Eisai Co., Ltd. | Eisai Inc."
+EVENITY,Biological,464251,19718980,19665831,Amgen Inc.
+DOVATO,Drug,139225,19386604,19371104,"GlaxoSmithKline, LLC. | ViiV Healthcare Company"
+Cimzia,Biological/Drug,343694,19192845,18903845,"UCB Biosciences Inc. | UCB GmBH | UCB GmbH | UCB SA | UCB, Inc."
+Korlym,Drug,173304,19164504,18856789,Corcept Therapeutics
+NINLARO,Drug,52121,19005758,18049142,"Millennium Pharmaceuticals, Inc. | Takeda Pharmaceutical Company, Limited | Takeda Pharmaceuticals U.S.A., Inc."
+SAMSCA,Drug,147287,18317572,16324986,"Otsuka America Pharmaceutical, Inc. | Otsuka Pharmaceutical Co., Ltd. | Otsuka Pharmaceutical Development & Commercialization, Inc."
+APTIOM,Drug,219107,18265609,18190234,"Sumitomo Pharma America, Inc. | Sunovion Pharmaceuticals Inc."
+REZDIFFRA,Drug,81640,18208867,18010337,Madrigal Pharmaceuticals
+Equinoxe,Device/Drug,8748,18113393,7031799,"Exactech, Inc."
+RESTASIS,Drug,198809,17661779,17661779,"Actavis Pharma Inc | Allergan Inc. | Allergan, Inc."
+Myrbetriq,Drug,613057,17234105,17072544,Astellas Pharma Europe BV | Astellas Pharma Global Development | Astellas Pharma Inc | Astellas Pharma US Inc | Astellas Scientific and Medical Affairs

@@ -1,0 +1,157 @@
+{
+ "op_strings_total": 64763,
+ "op_strings_in_map": 585,
+ "op_strings_by_method": {
+  "none": 277,
+  "exact": 186,
+  "non_product": 51,
+  "contains": 45,
+  "molecule": 20,
+  "reviewed": 6
+ },
+ "op_strings_by_class": {
+  "reviewed_out_of_scope": 277,
+  "inhaled_respiratory": 73,
+  "non_product": 51,
+  "insulin": 48,
+  "sglt2": 26,
+  "dpp4": 23,
+  "statin": 23,
+  "glp1": 21,
+  "anticoagulant": 16,
+  "antidiabetic_other": 10,
+  "metformin": 6,
+  "tzd": 6,
+  "glp1_insulin_combo": 4,
+  "sulfonylurea": 1
+ },
+ "glp1_strings": 25,
+ "glp1_records": 9494785,
+ "glp1_usd": 452541264.46,
+ "glp1_promo_usd": 426941862.42,
+ "glp1_strings_maker_inconsistent": [],
+ "glp1_brands_in_op": [
+  "Adlyxin",
+  "Bydureon",
+  "Byetta",
+  "Mounjaro",
+  "Ozempic",
+  "Rybelsus",
+  "Saxenda",
+  "Soliqua",
+  "Tanzeum",
+  "Trulicity",
+  "Victoza",
+  "Wegovy",
+  "Xultophy",
+  "Zepbound"
+ ],
+ "partd_rows_in_map": 691,
+ "partd_glp1_families": [
+  "Adlyxin",
+  "Bydureon",
+  "Byetta",
+  "Mounjaro",
+  "Ozempic",
+  "Rybelsus",
+  "Soliqua",
+  "Tanzeum",
+  "Trulicity",
+  "Victoza",
+  "Wegovy",
+  "Xultophy",
+  "Zepbound",
+  "liraglutide (generic)"
+ ],
+ "partd_by_class": {
+  "diabetes_supply": 411,
+  "insulin": 83,
+  "inhaled_respiratory": 47,
+  "statin": 29,
+  "antidiabetic_other": 19,
+  "dpp4": 19,
+  "sglt2": 19,
+  "sulfonylurea": 17,
+  "glp1": 15,
+  "metformin": 11,
+  "tzd": 10,
+  "anticoagulant": 9,
+  "glp1_insulin_combo": 2
+ },
+ "reviewed_out_of_scope": 277,
+ "unreviewed_drug_strings_over_10k": 4211,
+ "ndc": {
+  "ndc_keys_mapped": 1114,
+  "records_with_ndc_conflicting_brand": 2523,
+  "nameless_records": 9532,
+  "nameless_records_recovered": 2705,
+  "nameless_glp1_records_recovered": 1575
+ },
+ "coverage_glp1_makers": {
+  "2013": {
+   "share_with_product": 0.7576,
+   "share_resolved_of_named": 0.9881,
+   "share_glp1_of_named": 0.2116
+  },
+  "2014": {
+   "share_with_product": 0.7799,
+   "share_resolved_of_named": 0.9933,
+   "share_glp1_of_named": 0.3227
+  },
+  "2015": {
+   "share_with_product": 0.8124,
+   "share_resolved_of_named": 0.9914,
+   "share_glp1_of_named": 0.2932
+  },
+  "2016": {
+   "share_with_product": 0.8491,
+   "share_resolved_of_named": 0.9952,
+   "share_glp1_of_named": 0.186
+  },
+  "2017": {
+   "share_with_product": 0.8639,
+   "share_resolved_of_named": 0.9968,
+   "share_glp1_of_named": 0.2665
+  },
+  "2018": {
+   "share_with_product": 0.8329,
+   "share_resolved_of_named": 0.9988,
+   "share_glp1_of_named": 0.2597
+  },
+  "2019": {
+   "share_with_product": 0.8114,
+   "share_resolved_of_named": 0.999,
+   "share_glp1_of_named": 0.2184
+  },
+  "2020": {
+   "share_with_product": 0.8053,
+   "share_resolved_of_named": 0.9997,
+   "share_glp1_of_named": 0.2797
+  },
+  "2021": {
+   "share_with_product": 0.802,
+   "share_resolved_of_named": 0.9999,
+   "share_glp1_of_named": 0.3314
+  },
+  "2022": {
+   "share_with_product": 0.8004,
+   "share_resolved_of_named": 0.9998,
+   "share_glp1_of_named": 0.3537
+  },
+  "2023": {
+   "share_with_product": 0.7005,
+   "share_resolved_of_named": 0.9997,
+   "share_glp1_of_named": 0.2462
+  },
+  "2024": {
+   "share_with_product": 0.7421,
+   "share_resolved_of_named": 1.0,
+   "share_glp1_of_named": 0.2344
+  },
+  "2025": {
+   "share_with_product": 0.7431,
+   "share_resolved_of_named": 1.0,
+   "share_glp1_of_named": 0.3089
+  }
+ }
+}
