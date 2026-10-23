@@ -23,7 +23,8 @@ data: check-env data-open-payments data-partd data-reference
 build:
 	$(PY) -m ppg.build.drug_map
 	$(PY) -m ppg.build.linkage
-	@echo "build: P09-P10 steps added later"
+	$(PY) -m ppg.build.payments
+	@echo "build: P10 panel added later"
 
 models:
 	@echo "models: added in P13-P19"

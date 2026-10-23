@@ -324,3 +324,61 @@ NPs and PAs are covered recipients only from PY2021, so before that they have no
 5. **Paid but not in Part D:** 28% of linked NPIs never have a Part D row (≥ 11 claims of any drug). They are surgeons, dentists, low-volume or non-Medicare prescribers, or prescribers whose every row is suppressed. In the panel they are "absent from Part D", not zero (P10).
 6. **Specialty conflicts** (8.5%): different sources and dates; flagged, not resolved.
 7. **No NPPES** (the download was still down): entity type, deactivation dates and practice location were not cross-checked. The DAC (P05) gives practice and specialty for 2026 only.
+
+## 12. Payment measures (P09, 2026-10-23)
+
+Code: `src/ppg/build/payments.py` (`python -m ppg.build.payments`, about 2 min, part of `make build`); tests: `tests/test_payments.py`. Tables are in `PARQUET_DIR/payments/` (1.2 GB, git-ignored, contain NPIs):
+
+| Table | Grain | Contents |
+|---|---|---|
+| `record_brand` | record × brand | every linked record naming an in-scope brand (GLP-1s, other diabetes drugs, statins, anticoagulants, inhalers): NPI, date, maker, nature group, amount, brand's share of the product slots, first-listed flag |
+| `npi_brand_year` | NPI × year × brand | contacts (all natures and amounts, D12/D16), promotional contacts, promotional $ under each D8 rule, $ by nature group (split rule), non-promotional $, speaker contacts, first contact and first promotional dates |
+| `npi_brand_first` | NPI × brand | first promotional-contact year (the event-study exposure), first year under the first-listed rule, ever a speaker for the brand |
+| `npi_class_year` | NPI × year × class | the same at class level: GLP-1 (incl. Soliqua/Xultophy), **anticoagulant (negative-control exposure, D20)**, inhaled respiratory (secondary), SGLT2, DPP-4, insulin, statin… |
+| `npi_maker_year` | NPI × year × maker | Novo Nordisk, Lilly, AstraZeneca, Sanofi: all contacts, GLP-1 contacts, **no-product contacts and $** (manufacturer-level exposure, D21) |
+| `npi_flags` | NPI | first payment year (any company), ever a speaker (any product / any GLP-1), first GLP-1 promotional year |
+
+Nature groups: food & beverage; speaker/faculty (4 natures); consulting; travel & lodging; education; other promotional (gifts, honoraria, entertainment); non-promotional (D16, kept separate). GLP-1 totals (linked NPIs, 2013–2025): **7.50M records, 320,153 NPIs, $424.5M promotional** (equal split). That is 99.4% of the drug map's $426.9M; the rest went to teaching hospitals or unlinked recipients. 1,569 record-brand rows were recovered through NDCs (Bydureon, 2013–14).
+
+**Where GLP-1 money goes:**
+- **Speaker and faculty fees: 59% of promotional $** ($251.6M). This goes to only **3,288 NPIs ever**, 600–1,300 a year (about $20–30K each).
+- **Meals: 28%** ($118.2M), spread over 39K–141K NPIs a year.
+- Travel 7%, consulting 6%, education under 1%.
+
+The speaker-vs-meals comparison (D-5) will therefore have few speaker-treated prescribers.
+
+**D8: payments naming several products.** 3.77M of the 7.51M GLP-1 records name 2+ products, mostly sibling brands: Ozempic + Rybelsus 1.52M, Mounjaro + Zepbound 232K, Victoza + Xultophy 134K, Mounjaro + Trulicity 81K, Saxenda + Wegovy 17K. Full table: [payments_d8_comparison.csv](report/qa/payments_d8_comparison.csv).
+
+| Brand | $ full credit | equal split | first-listed | NPIs exposed (full/split) | NPIs exposed (first-listed) | first exposure year later under first-listed |
+|---|---|---|---|---|---|---|
+| Ozempic | $77.7M | $66.1M (−15%) | $68.8M (−12%) | 175,575 | 160,845 | 10,190 |
+| Rybelsus | $52.2M | $40.8M (−22%) | $38.2M (−27%) | 150,317 | 114,896 | 36,225 |
+| Victoza | $62.5M | $55.0M (−12%) | $55.4M (−11%) | 87,843 | 75,553 | 16,567 |
+| Trulicity | $57.1M | $51.5M (−10%) | $53.3M (−7%) | 107,477 | 96,896 | 21,670 |
+| Mounjaro | $46.3M | $43.6M (−6%) | $45.0M (−3%) | 121,528 | 117,720 | 8,134 |
+| Zepbound | $19.8M | $17.3M (−13%) | $14.8M (−25%) | 97,317 | 36,579 | 5,830 |
+| Xultophy | $6.7M | $5.4M (−19%) | $4.9M (−27%) | 34,642 | 14,380 | 1,315 |
+| Bydureon, Soliqua, Wegovy, Saxenda | | −1% to −3% | −1% to −3% | | | ≤ 1,042 each |
+
+**Proposed D8 rule:**
+- **Exposure and contacts: full credit.** A payment that names a brand is a contact for that brand.
+- **Dollars: equal split.** Totals add up and nothing is double-counted.
+- **First-listed: sensitivity only (P18).** Slot order is the manufacturer's choice, not a measure of emphasis; it would drop 64K of Zepbound's 97K exposed NPIs.
+
+**Consequence for P12:** Ozempic and Rybelsus are promoted together on 1.5M records, so their brand-specific exposures are close to collinear. The molecule-level exposure (P07) and the manufacturer-level exposure (D21) are the natural cross-checks.
+
+**Cohort sizes:** newly exposed MD/DO prescribers per brand by first promotional-contact year. The full table, including the subset present in Part D the year before, is [payments_cohorts.csv](report/qa/payments_cohorts.csv). Every linked NPI is counted; P10 applies the sample filters.
+
+| Brand | 2015 | 2016 | 2017 | 2018 | 2019 | 2020 | 2021 | 2022 | 2023 | 2024 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Trulicity | 29,016 | 12,506 | 9,103 | 5,889 | 4,520 | 3,817 | 4,201 | 3,432 | 1,209 | 149 |
+| Victoza | 8,059 | 6,315 | 7,128 | 4,040 | 1,347 | 78 | 15 | 9 | 5 | 8 |
+| Ozempic | — | — | 114 | 31,818 | 15,893 | 8,820 | 9,574 | 9,779 | 8,543 | 8,362 |
+| Rybelsus | — | — | — | — | 205 | 33,343 | 15,421 | 11,387 | 8,950 | 8,081 |
+| Mounjaro | — | — | — | — | — | — | — | 30,111 | 13,412 | 9,088 |
+| Bydureon | 7,173 | 2,409 | 1,259 | 1,865 | 940 | 162 | 33 | 36 | 2 | 9 |
+
+- **Each launch brings a wave of first payments** (Ozempic 2018, Rybelsus 2020, Mounjaro 2022), followed by a long tail.
+- **Victoza and Bydureon cohorts dry up after 2019,** once promotion moved to newer brands.
+- **2013–14 first payments are left-censored.** PY2013 covers Aug–Dec only, so many "2013" and "2014" first payments are really earlier exposure. This is why event cohorts start in 2015 (D6).
+- **Ozempic payments start in 2017,** before its December 2017 launch: 114 MD/DO prescribers.
