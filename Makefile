@@ -27,7 +27,10 @@ build:
 	$(PY) -m ppg.build.panel
 
 models:
-	@echo "models: added in P13-P19"
+	$(PY) -m ppg.models.event_study all
+	$(PY) -m ppg.models.event_study diagnostics
+	$(PY) -m ppg.models.event_study report
+	@echo "models: P14-P19 added later"
 
 figures:
 	$(PY) -m ppg.viz.figures

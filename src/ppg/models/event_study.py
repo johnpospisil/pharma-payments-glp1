@@ -82,7 +82,10 @@ def run_cs(
     res = json.loads(raw.read_text())
     sizes = df.groupby("npi").g.first().value_counts()
     res["att_gt"] = [r for r in res["att_gt"] if sizes.get(r["group"], 0) >= config.MIN_CELL]
-    res["cohort_sizes"] = {int(k): int(v) for k, v in sizes.sort_index().items()}
+    res["cohort_sizes"] = {  # cells under 11 physicians are masked (CLAUDE.md ethics rule)
+        int(k): (int(v) if v >= config.MIN_CELL else "<11") for k, v in sizes.sort_index().items()
+    }
+    res.pop("cohorts", None)
     res["frame"] = {
         k: (int(v) if isinstance(v, (int, np.integer)) else v) for k, v in df.attrs.items()
     } | {
@@ -302,7 +305,7 @@ def report() -> dict:
             if (QA / f"{tag}_{b}.json").exists()
         }
 
-    uni, nocov = load("universal"), load("nocov")
+    uni, nocov, honest = load("universal"), load("nocov"), load("honest")
     rows, pvals = [], {}
     for b, r in prim.items():
         o = r["overall_0_3"]
@@ -325,10 +328,8 @@ def report() -> dict:
                 "pre_mean": base,
                 "pretrend_p_varying": (r.get("pretrend_wald") or {}).get("p"),
                 "pretrend_p_universal": (uni.get(b, {}).get("pretrend_wald") or {}).get("p"),
-                # HonestDiD from the universal-base event study only (DEV-3)
-                "honest_breakdown_mbar": (uni.get(b, {}).get("honestdid") or {}).get(
-                    "breakdown_mbar"
-                ),
+                # HonestDiD relative magnitudes, universal-base event study, explicit grid
+                "honest_robust_mbar": robust_mbar(honest[b]["rm"]) if b in honest else None,
                 "physicians": r["frame"]["physicians"],
                 "treated": r["frame"]["treated_physicians"],
             }
@@ -405,7 +406,11 @@ def report() -> dict:
         "holm": adj,
         "sesoi_pp": 0.02,
         "types": _types_summary(),
-        "honestdid": {b: u.get("honestdid") for b, u in uni.items()},
+        "honestdid_rm": {b: h["rm"] for b, h in honest.items()},
+        "honestdid_robust_mbar": {b: robust_mbar(h["rm"]) for b, h in honest.items()},
+        "honestdid_smoothness": {
+            b: (u.get("honestdid") or {}).get("smoothness") for b, u in uni.items()
+        },
         "pretrend_wald": {
             b: {
                 "varying": prim[b].get("pretrend_wald"),
@@ -444,6 +449,7 @@ def _types_summary() -> dict:
 
 def hero_chart(events: pd.DataFrame, prim: dict) -> None:
     import matplotlib
+    import matplotlib.ticker
 
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
@@ -477,6 +483,7 @@ def hero_chart(events: pd.DataFrame, prim: dict) -> None:
         _style(ax)
         ax.set_xticks(range(-5, 4))
         ax.set_xlabel("Years since first promotional payment for the brand", color=INK2)
+        ax.yaxis.set_major_locator(matplotlib.ticker.MultipleLocator(0.02))
         ax.yaxis.set_major_formatter(lambda v, _: f"{v * 100:+.0f} pp")
     axes[0].set_ylabel("Change in probability of ≥ 11 claims of the brand")
     fig.suptitle(
@@ -490,7 +497,8 @@ def hero_chart(events: pd.DataFrame, prim: dict) -> None:
     _save(
         fig,
         "hero_v1_event_study",
-        "Callaway & Sant'Anna (doubly robust, not-yet-treated controls); bands: 95% simultaneous, "
+        "Callaway & Sant'Anna (doubly robust, not-yet-treated controls), relative to the year "
+        "before the first payment; bands: 95% simultaneous, "
         "clustered by practice. Year 0 is partly treated. Physicians, P10 diabetes-prescriber "
         "sample.\nSource: CMS Open Payments, Medicare Part D Prescribers. Associations, not proof "
         "of causation.",
@@ -593,6 +601,39 @@ def _run_type(brand: str, kind: str) -> dict:
     return run_cs(brand, tag=f"type_{kind}", df=df[(df.g == 0) | df.npi.map(t).eq(kind)])
 
 
+def run_honest() -> None:
+    """HonestDiD relative magnitudes with an explicit grid (DEV-3), from the universal fits."""
+    for b in PRIMARY_BRANDS:
+        p = subprocess.run(
+            [
+                RSCRIPT,
+                str(R.parent / "honest.R"),
+                str(QA / f"universal_{b}.json"),
+                str(QA / f"honest_{b}.json"),
+            ],
+            capture_output=True,
+            text=True,
+            env={"PATH": "/opt/homebrew/bin:/usr/bin:/bin"},
+        )
+        if p.returncode != 0:
+            raise RuntimeError(p.stderr[-2000:])
+
+
+def robust_mbar(rm: list[dict]) -> float | None:
+    """Largest Mbar at which the robust CI still excludes 0 (prereg §10 threshold: 0.5)."""
+    ok = [r for r in rm if r.get("lb") is not None and r.get("ub") is not None]
+    if len(ok) != len(rm):
+        return None
+    excl = [r["Mbar"] for r in sorted(ok, key=lambda r: r["Mbar"]) if r["lb"] > 0 or r["ub"] < 0]
+    m, out = sorted(r["Mbar"] for r in ok), None
+    for x in m:  # contiguous from 0
+        if x in excl:
+            out = x
+        else:
+            break
+    return out
+
+
 def diagnostics() -> None:
     """Universal-base event study (for HonestDiD, DEV-3) and CS without covariates
     (exploratory: explains the gap to the fixed-effects cross-checks)."""
@@ -621,6 +662,10 @@ def main(argv: list[str]) -> int:
     cmd = argv[0] if argv else "cs"
     if cmd == "diagnostics":
         diagnostics()
+        run_honest()
+        return 0
+    if cmd == "honest":
+        run_honest()
         return 0
     if cmd == "all":
         run_all()
