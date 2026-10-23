@@ -200,3 +200,25 @@ All 290 `prscrbr_type` labels seen in Part D 2013–2024 → 8 groups by ordered
 ### Diabetes denominator for the state map
 
 `est_diabetic_partd = Part D enrollees (state, year) × BRFSS % of adults 65+ with diabetes`, prevalence pooled over years t−2..t weighted by sample size (single-year state samples are ~200–800). 2024: **12.96M** estimated diabetic Part D enrollees (≈24% of 54.4M); lowest prevalence MT 16.6%, VT 16.7%, CO 17.8%; highest PR 38.6%. Covers 50 states + DC + PR (+ GU, VI); no estimate for AS, MP and foreign/unknown rows. Approximation: 65+ prevalence applied to all Part D enrollees (≈13% are under 65).
+
+## 9. Data-quality profile (P06, 2026-10-23)
+
+Code: `src/ppg/ingest/quality.py` (`python -m ppg.ingest.quality`); tests: `tests/test_data_quality.py` (marked `data`, skipped when the Parquet is absent; `make test-fast` skips them). Results: [report/qa/data_quality.json](report/qa/data_quality.json).
+
+| Check | Open Payments (148.8M records) | Part D by Provider and Drug (303.3M rows) |
+|---|---|---|
+| Duplicate keys | 0 record IDs | 0 NPI × brand × generic × year |
+| Missing amount / date / drug name | 0 / 0 | 0 drug names |
+| NPI check digit (Luhn) | **14** of 1,861,090 distinct NPIs fail | 0 of 1,721,486 |
+| Negative values | 871 amounts ≤ $0 (D12: kept as contacts, not dollars) | 0 |
+| Dates | 467 outside the program year (95 by > 1 year) | — |
+| Other | 10 records with `n_payments` < 1; 1,999 single payments > $1M; 8,294 disputed | 0 rows < 11 claims; 0 with fills < claims; 0 with beneficiaries > claims |
+| NPI missing (2015+, non-teaching-hospital) | 91,235, **all with a profile ID** → linked in P08 | — |
+
+### Anomalies
+
+- **Large non-promotional payments dominate dollars.** Royalties/licences are $13.9B (35% of all general-payment dollars); payments > $1M total ≈ $10.3B, mostly royalties, licences and acquisitions (e.g. a **$55.1M "Acquisitions" payment from Novo Nordisk to one physician on 2025-12-09**; **$16M AstraZeneca royalty to a teaching hospital, 2023-05-18**). Food and beverage is 132.8M of 148.8M records (89%) but $3.5B. → Dollar measures must use a **promotional subset** (P09).
+- **Eli Lilly meals collapse in Nov–Dec 2025:** Food-and-beverage records 36,317 (Oct 2025) → 5,159 (Nov) → 6,993 (Dec); Lilly's speaker and consulting payments continue, and the other makers show only the usual December dip. No public explanation found (web search, 2026-10-23). PY2025 is descriptive only (D6), so it cannot affect the event study; flag it on any chart that includes 2025.
+- **Usual seasonality:** December dips every year for all makers; spring 2020 COVID trough (e.g. Lilly 633 and 407 records in Apr–May 2020 vs ~23K median).
+- **Manufacturer-year jumps (> 2× change, ≥ 20K records): 237** ([op_manufacturer_jumps.csv](report/qa/op_manufacturer_jumps.csv)): 75 in 2014 (vs partial 2013), 76 in 2020–2021 (COVID and rebound); most others are corporate events (Actavis/Allergan 2015–16, Shire→Takeda 2018, Valeant 2015, Biohaven→Pfizer 2023).
+- Monthly series for the four GLP-1 makers: [op_monthly_glp1_makers.csv](report/qa/op_monthly_glp1_makers.csv); flagged months: [op_monthly_gaps.csv](report/qa/op_monthly_gaps.csv); chart: [p06_monthly_payments_glp1_makers.png](report/figures/p06_monthly_payments_glp1_makers.png).

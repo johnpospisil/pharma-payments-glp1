@@ -7,7 +7,7 @@ PY := uv run python -I
 # Ignore any other active virtualenv (e.g. ~/tf): uv always uses this project's .venv.
 unexport VIRTUAL_ENV
 
-.PHONY: all check-env check-env-local data build models figures report app test lint progress data-open-payments data-partd data-reference
+.PHONY: all check-env check-env-local data build models figures report app test lint test-fast progress data-open-payments data-partd data-reference
 
 all: check-env data build models figures report app
 
@@ -37,6 +37,10 @@ app:
 
 test:
 	uv run pytest -q
+
+# Unit tests only (skip checks on the real data, ~1 min)
+test-fast:
+	uv run pytest -q -m "not data"
 
 lint:
 	uv run ruff check src tests

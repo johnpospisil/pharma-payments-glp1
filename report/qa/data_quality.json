@@ -1,0 +1,35 @@
+{
+ "open_payments": {
+  "records": 148797140,
+  "duplicate_record_ids": 0,
+  "null_amount": 0,
+  "nonpositive_amount": 871,
+  "amount_over_1m": 1999,
+  "null_payment_date": 0,
+  "date_outside_program_year": 467,
+  "date_off_by_more_than_1y": 95,
+  "disputed": 8294,
+  "delayed_publication": 0,
+  "bad_n_payments": 10,
+  "missing_npi_2015plus": 91235,
+  "null_manufacturer_id": 0,
+  "npi": {
+   "distinct_npis": 1861090,
+   "failing_luhn": 14
+  }
+ },
+ "partd": {
+  "rows": 304308167,
+  "rows_lt11_claims": 0,
+  "rows_negative": 0,
+  "fills_below_claims": 0,
+  "benes_above_claims": 0,
+  "benes_suppressed": 178864644,
+  "missing_drug_name": 0,
+  "duplicate_keys": 0,
+  "npi": {
+   "distinct_npis": 1721486,
+   "failing_luhn": 0
+  }
+ }
+}
