@@ -182,7 +182,8 @@ def chart(df) -> None:
         ax.spines[s].set_visible(False)
     ax.spines["bottom"].set_color(MUTED)
     ax.tick_params(colors=MUTED, labelsize=9, length=0)
-    ax.legend(frameon=False, fontsize=9, loc="upper left", labelcolor=INK)
+    ax.legend(frameon=False, fontsize=9, loc="lower left", labelcolor=INK)
+    ax.set_xticks(range(int(df.year.min()), int(df.year.max()) + 1, 2))
     fig.text(
         0.01,
         0.01,

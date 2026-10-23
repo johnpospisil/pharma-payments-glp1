@@ -143,3 +143,36 @@ Each zip's README is copied to `data/reference/op_readme/`. Code: `src/ppg/inges
 - **Product placeholders:** PY2016–2020 fill empty device-ID slots with the text `N/A`. Placeholder values (`N/A`, `NA`, `NONE`, `NULL`, `-`) are treated as missing in product fields. 91–93% of records name at least one product in every year.
 - **NPI coverage:** 0% of PY2013–2014 records carry an NPI (field absent; linked via profile ID in P08); 99.4–99.7% from 2015 (the remainder are teaching hospitals).
 - **PY2024 removed/deleted file has 160,183 rows** (vs ≤ 900 in other years) — a large deletion by reporting entities between publications; the deleted records are absent from General as expected.
+
+## 7. Converted Part D and Part B (P04, 2026-10-23)
+
+Parquet under `PPG_DATA_DIR/parquet/{partd,partb}/<table>/year=YYYY/part-0.parquet` (`spending_by_drug/all.parquet` is one wide file). Raw CSVs kept on Drive3 (D13): Part D 48 GB, Part B 4.8 GB → Parquet 6.7 GB + 1.2 GB. Columns lower-cased; prescriber names, middle initial, street address and city dropped; blanks (suppressed) are NULL, never 0. Code: `src/ppg/ingest/partd.py`, `partd_convert.py`, `partd_qa.py`; run with `make data-partd`.
+
+| Table | Rows per year | Notes |
+|---|---|---|
+| Part D by Provider and Drug | 23.6M (2013) → 28.0M (2024) | 0.81M → 1.14M prescribers |
+| Part D by Provider | 1.05M → 1.42M | prescriber totals incl. claims hidden in by-drug rows |
+| Part D by Geography and Drug | ~107K–118K | national + state rows per drug |
+| Part D Spending by Drug | 14.5K (one file, 2020–2024 wide) | |
+| Part B by Provider | 0.96M → 1.30M | diabetes % from 2017 |
+
+### Checks ([report/qa/partd_checks.json](report/qa/partd_checks.json))
+
+- Prescriber × drug rows: **0** with < 11 claims, **0** negative, **0** missing NPI, **0** duplicate NPI × brand × generic × year keys.
+- **National rows of "by Geography and Drug" include the claims hidden at prescriber level**: national claims ≥ the sum of prescriber rows (and national prescriber counts ≥ the number of prescriber rows) for **100% of drugs in every year** ([partd_national_vs_rows.csv](report/qa/partd_national_vs_rows.csv)).
+- **Two CMS products agree:** national GLP-1 claims and cost (Geography) vs Part D Spending by Drug, 2020–2024, every brand: within **0.08%** ([partd_spending_crosscheck.csv](report/qa/partd_spending_crosscheck.csv)).
+- Part D by Provider total claims = national claims within 0.1% each year (the gap = prescribers with < 11 claims in total).
+
+### How much suppression hides ([partd_by_year.csv](report/qa/partd_by_year.csv), [partd_glp1_brands.csv](report/qa/partd_glp1_brands.csv))
+
+- **All drugs:** 13.1%–14.0% of claims are in suppressed prescriber × drug cells, every year.
+- **GLP-1 class:** **36.5% (2013) → 24.8% (2019) → 10.6% (2024)**: the hidden share falls as the drugs become common.
+- **By brand, the share of prescribers below 11 claims (no row at all) is large:** Ozempic 74% (2019) → 40% (2024); Trulicity 65% (2017) → 53% (2024); Mounjaro 93% (2022) → 50% (2024); Rybelsus 77% (2022) → 72% (2024); Victoza 3-Pak 70–94%. Claims hidden: Ozempic 26% → 4.6%, Mounjaro 67% → 8.0%, Trulicity 20% → 11%, Rybelsus 33% → 28%.
+- Consequence for the design: for most prescriber × brand × years the outcome is **interval-censored (0–10 claims)**, especially before and just after launch. See the P04 questions in CLAUDE.md / P12.
+
+### Brand-name facts for the drug map (P07)
+
+- Part D splits brands into presentations: `Victoza 2-Pak` / `Victoza 3-Pak`, `Bydureon` / `Bydureon Pen` / `Bydureon Bcise`, `Soliqua 100-33`, `Xultophy 100-3.6`.
+- **Generic liraglutide** appears in 2024 (62K claims; generic Victoza) and must not be mapped to the Victoza brand.
+- **Wegovy** appears in 2024 (211K claims, CV-risk indication); **Zepbound** has 353 claims in 2024. Tanzeum (albiglutide) was withdrawn by 2019; Adlyxin is negligible.
+- Trulicity's first Part D year is 2014 (215 claims; launched Sept 2014); Ozempic 2018; Rybelsus 2019 (400 claims); Mounjaro 2022.

@@ -85,7 +85,7 @@ def fetch(
     url: str,
     dest: Path,
     source: str,
-    retries: int = 8,
+    retries: int = 20,  # ~35 min of backoff: rides out short network outages
     progress: Progress | None = None,
     task: str | None = None,
 ) -> Path:

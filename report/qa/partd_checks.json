@@ -1,0 +1,8 @@
+{
+ "rows_lt11": 0,
+ "rows_null_clms": 0,
+ "rows_negative": 0,
+ "rows_null_npi": 0,
+ "duplicate_keys": 0,
+ "national_ge_rows_min_share": 1.0
+}
