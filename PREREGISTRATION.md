@@ -186,4 +186,14 @@ Descriptive outputs only (P03–P11; DATA.md §6–14):
 
 ## 13. Deviations
 
-_None yet. Each deviation after locking gets a dated entry: what changed, why, and whether results had been seen._
+Each deviation after locking gets a dated entry: what changed, why, and whether results had been seen.
+
+**DEV-1 (2026-10-23, before any estimate was seen): primary implementation moved from Python `differences` to R `did` 2.5.1 (J6 alternative).**
+- **What happened:** on the first test fits (a 20% Ozempic sample, inspected only for errors), `differences` 0.3.0 failed three ways under pandas 3 / numpy 2:
+  1. clustered inference crashes because the cluster column is passed as a Series;
+  2. the parallel multiplier bootstrap builds a mis-shaped mask;
+  3. a repeat fit on identical data failed with an empty influence-function stack.
+- **Change:** the estimator is now R `did::att_gt`, the reference implementation by the method's authors. Everything else stays as registered: doubly robust, not-yet-treated controls, varying base period, the same covariates, multiplier bootstrap clustered by practice.
+- **Why it is an improvement:** R `did` also provides the influence functions that HonestDiD and the joint pre-trend test need.
+- **Cross-checks:** the Python ones are now the Sun & Abraham and imputation (did2s) estimators in pyfixest. R `did` with never-treated controls stays as a sensitivity.
+- **Unbalanced panel:** prescriber-years dropped under D25 make the panel unbalanced. It is estimated with `allow_unbalanced_panel = TRUE`; a balanced-panel subsample (physicians observed in every year of the brand's window) is added as a sensitivity.
