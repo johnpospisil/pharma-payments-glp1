@@ -1,6 +1,6 @@
 # Pre-registration: Industry payments and GLP-1 prescribing in Medicare Part D
 
-**Status: DRAFT v0.9 (2026-10-23), not locked.** The open judgement calls in §12 need the author's approval. Once approved, this file is committed and tagged `prereg-v1`, before any model compares exposed and unexposed prescribers after exposure (CLAUDE.md rule 6). Later changes go in §13 "Deviations", dated, never as silent edits.
+**Status: LOCKED v1.0 (2026-10-23), git tag `prereg-v1`.** Approved by the author on 2026-10-23, including the judgement calls in §12 (all as drafted). Registered before any model compared exposed and unexposed prescribers after exposure (CLAUDE.md rule 6). Changes after this point go in §13 "Deviations", dated, never as silent edits.
 
 ## Summary
 
@@ -173,9 +173,9 @@ Descriptive outputs only (P03–P11; DATA.md §6–14):
 
 **No outcome has been compared between exposed and unexposed prescribers around the time of exposure.**
 
-## 12. Open judgement calls (to be approved before locking)
+## 12. Judgement calls (approved 2026-10-23, all as the draft choice)
 
-| # | Call | Draft choice | Main alternative |
+| # | Call | Registered choice | Alternative not taken |
 |---|---|---|---|
 | J1 | Primary outcome | Binary ≥ 11 claims (D14); fills via PPML secondary | PPML fills primary (D9 "leaning"), binary secondary |
 | J2 | Primary test structure | Three brand-specific ATTs, Holm; pooled stacked estimate as summary | One pooled estimate as the single primary test |
