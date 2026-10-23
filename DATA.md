@@ -272,3 +272,55 @@ The remaining 4,211 unmapped drug/biologic strings of ≥ $10K are other compani
 - **NDCs are unreliable inside multi-product records.** In AstraZeneca's 2013–14 records one product's NDC appears against another (Farxiga and Crestor rows carry Bydureon's code): 2,523 records conflict. NDCs are therefore used only to recover name-less product slots: 2,705 of 9,532, including 1,575 GLP-1 (Bydureon, 2013–14), flagged as `ndc`-matched.
 - Wegovy, Saxenda and Zepbound are obesity-indicated (`indication = obesity`). Part D excludes weight-loss-only use, so Saxenda has no Part D rows, while Wegovy (2023–24) and Zepbound (2024) have a few. The molecule column links Wegovy and Rybelsus to Ozempic (semaglutide) and Zepbound to Mounjaro (tirzepatide) for the molecule-level sensitivity analysis.
 - Generic liraglutide (2024) is its own Part D family, `liraglutide (generic)` (D15).
+
+## 11. NPI linkage (P08, 2026-10-23)
+
+Code: `src/ppg/build/linkage.py` (`python -m ppg.build.linkage`, about 10 min, part of `make build`); tests: `tests/test_linkage.py`. Outputs are in `PARQUET_DIR/linkage/` (1.4 GB, git-ignored):
+
+- `op_record_npi/`: one row per General Payments record, giving `npi_linked`, `link_method` and `recipient_class`.
+- `profile_npi.parquet`: 1.86M profile IDs mapped to an NPI.
+- `npi_specialty.parquet`: each NPI's specialty in Open Payments vs Part D, with an agree flag.
+
+QA: [linkage.json](report/qa/linkage.json), [linkage_match_rates.csv](report/qa/linkage_match_rates.csv), [linkage_overlap_by_year.csv](report/qa/linkage_overlap_by_year.csv), [linkage_specialty_crosstab.csv](report/qa/linkage_specialty_crosstab.csv).
+
+**Routes, in order:**
+1. **direct:** the record's own NPI (PY2015+), Luhn-valid (D17). 132.8M records.
+2. **supplement:** profile ID → Profile Supplement NPI, with 3,064 merged profiles resolved through the mapping table. 14.3M records.
+3. **learned:** profile ID → the NPI that the same profile carries in its PY2015+ records. 1.02M records. This route agrees with the supplement for all but 2 of the ~1.68M profiles found in both; the 11 profiles with two or more NPIs are not used.
+
+That leaves 233K records unlinked (0.16%). Teaching hospitals (530K records) are out of scope.
+
+**Match rates** (share of records linked to an NPI):
+
+| Program year | MD/DO | NP | PA | Other (dentists, optometrists, podiatrists…) |
+|---|---|---|---|---|
+| 2013 | 98.5% | — | — | 96.7% |
+| 2014 | 99.3% | — | — | 97.9% |
+| 2015–2020 | 99.94–99.97% | — | — | 99.8–99.9% |
+| 2021–2025 | 99.96–99.97% | 99.83–99.99% | 99.97–99.99% | 99.75–99.93% |
+
+NPs and PAs are covered recipients only from PY2021, so before that they have no records (D10).
+
+**Overlap with Part D** (descriptive: "ever" means any program year 2013–2025, so these shares say nothing about timing):
+
+| | 2013 | 2016 | 2019 | 2022 | 2024 |
+|---|---|---|---|---|---|
+| GLP-1 30-day fills from NPIs that ever appear in Open Payments | 95.6% | 96.5% | 95.7% | 94.5% | 93.3% |
+| … from NPIs that ever get a GLP-1 payment | 87.8% | 87.8% | 84.4% | 80.6% | 77.6% |
+| GLP-1 prescribers (≥ 11 claims) ever paid for a GLP-1 | 81% | 81% | 74% | 69% | 63% |
+| GLP-1 promotional $ to NPIs ever in Part D | 95.6% | 96.0% | 97.9% | 98.4% | 97.7% |
+| … to NPIs in Part D that same year | 93.4% | 91.8% | 95.2% | 95.4% | 93.4% |
+
+1.86M NPIs are linked; 1.34M (72%) appear in Part D. 320K NPIs ever received a GLP-1 payment: 294K appear in Part D, and 159K have at least one GLP-1 row with ≥ 11 claims. Unlinked GLP-1 promotional $ total $2.4M (0.5%).
+
+**Specialty agreement:** for the 1.34M NPIs in both sources, the Open Payments specialty group matches the Part D group for **91.5%**. That rises to 94.1% for GLP-1 prescribers; for Part D endocrinologists it is 90.5%. Open Payments specialties come from the recipient's taxonomy (grouping|classification|specialization); Part D uses CMS's per-year prescriber type. Most disagreements are primary care vs subspecialty: 30.1K are primary care in Open Payments but other physician in Part D, and 29.4K the reverse. Other notable ones: 2.3K are endocrinologists in Open Payments but primary care in Part D, and 5.6K the same for cardiologists. The analysis uses the Part D type (P05); P10 carries the disagreement flag.
+
+### Linkage failure modes
+
+1. **PY2013–14 profiles missing from the current Profile Supplement** (profiles never paid after 2014): 159K records unlinked. These physicians have no 2015+ records with an NPI, so they cannot be misassigned to a 2015–2024 first-payment cohort. The cost is small: missing 2013–14 pre-period payments for people who were not paid later anyway.
+2. **Merged profiles:** 3,064 secondary profile IDs, and 3,096 NPIs with several profile IDs. Both are resolved to one NPI.
+3. **Invalid NPIs** (14 NPIs fail the Luhn check, D17): linked through the profile ID, leaving 4 records unlinked.
+4. **Direct and profile routes disagree:** 36 records. The direct NPI wins.
+5. **Paid but not in Part D:** 28% of linked NPIs never have a Part D row (≥ 11 claims of any drug). They are surgeons, dentists, low-volume or non-Medicare prescribers, or prescribers whose every row is suppressed. In the panel they are "absent from Part D", not zero (P10).
+6. **Specialty conflicts** (8.5%): different sources and dates; flagged, not resolved.
+7. **No NPPES** (the download was still down): entity type, deactivation dates and practice location were not cross-checked. The DAC (P05) gives practice and specialty for 2026 only.
