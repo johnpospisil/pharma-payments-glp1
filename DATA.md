@@ -91,3 +91,55 @@ Payment records, not dollars. Full counts across all five product slots come in 
 | **Working total on SSD** | | **~20–30 GB** (329 GB free) |
 
 Prescriber names and street addresses are dropped at conversion: the analysis never needs them, and dropping them supports the no-individuals rule.
+
+## 6. Converted Open Payments (P03)
+
+Parquet under `PPG_DATA_DIR/parquet/open_payments/` (zstd, one file per program year):
+
+| Table | Path | Content |
+|---|---|---|
+| `general` | `general/program_year=YYYY/part-0.parquet` | **harmonised schema below**, all eras |
+| `research` | `research/program_year=YYYY/` | source columns (lower-cased, text), minus names/street addresses |
+| `ownership` | `ownership/program_year=YYYY/` | as research |
+| `removed_deleted` | `removed_deleted/program_year=YYYY/` | record IDs removed since the previous publication (PY2016+) |
+| `profile_supplement.parquet` | | profile ID ↔ NPI, specialty, taxonomies, license states (no names/addresses) |
+| `profile_id_mapping.parquet` | | secondary → primary profile IDs |
+
+Each zip's README is copied to `data/reference/op_readme/`. Code: `src/ppg/ingest/open_payments.py` (download), `op_convert.py` (convert), `op_reconcile.py` (checks), `op_summary.py` (table + chart). Run with `make data-open-payments`; watch with `make progress`.
+
+### Harmonised General Payments schema
+
+| Column | Type | Era A (2013–14) / A′ (2015) source | Era B (2016–25) source |
+|---|---|---|---|
+| `program_year` | int | `Program_Year` | same |
+| `record_id` | bigint | `Record_ID` | same |
+| `change_type` | text | `Change_Type` (NEW / ADD / CHANGED / UNCHANGED) | same |
+| `recipient_type` | text | `Covered_Recipient_Type` | same (NPP types from 2021) |
+| `profile_id` | bigint | `Physician_Profile_ID` | `Covered_Recipient_Profile_ID` |
+| `npi` | bigint | NULL (2013–14); `Physician_NPI` (2015) | `Covered_Recipient_NPI` |
+| `teaching_hospital_ccn`, `teaching_hospital_id` | text, bigint | same names | same |
+| `primary_types` | list<text> | `[Physician_Primary_Type]` | `Covered_Recipient_Primary_Type_1–6` (blanks dropped) |
+| `specialties` | list<text> | `[Physician_Specialty]` (pipe-separated taxonomy path) | `Covered_Recipient_Specialty_1–6` |
+| `recipient_city`, `recipient_state`, `recipient_zip5`, `recipient_country` | text | `Recipient_*` (ZIP cut to 5 digits) | same |
+| `submitting_entity`, `manufacturer_id`, `manufacturer_name`, `manufacturer_state`, `manufacturer_country` | | `*Applicable_Manufacturer_or_Applicable_GPO*` | same |
+| `amount_usd` | decimal(14,2) | `Total_Amount_of_Payment_USDollars` | same |
+| `payment_date` | date | `Date_of_Payment` (MM/DD/YYYY) | same |
+| `n_payments` | int | `Number_of_Payments_Included_in_Total_Amount` | same |
+| `form_of_payment`, `nature_of_payment` | text | same names | same |
+| `travel_state`, `travel_country` | text | `State_of_Travel`, `Country_of_Travel` | same |
+| `physician_ownership`, `charity`, `third_party_is_recipient`, `delayed_publication`, `disputed` | bool | Yes/No fields | same |
+| `third_party_recipient`, `related_product_indicator` | text | `Third_Party_Payment_Recipient_Indicator`, `Product_Indicator` | `…`, `Related_Product_Indicator` |
+| `contextual_information` | text | free text (internal use only; never published) | same |
+| `products` | list<struct{slot, covered, kind, category, name, ndc, pdi}> | drug slots 1–5 (kind = Drug), device slots 6–10 (kind = Device); no category | slots 1–5 with covered flag, kind, **therapeutic area**, name, NDC, device PDI |
+| `publication_date` | date | `Payment_Publication_Date` | same |
+
+**Dropped at conversion:** recipient first/middle/last names and suffixes, street addresses, license-state codes, teaching-hospital names and third-party entity names.
+
+### P03 results (2026-10-22)
+
+- **Converted:** 148.8M General Payments records (PY2013–2025, $39.2B), 11.0M Research, 53.9K Ownership, 162K removed/deleted IDs; 3.3 GB Parquet. Full run ≈ 5 min after download (download ≈ 15 min at 12 MB/s).
+- **Reconciliation** ([report/qa/op_reconciliation.csv](report/qa/op_reconciliation.csv)): PY2019–2025 General/Research records and dollars, disputed records and Ownership records match the June 2026 dashboard **exactly** (0.000%); PY2013–2018 all-category record counts within +0.06%, −0.02%, +0.03%, +0.07%, +0.08%, +0.74% of CMS Reports to Congress (FY2019/FY2020/FY2022, which predate the final republications).
+- **Integrity:** no duplicate `record_id` (within or across years); no removed/deleted record ID present in General; no null amounts or dates; **871 records with amount ≤ $0** and **467 with a payment date outside the program year** (left as published; handled in P06).
+- **Product placeholders:** PY2016–2020 fill empty device-ID slots with the text `N/A`. Placeholder values (`N/A`, `NA`, `NONE`, `NULL`, `-`) are treated as missing in product fields. 91–93% of records name at least one product in every year.
+- **NPI coverage:** 0% of PY2013–2014 records carry an NPI (field absent; linked via profile ID in P08); 99.4–99.7% from 2015 (the remainder are teaching hospitals).
+- **PY2024 removed/deleted file has 160,183 rows** (vs ≤ 900 in other years) — a large deletion by reporting entities between publications; the deleted records are absent from General as expected.

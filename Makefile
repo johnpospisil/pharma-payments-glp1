@@ -7,7 +7,7 @@ PY := uv run python -I
 # Ignore any other active virtualenv (e.g. ~/tf): uv always uses this project's .venv.
 unexport VIRTUAL_ENV
 
-.PHONY: all check-env check-env-local data build models figures report app test lint
+.PHONY: all check-env check-env-local data build models figures report app test lint progress data-open-payments
 
 all: check-env data build models figures report app
 
@@ -18,8 +18,8 @@ check-env:
 check-env-local:
 	$(PY) -m ppg.check_env --no-raw
 
-data: check-env
-	@echo "data: added in P03 (Open Payments), P04 (Part D), P05 (NPPES + reference)"
+data: check-env data-open-payments
+	@echo "data: P04 (Part D) and P05 (reference) targets added in their prompts"
 
 build:
 	@echo "build: added in P07-P10"
@@ -42,3 +42,13 @@ test:
 lint:
 	uv run ruff check src tests
 	uv run ruff format --check src tests
+
+# Live progress of running jobs (any terminal). WATCH=1 refreshes every 2 s; JOB=<name> filters.
+progress:
+	@$(PY) -m ppg.progress $(JOB) $(if $(WATCH),--watch,)
+
+# P03: Open Payments download -> Parquet -> reconciliation and summary
+data-open-payments: check-env
+	$(PY) -m ppg.ingest.open_payments all
+	$(PY) -m ppg.ingest.op_reconcile
+	$(PY) -m ppg.ingest.op_summary

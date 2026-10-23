@@ -1,0 +1,7 @@
+program_year,total_records_all_categories,total_dollars_all_categories_billion,source,as_of_publication,note
+2013,4610000,4.34,"CMS Annual Report to Congress on the Open Payments Program, FY2019, Table 1 (https://www.cms.gov/files/document/open-payments-2019-report-congress.pdf)",2019,"partial year Aug-Dec 2013; rounded to 0.01 million"
+2014,12120000,8.61,"CMS Open Payments FY2020 Annual Report to Congress, Table 2 (https://www.cms.gov/sites/default/files/2021-04/Open%20Payments%20FY%202020%20Annual%20Report%20to%20Congress.pdf)",2020-06,"rounded to 0.01 million"
+2015,12530000,9.09,"CMS Open Payments FY2022 Annual Report to Congress, Table 2 (https://edit.cms.gov/files/document/open-payments-fy-2022-report-congress.pdf)",2022-06,"rounded to 0.01 million"
+2016,12590000,9.78,"CMS Open Payments FY2022 Annual Report to Congress, Table 2",2022-06,"rounded to 0.01 million"
+2017,12240000,10.02,"CMS Open Payments FY2022 Annual Report to Congress, Table 2",2022-06,"rounded to 0.01 million"
+2018,11650000,10.42,"CMS Open Payments FY2022 Annual Report to Congress, Table 2",2022-06,"rounded to 0.01 million"

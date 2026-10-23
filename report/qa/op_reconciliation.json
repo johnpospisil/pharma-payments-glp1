@@ -1,0 +1,434 @@
+[
+ {
+  "program_year": 2013,
+  "metric": "all_records_rtc",
+  "ours": 4612564,
+  "published": 4610000.0,
+  "pct_diff": 0.056,
+  "tolerance_pct": 3.0,
+  "pass": true
+ },
+ {
+  "program_year": 2014,
+  "metric": "all_records_rtc",
+  "ours": 12117345,
+  "published": 12120000.0,
+  "pct_diff": -0.022,
+  "tolerance_pct": 3.0,
+  "pass": true
+ },
+ {
+  "program_year": 2015,
+  "metric": "all_records_rtc",
+  "ours": 12534136,
+  "published": 12530000.0,
+  "pct_diff": 0.033,
+  "tolerance_pct": 3.0,
+  "pass": true
+ },
+ {
+  "program_year": 2016,
+  "metric": "all_records_rtc",
+  "ours": 12598457,
+  "published": 12590000.0,
+  "pct_diff": 0.067,
+  "tolerance_pct": 3.0,
+  "pass": true
+ },
+ {
+  "program_year": 2017,
+  "metric": "all_records_rtc",
+  "ours": 12250175,
+  "published": 12240000.0,
+  "pct_diff": 0.083,
+  "tolerance_pct": 3.0,
+  "pass": true
+ },
+ {
+  "program_year": 2018,
+  "metric": "all_records_rtc",
+  "ours": 11735604,
+  "published": 11650000.0,
+  "pct_diff": 0.735,
+  "tolerance_pct": 3.0,
+  "pass": true
+ },
+ {
+  "program_year": 2019,
+  "metric": "general_records",
+  "ours": 10558933,
+  "published": 10558933.0,
+  "pct_diff": 0.0,
+  "tolerance_pct": 0.5,
+  "pass": true
+ },
+ {
+  "program_year": 2019,
+  "metric": "general_dollars",
+  "ours": 3719284386.1,
+  "published": 3719284386.1,
+  "pct_diff": 0.0,
+  "tolerance_pct": 0.5,
+  "pass": true
+ },
+ {
+  "program_year": 2019,
+  "metric": "general_disputed_records",
+  "ours": 722,
+  "published": 722.0,
+  "pct_diff": 0.0,
+  "tolerance_pct": 0.5,
+  "pass": true
+ },
+ {
+  "program_year": 2019,
+  "metric": "research_records",
+  "ours": 807295,
+  "published": 807295.0,
+  "pct_diff": 0.0,
+  "tolerance_pct": 0.5,
+  "pass": true
+ },
+ {
+  "program_year": 2019,
+  "metric": "research_dollars",
+  "ours": 6641778822.11,
+  "published": 6641778822.11,
+  "pct_diff": 0.0,
+  "tolerance_pct": 0.5,
+  "pass": true
+ },
+ {
+  "program_year": 2019,
+  "metric": "ownership_records",
+  "ours": 3049,
+  "published": 3049.0,
+  "pct_diff": 0.0,
+  "tolerance_pct": 0.5,
+  "pass": true
+ },
+ {
+  "program_year": 2020,
+  "metric": "general_records",
+  "ours": 5851438,
+  "published": 5851438.0,
+  "pct_diff": 0.0,
+  "tolerance_pct": 0.5,
+  "pass": true
+ },
+ {
+  "program_year": 2020,
+  "metric": "general_dollars",
+  "ours": 2193409440.78,
+  "published": 2193409440.78,
+  "pct_diff": 0.0,
+  "tolerance_pct": 0.5,
+  "pass": true
+ },
+ {
+  "program_year": 2020,
+  "metric": "general_disputed_records",
+  "ours": 224,
+  "published": 224.0,
+  "pct_diff": 0.0,
+  "tolerance_pct": 0.5,
+  "pass": true
+ },
+ {
+  "program_year": 2020,
+  "metric": "research_records",
+  "ours": 760295,
+  "published": 760295.0,
+  "pct_diff": 0.0,
+  "tolerance_pct": 0.5,
+  "pass": true
+ },
+ {
+  "program_year": 2020,
+  "metric": "research_dollars",
+  "ours": 7053174835.79,
+  "published": 7053174835.79,
+  "pct_diff": 0.0,
+  "tolerance_pct": 0.5,
+  "pass": true
+ },
+ {
+  "program_year": 2020,
+  "metric": "ownership_records",
+  "ours": 3555,
+  "published": 3555.0,
+  "pct_diff": 0.0,
+  "tolerance_pct": 0.5,
+  "pass": true
+ },
+ {
+  "program_year": 2021,
+  "metric": "general_records",
+  "ours": 11558469,
+  "published": 11558469.0,
+  "pct_diff": 0.0,
+  "tolerance_pct": 0.5,
+  "pass": true
+ },
+ {
+  "program_year": 2021,
+  "metric": "general_dollars",
+  "ours": 3270711175.77,
+  "published": 3270711175.77,
+  "pct_diff": 0.0,
+  "tolerance_pct": 0.5,
+  "pass": true
+ },
+ {
+  "program_year": 2021,
+  "metric": "general_disputed_records",
+  "ours": 309,
+  "published": 309.0,
+  "pct_diff": 0.0,
+  "tolerance_pct": 0.5,
+  "pass": true
+ },
+ {
+  "program_year": 2021,
+  "metric": "research_records",
+  "ours": 894317,
+  "published": 894317.0,
+  "pct_diff": 0.0,
+  "tolerance_pct": 0.5,
+  "pass": true
+ },
+ {
+  "program_year": 2021,
+  "metric": "research_dollars",
+  "ours": 8303425528.6,
+  "published": 8303425528.6,
+  "pct_diff": 0.0,
+  "tolerance_pct": 0.5,
+  "pass": true
+ },
+ {
+  "program_year": 2021,
+  "metric": "ownership_records",
+  "ours": 4191,
+  "published": 4191.0,
+  "pct_diff": 0.0,
+  "tolerance_pct": 0.5,
+  "pass": true
+ },
+ {
+  "program_year": 2022,
+  "metric": "general_records",
+  "ours": 13322266,
+  "published": 13322266.0,
+  "pct_diff": 0.0,
+  "tolerance_pct": 0.5,
+  "pass": true
+ },
+ {
+  "program_year": 2022,
+  "metric": "general_dollars",
+  "ours": 3845496173.61,
+  "published": 3845496173.61,
+  "pct_diff": 0.0,
+  "tolerance_pct": 0.5,
+  "pass": true
+ },
+ {
+  "program_year": 2022,
+  "metric": "general_disputed_records",
+  "ours": 443,
+  "published": 443.0,
+  "pct_diff": 0.0,
+  "tolerance_pct": 0.5,
+  "pass": true
+ },
+ {
+  "program_year": 2022,
+  "metric": "research_records",
+  "ours": 1011616,
+  "published": 1011616.0,
+  "pct_diff": 0.0,
+  "tolerance_pct": 0.5,
+  "pass": true
+ },
+ {
+  "program_year": 2022,
+  "metric": "research_dollars",
+  "ours": 8209863720.98,
+  "published": 8209863720.98,
+  "pct_diff": 0.0,
+  "tolerance_pct": 0.5,
+  "pass": true
+ },
+ {
+  "program_year": 2022,
+  "metric": "ownership_records",
+  "ours": 4148,
+  "published": 4148.0,
+  "pct_diff": 0.0,
+  "tolerance_pct": 0.5,
+  "pass": true
+ },
+ {
+  "program_year": 2023,
+  "metric": "general_records",
+  "ours": 14734121,
+  "published": 14734121.0,
+  "pct_diff": 0.0,
+  "tolerance_pct": 0.5,
+  "pass": true
+ },
+ {
+  "program_year": 2023,
+  "metric": "general_dollars",
+  "ours": 3328079279.62,
+  "published": 3328079279.62,
+  "pct_diff": 0.0,
+  "tolerance_pct": 0.5,
+  "pass": true
+ },
+ {
+  "program_year": 2023,
+  "metric": "general_disputed_records",
+  "ours": 251,
+  "published": 251.0,
+  "pct_diff": 0.0,
+  "tolerance_pct": 0.5,
+  "pass": true
+ },
+ {
+  "program_year": 2023,
+  "metric": "research_records",
+  "ours": 1092474,
+  "published": 1092474.0,
+  "pct_diff": 0.0,
+  "tolerance_pct": 0.5,
+  "pass": true
+ },
+ {
+  "program_year": 2023,
+  "metric": "research_dollars",
+  "ours": 8693765197.74,
+  "published": 8693765197.74,
+  "pct_diff": 0.0,
+  "tolerance_pct": 0.5,
+  "pass": true
+ },
+ {
+  "program_year": 2023,
+  "metric": "ownership_records",
+  "ours": 4426,
+  "published": 4426.0,
+  "pct_diff": 0.0,
+  "tolerance_pct": 0.5,
+  "pass": true
+ },
+ {
+  "program_year": 2024,
+  "metric": "general_records",
+  "ours": 15498687,
+  "published": 15498687.0,
+  "pct_diff": 0.0,
+  "tolerance_pct": 0.5,
+  "pass": true
+ },
+ {
+  "program_year": 2024,
+  "metric": "general_dollars",
+  "ours": 3424344413.22,
+  "published": 3424344413.22,
+  "pct_diff": 0.0,
+  "tolerance_pct": 0.5,
+  "pass": true
+ },
+ {
+  "program_year": 2024,
+  "metric": "general_disputed_records",
+  "ours": 327,
+  "published": 327.0,
+  "pct_diff": 0.0,
+  "tolerance_pct": 0.5,
+  "pass": true
+ },
+ {
+  "program_year": 2024,
+  "metric": "research_records",
+  "ours": 817215,
+  "published": 817215.0,
+  "pct_diff": 0.0,
+  "tolerance_pct": 0.5,
+  "pass": true
+ },
+ {
+  "program_year": 2024,
+  "metric": "research_dollars",
+  "ours": 8887005544.21,
+  "published": 8887005544.21,
+  "pct_diff": 0.0,
+  "tolerance_pct": 0.5,
+  "pass": true
+ },
+ {
+  "program_year": 2024,
+  "metric": "ownership_records",
+  "ours": 4834,
+  "published": 4834.0,
+  "pct_diff": 0.0,
+  "tolerance_pct": 0.5,
+  "pass": true
+ },
+ {
+  "program_year": 2025,
+  "metric": "general_records",
+  "ours": 16131856,
+  "published": 16131856.0,
+  "pct_diff": 0.0,
+  "tolerance_pct": 0.5,
+  "pass": true
+ },
+ {
+  "program_year": 2025,
+  "metric": "general_dollars",
+  "ours": 3923550962.8,
+  "published": 3923550962.8,
+  "pct_diff": 0.0,
+  "tolerance_pct": 0.5,
+  "pass": true
+ },
+ {
+  "program_year": 2025,
+  "metric": "general_disputed_records",
+  "ours": 305,
+  "published": 305.0,
+  "pct_diff": 0.0,
+  "tolerance_pct": 0.5,
+  "pass": true
+ },
+ {
+  "program_year": 2025,
+  "metric": "research_records",
+  "ours": 931959,
+  "published": 931959.0,
+  "pct_diff": 0.0,
+  "tolerance_pct": 0.5,
+  "pass": true
+ },
+ {
+  "program_year": 2025,
+  "metric": "research_dollars",
+  "ours": 9497235058.89,
+  "published": 9497235058.89,
+  "pct_diff": 0.0,
+  "tolerance_pct": 0.5,
+  "pass": true
+ },
+ {
+  "program_year": 2025,
+  "metric": "ownership_records",
+  "ours": 2646,
+  "published": 2646.0,
+  "pct_diff": 0.0,
+  "tolerance_pct": 0.5,
+  "pass": true
+ }
+]
