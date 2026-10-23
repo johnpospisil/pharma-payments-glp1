@@ -1,0 +1,29 @@
+Metric_Level,Payment_Type,Recipient_Type,Program_Year,Total_Number_of_Physicians,Total_Number_of_Non_Physician_Practitioners,Total_Payment_Amount_Physician,Total_Payment_Amount_Non_Physician_Practitioner,Mean_Total_Payment_Amount_Physician,Mean_Total_Payment_Amount_Non_Physician_Practitioner,Median_Total_Payment_Amount_Physician,Median_Total_Payment_Amount_Non_Physician_Practitioner,Total_Payment_Count_Physician,Total_Payment_Count_Non_Physician_Practitioner,Mean_Total_Payment_Count_Physician,Mean_Total_Payment_Count_Non_Physician_Practitioner,Median_Total_Payment_Count_Physician,Median_Total_Payment_Count_Non_Physician_Practitioner
+National,Research,Covered Recipient Physician,2019,7513,0,101892335.20,0.00,13562.14,0.00,1952.38,0.00,43556,0,6,0,2,0
+National,General,Covered Recipient Physician,2019,625118,0,2433781270.81,0.00,3893.31,0.00,162.92,0.00,10509389,0,17,0,4,0
+National,Research,Covered Recipient Physician,2020,7215,0,87206563.66,0.00,12086.84,0.00,1815.35,0.00,30860,0,4,0,2,0
+National,General,Covered Recipient Physician,2020,492111,0,1687784049.98,0.00,3429.68,0.00,113.93,0.00,5818681,0,12,0,3,0
+National,Research,Covered Recipient Physician,2021,5623,0,85496662.17,0.00,15204.81,0.00,2812.50,0.00,25731,0,5,0,2,0
+National,Research,Covered Recipient Non-Physician Practitioner,2021,0,146,0.00,569480.07,0.00,3900.55,0.00,444.71,0,373,0,3,0,1
+National,General,Covered Recipient Physician,2021,538771,0,2162165159.29,0.00,4013.14,0.00,142.78,0.00,7944340,0,15,0,3,0
+National,General,Covered Recipient Non-Physician Practitioner,2021,0,235622,0.00,122543516.85,0.00,520.09,0.00,116.99,0,3578840,0,15,0,3
+National,Research,Covered Recipient Physician,2022,5562,0,82933134.93,0.00,14910.67,0.00,2750.00,0.00,23384,0,4,0,2,0
+National,Research,Covered Recipient Non-Physician Practitioner,2022,0,154,0.00,515075.45,0.00,3344.65,0.00,1500.00,0,427,0,3,0,1
+National,General,Covered Recipient Physician,2022,595747,0,2561357850.69,0.00,4299.41,0.00,161.18,0.00,9038980,0,15,0,4,0
+National,General,Covered Recipient Non-Physician Practitioner,2022,0,274691,0.00,171024207.62,0.00,622.61,0.00,126.15,0,4244122,0,15,0,4
+National,Research,Covered Recipient Physician,2023,6150,0,81899140.16,0.00,13316.93,0.00,2250.00,0.00,28845,0,5,0,2,0
+National,Research,Covered Recipient Non-Physician Practitioner,2023,0,277,0.00,570256.88,0.00,2058.69,0.00,1152.42,0,1330,0,5,0,3
+National,General,Covered Recipient Physician,2023,632696,0,2316449307.28,0.00,3661.24,0.00,169.70,0.00,9685211,0,15,0,4,0
+National,General,Covered Recipient Non-Physician Practitioner,2023,0,311052,0.00,211835599.88,0.00,681.03,0.00,139.87,0,5016210,0,16,0,4
+National,Research,Covered Recipient Physician,2024,5848,0,105583689.91,0.00,18054.67,0.00,3200.00,0.00,28317,0,5,0,2,0
+National,Research,Covered Recipient Non-Physician Practitioner,2024,0,297,0.00,819092.49,0.00,2757.89,0.00,1562.06,0,1961,0,7,0,6
+National,General,Covered Recipient Physician,2024,654047,0,2503044925.94,0.00,3827.01,0.00,173.11,0.00,9965643,0,15,0,4,0
+National,General,Covered Recipient Non-Physician Practitioner,2024,0,339595,0.00,242055080.17,0.00,712.78,0.00,145.00,0,5495656,0,16,0,4
+National,Research,Covered Recipient Physician,2025,4722,0,62512736.88,0.00,13238.61,0.00,2591.78,0.00,26575,0,6,0,2,0
+National,Research,Covered Recipient Non-Physician Practitioner,2025,0,200,0.00,584754.39,0.00,2923.77,0.00,1270.00,0,1206,0,6,0,3
+National,General,Covered Recipient Physician,2025,666748,0,2624554749.77,0.00,3936.35,0.00,179.30,0.00,10129623,0,15,0,4,0
+National,General,Covered Recipient Non-Physician Practitioner,2025,0,362199,0.00,270515603.54,0.00,746.87,0.00,149.47,0,5966664,0,16,0,4
+National,Research,Covered Recipient Physician,ALL,21916,0,607524262.91,0.00,27720.58,0.00,3295.85,0.00,207268,0,9,0,3,0
+National,Research,Covered Recipient Non-Physician Practitioner,ALL,0,917,0.00,3058659.28,0.00,3335.51,0.00,1363.21,0,5297,0,6,0,3
+National,General,Covered Recipient Physician,ALL,1151592,0,16289137313.76,0.00,14144.89,0.00,381.42,0.00,63091867,0,55,0,8,0
+National,General,Covered Recipient Non-Physician Practitioner,ALL,0,552262,0.00,1017974008.06,0.00,1843.28,0.00,264.00,0,24301492,0,44,0,7

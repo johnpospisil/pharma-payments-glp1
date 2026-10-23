@@ -1,0 +1,91 @@
+Dashboard_Row_Number,Data_Metrics,PY_2019,PY_2020,PY_2021,PY_2022,PY_2023,PY_2024,PY_2025,Total
+2,Total Dollar Amount of all Payment Records,11985958767.80,10790595810.07,13301832779.25,13386925941.40,13641185630.99,13749148772.32,14670985192.09,82241323710.62
+3,Total Dollar Amount of all Payment Records - General Payments,3719284386.10,2193409440.78,3270711175.77,3845496173.61,3328079279.62,3424344413.22,3923550962.80,23704875831.90
+4,Total Dollar Amount of all Payment Records - General Payments - Disputed,748901.57,1846592.26,2371030.03,2059013.79,1354162.65,930621.88,1301839.46,10612161.64
+5,Total Dollar Amount of all Payment Records - General Payments - Undisputed,3718535484.53,2191562848.52,3268340145.74,3843437159.82,3326725116.97,3423413791.34,3922249123.34,23694263670.26
+6,Total Dollar Amount of all Payment Records - Research Payments,6641778822.11,7053174835.79,8303425528.60,8209863720.98,8693765197.74,8887005544.21,9497235058.89,57286248708.32
+7,Total Dollar Amount of all Payment Records - Research Payments - Covered Recipient,1801641668.83,1880972916.48,1896127635.04,1812777452.37,1734998129.68,1908367410.51,1941527500.18,12976412713.09
+8,Total Dollar Amount of all Payment Records - Research Payments - Non-Covered Recipient,4840137153.28,5172201919.31,6407297893.56,6397086268.61,6958767068.06,6978638133.70,7555707558.71,44309835995.23
+9,Total Dollar Amount of all Payment Records - Research Payments - Physician or Non-Covered Recipient,4942029488.48,5259408482.97,6492794555.73,6480019403.54,7040666208.22,7084221823.61,7618220295.59,44917360258.14
+10,Total Dollar Amount of all Payment Records - Research Payments - Non-Physician Practitioner or Non-Covered Recipient,4840137153.28,5172201919.31,6407867373.63,6397601344.06,6959337324.94,6979457226.19,7556292313.10,44312894654.51
+11,Total Dollar Amount of all Payment Records - Research Payments - Disputed,799696.03,4969542.66,14085501.48,6023546.95,2236953.42,1382351.35,2357715.23,31855307.12
+12,Total Dollar Amount of all Payment Records - Research Payments - Undisputed,6640979126.08,7048205293.13,8289340027.12,8203840174.03,8691528244.32,8885623192.86,9494877343.66,57254393401.20
+13,Total Dollar Amount Invested of all Payment Records - Ownership Payments,525261433.66,412086915.54,411846285.28,283309870.00,219503813.08,148959985.39,200158250.42,2201126553.37
+14,Total value of interest of all Payment Records - Ownership Payments,1624895559.59,1544011533.50,1727696074.88,1331566046.81,1619341153.63,1437798814.89,1250199170.40,1250199170.40
+15,Total Dollar Amount Invested of all Payment Records - Ownership Payments- Disputed,0.00,0.00,0.00,0.00,11600.00,0.00,0.00,11600.00
+16,Total value of interest of all Payment Records - Ownership Payments - Disputed,0.00,0.00,0.00,99992.65,60600.00,0.00,109765537.56,109765537.56
+17,Total Dollar Amount Invested of all Payment Records - Ownership Payments- Undisputed,525261433.66,412086915.54,411846285.28,283309870.00,219492213.08,148959985.39,200158250.42,2201114953.37
+18,Total value of interest of all Payment Records - Ownership Payments - Undisputed,1624895559.59,1544011533.50,1727696074.88,1331466054.16,1619280553.63,1437798814.89,1140433632.84,1140433632.84
+19,Total Number of all Payment Records,11369277,6615288,12456977,14338030,15831021,16320736,17066461,93973587
+20,Total Number of all Payment Records - General Payments,10558933,5851438,11558469,13322266,14734121,15498687,16131856,87655770
+21,Total Number of all Payment Records - General Payments - Disputed,722,224,309,443,251,327,305,2581
+22,Total Number of all Payment Records - General Payments - Undisputed,10558211,5851214,11558160,13321823,14733870,15498360,16131551,87653189
+23,Total Number of all Payment Records - Research Payments,807295,760295,894317,1011616,1092474,817215,931959,6315171
+24,Total Number of all Payment Records - Research Payments - Covered Recipient,177095,164310,150573,140071,152355,161685,175193,1121282
+25,Total Number of all Payment Records - Research Payments - Non-Covered Recipient,630200,595985,743744,871545,940119,655530,756766,5193889
+26,Total Number of all Payment Records - Research Payments - Physician or Non-Covered Recipient,673756,626845,769475,894929,968964,683847,783341,5401157
+27,Total Number of all Payment Records - Research Payments - Non-Physician Practitioner or Non-Covered Recipient,630200,595985,744117,871972,941449,657491,757972,5199186
+28,Total Number of all Payment Records - Research Payments - Disputed,113,106,117,213,133,143,160,985
+29,Total Number of all Payment Records - Research Payments - Undisputed,807182,760189,894200,1011403,1092341,817072,931799,6314186
+30,Total Number of all Payment Records - Ownership Payments,3049,3555,4191,4148,4426,4834,2646,2646
+31,Total Number of all Payment Records - Ownership Payments - Disputed,0,0,0,1,1,0,1,1
+32,Total Number of all Payment Records - Ownership Payments - Undisputed,3049,3555,4191,4147,4425,4834,2645,2645
+33,Total Number of Companies Making Payments (AM/GPO Making Payment),1810,1800,1886,1894,1933,1925,1833,2960
+34,Total Number of Physician Covered Recipients with associated payment records,626479,494202,540348,597152,634220,655554,667898,1152778
+35,Total Dollar Amount of all Payment Records to Physicians,4160569165.60,3319002147.14,3975357896.34,3975857032.43,4017689601.07,4046427430.74,3937266657.05,18146860747.07
+36,Total Dollar Amount of all Payment Records to Physicians - General Payments,2433781270.81,1687784049.98,2162165159.29,2561357850.69,2316449307.28,2503044925.94,2624554749.77,16289137313.76
+37,Total Dollar Amount of all Payment Records to Physicians - General Payments - Disputed,261893.63,1586033.78,1737352.20,266728.61,450903.97,291232.14,218743.31,4812887.64
+38,Total Dollar Amount of all Payment Records to Physicians - General Payments - Undisputed,2433519377.18,1686198016.20,2160427807.09,2561091122.08,2315998403.31,2502753693.80,2624336006.46,16284324426.12
+39,Total Dollar Amount of all Payment Records to Physicians - Research Payments,101892335.20,87206563.66,85496662.17,82933134.93,81899140.16,105583689.91,62512736.88,607524262.91
+40,Total Dollar Amount of all Payment Records to Physicians - Research Payments - Disputed,14026.26,0.00,1250.00,1000.00,308.20,0.00,60647.65,77232.11
+41,Total Dollar Amount of all Payment Records to Physicians - Research Payments - Undisputed,101878308.94,87206563.66,85495412.17,82932134.93,81898831.96,105583689.91,62452089.23,607447030.80
+42,Total Dollar Amount Invested of all Payment Records to Physicians - Ownership Payments,525261433.66,412086915.54,411846285.28,283309870.00,219503813.08,148959985.39,200158250.42,2201126553.37
+43,Total value of interest of all Payment Records to Physician - Ownership Payments,1624895559.59,1544011533.50,1727696074.88,1331566046.81,1619341153.63,1437798814.89,1250199170.40,1250199170.40
+44,Total Dollar Amount Invested of all Payment Records to Physicians - Ownership Payments - Disputed,0.00,0.00,0.00,0.00,11600.00,0.00,0.00,11600.00
+45,Total value of interest of all Payment Records to Physicians - Ownership Payments - Disputed,0.00,0.00,0.00,99992.65,60600.00,0.00,109765537.56,109765537.56
+46,Total Dollar Amount of all Payment Records to Physicians - Ownership Payments - Undisputed,525261433.66,412086915.54,411846285.28,283309870.00,219492213.08,148959985.39,200158250.42,2201114953.37
+47,Total value of interest of all Payment Records to Physicians - Ownership Payments - Undisputed,1624895559.59,1544011533.50,1727696074.88,1331466054.16,1619280553.63,1437798814.89,1140433632.84,1140433632.84
+48,Total Number of all Payment Records to Physicians,10555994,5853096,7974262,9066512,9718482,9998794,10158844,63301781
+49,Total Number of all Payment Records to Physicians - General Payments,10509389,5818681,7944340,9038980,9685211,9965643,10129623,63091867
+50,Total Number of all Payment Records to Physicians - General Payments - Disputed,630,153,147,313,189,235,174,1841
+51,Total Number of all Payment Records to Physicians - General Payments - Undisputed,10508759,5818528,7944193,9038667,9685022,9965408,10129449,63090026
+52,Total Number of all Payment Records to Physicians - Research Payments,43556,30860,25731,23384,28845,28317,26575,207268
+53,Total Number of all Payment Records to Physicians - Research Payments - Disputed,10,0,1,1,1,0,20,33
+54,Total Number of all Payment Records to Physicians - Research Payments - Undisputed,43546,30860,25730,23383,28844,28317,26555,207235
+55,Total Number of all Payment Records to Physicians - Ownership Payments,3049,3555,4191,4148,4426,4834,2646,2646
+56,Total Number of all Payment Records to Physicians - Ownership Payments - Disputed,0,0,0,1,1,0,1,1
+57,Total Number of all Payment Records to Physicians - Ownership Payments - Undisputed,3049,3555,4191,4147,4425,4834,2645,2645
+58,Total Number of Non-Physician Practitioner Covered Recipients with associated payment records,0,0,235651,274727,311113,339670,362261,552346
+59,Total Dollar Amount of all Payment Records to Non-Physician Practitioners,0.00,0.00,123112996.92,171539283.07,212405856.76,242874172.66,271100357.93,1021032667.34
+60,Total Dollar Amount of all Payment Records to Non-Physician Practitioners - General Payments,0.00,0.00,122543516.85,171024207.62,211835599.88,242055080.17,270515603.54,1017974008.06
+61,Total Dollar Amount of all Payment Records to Non-Physician Practitioners - General Payments - Disputed,0.00,0.00,18.52,747.36,3539.54,309.50,166.27,4781.19
+62,Total Dollar Amount of all Payment Records to Non-Physician Practitioners - General Payments - Undisputed,0.00,0.00,122543498.33,171023460.26,211832060.34,242054770.67,270515437.27,1017969226.87
+63,Total Dollar Amount of all Payment Records to Non-Physician Practitioners - Research Payments,0.00,0.00,569480.07,515075.45,570256.88,819092.49,584754.39,3058659.28
+64,Total Dollar Amount of all Payment Records to Non-Physician Practitioners - Research Payments - Disputed,0.00,0.00,0.00,0.00,0.00,0.00,0.00,0.00
+65,Total Dollar Amount of all Payment Records to Non-Physician Practitioners - Research Payments - Undisputed,0.00,0.00,569480.07,515075.45,570256.88,819092.49,584754.39,3058659.28
+66,Total Number of all Payment Records to Non-Physician Practitioners,0,0,3579213,4244549,5017540,5497617,5967870,24306789
+67,Total Number of all Payment Records to Non-Physician Practitioners - General Payments,0,0,3578840,4244122,5016210,5495656,5966664,24301492
+68,Total Number of all Payment Records to Non-Physician Practitioners - General Payments - Disputed,0,0,1,15,3,8,3,30
+69,Total Number of all Payment Records to Non-Physician Practitioners - General Payments - Undisputed,0,0,3578839,4244107,5016207,5495648,5966661,24301462
+70,Total Number of all Payment Records to Non-Physician Practitioners - Research Payments,0,0,373,427,1330,1961,1206,5297
+71,Total Number of all Payment Records to Non-Physician Practitioners - Research Payments - Disputed,0,0,0,0,0,0,0,0
+72,Total Number of all Payment Records to Non-Physician Practitioners - Research Payments - Undisputed,0,0,373,427,1330,1961,1206,5297
+73,Total Number of Teaching Hospitals with associated payment records,1207,1224,1252,1247,1236,1308,1327,1522
+74,Total Dollar Amount of all Payment Records to Teaching Hospitals,2985252448.92,2299391743.62,2796063992.43,2842443357.29,2452323105.10,2481209035.22,2906910618.40,18763594300.98
+75,Total Dollar Amount of all Payment Records to Teaching Hospitals - General Payments,1285503115.29,505625390.80,986002499.63,1113114115.30,799794372.46,679244407.11,1028480609.49,6397764510.08
+76,Total Dollar Amount of all Payment Records to Teaching Hospitals - General Payments - Disputed,487007.94,260558.48,633659.31,1791537.82,899719.14,639080.24,1082929.88,5794492.81
+77,Total Dollar Amount of all Payment Records to Teaching Hospitals - General Payments - Undisputed,1285016107.35,505364832.32,985368840.32,1111322577.48,798894653.32,678605326.87,1027397679.61,6391970017.27
+78,Total Dollar Amount of all Payment Records to Teaching Hospitals - Research Payments,1699749333.63,1793766352.82,1810061492.80,1729329241.99,1652528732.64,1801964628.11,1878430008.91,12365829790.90
+79,Total Dollar Amount of all Payment Records to Teaching Hospitals - Research Payments - Disputed,540057.58,4391941.84,13901093.89,4742237.87,1740168.37,1365326.35,2294032.58,28974858.48
+80,Total Dollar Amount of all Payment Records to Teaching Hospitals - Research Payments - Undisputed,1699209276.05,1789374410.98,1796160398.91,1724587004.12,1650788564.27,1800599301.76,1876135976.33,12336854932.42
+81,Total Number of all Payment Records to Teaching Hospitals,183083,166207,159758,155424,154880,168795,182981,1171128
+82,Total Number of all Payment Records to Teaching Hospitals - General Payments,49544,32757,35289,39164,32700,37388,35569,262411
+83,Total Number of all Payment Records to Teaching Hospitals - General Payments - Disputed,92,71,161,115,59,84,128,710
+84,Total Number of all Payment Records to Teaching Hospitals - General Payments - Undisputed,49452,32686,35128,39049,32641,37304,35441,261701
+85,Total Number of all Payment Records to Teaching Hospitals - Research Payments,133539,133450,124469,116260,122180,131407,147412,908717
+86,Total Number of all Payment Records to Teaching Hospitals - Research Payments - Disputed,74,70,91,200,115,138,138,826
+87,Total Number of all Payment Records to Teaching Hospitals - Research Payments - Undisputed,133465,133380,124378,116060,122065,131269,147274,907891
+88,Total Dollar Amount of all Payment Records - Research Payments - Non-Covered Recipient Entity,4839504583.75,5161954128.87,6406341659.39,6396620175.16,6957005511.45,6977352274.85,7555038795.57,44293817129.04
+89,Total Dollar Amount of all Payment Records - Research Payments - Non-Covered Recipient Individual,632569.53,10247790.44,956234.17,466093.45,1761556.61,1285858.85,668763.14,16018866.19
+90,Total Number of all Payment Records - Research Payments - Non-Covered Recipient Entity,628405,595074,743720,871461,940033,655460,756108,5190261
+91,Total Number of all Payment Records - Research Payments - Non-Covered Recipient Individual,1795,911,24,84,86,70,658,3628
