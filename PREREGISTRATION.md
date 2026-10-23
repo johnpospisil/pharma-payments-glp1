@@ -203,3 +203,11 @@ Each deviation after locking gets a dated entry: what changed, why, and whether 
 - **Change 1, specialty:** specialty is the physician's modal specialty group (the one that defines the sample, P10). It is time-invariant, not the year-specific label, which occasionally reads NP or other for a physician.
 - **Change 2, territories:** physicians practising in US territories (PR, VI, GU, other non-state codes) in any year are excluded, because they have no Census region. That is 5,233 physicians in the Ozempic frame.
 - **No other change.**
+
+**DEV-3 (2026-10-23, after the primary estimates were seen): HonestDiD computed from a universal-base-period event study.**
+- **The problem:** the registered specification uses a varying base period. Its pre-treatment estimates are then year-on-year changes, not deviations from a common reference year. HonestDiD's relative-magnitudes bounds assume the latter, as the `did` and HonestDiD authors recommend (`base_period = "universal"`).
+- **What was seen:** the first HonestDiD numbers, computed from the varying-base estimates, were seen. They are discarded as invalid, not reported.
+- **Change:** CS is re-estimated with `base_period = "universal"` (everything else unchanged), and HonestDiD and the event-study chart use those estimates.
+- **What stays registered:** post-treatment ATT(g, t), and hence every primary ATT, are identical under both base periods. The joint pre-trend Wald test is reported for both.
+
+**Exploratory (not registered), added 2026-10-23:** CS without covariates. The fixed-effects cross-checks (imputation, Sun & Abraham, TWFE) gave estimates about twice the primary ones, and this run shows how much of the gap the covariate adjustment explains. It does not replace the primary estimate (§10: disagreement is reported, not resolved by choosing an estimator).
