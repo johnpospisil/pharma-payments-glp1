@@ -205,7 +205,7 @@ All 290 `prscrbr_type` labels seen in Part D 2013–2024 → 8 groups by ordered
 
 Code: `src/ppg/ingest/quality.py` (`python -m ppg.ingest.quality`); tests: `tests/test_data_quality.py` (marked `data`, skipped when the Parquet is absent; `make test-fast` skips them). Results: [report/qa/data_quality.json](report/qa/data_quality.json).
 
-| Check | Open Payments (148.8M records) | Part D by Provider and Drug (303.3M rows) |
+| Check | Open Payments (148.8M records) | Part D by Provider and Drug (304.3M rows) |
 |---|---|---|
 | Duplicate keys | 0 record IDs | 0 NPI × brand × generic × year |
 | Missing amount / date / drug name | 0 / 0 | 0 drug names |
