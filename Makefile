@@ -7,7 +7,7 @@ PY := uv run python -I
 # Ignore any other active virtualenv (e.g. ~/tf): uv always uses this project's .venv.
 unexport VIRTUAL_ENV
 
-.PHONY: all check-env check-env-local data build models figures report app test lint progress data-open-payments
+.PHONY: all check-env check-env-local data build models figures report app test lint progress data-open-payments data-partd
 
 all: check-env data build models figures report app
 
@@ -18,8 +18,8 @@ check-env:
 check-env-local:
 	$(PY) -m ppg.check_env --no-raw
 
-data: check-env data-open-payments
-	@echo "data: P04 (Part D) and P05 (reference) targets added in their prompts"
+data: check-env data-open-payments data-partd
+	@echo "data: P05 (reference) target added in its prompt"
 
 build:
 	@echo "build: added in P07-P10"
@@ -52,3 +52,8 @@ data-open-payments: check-env
 	$(PY) -m ppg.ingest.open_payments all
 	$(PY) -m ppg.ingest.op_reconcile
 	$(PY) -m ppg.ingest.op_summary
+
+# P04: Part D (+ Part B by Provider) download -> Parquet -> suppression QA
+data-partd: check-env
+	$(PY) -m ppg.ingest.partd all
+	$(PY) -m ppg.ingest.partd_qa

@@ -1,0 +1,3 @@
+Prscrbr_NPI,Prscrbr_Last_Org_Name,Prscrbr_First_Name,Prscrbr_City,Prscrbr_State_Abrvtn,Prscrbr_State_FIPS,Prscrbr_Type,Prscrbr_Type_Src,Brnd_Name,Gnrc_Name,Tot_Clms,Tot_30day_Fills,Tot_Day_Suply,Tot_Drug_Cst,Tot_Benes,GE65_Sprsn_Flag,GE65_Tot_Clms,GE65_Tot_30day_Fills,GE65_Tot_Drug_Cst,GE65_Tot_Day_Suply,GE65_Bene_Sprsn_Flag,GE65_Tot_Benes
+1234567893,SECRETLAST,SECRETFIRST,SECRETCITY,IL,17,Endocrinology,S,Ozempic,Semaglutide,40,52.5,1575,"48,210.55",,*,,,,,*,
+1234567893,SECRETLAST,SECRETFIRST,SECRETCITY,IL,17,Endocrinology,S,Metformin Hcl,Metformin Hcl,120,140,4200,812.10,35,,90,100,600.00,3000,,26
