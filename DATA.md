@@ -464,3 +464,20 @@ Overall: observed 3.5%, suppressed 71.8%, known zero 0.06%, absent 14.9%, pre-la
 - Open Payments recipient class, and whether the Open Payments specialty agrees with Part D;
 - first payment year (any company), first GLP-1 promotional year, ever a GLP-1 speaker;
 - the filter flags `f1`–`f4`, `physician` and `high_volume`.
+
+## 14. Descriptive EDA (P11, 2026-10-23)
+
+Code: `src/ppg/viz/figures.py` (`make figures`); notebook: [notebooks/01_eda.ipynb](notebooks/01_eda.ipynb); tests: `tests/test_figures.py`. Numbers: [eda.json](report/qa/eda.json); tables: `report/qa/eda_*.csv`. This is descriptive only: no prescribing comparisons after payment (rule 6). Every shown cell has ≥ 11 prescribers.
+
+| Chart | File | Headline |
+|---|---|---|
+| 3: Part D GLP-1 spending by brand | [chart3_partd_glp1_spending.png](report/figures/chart3_partd_glp1_spending.png) | Gross cost $0.55B (2013) → $27.9B (2024); Ozempic 46% of 2024, then Mounjaro $6.3B and Trulicity $5.5B |
+| 4: payments by brand and type | [chart4_payments_by_brand_type.png](report/figures/chart4_payments_by_brand_type.png) | Speaker fees 59%, meals 28%, travel 7%, consulting 6%; each launch brings a two-to-three-year burst; Bydureon peaked at $24.8M in 2014 |
+| 6: state hex map, $ per Part D enrollee with diabetes (2024) | [chart6_state_payments_per_diabetic.png](report/figures/chart6_state_payments_per_diabetic.png) | US $2.59; highest CO $4.25, TN $4.22, MD $3.98, TX $3.83, NC $3.75; lowest MT $0.41, VT $0.48, WY $0.56, IA $0.63, NM $0.65 (10× spread) |
+| 7: Lorenz curve | [chart7_lorenz_payments.png](report/figures/chart7_lorenz_payments.png) | 279,833 paid prescribers (2013–24 total): top 1% received 76% of $, top 10% 88%, bottom half 1.5%; Gini 0.92; median $109. In 2024 alone: top 1% 62%, Gini 0.81 |
+| Secondary question 3: payments vs diabetes workload by specialty (2024) | [chart_specialty_payments_vs_load.png](report/figures/chart_specialty_payments_vs_load.png) | GLP-1 promotional $ per 1,000 other diabetes-drug claims: endocrinology $1,421, cardiology $774, primary care $234, NPs $283, PAs $294, nephrology $63. Share paid that year: endocrinology 45%, PAs 29%, NPs 26%, primary care 25% |
+
+Caveats:
+- **Spending is gross**, before manufacturer rebates (large for GLP-1s).
+- **The state map uses the recipient's state** in Open Payments. Its denominator applies 65+ diabetes prevalence to all Part D enrollees (DATA.md §8).
+- **The Lorenz curve covers paid prescribers only.** Most diabetes prescribers receive nothing in a given year.

@@ -30,7 +30,8 @@ models:
 	@echo "models: added in P13-P19"
 
 figures:
-	@echo "figures: added in P11 and P21"
+	$(PY) -m ppg.viz.figures
+	@echo "figures: final theme in P21"
 
 report:
 	@echo "report: added in P22"
