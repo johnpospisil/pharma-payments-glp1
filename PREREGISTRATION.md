@@ -197,3 +197,9 @@ Each deviation after locking gets a dated entry: what changed, why, and whether 
 - **Why it is an improvement:** R `did` also provides the influence functions that HonestDiD and the joint pre-trend test need.
 - **Cross-checks:** the Python ones are now the Sun & Abraham and imputation (did2s) estimators in pyfixest. R `did` with never-treated controls stays as a sensitivity.
 - **Unbalanced panel:** prescriber-years dropped under D25 make the panel unbalanced. It is estimated with `allow_unbalanced_panel = TRUE`; a balanced-panel subsample (physicians observed in every year of the brand's window) is added as a sensitivity.
+
+**DEV-2 (2026-10-23, before any estimate was seen): covariate coding for estimability.**
+- **What happened:** test fits gave singular design matrices in many group-time cells. In the unbalanced-panel (repeated cross-section) DR estimator, outcome regressions are also fitted within each treated cohort, and small cohorts lacked some covariate levels.
+- **Change 1, specialty:** specialty is the physician's modal specialty group (the one that defines the sample, P10). It is time-invariant, not the year-specific label, which occasionally reads NP or other for a physician.
+- **Change 2, territories:** physicians practising in US territories (PR, VI, GU, other non-state codes) in any year are excluded, because they have no Census region. That is 5,233 physicians in the Ozempic frame.
+- **No other change.**
