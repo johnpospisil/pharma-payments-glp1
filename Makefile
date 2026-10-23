@@ -7,7 +7,7 @@ PY := uv run python -I
 # Ignore any other active virtualenv (e.g. ~/tf): uv always uses this project's .venv.
 unexport VIRTUAL_ENV
 
-.PHONY: all check-env check-env-local data build models figures report app test lint progress data-open-payments data-partd
+.PHONY: all check-env check-env-local data build models figures report app test lint progress data-open-payments data-partd data-reference
 
 all: check-env data build models figures report app
 
@@ -18,8 +18,7 @@ check-env:
 check-env-local:
 	$(PY) -m ppg.check_env --no-raw
 
-data: check-env data-open-payments data-partd
-	@echo "data: P05 (reference) target added in its prompt"
+data: check-env data-open-payments data-partd data-reference
 
 build:
 	@echo "build: added in P07-P10"
@@ -57,3 +56,9 @@ data-open-payments: check-env
 data-partd: check-env
 	$(PY) -m ppg.ingest.partd all
 	$(PY) -m ppg.ingest.partd_qa
+
+# P05: reference data (practices, taxonomy, diabetes prevalence, enrollment) + derived tables
+data-reference: check-env
+	$(PY) -m ppg.ingest.reference
+	$(PY) -m ppg.build.specialty
+	$(PY) -m ppg.build.denominators

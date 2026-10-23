@@ -176,3 +176,27 @@ Parquet under `PPG_DATA_DIR/parquet/{partd,partb}/<table>/year=YYYY/part-0.parqu
 - **Generic liraglutide** appears in 2024 (62K claims; generic Victoza) and must not be mapped to the Victoza brand.
 - **Wegovy** appears in 2024 (211K claims, CV-risk indication); **Zepbound** has 353 claims in 2024. Tanzeum (albiglutide) was withdrawn by 2019; Adlyxin is negligible.
 - Trulicity's first Part D year is 2014 (215 claims; launched Sept 2014); Ozempic 2018; Rybelsus 2019 (400 claims); Mounjaro 2022.
+
+## 8. Reference data (P05, 2026-10-23)
+
+Parquet under `PPG_DATA_DIR/parquet/reference/`; raw CSVs on Drive3 `raw/reference/`. Code: `src/ppg/ingest/reference.py`, `src/ppg/build/specialty.py`, `src/ppg/build/denominators.py`; run with `make data-reference`.
+
+| Table | Rows | Use | Notes |
+|---|---|---|---|
+| `dac.parquet` (Doctors and Clinicians, **Oct 2026 snapshot**) | 3.63M rows; 1.64M NPIs; 83.7K group practices | practice ID (`org_pac_id`), group size, graduation year, specialty | names, addresses, phone and **group names dropped**. Covers 86.9% of 2024 GLP-1 prescribers (78.9% with a group) but only 71.3% / 61.2% of 2016 prescribers (attrition). Practice membership is **as of 2026, not as of each year**; archived snapshots are blocked for automated download (HTTP 403). Median 1 group per clinician (p90 = 2). |
+| `nucc_taxonomy.parquet` | 883 | taxonomy code labels | v26.1 |
+| `places_county.parquet` (CDC PLACES 2025) | 3,143 counties | diabetes / obesity prevalence (crude and age-adjusted, 18+) | context only |
+| `brfss_diabetes_65plus.parquet` | 792 (54 jurisdictions × 2011–2025) | % of adults 65+ ever told they have diabetes | CDC BRFSS dataset dttw-5yxu |
+| `enrollment_state_year.parquet` | 767 | Medicare and **Part D enrollees** (`prscrptn_drug_tot_benes`) by state and year, 2013–2025 | annual rows of Medicare Monthly Enrollment |
+| `gv_state_county.parquet` | 35,762 | Original Medicare utilisation context, 2014–2024 | no diabetes measure |
+| `state_diabetic_partd.parquet` | 754 state-years | **denominator for chart 6** | see below |
+
+**NPPES:** still unavailable on 2026-10-23 ("down for maintenance until further notice"). Not needed: Part D `prscrbr_type` (CMS-derived, per year) is the primary specialty, DAC supplies practice IDs. `python -m ppg.ingest.reference nppes` re-checks.
+
+### Specialty groups ([data/reference/specialty_groups.csv](data/reference/specialty_groups.csv))
+
+All 290 `prscrbr_type` labels seen in Part D 2013–2024 → 8 groups by ordered keyword rules plus reviewed overrides (`src/ppg/build/specialty.py`; tests in `tests/test_specialty.py`). Share of all GLP-1 claims 2013–2024: **primary-care physicians 54.9%** (family practice, internal medicine, general practice, geriatrics, preventive, osteopathic manipulative), **nurse practitioners 18.0%**, **endocrinology 17.5%**, **physician assistants 6.3%**, other physicians 1.3%, other non-physicians 0.8% (pharmacists, CNS, students…), cardiology 0.7%, nephrology 0.4%. Labels change between years (e.g. "Cardiovascular Disease (Cardiology)" appears only in 2016), and an NPI's label can change across years; P10 assigns one group per NPI (modal label, ties → most recent).
+
+### Diabetes denominator for the state map
+
+`est_diabetic_partd = Part D enrollees (state, year) × BRFSS % of adults 65+ with diabetes`, prevalence pooled over years t−2..t weighted by sample size (single-year state samples are ~200–800). 2024: **12.96M** estimated diabetic Part D enrollees (≈24% of 54.4M); lowest prevalence MT 16.6%, VT 16.7%, CO 17.8%; highest PR 38.6%. Covers 50 states + DC + PR (+ GU, VI); no estimate for AS, MP and foreign/unknown rows. Approximation: 65+ prevalence applied to all Part D enrollees (≈13% are under 65).

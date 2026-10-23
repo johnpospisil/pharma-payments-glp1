@@ -1,0 +1,291 @@
+prscrbr_type,specialty_group,rule,prescribers_all_years,prescribers_2024,glp1_claims_all_years,first_year,last_year
+Family Practice,primary_care_physician,primary_care_physician:family practice,156581,105120,18462093.0,2013,2024
+Internal Medicine,primary_care_physician,primary_care_physician:internal medicine,212231,104182,16849427.0,2013,2024
+Nurse Practitioner,nurse_practitioner,nurse_practitioner:nurse practitioner,322281,229976,11853077.0,2013,2024
+Endocrinology,endocrinology,endocrinology:endocrin,9017,6527,11577494.0,2013,2024
+Physician Assistant,physician_assistant,physician_assistant:physician assistant,157455,114276,4155218.0,2013,2024
+General Practice,primary_care_physician,primary_care_physician:general practice,17062,7210,678311.0,2013,2024
+Cardiology,cardiology,cardiology:cardiol,31538,18782,419093.0,2013,2024
+Pharmacist,other_nonphysician,other_nonphysician:pharmac,53333,25988,272196.0,2013,2024
+Nephrology,nephrology,nephrology:nephrolog,12280,9003,260200.0,2013,2024
+Emergency Medicine,other_physician,default,67296,40243,207015.0,2013,2024
+Geriatric Medicine,primary_care_physician,primary_care_physician:geriatric medicine,3702,1814,194415.0,2013,2024
+Hospitalist,other_physician,override,26934,14498,144352.0,2013,2024
+Student in an Organized Health Care Education/Training Program,other_nonphysician,other_nonphysician:student,158206,30207,129663.0,2013,2024
+Pediatric Medicine,other_physician,default,16581,3361,101142.0,2013,2024
+Certified Clinical Nurse Specialist,other_nonphysician,other_nonphysician:clinic,4365,1644,94888.0,2013,2024
+General Surgery,other_physician,default,33557,15891,56983.0,2013,2024
+Interventional Cardiology,cardiology,cardiology:cardiol,6261,4694,49322.0,2013,2024
+Pulmonary Disease,other_physician,default,14581,9233,48737.0,2013,2024
+Infectious Disease,other_physician,default,8335,5546,48256.0,2013,2024
+Osteopathic Manipulative Medicine,primary_care_physician,primary_care_physician:osteopathic manipulative medicine,1544,526,47435.0,2013,2024
+Gastroenterology,other_physician,default,19186,14294,38647.0,2013,2024
+Obstetrics & Gynecology,other_physician,default,40007,24311,34328.0,2013,2024
+Specialist,other_physician,override,6222,1049,21514.0,2013,2024
+Preventive Medicine,primary_care_physician,primary_care_physician:preventive medicine,1881,584,21161.0,2013,2024
+Family Medicine,primary_care_physician,primary_care_physician:family medicine,2826,699,16478.0,2013,2024
+Rheumatology,other_physician,default,7094,5224,16220.0,2013,2024
+Registered Nurse,other_nonphysician,other_nonphysician:nurse,2473,476,16182.0,2013,2024
+Psychiatry,other_physician,default,42378,20488,15745.0,2013,2024
+Physical Medicine and Rehabilitation,other_physician,default,12130,7591,15042.0,2013,2024
+Advanced Heart Failure and Transplant Cardiology,cardiology,cardiology:heart failure,951,800,14817.0,2017,2024
+Neurology,other_physician,default,21005,13695,8753.0,2013,2024
+Hospice and Palliative Care,other_physician,default,2160,1124,8723.0,2013,2024
+Hematology-Oncology,other_physician,default,12152,8746,8080.0,2016,2024
+Sports Medicine,other_physician,default,2400,1691,7424.0,2013,2024
+Cardiovascular Disease (Cardiology),cardiology,cardiology:cardiovascular,19743,0,6416.0,2016,2016
+Anesthesiology,other_physician,default,11447,3517,5992.0,2013,2024
+Interventional Pain Management,other_physician,default,3203,1476,5737.0,2013,2024
+Critical Care (Intensivists),other_physician,default,3402,1531,5444.0,2013,2024
+Psychiatry & Neurology,other_physician,default,37384,10755,5129.0,2013,2024
+Diagnostic Radiology,other_physician,default,6079,1198,4941.0,2013,2024
+Addiction Medicine,other_physician,default,816,382,4714.0,2013,2024
+Nuclear Medicine,other_physician,default,299,77,4679.0,2013,2024
+Clinical Cardiac Electrophysiology,cardiology,cardiology:electrophysiolog,3160,2573,4601.0,2017,2024
+Pain Management,other_physician,default,4746,2732,3682.0,2013,2024
+Allergy/ Immunology,other_physician,default,4953,3579,3672.0,2016,2024
+Sleep Medicine,other_physician,default,1056,723,3559.0,2013,2024
+Legal Medicine,other_physician,default,341,45,2989.0,2013,2024
+Naturopath,other_nonphysician,other_nonphysician:naturopath,1824,1068,2801.0,2013,2024
+Radiation Oncology,other_physician,default,5833,3680,2766.0,2013,2024
+Dermatology,other_physician,default,18016,13550,2709.0,2013,2024
+Gynecological Oncology,other_physician,default,1344,860,2652.0,2016,2024
+Otolaryngology,other_physician,default,13607,9296,2441.0,2013,2024
+Certified Nurse Midwife,other_nonphysician,other_nonphysician:nurse,3641,1212,2364.0,2013,2024
+Ophthalmology,other_physician,default,25155,18260,2126.0,2013,2024
+Thoracic Surgery,other_physician,default,2631,910,2012.0,2013,2024
+Orthopedic Surgery,other_physician,default,29625,18934,1905.0,2013,2024
+Obstetrics/Gynecology,other_physician,default,31068,0,1562.0,2013,2016
+Clinic or Group Practice,other_nonphysician,other_nonphysician:clinic,175,16,1559.0,2016,2024
+Undefined Physician type,other_nonphysician,other_nonphysician:undefined,645,138,1556.0,2016,2024
+Medical Oncology,other_physician,default,5783,3431,1533.0,2013,2024
+Urology,other_physician,default,14375,10221,1445.0,2013,2024
+Neurosurgery,other_physician,default,5577,2779,1401.0,2013,2024
+Orthopaedic Surgery,other_physician,default,6933,1233,1181.0,2013,2024
+Clinic/Center,other_nonphysician,other_nonphysician:clinic,558,91,1038.0,2013,2024
+Hematology/Oncology,other_physician,default,8747,0,1018.0,2013,2015
+Plastic and Reconstructive Surgery,other_physician,default,5874,2638,945.0,2013,2024
+Vascular Surgery,other_physician,default,4689,3087,854.0,2013,2024
+Licensed Practical Nurse,other_nonphysician,other_nonphysician:nurse,190,14,830.0,2013,2024
+Dentist,other_nonphysician,other_nonphysician:dentist,179258,110731,726.0,2013,2024
+Geriatric Psychiatry,other_physician,default,384,158,717.0,2013,2024
+Cardiac Surgery,other_physician,default,1698,411,635.0,2013,2024
+Pathology,other_physician,default,1395,205,632.0,2013,2024
+Pharmacy,other_nonphysician,other_nonphysician:pharmac,212,64,613.0,2013,2024
+Neuropsychiatry,other_physician,default,5630,1891,579.0,2013,2024
+Chiropractic,other_nonphysician,other_nonphysician:chiropract,474,28,499.0,2013,2024
+Interventional Radiology,other_physician,default,1419,554,451.0,2013,2024
+Peripheral Vascular Disease,other_physician,default,123,47,319.0,2013,2024
+Integrative Medicine,other_physician,default,21,16,316.0,2022,2024
+Podiatry,other_nonphysician,other_nonphysician:podiat,20025,14093,305.0,2013,2024
+Multispecialty Clinic/Group Practice,other_nonphysician,other_nonphysician:clinic,179,0,295.0,2013,2016
+Allergy/Immunology,other_physician,default,4048,0,269.0,2013,2016
+General Acute Care Hospital,other_nonphysician,other_nonphysician:hospital,718,24,205.0,2013,2024
+Other Clinic/Center,other_nonphysician,other_nonphysician:clinic,23,6,192.0,2018,2024
+Neurological Surgery,other_physician,default,1146,237,178.0,2013,2024
+"Neuromusculoskeletal Medicine, Sports Medicine",other_physician,default,112,22,163.0,2013,2024
+Case Manager/Care Coordinator,other_nonphysician,other_nonphysician:case manag,82,9,154.0,2013,2024
+Thoracic Surgery (Cardiothoracic Vascular Surgery),other_physician,default,476,79,152.0,2013,2024
+Medical Genetics and Genomics,other_physician,default,150,82,139.0,2018,2024
+Optometry,other_nonphysician,other_nonphysician:optomet,40570,27653,133.0,2013,2024
+Colorectal Surgery (Proctology),other_physician,default,2033,1507,133.0,2016,2024
+Anesthesiology Assistant,other_nonphysician,other_nonphysician:assistant,11,3,130.0,2016,2024
+Pain Medicine,other_physician,default,151,0,126.0,2019,2022
+Personal Emergency Response Attendant,other_nonphysician,other_nonphysician:attendant,165,22,122.0,2013,2024
+Plastic Surgery,other_physician,default,1750,700,116.0,2013,2024
+Hospital,other_nonphysician,other_nonphysician:hospital,244,11,115.0,2017,2024
+Colon & Rectal Surgery,other_physician,default,328,42,98.0,2013,2024
+Acupuncturist,other_nonphysician,other_nonphysician:acupunct,185,26,85.0,2013,2024
+Licensed Clinical Social Worker,other_nonphysician,other_nonphysician:clinic,321,12,83.0,2013,2024
+Program of All-Inclusive Care for the Elderly (PACE) Provider Organization,other_nonphysician,other_nonphysician:program,2,1,76.0,2020,2024
+Certified Registered Nurse Anesthetist (CRNA),other_nonphysician,other_nonphysician:nurse,489,143,66.0,2016,2024
+"Psychologist, Clinical",other_nonphysician,other_nonphysician:psycholog,438,161,61.0,2016,2024
+Midwife,other_nonphysician,other_nonphysician:midwife,295,51,56.0,2013,2024
+Undersea and Hyperbaric Medicine,other_physician,default,143,85,53.0,2018,2024
+Behavior Analyst,other_nonphysician,other_nonphysician:analyst,29,5,52.0,2017,2024
+,other_nonphysician,missing,15,2,50.0,2018,2024
+Hematology,other_physician,default,1523,799,49.0,2013,2024
+Military Health Care Provider,other_nonphysician,other_nonphysician:military health care provider,124,31,49.0,2013,2024
+Physical Medicine & Rehabilitation,other_physician,default,97,31,48.0,2013,2024
+Rehabilitation Agency,other_nonphysician,other_nonphysician:agency,51,0,43.0,2013,2017
+Health Maintenance Organization,other_nonphysician,other_nonphysician:organization,19,1,43.0,2013,2024
+"Specialist/Technologist, Health Information",other_nonphysician,other_nonphysician:technologist,3,0,32.0,2018,2020
+Unknown Physician Specialty Code,other_nonphysician,other_nonphysician:unknown,253,0,30.0,2013,2015
+Counselor,other_nonphysician,other_nonphysician:counsel,728,9,27.0,2013,2024
+Hematopoietic Cell Transplantation and Cellular Therapy,other_physician,override,209,130,25.0,2018,2024
+Surgery,other_physician,default,1365,200,17.0,2013,2024
+CRNA,other_nonphysician,other_nonphysician:crna,368,0,16.0,2013,2016
+"Medical Genetics, Ph.D. Medical Genetics",other_nonphysician,other_nonphysician:ph.d,64,11,16.0,2013,2024
+Ambulatory Surgical Center,other_nonphysician,other_nonphysician:center,24,8,14.0,2013,2024
+Preferred Provider Organization,other_nonphysician,other_nonphysician:organization,18,3,14.0,2013,2024
+Oral Surgery (Dentist only),other_nonphysician,other_nonphysician:oral,8297,5440,13.0,2017,2024
+Physical Therapist in Private Practice,other_nonphysician,other_nonphysician:therap,90,9,13.0,2016,2024
+Anesthesiologist Assistants,other_nonphysician,other_nonphysician:assistant,15,0,13.0,2013,2016
+Hand Surgery,other_physician,default,2210,1399,12.0,2013,2024
+Surgical Oncology,other_physician,default,1437,682,12.0,2013,2024
+Psychologist,other_nonphysician,other_nonphysician:psycholog,178,16,12.0,2013,2024
+Adult Congenital Heart Disease,cardiology,cardiology:congenital heart,68,50,12.0,2019,2024
+Contractor,other_nonphysician,other_nonphysician:contractor,49,5,12.0,2013,2024
+Oral Surgery (dentists only),other_nonphysician,other_nonphysician:oral,6047,0,11.0,2013,2015
+Radiology,other_physician,default,127,8,11.0,2013,2024
+Specialist/Technologist,other_nonphysician,other_nonphysician:technologist,53,8,11.0,2013,2024
+Registered Dietitian or Nutrition Professional,other_nonphysician,other_nonphysician:dietit,24,3,11.0,2017,2024
+Homeopath,other_nonphysician,other_nonphysician:homeopath,14,2,11.0,2013,2024
+Oral Surgery (Dentists only),other_nonphysician,other_nonphysician:oral,5196,0,0.0,2016,2016
+Maxillofacial Surgery,other_nonphysician,override,2014,692,0.0,2013,2024
+Cardiac Electrophysiology,cardiology,cardiology:electrophysiolog,1848,0,0.0,2013,2016
+Clinical Cardiatric Electrophysiology,cardiology,cardiology:electrophysiolog,1831,0,0.0,2016,2016
+Colorectal Surgery (formerly proctology),other_physician,default,1377,0,0.0,2013,2015
+Oral & Maxillofacial Surgery,other_nonphysician,override,1025,600,0.0,2013,2024
+Gynecological/Oncology,other_physician,default,975,0,0.0,2013,2015
+Micrographic Dermatologic Surgery,other_physician,default,426,366,0.0,2020,2024
+Psychologist (billing independently),other_nonphysician,other_nonphysician:psycholog,306,0,0.0,2013,2016
+Physical Therapist,other_nonphysician,other_nonphysician:therap,214,0,0.0,2013,2016
+Dental Hygienist,other_nonphysician,other_nonphysician:dental,201,146,0.0,2013,2024
+Clinical Psychologist,other_nonphysician,other_nonphysician:clinic,189,0,0.0,2013,2015
+Speech Language Pathologist,other_nonphysician,other_nonphysician:speech,121,4,0.0,2013,2024
+Hospital (Dmercs Only),other_nonphysician,other_nonphysician:hospital,113,0,0.0,2013,2016
+Marriage & Family Therapist,other_nonphysician,other_nonphysician:therap,91,0,0.0,2013,2022
+Occupational therapist,other_nonphysician,other_nonphysician:therap,84,0,0.0,2013,2016
+Social Worker,other_nonphysician,other_nonphysician:social work,78,3,0.0,2013,2024
+Psychoanalyst,other_nonphysician,other_nonphysician:psychoanalyst,65,7,0.0,2013,2024
+Licensed Professional Counselor,other_nonphysician,other_nonphysician:counsel,62,38,0.0,2023,2024
+Medical Genetics,other_physician,default,50,0,0.0,2013,2018
+Occupational Therapist in Private Practice,other_nonphysician,other_nonphysician:therap,42,2,0.0,2016,2024
+Rehabilitation Practitioner,other_nonphysician,other_nonphysician:practitioner,42,5,0.0,2013,2024
+Unknown Supplier/Provider,other_nonphysician,other_nonphysician:unknown,42,0,0.0,2013,2015
+Independent Medical Examiner,other_physician,default,41,8,0.0,2013,2024
+Registered Dietician/Nutrition Professional,other_nonphysician,other_nonphysician:nutrition,40,0,0.0,2013,2016
+Physical Therapy Assistant,other_nonphysician,other_nonphysician:therap,38,1,0.0,2013,2024
+Community Health Worker,other_nonphysician,other_nonphysician:worker,37,5,0.0,2013,2024
+"Specialist/Technologist, Other",other_nonphysician,other_nonphysician:technologist,31,5,0.0,2013,2024
+Massage Therapist,other_nonphysician,other_nonphysician:massage,30,1,0.0,2013,2024
+Pediatrics,other_physician,default,28,3,0.0,2013,2024
+Epileptologists,other_physician,default,25,25,0.0,2024,2024
+Occupational Therapy Assistant,other_nonphysician,other_nonphysician:therap,25,1,0.0,2013,2024
+Clinical Pharmacology,other_physician,override,25,6,0.0,2013,2024
+Mass Immunization Roster Biller,other_nonphysician,other_nonphysician:roster,24,0,0.0,2013,2015
+Chronic Disease Hospital,other_nonphysician,other_nonphysician:hospital,24,0,0.0,2013,2018
+Community/Behavioral Health,other_nonphysician,other_nonphysician:oral,23,6,0.0,2013,2024
+Oral Medicinist,other_nonphysician,other_nonphysician:oral,23,11,0.0,2015,2024
+Durable Medical Equipment & Medical Supplies,other_nonphysician,other_nonphysician:equipment,22,6,0.0,2013,2024
+Clinical Neuropsychologist,other_nonphysician,other_nonphysician:clinic,22,0,0.0,2013,2023
+Medical Toxicology,other_physician,default,21,9,0.0,2018,2024
+Pharmacy Technician,other_nonphysician,other_nonphysician:pharmac,20,3,0.0,2013,2024
+Audiologist (billing independently),other_nonphysician,other_nonphysician:audiolog,20,0,0.0,2013,2015
+Licensed Vocational Nurse,other_nonphysician,other_nonphysician:nurse,19,1,0.0,2013,2024
+"Emergency Medical Technician, Basic",other_nonphysician,other_nonphysician:emergency medical,19,1,0.0,2013,2024
+Unknown Supplier/Provider Specialty,other_nonphysician,other_nonphysician:unknown,19,5,0.0,2016,2024
+Technician/Technologist,other_nonphysician,other_nonphysician:technician,17,0,0.0,2013,2022
+Technician,other_nonphysician,other_nonphysician:technician,15,2,0.0,2013,2024
+Optician,other_nonphysician,other_nonphysician:optician,14,0,0.0,2013,2020
+Home Health Aide,other_nonphysician,other_nonphysician:home health,14,1,0.0,2013,2024
+Behavioral Analyst,other_nonphysician,other_nonphysician:oral,14,0,0.0,2013,2016
+Nutritionist,other_nonphysician,other_nonphysician:nutrition,13,2,0.0,2013,2024
+Denturist,other_nonphysician,other_nonphysician:denturist,13,6,0.0,2013,2024
+Slide Preparation Facility,other_nonphysician,other_nonphysician:slide preparation,13,0,0.0,2013,2023
+Public Health Welfare Agency,other_nonphysician,other_nonphysician:agency,11,0,0.0,2013,2016
+Marriage and Family Therapist,other_nonphysician,other_nonphysician:therap,11,7,0.0,2023,2024
+Developmental Therapist,other_nonphysician,other_nonphysician:therap,10,0,0.0,2013,2023
+Phlebology,other_physician,default,10,1,0.0,2013,2024
+Home Health,other_nonphysician,other_nonphysician:home health,9,1,0.0,2013,2024
+Exclusive Provider Organization,other_nonphysician,other_nonphysician:organization,9,1,0.0,2013,2024
+Religious Nonmedical Nursing Personnel,other_nonphysician,other_nonphysician:personnel,9,1,0.0,2013,2024
+"Assistant, Podiatric",other_nonphysician,other_nonphysician:assistant,8,0,0.0,2015,2021
+Chore Provider,other_nonphysician,other_nonphysician:chore,8,1,0.0,2013,2024
+Health Educator,other_nonphysician,other_nonphysician:health educator,8,0,0.0,2013,2018
+Clinical Medical Laboratory,other_nonphysician,other_nonphysician:clinic,8,1,0.0,2013,2024
+Electrodiagnostic Medicine,other_physician,default,8,1,0.0,2013,2024
+SNF (Dmercs Only),other_nonphysician,other_nonphysician:snf,8,0,0.0,2013,2016
+Mechanotherapist,other_nonphysician,other_nonphysician:therap,7,0,0.0,2013,2019
+Dental Assistant,other_nonphysician,other_nonphysician:dental,7,3,0.0,2013,2024
+Case Management,other_nonphysician,other_nonphysician:case manag,7,0,0.0,2013,2018
+Naprapath,other_nonphysician,other_nonphysician:naprapath,7,2,0.0,2013,2024
+Hearing Instrument Specialist,other_nonphysician,other_nonphysician:hearing instrument,7,0,0.0,2013,2021
+"Genetic Counselor, MS",other_nonphysician,other_nonphysician:counsel,7,0,0.0,2013,2016
+Nurse's Aide,other_nonphysician,other_nonphysician:nurse,7,0,0.0,2013,2021
+Radiologic Technologist,other_nonphysician,other_nonphysician:technologist,6,0,0.0,2013,2017
+Mass Immunizer Roster Biller,other_nonphysician,other_nonphysician:roster,6,3,0.0,2016,2024
+Prosthetist,other_nonphysician,other_nonphysician:prosthetist,6,0,0.0,2013,2022
+Substance Abuse Rehabilitation Facility,other_nonphysician,other_nonphysician:facility,6,2,0.0,2013,2024
+Point of Service,other_nonphysician,other_nonphysician:point of service,6,0,0.0,2013,2018
+Oral and Maxillofacial Pathology,other_nonphysician,other_nonphysician:oral,6,6,0.0,2024,2024
+Public Health or Welfare Agency,other_nonphysician,other_nonphysician:agency,6,2,0.0,2017,2024
+Advanced Practice Dental Therapist,other_nonphysician,other_nonphysician:dental,5,3,0.0,2015,2024
+Homemaker,other_nonphysician,other_nonphysician:homemaker,5,1,0.0,2015,2024
+Rehabilitation Counselor,other_nonphysician,other_nonphysician:counsel,5,0,0.0,2013,2015
+Military Hospital,other_nonphysician,other_nonphysician:hospital,4,0,0.0,2014,2017
+Local Education Agency (LEA),other_nonphysician,other_nonphysician:agency,4,0,0.0,2015,2023
+"Emergency Medical Technician, Paramedic",other_nonphysician,other_nonphysician:emergency medical,4,0,0.0,2013,2023
+Audiologist,other_nonphysician,other_nonphysician:audiolog,4,0,0.0,2016,2021
+"Lactation Consultant, Non-RN",other_nonphysician,other_nonphysician:consultant,4,0,0.0,2014,2020
+Skilled Nursing Facility,other_nonphysician,other_nonphysician:facility,3,2,0.0,2013,2024
+"Residential Treatment Facility, Emotionally Disturbed Children",other_nonphysician,other_nonphysician:residential,3,0,0.0,2013,2017
+"Nursing Facility, Other (Dmercs Only)",other_nonphysician,other_nonphysician:facility,3,0,0.0,2013,2016
+"Respiratory Therapist, Registered",other_nonphysician,other_nonphysician:therap,3,0,0.0,2015,2018
+Doula,other_nonphysician,other_nonphysician:doula,3,0,0.0,2014,2023
+Orofacial Pain,other_nonphysician,other_nonphysician:orofacial,3,3,0.0,2024,2024
+"Respiratory Therapist, Certified",other_nonphysician,other_nonphysician:therap,3,0,0.0,2013,2017
+Peer Specialist,other_nonphysician,other_nonphysician:peer specialist,3,2,0.0,2018,2024
+Other Nursing Facility,other_nonphysician,other_nonphysician:facility,3,0,0.0,2017,2019
+Voluntary Health or Charitable Agency,other_nonphysician,other_nonphysician:agency,2,0,0.0,2017,2021
+Psychiatric Residential Treatment Facility,other_nonphysician,other_nonphysician:residential,2,0,0.0,2013,2015
+Voluntary Health or Charitable Agencies,other_nonphysician,other_nonphysician:agencies,2,0,0.0,2013,2013
+Medicare Diabetes Preventive Program,other_nonphysician,override,2,0,0.0,2019,2019
+"Specialist/Technologist, Pathology",other_nonphysician,other_nonphysician:technologist,2,0,0.0,2017,2018
+Non-emergency Medical Transport (VAN),other_nonphysician,other_nonphysician:emergency medical,2,0,0.0,2013,2013
+Licensed Psychiatric Technician,other_nonphysician,other_nonphysician:technician,2,0,0.0,2014,2015
+Veterinarian,other_nonphysician,other_nonphysician:veterinarian,2,0,0.0,2017,2022
+Radiology Practitioner Assistant,other_nonphysician,other_nonphysician:practitioner,2,0,0.0,2013,2016
+"Technician, Health Information",other_nonphysician,other_nonphysician:technician,2,1,0.0,2013,2024
+Driver,other_nonphysician,other_nonphysician:driver,2,0,0.0,2013,2022
+"Spec/Tech, Cardiovascular",cardiology,cardiology:cardiovascular,2,0,0.0,2014,2016
+Oral Medicine,other_nonphysician,other_nonphysician:oral,2,2,0.0,2024,2024
+Assisted Living Facility,other_nonphysician,other_nonphysician:facility,2,0,0.0,2013,2022
+Centralized Flu,other_nonphysician,other_nonphysician:centralized flu,2,0,0.0,2014,2020
+Day Training/Habilitation Specialist,other_nonphysician,other_nonphysician:day training,2,0,0.0,2013,2016
+Adult Companion,other_nonphysician,other_nonphysician:companion,2,0,0.0,2013,2021
+Nursing Care,other_nonphysician,other_nonphysician:nursing care,2,0,0.0,2013,2022
+Prosthodontics,other_nonphysician,other_nonphysician:odontics,2,2,0.0,2024,2024
+"Spec/Tech, Pathology",other_nonphysician,other_nonphysician:spec/tech,2,0,0.0,2013,2016
+"Midwife, Lay",other_nonphysician,other_nonphysician:midwife,2,1,0.0,2016,2024
+Respite Care,other_nonphysician,other_nonphysician:respite,2,2,0.0,2013,2024
+All Other Suppliers,other_nonphysician,other_nonphysician:supplier,2,0,0.0,2013,2013
+Nursing Home Administrator,other_nonphysician,other_nonphysician:administrator,2,0,0.0,2013,2022
+"Emergency Medical Technician, Intermediate",other_nonphysician,other_nonphysician:emergency medical,2,0,0.0,2014,2019
+Eyewear Supplier,other_nonphysician,other_nonphysician:supplier,2,1,0.0,2020,2024
+Radiation Therapy Center,other_nonphysician,other_nonphysician:therap,1,1,0.0,2024,2024
+Custodial Care Facility,other_nonphysician,other_nonphysician:facility,1,0,0.0,2013,2013
+Home Delivered Meals,other_nonphysician,other_nonphysician:meals,1,0,0.0,2019,2019
+"Community Based Residential Treatment Facility, Mental Illness",other_nonphysician,other_nonphysician:residential,1,0,0.0,2013,2013
+Prevention Professional,other_nonphysician,other_nonphysician:prevention professional,1,1,0.0,2024,2024
+Recreation Therapist,other_nonphysician,other_nonphysician:therap,1,0,0.0,2013,2014
+"Technician, Cardiology",cardiology,cardiology:cardiol,1,0,0.0,2013,2019
+Lodging,other_nonphysician,other_nonphysician:lodging,1,0,0.0,2015,2023
+Individual Certified Prosthetist-Orthotist,other_nonphysician,other_nonphysician:prosthetist,1,0,0.0,2016,2016
+Independent Diagnostic Testing Facility (IDTF),other_nonphysician,other_nonphysician:facility,1,0,0.0,2022,2023
+Dental Therapist,other_nonphysician,other_nonphysician:dental,1,1,0.0,2016,2024
+"Technician, Pathology",other_nonphysician,other_nonphysician:technician,1,0,0.0,2017,2017
+"Medical Supply Company, Other",other_nonphysician,other_nonphysician:supply company,1,0,0.0,2014,2014
+Orthotic Fitter,other_nonphysician,other_nonphysician:orthotic,1,0,0.0,2015,2015
+"Residential Treatment Facility, Mental Retardation and/or Developmental Dis",other_nonphysician,other_nonphysician:residential,1,0,0.0,2015,2015
+"Community Based Residential Treatment, Mental Retardation and/or Developmen",other_nonphysician,other_nonphysician:residential,1,0,0.0,2013,2013
+Dietary Manager,other_nonphysician,other_nonphysician:dietary,1,0,0.0,2015,2016
+Ambulance Service Supplier,other_nonphysician,other_nonphysician:supplier,1,0,0.0,2013,2013
+"Day Training, Developmentally Disabled Services",other_nonphysician,other_nonphysician:day training,1,0,0.0,2013,2013
+Oxygen supplier,other_nonphysician,other_nonphysician:supplier,1,0,0.0,2020,2020
+In Home Supportive Care,other_nonphysician,other_nonphysician:in home,1,0,0.0,2013,2013
+Prosthetic/Orthotic Supplier,other_nonphysician,other_nonphysician:orthotic,1,0,0.0,2020,2020
+Kinesiotherapist,other_nonphysician,other_nonphysician:therap,1,0,0.0,2015,2015
+"Residential Treatment Facility, Physical Disabilities",other_nonphysician,other_nonphysician:residential,1,0,0.0,2020,2023
+Intensive Cardiac Rehabilitation,other_physician,default,1,1,0.0,2019,2024
+"Dietetic Technician, Registered",other_nonphysician,other_nonphysician:technician,1,0,0.0,2017,2018
+Clinical Laboratory,other_nonphysician,other_nonphysician:clinic,1,0,0.0,2018,2019
+Indian Health Service/Tribal/Urban Indian Health (I/T/U) Pharmacy,other_nonphysician,other_nonphysician:pharmac,1,0,0.0,2013,2013
+Periodontics,other_nonphysician,other_nonphysician:odontics,1,1,0.0,2024,2024
+Dental Laboratory Technician,other_nonphysician,other_nonphysician:dental,1,1,0.0,2013,2024
+Opioid Treatment Program,other_nonphysician,other_nonphysician:program,1,1,0.0,2024,2024
+Orthotist,other_nonphysician,other_nonphysician:orthotist,1,0,0.0,2018,2018
+"Sleep Specialist, PhD",other_nonphysician,other_nonphysician:phd,1,0,0.0,2015,2017
+Non-Pharmacy Dispensing Site,other_nonphysician,other_nonphysician:pharmac,1,0,0.0,2013,2013
+Specialist/Technologist Cardiovascular,cardiology,cardiology:cardiovascular,1,0,0.0,2021,2021
