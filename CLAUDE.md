@@ -20,7 +20,7 @@ Project brief: [02-pharma-payments-glp1.md](02-pharma-payments-glp1.md) (the sou
    - **Data issues / surprises:** anything odd, and how it was handled
    - **Questions before the next prompt:** decisions only the user can make (0–3), each with a recommended answer
    - **Next:** the next prompt ID and anything to check before running it (e.g. "mount Drive3")
-5. When a prompt is finished and its findings are approved, tick its box and add a dated one-line result next to it. When every prompt in a phase is ticked, add "✅ DONE" to the phase heading. Record decisions in the Decisions table.
+5. When a prompt is finished and its findings are approved, tick its box and add a dated one-line result next to it. When every prompt in a phase is ticked, add "✅ DONE" to the phase heading **in the same edit that ticks the last prompt**. Record decisions in the Decisions table.
 6. **Pre-registration (P12) is locked before any model compares exposed and unexposed prescribers after exposure.** Descriptive work before P12 must not compute post-payment prescribing contrasts. Later changes go in a dated "Deviations" section of `PREREGISTRATION.md`, never as silent edits.
 
 ## Working conventions
@@ -60,7 +60,7 @@ Project brief: [02-pharma-payments-glp1.md](02-pharma-payments-glp1.md) (the sou
 
 ## Prompt list
 
-### Phase 0: Setup and scope
+### Phase 0: Setup and scope ✅ DONE
 
 - [x] **P00: Repo scaffold.** _Done 2026-10-22: uv + Python 3.12, 24 tests pass, CI green; private repo johnpospisil/pharma-payments-glp1; Quarto 1.10.19 + Homebrew R 4.6.1 (did, fixest, HonestDiD) working; Drive3 1.2 TB / SSD 329 GB free._ `git init`; `pyproject.toml` with `uv` and pinned dependencies (duckdb, polars, pyarrow, pyfixest, differences, statsmodels, linearmodels, matplotlib, plotly, httpx, pytest, ruff); a `Makefile` with targets `check-env data build models figures report app test all`; the `src/ppg/` layout from brief §7; `src/ppg/config.py` reading `PPG_RAW_DIR` and `PPG_DATA_DIR` from `.env`; `.gitignore` excluding data and `.env`; `make check-env`, which reports whether Drive3 is mounted, free space on both disks, and Python/R/DuckDB versions. Install Quarto if it's missing (`brew install --cask quarto`). Create a **private** GitHub repo `johnpospisil/pharma-payments-glp1` with `gh` and push. Add CI (ruff + pytest on fixtures only).
   **Deliverables:** repo URL; `make check-env` output; the package/version list; anything that failed to install.
