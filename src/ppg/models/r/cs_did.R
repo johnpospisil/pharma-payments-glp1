@@ -52,20 +52,31 @@ if (length(pre) > 0) {
   wald <- list(stat = stat, df = length(pre), p = pchisq(stat, length(pre), lower.tail = FALSE))
 }
 
-# HonestDiD (Rambachan & Roth): relative magnitudes, average of e = 0..3
+# HonestDiD (Rambachan & Roth), on the average of e = 0..3. Pre-periods e = -4..-2 only
+# (long pre-windows make the C-LF solver fail numerically). Breakdown = smallest Mbar whose
+# robust CI includes 0; NA rows mean "not established", never "robust".
 honest <- NULL
-keep <- which(e >= -5 & e <= 3 & e != -1)
+keep <- which(e >= -4 & e <= 3 & e != -1)
 ek <- e[keep]; npre <- sum(ek < 0); npost <- sum(ek >= 0)
 if (npre >= 1 && npost >= 1) {
   lvec <- rep(1 / npost, npost)
-  orig <- constructOriginalCS(betahat = es$att.egt[keep], sigma = V[keep, keep],
-                              numPrePeriods = npre, numPostPeriods = npost, l_vec = lvec)
+  bh <- es$att.egt[keep]; sg <- V[keep, keep]
+  orig <- constructOriginalCS(betahat = bh, sigma = sg, numPrePeriods = npre,
+                              numPostPeriods = npost, l_vec = lvec)
   rm <- createSensitivityResults_relativeMagnitudes(
-    betahat = es$att.egt[keep], sigma = V[keep, keep], numPrePeriods = npre,
-    numPostPeriods = npost, l_vec = lvec, Mbarvec = seq(0, 2, by = 0.25))
-  breakdown <- suppressWarnings(min(rm$Mbar[rm$lb <= 0 & rm$ub >= 0]))
-  honest <- list(original = as.list(orig), rm = rm, breakdown_mbar = breakdown)
+    betahat = bh, sigma = sg, numPrePeriods = npre, numPostPeriods = npost, l_vec = lvec,
+    Mbarvec = seq(0, 2, by = 0.25), gridPoints = 2000)
+  ok <- !is.na(rm$lb) & !is.na(rm$ub)
+  covers0 <- ok & rm$lb <= 0 & rm$ub >= 0
+  breakdown <- if (any(covers0)) min(rm$Mbar[covers0]) else if (all(ok)) Inf else NA
+  # smoothness (Delta^SD): M = 0 allows the pre-trend to continue linearly after treatment
+  sd <- tryCatch(createSensitivityResults(
+    betahat = bh, sigma = sg, numPrePeriods = npre, numPostPeriods = npost, l_vec = lvec,
+    Mvec = c(0, 0.0025, 0.005, 0.01)), error = function(err) NULL)
+  honest <- list(window = ek, original = as.list(orig), rm = rm, breakdown_mbar = breakdown,
+                 smoothness = sd)
 }
+vrange <- which(e >= -7 & e <= 4)
 
 gt <- data.frame(group = a$group, t = a$t, att = a$att, se = a$se)
 res <- list(
@@ -78,6 +89,7 @@ res <- list(
   overall_0_3 = list(att = o03$overall.att, se = o03$overall.se),
   overall_1_3 = list(att = o13$overall.att, se = o13$overall.se),
   pretrend_wald = wald, honestdid = honest,
+  event_vcov = list(e = e[vrange], beta = es$att.egt[vrange], V = V[vrange, vrange]),
   cohorts = as.data.frame(table(d$g[!duplicated(d$npi)]))
 )
 write_json(res, out, auto_unbox = TRUE, digits = 10, pretty = TRUE)

@@ -211,3 +211,9 @@ Each deviation after locking gets a dated entry: what changed, why, and whether 
 - **What stays registered:** post-treatment ATT(g, t), and hence every primary ATT, are identical under both base periods. The joint pre-trend Wald test is reported for both.
 
 **Exploratory (not registered), added 2026-10-23:** CS without covariates. The fixed-effects cross-checks (imputation, Sun & Abraham, TWFE) gave estimates about twice the primary ones, and this run shows how much of the gap the covariate adjustment explains. It does not replace the primary estimate (§10: disagreement is reported, not resolved by choosing an estimator).
+
+**DEV-3 addendum (2026-10-23): HonestDiD window and supplementary bound.**
+- **The problem:** with all available pre-periods (up to e = −7), the relative-magnitudes C-LF solver returned no interval (NA) for most M̄ values for Trulicity and Ozempic. A breakdown value computed from those rows would have been spurious.
+- **Window:** HonestDiD now uses pre-periods e = −4…−2 (e = −1 is the reference), the common practice for short, well-estimated pre-windows.
+- **Breakdown rule:** the breakdown is reported only when every row solves.
+- **Supplementary:** the smoothness restriction (ΔSD), whose M = 0 case lets the estimated pre-trend continue linearly after treatment, is reported alongside. Rising pre-trends were seen for all three brands, and the natural question is whether the post-payment change exceeds a continuation of that trend.

@@ -294,6 +294,15 @@ def report() -> dict:
         for b in PRIMARY_BRANDS
         if (QA / f"crosscheck_{b}.json").exists()
     }
+
+    def load(tag: str) -> dict:
+        return {
+            b: json.loads((QA / f"{tag}_{b}.json").read_text())
+            for b in PRIMARY_BRANDS
+            if (QA / f"{tag}_{b}.json").exists()
+        }
+
+    uni, nocov = load("universal"), load("nocov")
     rows, pvals = [], {}
     for b, r in prim.items():
         o = r["overall_0_3"]
@@ -314,12 +323,28 @@ def report() -> dict:
                 "se_1_3": r["overall_1_3"]["se"],
                 "relative_to_pre_mean": o["att"] / base if base else None,
                 "pre_mean": base,
-                "pretrend_p": (r.get("pretrend_wald") or {}).get("p"),
-                "honest_breakdown_mbar": (r.get("honestdid") or {}).get("breakdown_mbar"),
+                "pretrend_p_varying": (r.get("pretrend_wald") or {}).get("p"),
+                "pretrend_p_universal": (uni.get(b, {}).get("pretrend_wald") or {}).get("p"),
+                # HonestDiD from the universal-base event study only (DEV-3)
+                "honest_breakdown_mbar": (uni.get(b, {}).get("honestdid") or {}).get(
+                    "breakdown_mbar"
+                ),
                 "physicians": r["frame"]["physicians"],
                 "treated": r["frame"]["treated_physicians"],
             }
         )
+        if b in nocov:
+            x = nocov[b]["overall_0_3"]
+            rows.append(
+                {
+                    "brand": b,
+                    "estimator": "CS without covariates (exploratory)",
+                    "att_0_3": x["att"],
+                    "se": x["se"],
+                    "ci_low": x["att"] - 1.96 * x["se"],
+                    "ci_high": x["att"] + 1.96 * x["se"],
+                }
+            )
         for key, label in (
             ("imputation_0_3", "Imputation (BJS / did2s)"),
             ("sunab_0_3", "Sun & Abraham"),
@@ -340,17 +365,17 @@ def report() -> dict:
     tab = pd.DataFrame(rows)
     adj = holm(pvals)
     tab["p"] = [
-        pvals[b] if e.startswith("CS") else None
+        pvals[b] if e == "CS (R did, primary)" else None
         for b, e in zip(tab.brand, tab.estimator, strict=True)
     ]
     tab["p_holm"] = [
-        adj[b] if e.startswith("CS") else None
+        adj[b] if e == "CS (R did, primary)" else None
         for b, e in zip(tab.brand, tab.estimator, strict=True)
     ]
-    prim_ci = tab[tab.estimator.str.startswith("CS")].set_index("brand")
+    prim_ci = tab[tab.estimator == "CS (R did, primary)"].set_index("brand")
     tab["agrees_with_primary"] = [
         None
-        if e.startswith("CS") or e.startswith("TWFE")
+        if e == "CS (R did, primary)" or e.startswith("TWFE")
         else bool(
             prim_ci.loc[b, "ci_low"] <= a <= prim_ci.loc[b, "ci_high"]
             and np.sign(a) == np.sign(prim_ci.loc[b, "att_0_3"])
@@ -364,14 +389,15 @@ def report() -> dict:
                 "brand": b,
                 "e": int(e["e"]),
                 "att": e["att"],
-                "se": e["se"],
+                "se": e.get("se", 0.0),  # reference year e = -1 has no SE
                 "se_cluster_if": e["se_cluster_if"],
                 "crit_val": r["crit_val_event"],
             }
-            for b, r in prim.items()
+            for b, r in (uni or prim).items()
             for e in r["event"]
         ]
     )
+    events["base_period"] = "universal" if uni else "varying"
     events.to_csv(config.QA_DIR / "event_study_event_time.csv", index=False, float_format="%.6f")
     hero_chart(events, prim)
     out = {
@@ -379,6 +405,14 @@ def report() -> dict:
         "holm": adj,
         "sesoi_pp": 0.02,
         "types": _types_summary(),
+        "honestdid": {b: u.get("honestdid") for b, u in uni.items()},
+        "pretrend_wald": {
+            b: {
+                "varying": prim[b].get("pretrend_wald"),
+                "universal": uni.get(b, {}).get("pretrend_wald"),
+            }
+            for b in prim
+        },
     }
     (config.QA_DIR / "event_study.json").write_text(json.dumps(out, indent=1, default=float))
     return out
@@ -394,8 +428,7 @@ def _types_summary() -> dict:
         t = payment_type(df)
         g = df.groupby("npi").g.first()
         counts = t[t.index.isin(g[g > 0].index)].value_counts().to_dict()
-        r = {"first_year_type_counts": {k: int(v) for k, v in counts.items()},
-             "estimable": False}  # fmt: skip
+        r = {"first_year_type_counts": {k: int(v) for k, v in counts.items()}, "estimable": False}
         for kind in ("meals_only", "speaker_consulting"):
             f = QA / f"type_{kind}_{b}.json"
             if f.exists():
