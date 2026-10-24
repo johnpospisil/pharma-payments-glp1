@@ -1,0 +1,116 @@
+{
+ "chart3": {
+  "partd_glp1_cost_by_year": {
+   "2013": 0.55,
+   "2014": 0.792,
+   "2015": 1.112,
+   "2016": 1.65,
+   "2017": 2.456,
+   "2018": 3.675,
+   "2019": 5.411,
+   "2020": 7.457,
+   "2021": 10.253,
+   "2022": 14.203,
+   "2023": 22.598,
+   "2024": 27.895
+  },
+  "share_ozempic_2024": 0.4648121723502317
+ },
+ "chart4": {
+  "glp1_promo_usd_by_type_share": {
+   "usd_speaker": 0.5936,
+   "usd_food_beverage": 0.2793,
+   "usd_travel": 0.0655,
+   "usd_consulting": 0.0601,
+   "usd_other": 0.0015
+  }
+ },
+ "chart6": {
+  "usd_per_diabetic_us": 2.587658327796303,
+  "masked_states": [
+   "ID",
+   "ME",
+   "OR",
+   "VT"
+  ],
+  "top5_states": {
+   "CO": 4.246,
+   "TN": 4.221,
+   "MD": 3.981,
+   "TX": 3.834,
+   "NC": 3.751
+  },
+  "bottom5_states": {
+   "MN": 0.674,
+   "NM": 0.646,
+   "IA": 0.631,
+   "WY": 0.564,
+   "MT": 0.414
+  },
+  "max_to_min_ratio": 10.258396881113386
+ },
+ "chart7": {
+  "npis": 279833,
+  "top1_share": 0.7570584823244874,
+  "top10_share": 0.8839710502567183,
+  "bottom50_share": 0.014856162644163912,
+  "gini": 0.9210644073409279,
+  "median_usd": 108.62,
+  "p99_usd": 5239.7777866666565,
+  "top1_speaker_share": 0.7771484780652961,
+  "top1_fee_share": 0.8608605546857836
+ },
+ "concentration_2024": {
+  "npis": 125328,
+  "top1_share": 0.6205452798758535,
+  "top10_share": 0.7458690936786883,
+  "bottom50_share": 0.05246282357747834,
+  "gini": 0.8119342836847405,
+  "median_usd": 61.05,
+  "p99_usd": 642.9673
+ },
+ "specialty_2024": {
+  "nephrology": {
+   "prescribers": 6872,
+   "share_paid": 0.1564,
+   "usd_per_1000_dm_claims": 62.71,
+   "usd_per_prescriber": 8.52
+  },
+  "primary_care_physician": {
+   "prescribers": 179168,
+   "share_paid": 0.2477,
+   "usd_per_1000_dm_claims": 234.12,
+   "usd_per_prescriber": 68.42
+  },
+  "nurse_practitioner": {
+   "prescribers": 92825,
+   "share_paid": 0.2645,
+   "usd_per_1000_dm_claims": 282.69,
+   "usd_per_prescriber": 41.48
+  },
+  "physician_assistant": {
+   "prescribers": 31577,
+   "share_paid": 0.2865,
+   "usd_per_1000_dm_claims": 294.18,
+   "usd_per_prescriber": 41.34
+  },
+  "other_physician": {
+   "prescribers": 25855,
+   "share_paid": 0.0537,
+   "usd_per_1000_dm_claims": 300.09,
+   "usd_per_prescriber": 14.56
+  },
+  "cardiology": {
+   "prescribers": 15942,
+   "share_paid": 0.2532,
+   "usd_per_1000_dm_claims": 773.88,
+   "usd_per_prescriber": 87.27
+  },
+  "endocrinology": {
+   "prescribers": 5864,
+   "share_paid": 0.4541,
+   "usd_per_1000_dm_claims": 1421.03,
+   "usd_per_prescriber": 1612.3
+  }
+ }
+}

@@ -1,0 +1,14 @@
+/*-- scss:defaults --*/
+$body-bg: #fcfcfb;
+$body-color: #0b0b0b;
+$link-color: #1c5cab;
+$font-family-sans-serif: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+$callout-color-note: #2a78d6;
+$callout-color-warning: #c98500;
+/*-- scss:rules --*/
+.figure-caption, figcaption { color: #52514e; }
+.claim-box { border-left: 4px solid #2a78d6; padding: .2rem 1rem; background: #f3f6fb; }
+.doesnt-box { border-left: 4px solid #898781; padding: .2rem 1rem; background: #f3f3f0; }
+.table-scroll { overflow-x: auto; }
+@media (max-width: 767px) { .table-scroll table { min-width: 560px; } }
+main a { overflow-wrap: anywhere; }

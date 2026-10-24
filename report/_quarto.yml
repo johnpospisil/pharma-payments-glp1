@@ -1,0 +1,29 @@
+project:
+  type: default
+  output-dir: _site
+  render:
+    - index.qmd
+  resources:
+    - figures/final/*.png
+    - figures/final/*.svg
+
+format:
+  html:
+    theme:
+      light: [cosmo, theme-light.scss]
+      dark: [cosmo, theme-dark.scss]
+    respect-user-color-scheme: true
+    lightbox: auto
+    toc: true
+    toc-depth: 2
+    toc-location: left
+    number-sections: false
+    fig-cap-location: bottom
+    smooth-scroll: true
+    citations-hover: true
+    footnotes-hover: true
+    link-external-newwindow: true
+    embed-resources: false
+
+bibliography: references.bib
+lang: en-US

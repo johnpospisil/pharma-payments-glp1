@@ -62,8 +62,10 @@ figures:
 	$(PY) -m ppg.viz.figures
 	$(PY) -m ppg.viz.final
 
+# P22: article numbers from report/qa -> report/_variables.yml, then render to report/_site
 report:
-	@echo "report: added in P22"
+	$(PY) -m ppg.report.vars > /dev/null
+	cd report && quarto render
 
 app:
 	@echo "app: added in P23"

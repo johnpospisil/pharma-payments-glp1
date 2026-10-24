@@ -235,6 +235,12 @@ def targeting(t, social=False):
 
 def dose(t, social=False):
     d = pd.read_csv(QA / "dose_response.csv")
+    gq = d[d.family == "dose_g"]
+    sh = [
+        gq[(gq.brand == b) & (gq.group == "< $100")].treated.sum() / gq[gq.brand == b].treated.sum()
+        for b in PRIMARY
+    ]
+    low = f"{min(sh):.0%}–{max(sh):.0%}"
     fig, axs = plt.subplots(1, 3, figsize=_size(social), sharey=True)
     for ax, b in zip(axs, PRIMARY, strict=True):
         c = t.brand(b)
@@ -287,7 +293,7 @@ def dose(t, social=False):
     )
     full = (
         "Groups by promotional dollars and contacts for the brand in the year of the first "
-        "payment; bars: 95% CIs clustered by practice. 91–97% of newly paid physicians got under "
+        f"payment; bars: 95% CIs clustered by practice. {low} of newly paid physicians got under "
         "$100 that year (mostly sponsored meals). Bigger first-year payments go to physicians who "
         "differ in ways matching cannot fully capture, so this gradient is descriptive, not a "
         f"dose-response. {NOT_CAUSAL}\nSource: {SRC_OP}; {SRC_PD}."

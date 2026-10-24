@@ -303,6 +303,22 @@ def lorenz_points(df: pd.DataFrame, step: float = 0.005) -> pd.DataFrame:
     return pd.DataFrame({"share_prescribers": q, "share_usd": np.interp(q, x, y)})
 
 
+def top1_composition(con) -> dict:
+    """Share of the top 1% of payees' GLP-1 promotional $ (2013-2024) that is speaker fees."""
+    r = con.execute(f"""
+        WITH r AS (SELECT DISTINCT record_id, program_year, npi, nature_group, brand,
+                          amount_usd * brand_slots / nprod AS usd
+                   FROM '{P}/payments/record_brand.parquet'
+                   WHERE drug_class IN {GLP1} AND promotional AND amount_usd > 0
+                     AND program_year <= 2024),
+             n AS (SELECT npi, sum(usd) AS u FROM r GROUP BY 1),
+             t AS (SELECT npi FROM n ORDER BY u DESC, npi LIMIT (SELECT count(*) // 100 FROM n))
+        SELECT sum(usd) FILTER (WHERE nature_group = 'speaker') / sum(usd),
+               sum(usd) FILTER (WHERE nature_group IN ('speaker', 'consulting')) / sum(usd)
+        FROM r WHERE npi IN (SELECT npi FROM t)""").fetchone()
+    return {"top1_speaker_share": float(r[0]), "top1_fee_share": float(r[1])}
+
+
 def chart7(df: pd.DataFrame) -> dict:
     v = np.sort(df.usd.values)
     x = np.concatenate([[0], np.arange(1, len(v) + 1) / len(v)])
@@ -412,7 +428,7 @@ def build() -> dict:
     _csv(pub, "state_payments_per_diabetic")
     out["chart6"] = chart6(st)
     lz = lorenz_data(con)
-    out["chart7"] = chart7(lz)
+    out["chart7"] = chart7(lz) | top1_composition(con)
     _csv(lorenz_points(lz), "lorenz_curve")
     y24 = con.execute(f"""SELECT sum(usd_split) AS usd FROM '{P}/payments/npi_class_year.parquet'
                           WHERE class_group = 'glp1' AND year = 2024 GROUP BY npi
