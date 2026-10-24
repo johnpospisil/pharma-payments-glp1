@@ -158,7 +158,7 @@ def manufacturer_jumps(con, min_records: int = 20_000, ratio: float = 2.0) -> pd
         FROM l
         WHERE prev IS NOT NULL AND greatest(records, prev) >= {min_records}
           AND (records / prev > {ratio} OR prev / records > {ratio})
-        ORDER BY greatest(records, prev) DESC""").df()
+        ORDER BY greatest(records, prev) DESC, name, program_year""").df()
 
 
 def monthly_makers(con) -> pd.DataFrame:

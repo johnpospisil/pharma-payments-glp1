@@ -20,6 +20,7 @@ import pandas as pd
 from ppg import config
 
 RTOL = 1e-6
+IGNORE_KEYS = {"fit_seconds"}  # run-time metadata
 SKIP = {"rebuild_compare.json", "claims.json", "disclosure_audit.json"}
 
 
@@ -46,6 +47,8 @@ def _cmp_json(a: Path, b: Path) -> tuple[float, str]:
         return np.inf, f"keys differ: {sorted(la.keys() ^ lb.keys())[:5]}"
     worst, where = 0.0, ""
     for k, va in la.items():
+        if k.rsplit("/", 1)[-1] in IGNORE_KEYS:
+            continue
         vb = lb[k]
         num = isinstance(va, (int, float)) and isinstance(vb, (int, float))
         r = _rel(float(va), float(vb)) if num and va is not None else float(va != vb)
@@ -66,7 +69,8 @@ def _cmp_csv(a: Path, b: Path) -> tuple[float, str]:
             den = np.maximum(np.maximum(xa.abs(), xb.abs()), 1e-12)
             r = ((xa - xb).abs() / den).where(~(xa.isna() & xb.isna()), 0).fillna(1.0)
         else:
-            r = (da[c].astype(str) != db[c].astype(str)).astype(float)
+            both_na = da[c].isna() & db[c].isna()
+            r = ((da[c].astype(str) != db[c].astype(str)) & ~both_na).astype(float)
         if r.max() > worst:
             i = int(r.values.argmax())
             worst, where = float(r.max()), f"row {i}, {c}: {da[c].iloc[i]} vs {db[c].iloc[i]}"

@@ -71,6 +71,11 @@ def unit_measures(df: pd.DataFrame, w: Wide) -> pd.DataFrame:
     years 0-3, and payment type over event years 0-1."""
     t = df[(df.g > 0) & (df.year >= df.g) & (df.year <= df.g + 3)].copy()
     t["e"] = t.year - t.g
+    # dollars to the cent first: float sums of split payments differ in the last bits between
+    # builds, which must not move a physician across a bin edge or create a 1e-12 "other" $
+    usd = ["usd", "usd_speaker", "usd_consulting", "usd_food_beverage", "usd_travel",
+           "usd_education"]  # fmt: skip
+    t[usd] = t[usd].round(2)
     fee = t.usd_speaker.fillna(0) + t.usd_consulting.fillna(0)
     named = (t.usd_food_beverage.fillna(0) + fee + t.usd_travel.fillna(0)
              + t.usd_education.fillna(0))  # fmt: skip
@@ -82,7 +87,9 @@ def unit_measures(df: pd.DataFrame, w: Wide) -> pd.DataFrame:
     m["g"] = w.g
     m["usd_g"] = g0.usd
     m["contacts_g"] = g0.promo_contacts
-    m["usd_03"] = t.groupby("npi").usd.sum().where(lambda s: s.index.isin(m.index[m.g > 0]))
+    m["usd_03"] = (
+        t.groupby("npi").usd.sum().round(2).where(lambda s: s.index.isin(m.index[m.g > 0]))
+    )
     m.loc[m.g > LAST_FULL_COHORT, "usd_03"] = np.nan
     m["type_01"] = np.select(
         [e01.fee.reindex(m.index) > 0, e01.other.reindex(m.index) > 0], TYPES[:0:-1], TYPES[0]
