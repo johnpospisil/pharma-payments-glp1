@@ -1,6 +1,6 @@
 # Results log (P13–P19)
 
-Internal running record of model results against [PREREGISTRATION.md](../PREREGISTRATION.md) (`prereg-v1`, deviations DEV-1 to DEV-7). Every number comes from `report/qa/` (event study: [event_study.json](../report/qa/event_study.json), [event_study_estimates.csv](../report/qa/event_study_estimates.csv), [event_study_event_time.csv](../report/qa/event_study_event_time.csv)). The article (P22) words these cautiously. This file states them plainly.
+Internal running record of model results against [PREREGISTRATION.md](../PREREGISTRATION.md) (`prereg-v1`, deviations DEV-1 to DEV-9). Every number comes from `report/qa/` (event study: [event_study.json](../report/qa/event_study.json), [event_study_estimates.csv](../report/qa/event_study_estimates.csv), [event_study_event_time.csv](../report/qa/event_study_event_time.csv)). The article (P22) words these cautiously. This file states them plainly.
 
 ## P13: Primary event study (2026-10-23)
 
@@ -411,3 +411,70 @@ So payments reach physicians who are expanding GLP-1 use overall and expanding t
 **What this doesn't mean:**
 - None of the failures shows that payments have no effect.
 - They show that the binary "≥ 11 claims" contrast cannot separate an effect from the growth trajectory of the physicians reps choose to visit.
+
+## P18: Sensitivity (2026-10-23)
+
+Specification: [PREREGISTRATION.md](../PREREGISTRATION.md) §9, DEV-8 and DEV-9. Numbers: [sensitivity.csv](../report/qa/sensitivity.csv). Chart: [p18_sensitivity_forest.png](../report/figures/p18_sensitivity_forest.png).
+
+### Binary primary outcome: ATT over event years 0–3, pp [matched]
+
+| Spec | Trulicity | Victoza | Ozempic |
+|---|---|---|---|
+| **Primary (reference)** | **12.0** [12.5] | **5.5** [6.6] | **13.7** [14.6] |
+| Never-treated controls | 12.5 | 5.5 | 14.2 |
+| Never-treated controls in practices with no paid member (D-3) | 14.9 | 7.0 | 20.1 |
+| g + 1 when the first payment is in Jul–Dec (D-1) | 12.0 [12.8] | 5.1 [6.5] | 13.0 [14.4] |
+| Manufacturer-level exposure (D-2) | 9.9 [10.5] | 3.2 [3.6] | 15.5 [16.7] |
+| Molecule-level exposure | 12.0 [12.5] | 5.5 [6.6] | 13.6 [14.7] |
+| D8 first-listed product rule | 12.6 [13.9] | 4.6 [7.2] | 13.4 [14.3] |
+| Drop top 1% of GLP-1 payees | 11.9 [12.4] | 5.4 [6.5] | 13.6 [14.5] |
+| Diabetes-prescriber filter met before payment (D24) | 10.5 [12.0] | 4.3 [6.0] | 12.0 [13.4] |
+| 2020 not used as a base year | 12.0 | 5.5 | 13.7 |
+| State instead of region | 12.1 | 5.6 | 14.0 |
+| Balanced panel | 11.4 [11.9] | 5.3 [6.7] | 12.6 [13.6] |
+| High-volume diabetes prescribers | 12.6 [12.5] | 5.7 [7.1] | 11.7 [12.4] |
+| **Matched also on total-claims growth (DEV-8)** | **12.7** | **6.0** | **14.1** |
+
+**Every spec keeps every brand positive, significant and above the 2 pp SESOI.**
+- **Range across specs:** Trulicity 9.9–14.9, Victoza 3.2–7.0, Ozempic 11.7–20.1.
+- **Practice-clean controls (D-3) give the largest estimates.** Physicians in practices where nobody was paid grow more slowly, so spillovers to colleagues would bias the primary *down*. But clean-practice controls are also the least similar.
+- **Manufacturer-level exposure** lowers Trulicity and Victoza: contact with the maker starts earlier and is broader than contact for the brand.
+
+### DEV-8: does practice growth explain it?
+
+**The brand effect survives matching on total-claims growth.** With CEM on the registered strata plus the quartile of g − 3 → g − 1 total-claims growth:
+- the effect is +12.7 / +6.0 / +14.1 pp;
+- matched pre-trends are flat (p = 0.39 / 0.44 / 0.74);
+- balance holds (max |SMD| 0.036);
+- 52–88% of treated physicians are matched.
+
+**But the statin negative control still fails under that matching:** +6.9 / +8.0 / +6.5 pp, with strongly rising statin pre-trends (p < 10⁻²²). Quartiles of total-claims growth do not balance these physicians' broader growth trajectory. **So DEV-8 does not rule out practice growth**, and P17's reading stands. The volume-normalised outcome cannot settle it either (DEV-9: its bounds span zero).
+
+### Scale-free outcomes (relative to the paid physicians' mean in g − 1, or PPML ratio)
+
+| Outcome | Trulicity | Victoza | Ozempic |
+|---|---|---|---|
+| Brand claims (suppressed = 0) | +236% | +73% | +201% |
+| Brand beneficiaries | +242% | +102% | +258% |
+| Brand cost | +235% | +105% | +208% |
+| log(1 + fills) (D9) | +0.44 | +0.20 | +0.56 |
+| **Fills, PPML (H6), matched: suppressed = 0 / 5 / cap** | **+111% / +44% / +28%** | **+72% / +29% / +17%** | **+59% / +49% / +36%** |
+| Fills, PPML, unmatched: 0 / 5 / cap | +31% / +77% / +46% | +20% / +31% / +20% | −0.5% / +93% / +69% |
+
+- **The relative changes are huge** because 94% of base-year cells are suppressed (counted as 0 in the first rows).
+- **H6:** within the suppression bounds, every matched PPML estimate exceeds the 10% SESOI.
+- **Not estimable:** "never suppressed for the brand" (DEV-9: 63 / 105 / 3,752 physicians); the volume-normalised outcome (bounds span zero).
+
+### Conclusions that hold, and ones that don't
+
+**Hold:**
+- the direction and size (above SESOI) of the binary effect across all 13 specs and every matched version;
+- H6 is positive across the suppression bounds;
+- the result does not depend on the top 1% of payees, the D8 allocation rule, 2020, region vs state, the panel's balance, or the exposure-timing convention.
+
+**Do not resolve:**
+- whether the binary and volume effects reflect payments or the growth path of the practices reps target. Statins still fail under the extra matching.
+
+**Not estimable:** the never-suppressed sample and the volume-normalised bounds.
+
+**The brand-specific claim still rests on the share outcome (H5, P15; D34).**

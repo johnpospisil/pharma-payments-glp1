@@ -34,6 +34,7 @@ def frame(
     sample: str = "physician",
     exposure: str = "first_promo_year",
     first_cohort: int | None = None,
+    first_year: pd.Series | None = None,
 ) -> pd.DataFrame:
     """Physician x year analysis frame for one brand (prereg §3-5).
 
@@ -42,6 +43,7 @@ def frame(
               first_promo_year_molecule) for pre-registered sensitivities.
     first_cohort: earliest cohort kept (default max(2015, launch + 1)); P15 sets the launch year
               for brand share relative to launch (H5, Mounjaro).
+    first_year: npi -> first exposure year replacing `exposure` (P18: manufacturer level).
     """
     con = con or duckdb.connect()
     who = {
@@ -54,6 +56,7 @@ def frame(
         SELECT b.npi, b.year, b.first_partd_year,
                (b.status = 'observed')::INT AS y,
                coalesce(b.fills, 0) AS fills_obs, b.status, b.supp_cap, b.fills,
+               b.claims, b.benes, b.cost,
                b.{exposure} AS first_year, b.first_promo_date,
                b.specialty_group, b.state, b.ruca, b.tot_clms, b.dm_load,
                (b.glp1_claims_all - coalesce(CASE WHEN b.status = 'observed'
@@ -69,6 +72,8 @@ def frame(
           AND b.year <= {LAST_YEAR}""",
         [brand],
     ).df()
+    if first_year is not None:
+        df["first_year"] = df.npi.map(first_year)
     launch = int(df.first_partd_year.iloc[0])
     # cohorts (prereg §3.4): first contact in 2013-14 or before launch + 1 -> already treated
     g = df.first_year.fillna(0).astype(int)

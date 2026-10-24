@@ -21,7 +21,7 @@ from ppg import config
 from ppg.models.data import LAST_YEAR, PRIMARY_BRANDS, STATE_REGION, frame
 from ppg.models.event_study import QA, _p, holm
 
-SPECS = {"unmatched": 2, "registered": 2, "trajectory": 3}  # pre-period years required
+SPECS = {"unmatched": 2, "registered": 2, "trajectory": 3, "volume_growth": 3}  # years required
 EVENTS = tuple(range(-5, 4))
 CLASS_CUTS = [0.5, 49.5, 199.5]  # GLP-1 class claims: 0, 11-49, 50-199, >= 200
 GROWTH_CUTS = [-10.5, 10.5, 49.5]  # change in class claims: <= -11, +-10, 11-49, >= 50
@@ -91,6 +91,9 @@ def strata(w: Wide, g: int, spec: str, keep: np.ndarray | None = None) -> pd.Dat
         for v in ("dm", "tot"):
             x = getattr(w, v)[i, c1]
             f[v] = np.digitize(x, np.quantile(x, [0.25, 0.5, 0.75]))
+        if spec == "volume_growth":  # DEV-8: + quartile of total-claims growth g-3 -> g-1
+            vg = np.log1p(w.tot[i, c1]) - np.log1p(w.tot[i, w.col(g - 3)])
+            f["vg"] = np.digitize(vg, np.quantile(vg, [0.25, 0.5, 0.75]))
         if spec == "trajectory":
             c3 = w.col(g - 3)
             f["y3"] = w.y[i, c3]
@@ -122,6 +125,9 @@ def features(w: Wide, i: np.ndarray, g: int) -> pd.DataFrame:
         "Class growth g − 3 → g − 1 (log)": lc[:, c1] - lc[:, c3] if c3 is not None else np.nan,
         "log(1 + diabetes claims), g − 1": np.log1p(w.dm[i, c1]),
         "log(1 + total claims), g − 1": np.log1p(w.tot[i, c1]),
+        "Total claims growth g − 3 → g − 1 (log)": (
+            np.log1p(w.tot[i, c1]) - np.log1p(w.tot[i, c3]) if c3 is not None else np.nan
+        ),
     }
     for s in ("endocrinology", "primary_care_physician"):
         out[f"Specialty: {s.replace('_', ' ')}"] = (w.specialty[i] == s).astype(float)
@@ -289,9 +295,13 @@ def load(brand: str, **frame_kw) -> Wide:
     """The P13 frame plus physician-level rows for 2013 .. window start - 1 (npi_year), where the
     brand is pre-launch (y = 0), so cohorts near launch can be matched on g - 2 and g - 3 (and,
     in P15, Mounjaro's launch cohort gets base-year covariates for 2021)."""
+    return with_early(frame(brand, **frame_kw))
+
+
+def with_early(df: pd.DataFrame) -> Wide:
+    """Wide arrays for a frame plus npi_year rows for 2013 .. its first year (see `load`)."""
     import duckdb
 
-    df = frame(brand, **frame_kw)
     early = duckdb.sql(
         f"""SELECT npi, year, 0 AS y, clms_glp1 AS glp1_claims_all, dm_load, tot_clms, state,
                    (coalesce(clms_glp1, 0) > 0)::INT AS other_glp1,

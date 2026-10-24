@@ -42,7 +42,10 @@ models:
 	$(PY) -m ppg.models.dose_response report
 	$(PY) -m ppg.models.falsification all
 	$(PY) -m ppg.models.falsification report
-	@echo "models: P18-P19 added later"
+	$(PY) -m ppg.models.sensitivity all
+	$(PY) -m ppg.models.sensitivity report
+	$(PY) -m ppg.models.matched report
+	@echo "models: P19 added later"
 
 figures:
 	$(PY) -m ppg.viz.figures

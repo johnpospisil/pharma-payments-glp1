@@ -70,16 +70,22 @@ def drdid_panel(dy: np.ndarray, D: np.ndarray, X: np.ndarray) -> tuple[float, np
 
 
 def design(
-    w: Wide, i: np.ndarray, year: int, covariates: bool, extra: tuple[np.ndarray, ...] = ()
+    w: Wide,
+    i: np.ndarray,
+    year: int,
+    covariates: bool,
+    extra: tuple[np.ndarray, ...] = (),
+    geo: str = "region",
 ) -> np.ndarray:
     """Registered covariates (§6) measured in `year`: specialty, region, log diabetes claims,
     log total claims, any other GLP-1, urban; plus any `extra` physician x year arrays (P15:
-    the outcome's own base-year share); constant columns dropped."""
+    the outcome's own base-year share); geo='state' swaps region for state (P18); constant
+    columns dropped."""
     if not covariates:
         return np.ones((len(i), 1))
     c = w.col(year)
     cols = [np.ones(len(i))]
-    for codes in (w.spec[i], w.reg[i, c]):
+    for codes in (w.spec[i], (w.state if geo == "state" else w.reg)[i, c]):
         for k in np.unique(codes)[1:]:
             cols.append((codes == k).astype(float))
     cols += [np.log1p(w.dm[i, c]), np.log1p(w.tot[i, c]), w.other[i, c], w.urban[i, c]]
@@ -97,9 +103,14 @@ def fit(
     start: int | None = None,
     extra: tuple[np.ndarray, ...] = (),
     keep: np.ndarray | None = None,
+    control: str = "notyettreated",
+    skip_base: tuple[int, ...] = (),
+    geo: str = "region",
 ) -> dict:
     """outcome: physician x year array replacing w.y (NaN = not defined that year).
-    start: first year usable as a base year (default: the P13 window start)."""
+    start: first year usable as a base year (default: the P13 window start).
+    control: 'notyettreated' (primary) or 'nevertreated'; skip_base: base years not used
+    (P18: 2020); geo: 'region' (registered) or 'state' (P18)."""
     start = w.start if start is None else start
     yy = w.y if outcome is None else outcome
     nunit = len(w.npi)
@@ -112,17 +123,18 @@ def fit(
             if e == -1 and base == "universal":
                 continue
             b = g - 1 if (t >= g or base == "universal") else t - 1
-            if b < start:
+            if b < start or b in skip_base:
                 continue
             y1, y0 = yy[:, w.col(t)], yy[:, w.col(b)]
             ok = ~np.isnan(y1) & ~np.isnan(y0)
             # cohort g is never its own control, even members outside the `keep` subgroup
-            ok &= ((w.g == g) & keep) | (w.g == 0) | ((w.g > max(t, b)) & (w.g != g))
+            nyt = (w.g > max(t, b)) & (w.g != g) if control == "notyettreated" else False
+            ok &= ((w.g == g) & keep) | (w.g == 0) | nyt
             i = np.flatnonzero(ok)
             D = (w.g[i] == g).astype(float)
             if D.sum() < 1 or (1 - D).sum() < 1:
                 continue
-            X = design(w, i, min(b, t), covariates, extra)
+            X = design(w, i, min(b, t), covariates, extra, geo)
             att, inf = drdid_panel(y1[i] - y0[i], D, X)
             v = np.zeros(nunit)
             np.add.at(v, i, inf / len(i))

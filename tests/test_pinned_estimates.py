@@ -148,3 +148,21 @@ def test_p17_falsification(key):
     for k in key[1]:
         x = x[k]
     assert x == pytest.approx(PINNED_P17[key], abs=5e-6)
+
+
+PINNED_P18 = {  # (brand, spec): ATT 0-3, Pr(>= 11 claims) (deterministic)
+    ("Trulicity", "Matched also on total-claims growth (DEV-8)"): 0.126568,
+    ("Victoza", "Matched also on total-claims growth (DEV-8)"): 0.060240,
+    ("Ozempic", "Matched also on total-claims growth (DEV-8)"): 0.141167,
+    ("Ozempic", "Never-treated controls in practices with no paid member (D-3)"): 0.2014,
+    ("Victoza", "Manufacturer-level exposure (D-2)"): 0.0318,
+}
+
+
+@pytest.mark.parametrize("key", list(PINNED_P18), ids=lambda k: "-".join(k))
+def test_p18_sensitivity(key):
+    f = config.QA_DIR / "es" / f"sensitivity_{key[0]}.json"
+    if not f.exists():
+        pytest.skip("run python -m ppg.models.sensitivity all first")
+    att = json.loads(f.read_text())["binary"][key[1]]["att"]
+    assert att == pytest.approx(PINNED_P18[key], abs=5e-5)
