@@ -18,17 +18,20 @@ import time
 from ppg import config
 
 PROGRESS_DIR = config.DATA_DIR / "progress"
+# Resume an interrupted run (skip finished fits); otherwise model jobs start with fresh bars
+RESUME = os.environ.get("PPG_RESUME") == "1"
 
 
 class Progress:
-    def __init__(self, job: str):
+    def __init__(self, job: str, keep_done: bool = True):
         self.job = job
+        self.keep_done = keep_done
         self.path = PROGRESS_DIR / f"{job}.json"
         self.state: dict = {"job": job, "started": time.time(), "pid": os.getpid(), "tasks": {}}
         self._last = 0.0
 
     def __enter__(self) -> Progress:
-        if self.path.exists():  # keep tasks already finished in an earlier run
+        if self.keep_done and self.path.exists():  # keep tasks finished in an earlier run
             old = json.loads(self.path.read_text())
             self.state["tasks"] = {
                 k: v for k, v in old.get("tasks", {}).items() if v.get("status") == "done"

@@ -208,9 +208,9 @@ def validate() -> None:
 
 
 def run_all() -> None:
-    from ppg.progress import Progress
+    from ppg.progress import RESUME, Progress
 
-    with Progress("cs_panel") as p:
+    with Progress("cs_panel", keep_done=RESUME) as p:
         for b in PRIMARY_BRANDS:
             p.add(b, total=3, unit="fits")
         for b in PRIMARY_BRANDS:

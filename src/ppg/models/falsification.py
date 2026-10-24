@@ -254,14 +254,14 @@ def nc_exposure(p=None) -> dict:
 
 
 def run_all() -> None:
-    from ppg.progress import Progress
+    from ppg.progress import RESUME, Progress
 
     prim = {
         b: json.loads((QA / f"panel_{b}.json").read_text())["overall_0_3"]["att"]
         for b in PRIMARY_BRANDS
     }
     QA.mkdir(parents=True, exist_ok=True)
-    with Progress("falsification") as p:
+    with Progress("falsification", keep_done=RESUME) as p:
         for b in PRIMARY_BRANDS:
             p.add(b, total=6, unit="tests")
         p.add("negative-control exposure", total=3, unit="fits")

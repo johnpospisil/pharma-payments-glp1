@@ -209,9 +209,9 @@ def _strip(x):
 
 
 def run_all() -> None:
-    from ppg.progress import Progress
+    from ppg.progress import RESUME, Progress
 
-    with Progress("heterogeneity") as p:
+    with Progress("heterogeneity", keep_done=RESUME) as p:
         for b in PRIMARY_BRANDS:
             p.add(b, total=1, unit="brand")
         p.add("secondary family", total=3, unit="brands")

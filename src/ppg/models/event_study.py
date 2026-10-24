@@ -546,7 +546,7 @@ def run_all() -> None:
     """All of P13 under one progress job: `make progress WATCH=1` (job event_study)."""
     import gc
 
-    from ppg.progress import Progress
+    from ppg.progress import RESUME, Progress
 
     rows = {}  # expected sizes only; each task rebuilds its frame to keep memory low
     for b in PRIMARY_BRANDS:
@@ -580,7 +580,7 @@ def run_all() -> None:
         "crosscheck": "crosscheck_{b}.json",
         "type": "type_{k}_{b}.json",
     }
-    with Progress("event_study") as p:
+    with Progress("event_study", keep_done=RESUME) as p:
         for task, *_rest, secs in plan:
             p.add(task, total=round(secs), unit="s")
         for task, kind, b, k, _secs in plan:
@@ -643,11 +643,11 @@ def robust_mbar(rm: list[dict]) -> float | None:
 def diagnostics() -> None:
     """Universal-base event study (for HonestDiD, DEV-3) and CS without covariates
     (exploratory: explains the gap to the fixed-effects cross-checks)."""
-    from ppg.progress import Progress
+    from ppg.progress import RESUME, Progress
 
     plan = [(f"CS universal base {b}", b, "universal", True, "universal") for b in PRIMARY_BRANDS]
     plan += [(f"CS no covariates {b}", b, "varying", False, "nocov") for b in PRIMARY_BRANDS]
-    with Progress("event_study_diagnostics") as p:
+    with Progress("event_study_diagnostics", keep_done=RESUME) as p:
         for task, *_ in plan:
             p.add(task, total=200, unit="s")
         for task, b, base, cov, tag in plan:

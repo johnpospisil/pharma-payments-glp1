@@ -359,9 +359,9 @@ def balance_only() -> None:
 
 
 def run_all() -> None:
-    from ppg.progress import Progress
+    from ppg.progress import RESUME, Progress
 
-    with Progress("matched") as p:
+    with Progress("matched", keep_done=RESUME) as p:
         for b in PRIMARY_BRANDS:
             p.add(b, total=len(SPECS) + 1, unit="steps")
         for b in PRIMARY_BRANDS:

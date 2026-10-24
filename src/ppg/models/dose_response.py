@@ -172,9 +172,9 @@ def run_brand(brand: str, p=None) -> dict:
 
 
 def run_all() -> None:
-    from ppg.progress import Progress
+    from ppg.progress import RESUME, Progress
 
-    with Progress("dose_response") as p:
+    with Progress("dose_response", keep_done=RESUME) as p:
         for b in PRIMARY_BRANDS:
             p.add(b, total=13, unit="groups")
         for b in PRIMARY_BRANDS:

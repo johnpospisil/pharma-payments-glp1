@@ -179,9 +179,9 @@ def run_brand_all(brand: str, p=None) -> dict:
 
 
 def run_all() -> None:
-    from ppg.progress import Progress
+    from ppg.progress import RESUME, Progress
 
-    with Progress("sensitivity") as p:
+    with Progress("sensitivity", keep_done=RESUME) as p:
         for b in PRIMARY_BRANDS:
             p.add(b, total=16, unit="specs")
         for b in PRIMARY_BRANDS:

@@ -252,9 +252,9 @@ def run_brand(brand: str, p=None) -> dict:
 
 
 def run_all() -> None:
-    from ppg.progress import Progress
+    from ppg.progress import RESUME, Progress
 
-    with Progress("switching") as p:
+    with Progress("switching", keep_done=RESUME) as p:
         for b in EXPOSURES:
             p.add(b, total=len(GROUPS), unit="outcomes")
         for b in EXPOSURES:
