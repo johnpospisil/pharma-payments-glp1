@@ -83,6 +83,9 @@ Project brief: [02-pharma-payments-glp1.md](02-pharma-payments-glp1.md) (the sou
 | D38 | Weak-claim wording | **Decided 2026-10-24:** docs/qa.md W1–W10 are binding for P22, P23 and P27: every headline number travels with its caveat sentence (e.g. the ≥ 11-claims contrast always with the statin result) |
 | D39 | Rebuild keeps the Mac awake | **Decided 2026-10-24:** `make all` runs under `caffeinate -s` on macOS |
 | D40 | National complementary disclosure | **Decided 2026-10-24:** accepted: a masked national brand-year nature subtotal derivable by subtraction (≤ 10 unnamed prescribers, no geography) is not identifying; noted in docs/qa.md |
+| D41 | Hero chart | **Decided 2026-10-24:** the hero is the brand-share event study (D34); the ≥ 11-claims event study is chart 1b, always beside the statin negative control |
+| D42 | Hero display window | **Decided 2026-10-24:** event years −4…3 shown (Victoza's e = −5 rests on one tiny cohort); all years stay in report/qa and in the pre-trend tests |
+| D43 | Social crops | **Decided 2026-10-24:** 16:9 (1200×675) only; 4:5 / square added in P27 only if a platform needs them |
 | D11 | Positioning | **Decided 2026-10-22:** the article names Khunte et al. 2026 (*Mayo Clin Proc*, cross-sectional) as the baseline; our headline is the within-prescriber, brand-level change and switching, not the cross-sectional association |
 
 ## Prompt list
@@ -166,7 +169,7 @@ Project brief: [02-pharma-payments-glp1.md](02-pharma-payments-glp1.md) (the sou
 
 ### Phase 6: Write, build, review
 
-- [ ] **P21: Final figures.** `ppg.viz.theme` (one palette, light and dark, colour-blind safe), with final versions of the hero chart and charts 2–7, alt text for each, and social-media crops.
+- [x] **P21: Final figures.** _Done 2026-10-24: `ppg.viz.theme` (validated light/dark palette, fixed brand colours) + `ppg.viz.final` draws hero (brand-share event study), 1b (brand vs statins) and charts 2–8 from report/qa only; light/dark PNG+SVG, 1200×675 crops, alt text, contact sheet; byte-identical re-renders._ `ppg.viz.theme` (one palette, light and dark, colour-blind safe), with final versions of the hero chart and charts 2–7, alt text for each, and social-media crops.
   **Deliverables:** `report/figures/` (all charts), a contact sheet of every figure.
 
 - [ ] **P22: Quarto article.** `report/index.qmd`: "What we found / what it doesn't mean" box first, then the question, data, method in plain English, results, falsification, limitations, an ethics note (why no individual doctors are shown), and a reproducibility section. Cite the literature from P02. Every number comes from `report/qa`. Render locally.
