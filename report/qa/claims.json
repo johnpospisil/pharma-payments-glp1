@@ -1,0 +1,706 @@
+{
+ "claims": 51,
+ "pass": true,
+ "failures": [],
+ "values": [
+  {
+   "id": "spend_2013",
+   "text": "Part D GLP-1 spending $0.55B in 2013",
+   "source": "eda.json",
+   "path": [
+    "chart3",
+    "partd_glp1_cost_by_year",
+    "2013"
+   ],
+   "value": 0.55,
+   "quoted": 0.55,
+   "stated": 0.55,
+   "pass": true
+  },
+  {
+   "id": "spend_2024",
+   "text": "$27.9B in 2024",
+   "source": "eda.json",
+   "path": [
+    "chart3",
+    "partd_glp1_cost_by_year",
+    "2024"
+   ],
+   "value": 27.895,
+   "quoted": 27.9,
+   "stated": 27.9,
+   "pass": true
+  },
+  {
+   "id": "ozempic_share_2024",
+   "text": "Ozempic 46.0% of 2024 GLP-1 spending",
+   "source": "eda.json",
+   "path": [
+    "chart3",
+    "share_ozempic_2024"
+   ],
+   "value": 0.4648121723502317,
+   "quoted": 46.0,
+   "stated": 46,
+   "pass": true
+  },
+  {
+   "id": "promo_usd_m",
+   "text": "$424.5M GLP-1 promotional payments 2013-2025",
+   "source": "payments.json",
+   "path": [
+    "glp1_promo_usd",
+    "split"
+   ],
+   "value": 424495686.6223341,
+   "quoted": 424.5,
+   "stated": 424.5,
+   "pass": true
+  },
+  {
+   "id": "paid_npis_k",
+   "text": "320.0K prescribers paid for a GLP-1",
+   "source": "payments.json",
+   "path": [
+    "glp1_paid_npis"
+   ],
+   "value": 320153.0,
+   "quoted": 320.0,
+   "stated": 320,
+   "pass": true
+  },
+  {
+   "id": "speaker_share",
+   "text": "speaker fees 59.0% of GLP-1 promotional $",
+   "source": "eda.json",
+   "path": [
+    "chart4",
+    "glp1_promo_usd_by_type_share",
+    "usd_speaker"
+   ],
+   "value": 0.5936,
+   "quoted": 59.0,
+   "stated": 59,
+   "pass": true
+  },
+  {
+   "id": "meal_share",
+   "text": "meals 28.0%",
+   "source": "eda.json",
+   "path": [
+    "chart4",
+    "glp1_promo_usd_by_type_share",
+    "usd_food_beverage"
+   ],
+   "value": 0.2793,
+   "quoted": 28.0,
+   "stated": 28,
+   "pass": true
+  },
+  {
+   "id": "glp1_speakers",
+   "text": "3288.0 prescribers ever paid as GLP-1 speakers",
+   "source": "payments.json",
+   "path": [
+    "npis_ever_glp1_speaker"
+   ],
+   "value": 3288.0,
+   "quoted": 3288.0,
+   "stated": 3288,
+   "pass": true
+  },
+  {
+   "id": "top1_share",
+   "text": "top 1% of paid prescribers got 76.0% of GLP-1 promotional $",
+   "source": "eda.json",
+   "path": [
+    "chart7",
+    "top1_share"
+   ],
+   "value": 0.7570584823244874,
+   "quoted": 76.0,
+   "stated": 76,
+   "pass": true
+  },
+  {
+   "id": "gini",
+   "text": "Gini 0.92",
+   "source": "eda.json",
+   "path": [
+    "chart7",
+    "gini"
+   ],
+   "value": 0.9210644073409279,
+   "quoted": 0.92,
+   "stated": 0.92,
+   "pass": true
+  },
+  {
+   "id": "state_us",
+   "text": "US $2.59 per Part D enrollee with diabetes (2024)",
+   "source": "eda.json",
+   "path": [
+    "chart6",
+    "usd_per_diabetic_us"
+   ],
+   "value": 2.587658327796303,
+   "quoted": 2.59,
+   "stated": 2.59,
+   "pass": true
+  },
+  {
+   "id": "state_max",
+   "text": "highest state $4.25",
+   "source": "eda.json",
+   "path": [
+    "chart6",
+    "top5_states",
+    "CO"
+   ],
+   "value": 4.246,
+   "quoted": 4.25,
+   "stated": 4.25,
+   "pass": true
+  },
+  {
+   "id": "state_min",
+   "text": "lowest state $0.41",
+   "source": "eda.json",
+   "path": [
+    "chart6",
+    "bottom5_states",
+    "MT"
+   ],
+   "value": 0.414,
+   "quoted": 0.41,
+   "stated": 0.41,
+   "pass": true
+  },
+  {
+   "id": "endo_per_1000",
+   "text": "endocrinology $1421.0 per 1,000 other diabetes claims",
+   "source": "eda.json",
+   "path": [
+    "specialty_2024",
+    "endocrinology",
+    "usd_per_1000_dm_claims"
+   ],
+   "value": 1421.03,
+   "quoted": 1421.0,
+   "stated": 1421,
+   "pass": true
+  },
+  {
+   "id": "pc_per_1000",
+   "text": "primary care $234.0",
+   "source": "eda.json",
+   "path": [
+    "specialty_2024",
+    "primary_care_physician",
+    "usd_per_1000_dm_claims"
+   ],
+   "value": 234.12,
+   "quoted": 234.0,
+   "stated": 234,
+   "pass": true
+  },
+  {
+   "id": "att_trulicity",
+   "text": "Trulicity +12.0 pp",
+   "source": "matched.json",
+   "path": [
+    "brands",
+    "Trulicity",
+    "primary",
+    "att"
+   ],
+   "value": 0.12033194434623763,
+   "quoted": 12.0,
+   "stated": 12.0,
+   "pass": true
+  },
+  {
+   "id": "att_victoza",
+   "text": "Victoza +5.5 pp",
+   "source": "matched.json",
+   "path": [
+    "brands",
+    "Victoza",
+    "primary",
+    "att"
+   ],
+   "value": 0.05462408138290879,
+   "quoted": 5.5,
+   "stated": 5.5,
+   "pass": true
+  },
+  {
+   "id": "att_ozempic",
+   "text": "Ozempic +13.7 pp",
+   "source": "matched.json",
+   "path": [
+    "brands",
+    "Ozempic",
+    "primary",
+    "att"
+   ],
+   "value": 0.1370971240682673,
+   "quoted": 13.7,
+   "stated": 13.7,
+   "pass": true
+  },
+  {
+   "id": "matched_trulicity",
+   "text": "matched +12.5 pp",
+   "source": "matched.json",
+   "path": [
+    "brands",
+    "Trulicity",
+    "registered",
+    "att"
+   ],
+   "value": 0.1250399620544158,
+   "quoted": 12.5,
+   "stated": 12.5,
+   "pass": true
+  },
+  {
+   "id": "matched_victoza",
+   "text": "matched +6.6 pp",
+   "source": "matched.json",
+   "path": [
+    "brands",
+    "Victoza",
+    "registered",
+    "att"
+   ],
+   "value": 0.06638983583134353,
+   "quoted": 6.6,
+   "stated": 6.6,
+   "pass": true
+  },
+  {
+   "id": "matched_ozempic",
+   "text": "matched +14.6 pp",
+   "source": "matched.json",
+   "path": [
+    "brands",
+    "Ozempic",
+    "registered",
+    "att"
+   ],
+   "value": 0.14585920991443785,
+   "quoted": 14.6,
+   "stated": 14.6,
+   "pass": true
+  },
+  {
+   "id": "treated_trulicity",
+   "text": "67741.0 newly paid Trulicity physicians",
+   "source": "matched.json",
+   "path": [
+    "brands",
+    "Trulicity",
+    "primary",
+    "treated"
+   ],
+   "value": 67741.0,
+   "quoted": 67741.0,
+   "stated": 67741,
+   "pass": true
+  },
+  {
+   "id": "honest_trulicity",
+   "text": "HonestDiD breakdown M̄ 1.75",
+   "source": "matched.json",
+   "path": [
+    "brands",
+    "Trulicity",
+    "primary",
+    "honest_breakdown_mbar"
+   ],
+   "value": 1.75,
+   "quoted": 1.75,
+   "stated": 1.75,
+   "pass": true
+  },
+  {
+   "id": "share_trulicity",
+   "text": "Trulicity share +4.1 pp",
+   "source": "switching.json",
+   "path": [
+    "Trulicity",
+    "own_share",
+    "att"
+   ],
+   "value": 0.041404709431981324,
+   "quoted": 4.1,
+   "stated": 4.1,
+   "pass": true
+  },
+  {
+   "id": "share_ozempic",
+   "text": "Ozempic share +3.0 pp",
+   "source": "switching.json",
+   "path": [
+    "Ozempic",
+    "own_share",
+    "att"
+   ],
+   "value": 0.03039850263370101,
+   "quoted": 3.0,
+   "stated": 3.0,
+   "pass": true
+  },
+  {
+   "id": "share_mounjaro",
+   "text": "Mounjaro share +5.3 pp",
+   "source": "switching.json",
+   "path": [
+    "Mounjaro",
+    "own_share",
+    "att"
+   ],
+   "value": 0.053237492301962674,
+   "quoted": 5.3,
+   "stated": 5.3,
+   "pass": true
+  },
+  {
+   "id": "share_victoza",
+   "text": "Victoza share -4.8 pp",
+   "source": "switching.json",
+   "path": [
+    "Victoza",
+    "own_share",
+    "att"
+   ],
+   "value": -0.04759367540781603,
+   "quoted": -4.8,
+   "stated": -4.8,
+   "pass": true
+  },
+  {
+   "id": "switch_frac_trulicity",
+   "text": "56.0% of extra Trulicity claims are switching",
+   "source": "switching.json",
+   "path": [
+    "Trulicity",
+    "decomposition",
+    "switching_fraction"
+   ],
+   "value": 0.5604849935657323,
+   "quoted": 56.0,
+   "stated": 56,
+   "pass": true
+  },
+  {
+   "id": "switch_frac_ozempic",
+   "text": "58.0% for Ozempic",
+   "source": "switching.json",
+   "path": [
+    "Ozempic",
+    "decomposition",
+    "switching_fraction"
+   ],
+   "value": 0.5773939547996867,
+   "quoted": 58.0,
+   "stated": 58,
+   "pass": true
+  },
+  {
+   "id": "dose_lt100_trulicity",
+   "text": "Trulicity < $100 +11.9",
+   "source": "dose_response.csv",
+   "path": [
+    "brand == 'Trulicity' and family == 'dose_g' and group == '< $100'",
+    "att"
+   ],
+   "value": 0.11872713522164745,
+   "quoted": 11.9,
+   "stated": 11.9,
+   "pass": true
+  },
+  {
+   "id": "dose_ge100_trulicity",
+   "text": "Trulicity ≥ $100 +16.8",
+   "source": "dose_response.csv",
+   "path": [
+    "brand == 'Trulicity' and family == 'dose_g' and group != '< $100'",
+    "att"
+   ],
+   "value": 0.16810332919372015,
+   "quoted": 16.8,
+   "stated": 16.8,
+   "pass": true
+  },
+  {
+   "id": "dose_lt100_ozempic",
+   "text": "Ozempic < $100 +13.2",
+   "source": "dose_response.csv",
+   "path": [
+    "brand == 'Ozempic' and family == 'dose_g' and group == '< $100'",
+    "att"
+   ],
+   "value": 0.13160742484741636,
+   "quoted": 13.2,
+   "stated": 13.2,
+   "pass": true
+  },
+  {
+   "id": "dose_ge100_ozempic",
+   "text": "Ozempic ≥ $100 +19.1",
+   "source": "dose_response.csv",
+   "path": [
+    "brand == 'Ozempic' and family == 'dose_g' and group != '< $100'",
+    "att"
+   ],
+   "value": 0.1914468532443222,
+   "quoted": 19.1,
+   "stated": 19.1,
+   "pass": true
+  },
+  {
+   "id": "statin_trulicity",
+   "text": "statins +6.4 pp (Trulicity-paid)",
+   "source": "falsification.csv",
+   "path": [
+    "test.str.startswith('Negative-control outcome: statins') and brand == 'Trulicity'",
+    "att"
+   ],
+   "value": 0.06402061947250962,
+   "quoted": 6.4,
+   "stated": 6.4,
+   "pass": true
+  },
+  {
+   "id": "statin_victoza",
+   "text": "statins +7.9 pp (Victoza)",
+   "source": "falsification.csv",
+   "path": [
+    "test.str.startswith('Negative-control outcome: statins') and brand == 'Victoza'",
+    "att"
+   ],
+   "value": 0.07930647228444124,
+   "quoted": 7.9,
+   "stated": 7.9,
+   "pass": true
+  },
+  {
+   "id": "statin_ozempic",
+   "text": "statins +7.1 pp (Ozempic)",
+   "source": "falsification.csv",
+   "path": [
+    "test.str.startswith('Negative-control outcome: statins') and brand == 'Ozempic'",
+    "att"
+   ],
+   "value": 0.07068202500248379,
+   "quoted": 7.1,
+   "stated": 7.1,
+   "pass": true
+  },
+  {
+   "id": "nc_anticoag",
+   "text": "anticoagulant payments +5.0 pp on any GLP-1",
+   "source": "falsification.csv",
+   "path": [
+    "test.str.startswith('Negative-control exposure: Anticoagulant') and brand == 'any GLP-1'",
+    "att"
+   ],
+   "value": 0.0502463228002436,
+   "quoted": 5.0,
+   "stated": 5.0,
+   "pass": true
+  },
+  {
+   "id": "nc_inhaled",
+   "text": "inhaled-respiratory payments +9.0 pp",
+   "source": "falsification.csv",
+   "path": [
+    "test.str.startswith('Negative-control exposure: Inhaled') and brand == 'any GLP-1'",
+    "att"
+   ],
+   "value": 0.09035978074550116,
+   "quoted": 9.0,
+   "stated": 9.0,
+   "pass": true
+  },
+  {
+   "id": "dev8_trulicity",
+   "text": "volume-growth matched +12.7 pp",
+   "source": "sensitivity.csv",
+   "path": [
+    "brand == 'Trulicity' and spec == 'Matched also on total-claims growth (DEV-8)'",
+    "att"
+   ],
+   "value": 12.656839858929741,
+   "quoted": 12.7,
+   "stated": 12.7,
+   "pass": true
+  },
+  {
+   "id": "h6_max",
+   "text": "matched PPML fills up to +111.0%",
+   "source": "sensitivity.csv",
+   "path": [
+    "brand == 'Trulicity' and spec == 'Fills, PPML, suppressed = 0 (H6) [matched]'",
+    "att"
+   ],
+   "value": 110.8693959502362,
+   "quoted": 111.0,
+   "stated": 111,
+   "pass": true
+  },
+  {
+   "id": "h6_min",
+   "text": "matched PPML fills from +17.0%",
+   "source": "sensitivity.csv",
+   "path": [
+    "brand == 'Victoza' and spec == 'Fills, PPML, suppressed = cap (H6) [matched]'",
+    "att"
+   ],
+   "value": 16.79980796106664,
+   "quoted": 17.0,
+   "stated": 17,
+   "pass": true
+  },
+  {
+   "id": "h2",
+   "text": "H2 +5.6 pp",
+   "source": "secondary_family.json",
+   "path": [
+    "family",
+    "H2 speaker/consulting − meals only",
+    "att"
+   ],
+   "value": 0.05576669540801728,
+   "quoted": 5.6,
+   "stated": 5.6,
+   "pass": true
+  },
+  {
+   "id": "h2_holm",
+   "text": "Holm p 0.12",
+   "source": "secondary_family.json",
+   "path": [
+    "family",
+    "H2 speaker/consulting − meals only",
+    "p_holm"
+   ],
+   "value": 0.1159814258111342,
+   "quoted": 0.12,
+   "stated": 0.12,
+   "pass": true
+  },
+  {
+   "id": "h3",
+   "text": "H3 -0.4 pp",
+   "source": "secondary_family.json",
+   "path": [
+    "family",
+    "H3 endocrinology + cardiology − primary care",
+    "att"
+   ],
+   "value": -0.0038548804349603834,
+   "quoted": -0.4,
+   "stated": -0.4,
+   "pass": true
+  },
+  {
+   "id": "h4",
+   "text": "H4 +5.1 pp",
+   "source": "secondary_family.json",
+   "path": [
+    "family",
+    "H4 ≥ $100 − < $100 in the first year",
+    "att"
+   ],
+   "value": 0.051244800286509254,
+   "quoted": 5.1,
+   "stated": 5.1,
+   "pass": true
+  },
+  {
+   "id": "h5",
+   "text": "H5 +3.2 pp share",
+   "source": "secondary_family.json",
+   "path": [
+    "family",
+    "H5 own-brand share (log-odds, matched)",
+    "att"
+   ],
+   "value": 0.03202383415045599,
+   "quoted": 3.2,
+   "stated": 3.2,
+   "pass": true
+  },
+  {
+   "id": "h5_holm",
+   "text": "Holm p 0.021",
+   "source": "secondary_family.json",
+   "path": [
+    "family",
+    "H5 own-brand share (log-odds, matched)",
+    "p_holm"
+   ],
+   "value": 0.02118133382604859,
+   "quoted": 0.021,
+   "stated": 0.021,
+   "pass": true
+  },
+  {
+   "id": "h6",
+   "text": "H6 +28.7% fills",
+   "source": "secondary_family.json",
+   "path": [
+    "family",
+    "H6 fills, PPML matched, suppressed = cap (log ratio)",
+    "ratio"
+   ],
+   "value": 0.28664483793743045,
+   "quoted": 28.7,
+   "stated": 28.7,
+   "pass": true
+  },
+  {
+   "id": "h7",
+   "text": "H7 NPs/PAs +15.0 pp",
+   "source": "secondary_family.json",
+   "path": [
+    "family",
+    "H7 NPs/PAs, Pr(≥ 11 claims)",
+    "att"
+   ],
+   "value": 0.1497029048227954,
+   "quoted": 15.0,
+   "stated": 15.0,
+   "pass": true
+  },
+  {
+   "id": "south_min",
+   "text": "South larger by -2.3 pp (smallest contrast)",
+   "source": "heterogeneity_comparisons.csv",
+   "path": [
+    "brand == 'Trulicity' and group == 'Northeast'",
+    "att"
+   ],
+   "value": -0.023186794214664116,
+   "quoted": -2.3,
+   "stated": -2.3,
+   "pass": true
+  },
+  {
+   "id": "victoza_endo",
+   "text": "Victoza endocrinology +8.3 pp vs primary care",
+   "source": "heterogeneity_comparisons.csv",
+   "path": [
+    "brand == 'Victoza' and group == 'endocrinology'",
+    "att"
+   ],
+   "value": 0.08307472336336935,
+   "quoted": 8.3,
+   "stated": 8.3,
+   "pass": true
+  }
+ ]
+}

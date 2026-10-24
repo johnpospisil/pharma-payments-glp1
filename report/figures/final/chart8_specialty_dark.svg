@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="720pt" height="403.2pt" viewBox="0 0 720 403.2" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 403.2 
+L 720 403.2 
+L 720 0 
+L 0 0 
+z
+" style="fill: #1a1a19"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 122.4 351.4167 
+L 394.098113 351.4167 
+L 394.098113 80.64 
+L 122.4 80.64 
+z
+" style="fill: #1a1a19"/>
+   </g>
+   <g id="matplotlib.axis_1"/>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_1"/>
+     <g id="text_1">
+      <text style="font-size: 8.5px; font-family: 'Arial', 'Helvetica Neue', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #c3c2b7" x="117.4" y="331.695928" transform="rotate(-0 117.4 331.695928)">Nephrology</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_2"/>
+     <g id="text_2">
+      <text style="font-size: 8.5px; font-family: 'Arial', 'Helvetica Neue', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #c3c2b7" x="117.4" y="294.173848" transform="rotate(-0 117.4 294.173848)">Primary care (MD/DO)</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_3"/>
+     <g id="text_3">
+      <text style="font-size: 8.5px; font-family: 'Arial', 'Helvetica Neue', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #c3c2b7" x="117.4" y="256.646953" transform="rotate(-0 117.4 256.646953)">Nurse practitioner</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_4"/>
+     <g id="text_4">
+      <text style="font-size: 8.5px; font-family: 'Arial', 'Helvetica Neue', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #c3c2b7" x="117.4" y="219.122466" transform="rotate(-0 117.4 219.122466)">Physician assistant</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_5"/>
+     <g id="text_5">
+      <text style="font-size: 8.5px; font-family: 'Arial', 'Helvetica Neue', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #c3c2b7" x="117.4" y="181.600386" transform="rotate(-0 117.4 181.600386)">Other physician</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_6"/>
+     <g id="text_6">
+      <text style="font-size: 8.5px; font-family: 'Arial', 'Helvetica Neue', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #c3c2b7" x="117.4" y="144.073492" transform="rotate(-0 117.4 144.073492)">Cardiology</text>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_7"/>
+     <g id="text_7">
+      <text style="font-size: 8.5px; font-family: 'Arial', 'Helvetica Neue', 'DejaVu Sans', sans-serif; text-anchor: end; fill: #c3c2b7" x="117.4" y="106.549004" transform="rotate(-0 117.4 106.549004)">Endocrinology</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 122.4 339.108668 
+L 194.382764 339.108668 
+L 194.382764 318.094955 
+L 122.4 318.094955 
+z
+" clip-path="url(#pef26cf0cc0)" style="fill: #c3c2b7"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 122.4 301.584181 
+L 236.403392 301.584181 
+L 236.403392 280.570468 
+L 122.4 280.570468 
+z
+" clip-path="url(#pef26cf0cc0)" style="fill: #c3c2b7"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 122.4 264.059694 
+L 244.135556 264.059694 
+L 244.135556 243.045981 
+L 122.4 243.045981 
+z
+" clip-path="url(#pef26cf0cc0)" style="fill: #c3c2b7"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 122.4 226.535206 
+L 254.261009 226.535206 
+L 254.261009 205.521494 
+L 122.4 205.521494 
+z
+" clip-path="url(#pef26cf0cc0)" style="fill: #c3c2b7"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 122.4 189.010719 
+L 147.11531 189.010719 
+L 147.11531 167.997006 
+L 122.4 167.997006 
+z
+" clip-path="url(#pef26cf0cc0)" style="fill: #c3c2b7"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 122.4 151.486232 
+L 238.934756 151.486232 
+L 238.934756 130.472519 
+L 122.4 130.472519 
+z
+" clip-path="url(#pef26cf0cc0)" style="fill: #c3c2b7"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 122.4 113.961745 
+L 331.398549 113.961745 
+L 331.398549 92.948032 
+L 122.4 92.948032 
+z
+" clip-path="url(#pef26cf0cc0)" style="fill: #c3c2b7"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 122.4 351.4167 
+L 122.4 80.64 
+" style="fill: none; stroke: #383835; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 9.5px; font-family: 'Arial', 'Helvetica Neue', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #f0efec" x="194.382764" y="331.060308" transform="rotate(-0 194.382764 331.060308)">  16%</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 9.5px; font-family: 'Arial', 'Helvetica Neue', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #f0efec" x="236.403392" y="293.535821" transform="rotate(-0 236.403392 293.535821)">  25%</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 9.5px; font-family: 'Arial', 'Helvetica Neue', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #f0efec" x="244.135556" y="256.011333" transform="rotate(-0 244.135556 256.011333)">  26%</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 9.5px; font-family: 'Arial', 'Helvetica Neue', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #f0efec" x="254.261009" y="218.486846" transform="rotate(-0 254.261009 218.486846)">  29%</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 9.5px; font-family: 'Arial', 'Helvetica Neue', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #f0efec" x="147.11531" y="180.962359" transform="rotate(-0 147.11531 180.962359)">  5%</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 9.5px; font-family: 'Arial', 'Helvetica Neue', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #f0efec" x="238.934756" y="143.437872" transform="rotate(-0 238.934756 143.437872)">  25%</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 9.5px; font-family: 'Arial', 'Helvetica Neue', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #f0efec" x="331.398549" y="105.913384" transform="rotate(-0 331.398549 105.913384)">  45%</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 9.5px; font-family: 'Arial', 'Helvetica Neue', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #f0efec" x="122.4" y="74.64" transform="rotate(-0 122.4 74.64)">Share paid for a GLP-1 in 2024</text>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_11">
+    <path d="M 426.701887 351.4167 
+L 698.4 351.4167 
+L 698.4 80.64 
+L 426.701887 80.64 
+z
+" style="fill: #1a1a19"/>
+   </g>
+   <g id="matplotlib.axis_3"/>
+   <g id="matplotlib.axis_4">
+    <g id="ytick_8">
+     <g id="line2d_8"/>
+    </g>
+    <g id="ytick_9">
+     <g id="line2d_9"/>
+    </g>
+    <g id="ytick_10">
+     <g id="line2d_10"/>
+    </g>
+    <g id="ytick_11">
+     <g id="line2d_11"/>
+    </g>
+    <g id="ytick_12">
+     <g id="line2d_12"/>
+    </g>
+    <g id="ytick_13">
+     <g id="line2d_13"/>
+    </g>
+    <g id="ytick_14">
+     <g id="line2d_14"/>
+    </g>
+   </g>
+   <g id="patch_12">
+    <path d="M 426.701887 339.108668 
+L 435.924931 339.108668 
+L 435.924931 318.094955 
+L 426.701887 318.094955 
+z
+" clip-path="url(#pc9501f6b41)" style="fill: #c3c2b7"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 426.701887 301.584181 
+L 461.134519 301.584181 
+L 461.134519 280.570468 
+L 426.701887 280.570468 
+z
+" clip-path="url(#pc9501f6b41)" style="fill: #c3c2b7"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 426.701887 264.059694 
+L 468.278665 264.059694 
+L 468.278665 243.045981 
+L 426.701887 243.045981 
+z
+" clip-path="url(#pc9501f6b41)" style="fill: #c3c2b7"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 426.701887 226.535206 
+L 469.968518 226.535206 
+L 469.968518 205.521494 
+L 426.701887 205.521494 
+z
+" clip-path="url(#pc9501f6b41)" style="fill: #c3c2b7"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 426.701887 189.010719 
+L 470.837999 189.010719 
+L 470.837999 167.997006 
+L 426.701887 167.997006 
+z
+" clip-path="url(#pc9501f6b41)" style="fill: #c3c2b7"/>
+   </g>
+   <g id="patch_17">
+    <path d="M 426.701887 151.486232 
+L 540.520694 151.486232 
+L 540.520694 130.472519 
+L 426.701887 130.472519 
+z
+" clip-path="url(#pc9501f6b41)" style="fill: #c3c2b7"/>
+   </g>
+   <g id="patch_18">
+    <path d="M 426.701887 113.961745 
+L 635.700435 113.961745 
+L 635.700435 92.948032 
+L 426.701887 92.948032 
+z
+" clip-path="url(#pc9501f6b41)" style="fill: #c3c2b7"/>
+   </g>
+   <g id="patch_19">
+    <path d="M 426.701887 351.4167 
+L 426.701887 80.64 
+" style="fill: none; stroke: #383835; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 9.5px; font-family: 'Arial', 'Helvetica Neue', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #f0efec" x="435.924931" y="331.315342" transform="rotate(-0 435.924931 331.315342)">  $63</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 9.5px; font-family: 'Arial', 'Helvetica Neue', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #f0efec" x="461.134519" y="293.790855" transform="rotate(-0 461.134519 293.790855)">  $234</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 9.5px; font-family: 'Arial', 'Helvetica Neue', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #f0efec" x="468.278665" y="256.266368" transform="rotate(-0 468.278665 256.266368)">  $283</text>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 9.5px; font-family: 'Arial', 'Helvetica Neue', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #f0efec" x="469.968518" y="218.74188" transform="rotate(-0 469.968518 218.74188)">  $294</text>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 9.5px; font-family: 'Arial', 'Helvetica Neue', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #f0efec" x="470.837999" y="181.217393" transform="rotate(-0 470.837999 181.217393)">  $300</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 9.5px; font-family: 'Arial', 'Helvetica Neue', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #f0efec" x="540.520694" y="143.692906" transform="rotate(-0 540.520694 143.692906)">  $774</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 9.5px; font-family: 'Arial', 'Helvetica Neue', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #f0efec" x="635.700435" y="106.168419" transform="rotate(-0 635.700435 106.168419)">  $1,421</text>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 9.5px; font-family: 'Arial', 'Helvetica Neue', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #f0efec" x="426.701887" y="74.64" transform="rotate(-0 426.701887 74.64)">GLP-1 promotional $ per 1,000 other diabetes-drug claims</text>
+   </g>
+  </g>
+  <g id="text_24">
+   <text style="font-weight: 700; font-size: 12.54px; font-family: 'Arial', 'Helvetica Neue', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #f0efec" x="8.64" y="21.225463" transform="rotate(-0 8.64 21.225463)">Per diabetes claim, endocrinologists receive about 6 times what primary-care physicians do</text>
+  </g>
+  <g id="text_25">
+   <text style="font-size: 9.69px; font-family: 'Arial', 'Helvetica Neue', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #c3c2b7" x="8.64" y="41.326585" transform="rotate(-0 8.64 41.326585)">Diabetes prescribers in the analysis sample, 2024</text>
+  </g>
+  <g id="text_26">
+   <text style="font-size: 7.41px; font-family: 'Arial', 'Helvetica Neue', 'DejaVu Sans', sans-serif; fill: #898781" transform="translate(8.64 376.004727)">Other diabetes-drug claims: metformin, SGLT2, DPP-4, sulfonylurea, TZD and insulin (observed Part D rows). A specialty with more payments per claim is not evidence that its prescribing</text>
+   <text style="font-size: 7.41px; font-family: 'Arial', 'Helvetica Neue', 'DejaVu Sans', sans-serif; fill: #898781" transform="translate(8.64 386.126831)">differs.</text>
+   <text style="font-size: 7.41px; font-family: 'Arial', 'Helvetica Neue', 'DejaVu Sans', sans-serif; fill: #898781" transform="translate(8.64 394.780828)">Source: CMS Open Payments (general payments, promotional natures); CMS Medicare Part D Prescribers.</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pef26cf0cc0">
+   <rect x="122.4" y="80.64" width="271.698113" height="270.7767"/>
+  </clipPath>
+  <clipPath id="pc9501f6b41">
+   <rect x="426.701887" y="80.64" width="271.698113" height="270.7767"/>
+  </clipPath>
+ </defs>
+</svg>

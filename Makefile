@@ -60,7 +60,7 @@ models:
 
 figures:
 	$(PY) -m ppg.viz.figures
-	@echo "figures: final theme in P21"
+	$(PY) -m ppg.viz.final
 
 report:
 	@echo "report: added in P22"

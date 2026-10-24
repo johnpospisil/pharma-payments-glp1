@@ -293,6 +293,16 @@ def _shares(usd: np.ndarray) -> dict:
             "median_usd": float(np.median(v)), "p99_usd": float(np.quantile(v, 0.99))}  # fmt: skip
 
 
+def lorenz_points(df: pd.DataFrame, step: float = 0.005) -> pd.DataFrame:
+    """The Lorenz curve at 0.5% steps of paid prescribers, 0.1% above the 99th percentile (each
+    step aggregates >= ~280 prescribers), so the final chart can be drawn from report/qa alone."""
+    v = np.sort(df.usd.values)
+    x = np.concatenate([[0], np.arange(1, len(v) + 1) / len(v)])
+    y = np.concatenate([[0], np.cumsum(v) / v.sum()])
+    q = np.round(np.r_[np.arange(0, 0.99, step), np.arange(0.99, 1.0005, 0.001)], 4)
+    return pd.DataFrame({"share_prescribers": q, "share_usd": np.interp(q, x, y)})
+
+
 def chart7(df: pd.DataFrame) -> dict:
     v = np.sort(df.usd.values)
     x = np.concatenate([[0], np.arange(1, len(v) + 1) / len(v)])
@@ -403,6 +413,7 @@ def build() -> dict:
     out["chart6"] = chart6(st)
     lz = lorenz_data(con)
     out["chart7"] = chart7(lz)
+    _csv(lorenz_points(lz), "lorenz_curve")
     y24 = con.execute(f"""SELECT sum(usd_split) AS usd FROM '{P}/payments/npi_class_year.parquet'
                           WHERE class_group = 'glp1' AND year = 2024 GROUP BY npi
                           HAVING sum(usd_split) > 0""").df()  # fmt: skip
