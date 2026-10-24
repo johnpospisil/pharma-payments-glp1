@@ -66,6 +66,12 @@ def bins(x: pd.Series, cuts: list[float], unit: str) -> dict[str, pd.Series]:
     return {_label(lo, hi, unit): (x >= lo) & (x < hi) for lo, hi in edges}
 
 
+def _cents(x):
+    """Round to the cent; equal splits make half-cents ($99.995), so nudge them up by 1e-7 to
+    round the same way whatever the float noise in the last bits."""
+    return (x + 1e-7).round(2)
+
+
 def unit_measures(df: pd.DataFrame, w: Wide) -> pd.DataFrame:
     """Per treated physician (w.npi order): $ and contacts in year g, cumulative $ over event
     years 0-3, and payment type over event years 0-1."""
@@ -75,7 +81,7 @@ def unit_measures(df: pd.DataFrame, w: Wide) -> pd.DataFrame:
     # builds, which must not move a physician across a bin edge or create a 1e-12 "other" $
     usd = ["usd", "usd_speaker", "usd_consulting", "usd_food_beverage", "usd_travel",
            "usd_education"]  # fmt: skip
-    t[usd] = t[usd].round(2)
+    t[usd] = _cents(t[usd])
     fee = t.usd_speaker.fillna(0) + t.usd_consulting.fillna(0)
     named = (t.usd_food_beverage.fillna(0) + fee + t.usd_travel.fillna(0)
              + t.usd_education.fillna(0))  # fmt: skip
@@ -87,9 +93,7 @@ def unit_measures(df: pd.DataFrame, w: Wide) -> pd.DataFrame:
     m["g"] = w.g
     m["usd_g"] = g0.usd
     m["contacts_g"] = g0.promo_contacts
-    m["usd_03"] = (
-        t.groupby("npi").usd.sum().round(2).where(lambda s: s.index.isin(m.index[m.g > 0]))
-    )
+    m["usd_03"] = _cents(t.groupby("npi").usd.sum()).where(lambda s: s.index.isin(m.index[m.g > 0]))
     m.loc[m.g > LAST_FULL_COHORT, "usd_03"] = np.nan
     m["type_01"] = np.select(
         [e01.fee.reindex(m.index) > 0, e01.other.reindex(m.index) > 0], TYPES[:0:-1], TYPES[0]
