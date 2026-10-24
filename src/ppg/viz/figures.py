@@ -52,6 +52,7 @@ plt.rcParams.update({
     "axes.labelcolor": INK2, "xtick.color": INK2, "ytick.color": INK2,
     "axes.titlecolor": INK, "figure.facecolor": SURFACE, "axes.facecolor": SURFACE,
     "svg.fonttype": "none", "text.parse_math": False,  # "$" is currency, not mathtext
+    "svg.hashsalt": "ppg",  # stable element ids, so rebuilt SVGs are byte-identical
 })  # fmt: skip
 
 
@@ -70,7 +71,8 @@ def _save(fig, name: str, note: str) -> None:
     fig.text(0.01, 0.01, "\n".join(lines), fontsize=7.5, color=MUTED, va="bottom")
     config.FIGURE_DIR.mkdir(parents=True, exist_ok=True)
     for ext in ("png", "svg"):
-        fig.savefig(config.FIGURE_DIR / f"{name}.{ext}", dpi=160, facecolor=SURFACE)
+        fig.savefig(config.FIGURE_DIR / f"{name}.{ext}", dpi=160, facecolor=SURFACE,
+                    metadata={"Date": None} if ext == "svg" else None)  # fmt: skip
     plt.close(fig)
 
 

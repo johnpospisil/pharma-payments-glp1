@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="720pt" height="316.8pt" viewBox="0 0 720 316.8" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 316.8 
+L 720 316.8 
+L 720 0 
+L 0 0 
+z
+" style="fill: #fcfcfb"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 115.1 288.072 
+L 407.83 288.072 
+L 407.83 63.368 
+L 115.1 63.368 
+z
+" style="fill: #fcfcfb"/>
+   </g>
+   <g id="matplotlib.axis_1"/>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_1"/>
+     <g id="text_1">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #52514e" x="111.6" y="271.711667" transform="rotate(-0 111.6 271.711667)">Nephrology</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_2"/>
+     <g id="text_2">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #52514e" x="111.6" y="240.85421" transform="rotate(-0 111.6 240.85421)">Primary care (MD/DO)</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_3"/>
+     <g id="text_3">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #52514e" x="111.6" y="209.996754" transform="rotate(-0 111.6 209.996754)">Nurse practitioner</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_4"/>
+     <g id="text_4">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #52514e" x="111.6" y="179.139297" transform="rotate(-0 111.6 179.139297)">Physician assistant</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_5"/>
+     <g id="text_5">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #52514e" x="111.6" y="148.28184" transform="rotate(-0 111.6 148.28184)">Other physician</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_6"/>
+     <g id="text_6">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #52514e" x="111.6" y="117.424383" transform="rotate(-0 111.6 117.424383)">Cardiology</text>
+     </g>
+    </g>
+    <g id="ytick_7">
+     <g id="line2d_7"/>
+     <g id="text_7">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #52514e" x="111.6" y="86.566927" transform="rotate(-0 111.6 86.566927)">Endocrinology</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 115.1 277.858182 
+L 195.76875 277.858182 
+L 195.76875 258.726559 
+L 115.1 258.726559 
+z
+" clip-path="url(#p29eae346a8)" style="fill: #2a78d6"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 115.1 247.000725 
+L 242.828348 247.000725 
+L 242.828348 227.869102 
+L 115.1 227.869102 
+z
+" clip-path="url(#p29eae346a8)" style="fill: #2a78d6"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 115.1 216.143268 
+L 251.501649 216.143268 
+L 251.501649 197.011645 
+L 115.1 197.011645 
+z
+" clip-path="url(#p29eae346a8)" style="fill: #2a78d6"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 115.1 185.285812 
+L 262.861653 185.285812 
+L 262.861653 166.154188 
+L 115.1 166.154188 
+z
+" clip-path="url(#p29eae346a8)" style="fill: #2a78d6"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 115.1 154.428355 
+L 142.803696 154.428355 
+L 142.803696 135.296732 
+L 115.1 135.296732 
+z
+" clip-path="url(#p29eae346a8)" style="fill: #2a78d6"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 115.1 123.570898 
+L 245.653454 123.570898 
+L 245.653454 104.439275 
+L 115.1 104.439275 
+z
+" clip-path="url(#p29eae346a8)" style="fill: #2a78d6"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 115.1 92.713441 
+L 349.284 92.713441 
+L 349.284 73.581818 
+L 115.1 73.581818 
+z
+" clip-path="url(#p29eae346a8)" style="fill: #2a78d6"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 115.1 288.072 
+L 115.1 63.368 
+" style="fill: none; stroke: #c3c2b7; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 115.1 288.072 
+L 407.83 288.072 
+" style="fill: none; stroke: #c3c2b7; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0b0b" x="195.76875" y="270.500378" transform="rotate(-0 195.76875 270.500378)">  16%</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0b0b" x="242.828348" y="239.642921" transform="rotate(-0 242.828348 239.642921)">  25%</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0b0b" x="251.501649" y="208.785465" transform="rotate(-0 251.501649 208.785465)">  26%</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0b0b" x="262.861653" y="177.928008" transform="rotate(-0 262.861653 177.928008)">  29%</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0b0b" x="142.803696" y="147.070551" transform="rotate(-0 142.803696 147.070551)">  5%</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0b0b" x="245.653454" y="116.213094" transform="rotate(-0 245.653454 116.213094)">  25%</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0b0b" x="349.284" y="85.355638" transform="rotate(-0 349.284 85.355638)">  45%</text>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0b0b" x="115.1" y="57.368" transform="rotate(-0 115.1 57.368)">Share paid for a GLP-1 that year</text>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_12">
+    <path d="M 417.55 288.072 
+L 710.28 288.072 
+L 710.28 63.368 
+L 417.55 63.368 
+z
+" style="fill: #fcfcfb"/>
+   </g>
+   <g id="matplotlib.axis_3"/>
+   <g id="matplotlib.axis_4">
+    <g id="ytick_8">
+     <g id="line2d_8"/>
+    </g>
+    <g id="ytick_9">
+     <g id="line2d_9"/>
+    </g>
+    <g id="ytick_10">
+     <g id="line2d_10"/>
+    </g>
+    <g id="ytick_11">
+     <g id="line2d_11"/>
+    </g>
+    <g id="ytick_12">
+     <g id="line2d_12"/>
+    </g>
+    <g id="ytick_13">
+     <g id="line2d_13"/>
+    </g>
+    <g id="ytick_14">
+     <g id="line2d_14"/>
+    </g>
+   </g>
+   <g id="patch_13">
+    <path d="M 417.55 277.858182 
+L 427.884471 277.858182 
+L 427.884471 258.726559 
+L 417.55 258.726559 
+z
+" clip-path="url(#pc6daca86b9)" style="fill: #2a78d6"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 417.55 247.000725 
+L 456.131943 247.000725 
+L 456.131943 227.869102 
+L 417.55 227.869102 
+z
+" clip-path="url(#pc6daca86b9)" style="fill: #2a78d6"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 417.55 216.143268 
+L 464.137006 216.143268 
+L 464.137006 197.011645 
+L 417.55 197.011645 
+z
+" clip-path="url(#pc6daca86b9)" style="fill: #2a78d6"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 417.55 185.285812 
+L 466.030495 185.285812 
+L 466.030495 166.154188 
+L 417.55 166.154188 
+z
+" clip-path="url(#pc6daca86b9)" style="fill: #2a78d6"/>
+   </g>
+   <g id="patch_17">
+    <path d="M 417.55 154.428355 
+L 467.004748 154.428355 
+L 467.004748 135.296732 
+L 417.55 135.296732 
+z
+" clip-path="url(#pc6daca86b9)" style="fill: #2a78d6"/>
+   </g>
+   <g id="patch_18">
+    <path d="M 417.55 123.570898 
+L 545.084584 123.570898 
+L 545.084584 104.439275 
+L 417.55 104.439275 
+z
+" clip-path="url(#pc6daca86b9)" style="fill: #2a78d6"/>
+   </g>
+   <g id="patch_19">
+    <path d="M 417.55 92.713441 
+L 651.734 92.713441 
+L 651.734 73.581818 
+L 417.55 73.581818 
+z
+" clip-path="url(#pc6daca86b9)" style="fill: #2a78d6"/>
+   </g>
+   <g id="patch_20">
+    <path d="M 417.55 288.072 
+L 417.55 63.368 
+" style="fill: none; stroke: #c3c2b7; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_21">
+    <path d="M 417.55 288.072 
+L 710.28 288.072 
+" style="fill: none; stroke: #c3c2b7; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0b0b" x="427.884471" y="270.50071" transform="rotate(-0 427.884471 270.50071)">  $63</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0b0b" x="456.131943" y="239.643253" transform="rotate(-0 456.131943 239.643253)">  $234</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0b0b" x="464.137006" y="208.785797" transform="rotate(-0 464.137006 208.785797)">  $283</text>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0b0b" x="466.030495" y="177.92834" transform="rotate(-0 466.030495 177.92834)">  $294</text>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0b0b" x="467.004748" y="147.070883" transform="rotate(-0 467.004748 147.070883)">  $300</text>
+   </g>
+   <g id="text_21">
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0b0b" x="545.084584" y="116.213426" transform="rotate(-0 545.084584 116.213426)">  $774</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0b0b" x="651.734" y="85.35597" transform="rotate(-0 651.734 85.35597)">  $1,421</text>
+   </g>
+   <g id="text_23">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0b0b" x="417.55" y="57.368" transform="rotate(-0 417.55 57.368)">GLP-1 promotional $ per 1,000 other diabetes-drug claims</text>
+   </g>
+  </g>
+  <g id="text_24">
+   <text style="font-size: 11px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0b0b0b" x="7.2" y="14.694281" transform="rotate(-0 7.2 14.694281)">Payments relative to diabetes workload, by specialty, 2024</text>
+  </g>
+  <g id="text_25">
+   <text style="font-size: 7.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #898781" transform="translate(7.2 302.077459)">Diabetes prescribers in the analysis sample (P10), 2024. Other diabetes-drug claims: metformin, SGLT2, DPP-4, sulfonylurea, TZD, insulin (observed rows).</text>
+   <text style="font-size: 7.5px; font-family: 'DejaVu Sans', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Arial', 'Helvetica', 'Avant Garde', sans-serif; fill: #898781" transform="translate(7.2 311.07951)">Source: CMS Open Payments (General Payments), linked to NPIs. CMS Part D Prescribers.</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p29eae346a8">
+   <rect x="115.1" y="63.368" width="292.73" height="224.704"/>
+  </clipPath>
+  <clipPath id="pc6daca86b9">
+   <rect x="417.55" y="63.368" width="292.73" height="224.704"/>
+  </clipPath>
+ </defs>
+</svg>
