@@ -251,6 +251,8 @@ def by_brand_year(con) -> pd.DataFrame:
                count(DISTINCT npi) FILTER (WHERE speaker_contacts > 0) AS npis_speaker
         FROM {T["npi_brand_year"]} WHERE drug_class IN {GLP1_CLASSES}
         GROUP BY 1, 2 ORDER BY 1, 2""").df()
+    money = ["usd_split", *(f"usd_{g}" for g in PROMO_GROUPS)]
+    d[money] = (d[money] + 1e-7).round(2)  # half-cents round the same way in every build
     for g in PROMO_GROUPS:
         d = mask_small(d, f"npis_usd_{g}", [f"usd_{g}"])
     d = mask_small(d, "npis_speaker")
