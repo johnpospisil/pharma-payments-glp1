@@ -6,7 +6,7 @@ date: 2026-10-24
 description: "Following every Medicare Part D prescriber brand by brand: does a GLP-1 maker's first payment come before a shift toward its brand, or do companies simply reach doctors whose practices were already growing?"
 ---
 
-::: {#fig-hero .column-body-outset}
+::: {#fig-hero .column-page-right}
 ![](figures/final/hero_brand_share.png){.light-content fig-alt="{{< var alt_hero_brand_share >}}"}
 
 ![](figures/final/hero_brand_share_dark.png){.dark-content fig-alt="{{< var alt_hero_brand_share >}}"}
@@ -38,7 +38,7 @@ Two decades of research find that doctors who take industry money prescribe more
 
 This project asks a narrower, harder question: **when a doctor receives a first promotional payment for a specific GLP-1 brand, does their prescribing of *that brand* change afterwards, compared with similar doctors who have not yet been paid — and does it change in ways that targeting alone would not produce?**
 
-::: {.column-body-outset}
+::: {.column-page-right}
 ![](figures/final/chart3_partd_spending.png){.light-content fig-alt="{{< var alt_chart3_partd_spending >}}"}
 ![](figures/final/chart3_partd_spending_dark.png){.dark-content fig-alt="{{< var alt_chart3_partd_spending >}}"}
 :::
@@ -56,7 +56,7 @@ Two features of the data shape every result:
 1. **Medicare hides small counts.** A prescriber-drug row with fewer than 11 claims in a year is suppressed. A missing row means "0 to 10 claims", not zero. The main outcome is therefore *whether* a doctor wrote at least 11 claims of the brand that year, which is always observed; prescription volumes are estimated separately with bounds for the hidden cells.
 2. **Almost every GLP-1 prescriber gets paid eventually.** {{< var fills_paid_2013 >}}% of GLP-1 fills in 2013, and {{< var fills_paid_2024 >}}% in 2024, came from prescribers who received a GLP-1 payment at some point. So the comparison group is mostly doctors **not paid yet**, not doctors never paid.
 
-::: {.column-body-outset}
+::: {.column-page-right}
 ![](figures/final/chart4_payments_by_type.png){.light-content fig-alt="{{< var alt_chart4_payments_by_type >}}"}
 ![](figures/final/chart4_payments_by_type_dark.png){.dark-content fig-alt="{{< var alt_chart4_payments_by_type >}}"}
 :::
@@ -85,7 +85,7 @@ For Trulicity and Mounjaro, the paid and comparison doctors' shares moved togeth
 
 **The gain comes from direct competitors.** After a Trulicity payment, Victoza's share falls by {{< var src_tru_vic >}} points; after an Ozempic payment, Trulicity's falls by {{< var src_oz_tru >}}; after a Mounjaro payment, Lilly's own Trulicity falls by {{< var src_mj_tru >}}. For the established brands, {{< var switch_frac_trulicity >}}% (Trulicity) and {{< var switch_frac_ozempic >}}% (Ozempic) of the extra claims after payment come from switching between brands rather than from more GLP-1 prescribing overall.
 
-::: {.column-body-outset}
+::: {.column-page-right}
 ![](figures/final/chart5_share_dumbbells.png){.light-content fig-alt="{{< var alt_chart5_share_dumbbells >}}"}
 ![](figures/final/chart5_share_dumbbells_dark.png){.dark-content fig-alt="{{< var alt_chart5_share_dumbbells >}}"}
 :::
@@ -102,7 +102,7 @@ The obvious headline would be that paid doctors become far more likely to prescr
 
 But the pre-registered tests say this number cannot be read as the effect of a payment:
 
-::: {#fig-statins .column-body-outset}
+::: {#fig-statins .column-page-right}
 ![](figures/final/chart1b_targeting_statins.png){.light-content fig-alt="{{< var alt_chart1b_targeting_statins >}}"}
 
 ![](figures/final/chart1b_targeting_statins_dark.png){.dark-content fig-alt="{{< var alt_chart1b_targeting_statins >}}"}
@@ -118,7 +118,7 @@ Under the pre-registered interpretation rules, this pattern is reported as **"ex
 
 ## Result 3: bigger payments, bigger changes, different doctors
 
-::: {.column-body-outset}
+::: {.column-page-right}
 ![](figures/final/chart2_dose.png){.light-content fig-alt="{{< var alt_chart2_dose >}}"}
 ![](figures/final/chart2_dose_dark.png){.dark-content fig-alt="{{< var alt_chart2_dose >}}"}
 :::
@@ -131,21 +131,21 @@ Doctors who received $100 or more for the brand in their first payment year rose
 
 ## Where the money goes
 
-::: {.column-body-outset}
+::: {.column-page-right}
 ![](figures/final/chart7_lorenz.png){.light-content fig-alt="{{< var alt_chart7_lorenz >}}"}
 ![](figures/final/chart7_lorenz_dark.png){.dark-content fig-alt="{{< var alt_chart7_lorenz >}}"}
 :::
 
 GLP-1 promotional money is extremely concentrated. Of {{< var n_paid_lorenz >}} prescribers paid for a GLP-1 through 2024, the top 1% received {{< var top1_share >}}% of the dollars and the top 10% received {{< var top10_share >}}% (Gini {{< var gini >}}); the median paid prescriber received ${{< var median_usd >}} over twelve years. Speaker and consulting fees are {{< var fees_share >}}% of all GLP-1 promotional dollars, paid to {{< var glp1_speakers >}} speakers in all; meals are {{< var meal_share >}}%.
 
-::: {.column-body-outset}
+::: {.column-page-right}
 ![](figures/final/chart6_state_map.png){.light-content fig-alt="{{< var alt_chart6_state_map >}}"}
 ![](figures/final/chart6_state_map_dark.png){.dark-content fig-alt="{{< var alt_chart6_state_map >}}"}
 :::
 
 Per Medicare Part D enrollee with diabetes, GLP-1 promotional payments in 2024 ranged from ${{< var state_min >}} ({{< var state_min_name >}}) to ${{< var state_max >}} ({{< var state_max_name >}}), against ${{< var state_us >}} nationally. {{< var masked_states >}} are left blank: in each, one prescriber received more than half of the state's GLP-1 promotional dollars, so the state's figure would describe one person.
 
-::: {.column-body-outset}
+::: {.column-page-right}
 ![](figures/final/chart8_specialty.png){.light-content fig-alt="{{< var alt_chart8_specialty >}}"}
 ![](figures/final/chart8_specialty_dark.png){.dark-content fig-alt="{{< var alt_chart8_specialty >}}"}
 :::
