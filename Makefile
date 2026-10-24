@@ -40,7 +40,9 @@ models:
 	$(PY) -m ppg.models.dose_response all
 	$(PY) -m ppg.models.dose_response pretrends
 	$(PY) -m ppg.models.dose_response report
-	@echo "models: P17-P19 added later"
+	$(PY) -m ppg.models.falsification all
+	$(PY) -m ppg.models.falsification report
+	@echo "models: P18-P19 added later"
 
 figures:
 	$(PY) -m ppg.viz.figures

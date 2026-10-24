@@ -340,3 +340,74 @@ The first-year-dollar bins, the least contaminated measure, show the gradient fr
 **What this doesn't mean:**
 - It does not show that a larger meal causes more prescribing, or that speaker fees work better than meals. The speaker groups are too small, and too selected, to say.
 - It does not describe any individual physician.
+
+## P17: Falsification tests (2026-10-23)
+
+Specification: [PREREGISTRATION.md](../PREREGISTRATION.md) §9. Numbers: [falsification.csv](../report/qa/falsification.csv), [falsification.json](../report/qa/falsification.json).
+
+**Method:**
+- **Estimators:** panel-form CS-DR (the registered verdict) plus the matched (CEM) version, as D28 requires.
+- **Fail rule:** the 95% CI excludes 0 *and* the estimate is at least half the comparator in the comparator's direction.
+
+### Results
+
+| Test | Trulicity | Victoza | Ozempic | Verdict (primary / matched) |
+|---|---|---|---|---|
+| **Negative-control outcome:** statins ≥ 11 claims (comparator: primary ATT) | +6.4 pp | +7.9 pp | +7.1 pp | **FAIL / FAIL** all three |
+| **Negative-control outcome:** statin claims, ratio scale (comparator: brand claims ratio) | +5.8% | +11.9% | +7.2% | pass / pass, except Victoza unmatched FAIL |
+| **Placebo timing**, 1 year early (comparator: primary ATT) | +1.7 [+2.8] | +1.2 [+1.7] | +2.0 [+3.5] | pass / pass |
+| **Placebo timing**, 2 years early | +2.6 [+3.8] | +1.1 [+1.8] | +3.0 [+3.9] | pass / pass |
+| **Placebo brand:** Trulicity payment → Ozempic ≥ 11 | +4.0 [+3.8] | | | pass / pass (but > 0) |
+| **Placebo brand:** Ozempic payment → Trulicity ≥ 11 | | | +8.3 [+8.8] | **FAIL / FAIL** |
+| **Pre-trend, second outcome** (any other GLP-1): joint p, primary / matched | < 0.001 / < 0.001 | < 0.001 / 0.046 | < 0.001 / 0.67 | **FAIL**; matched FAIL, FAIL, pass |
+
+Matched estimates are in brackets.
+
+| Negative-control exposure (outcome: any GLP-1 ≥ 11 claims) | ATT | Matched | Share of the GLP-1-payment effect (+13.4 pp; matched +15.1) | Verdict |
+|---|---|---|---|---|
+| First anticoagulant payment (primary, D20) | **+5.0 pp** (4.6 to 5.4) | +6.7 | 37% (matched 44%) | pass / pass |
+| First inhaled-respiratory payment (secondary) | **+9.0 pp** (8.6 to 9.5) | +10.9 | 68% (matched 72%) | **FAIL / FAIL** |
+
+### What the failures say
+
+**1. The statin failure is practice growth, not statin promotion.**
+- Paid physicians' **total** Part D claims grow after a GLP-1 brand payment: +6.0% / +12.4% / +8.0% (matched +14.6% / +19.3% / +15.2%).
+- Their statin claims grow by almost exactly the same proportions (+5.8% / +11.9% / +7.2%; matched +14.9% / +19.0% / +14.5%). Statins as a share of their prescribing don't change.
+- The event study shows a steep rise in statin ≥ 11 claims over the **five years before** payment (−15 pp to 0). These physicians are building their Medicare practices.
+- 88–94% already had ≥ 11 statin claims at g − 1, so growth pushes the rest over the threshold.
+
+The binary primary outcome rewards that growth too: a growing panel crosses the 11-claim threshold for many drugs. The matched design matched volume *levels*, not volume *growth*, so it doesn't remove this.
+
+**2. Placebo brand: in levels, paid physicians prescribe more competing GLP-1s too.**
+- An Ozempic payment is followed by +8.3 pp on Trulicity ≥ 11 claims.
+- In shares, it goes the other way: Ozempic payment → Trulicity *share* −5.0 pp (P15).
+
+So payments reach physicians who are expanding GLP-1 use overall and expanding their practices. Within that expansion, the paid brand gains share.
+
+**3. Negative-control exposure.** Physicians first paid for an anticoagulant (by companies selling no GLP-1) increase GLP-1 prescribing by 5.0 pp, about 37% of the effect after a first GLP-1 payment.
+- That passes the registered rule. But a sizeable part of the "paid physician" contrast is general: physicians who start seeing reps for any new drug are on a growth path.
+- The inhaled-respiratory payment, from AstraZeneca and GSK, which also sell diabetes drugs (D20), fails at 68%.
+
+**4. Placebo timing passes the rule**, but the estimates are positive. In the matched sample, the fake post-years (true g − 2 and g − 1) rise 1.7–3.9 pp, so there is a run-up just before the first payment. The matched design (P14) absorbs it, because it matches on g − 1 and g − 2.
+
+### §10 classification after P17 (H1, the binary primary outcome)
+
+**Not met** for "consistent with influence":
+- the primary pre-trend test (P13/P14);
+- the negative-control outcome (statins, all three brands);
+- the Ozempic → Trulicity placebo brand.
+
+**Met:**
+- HonestDiD M̄* ≥ 0.5;
+- the matched estimate is ≥ half the primary;
+- the primary negative-control exposure (anticoagulants, 37%) passes.
+
+**Registered reading:** H1 is **"explained at least partly by targeting of already-rising prescribers"**. The falsification tests add that the targeting is of physicians whose whole Medicare practice is growing.
+
+**What survives as brand-specific evidence is the share outcome (H5, P15).**
+- It cancels practice growth and class growth.
+- It moves toward the paid brand and away from its direct competitors: +3–5 pp, precise under the linear form; under the registered log-odds form, statistically clear only for Mounjaro (D29).
+
+**What this doesn't mean:**
+- None of the failures shows that payments have no effect.
+- They show that the binary "≥ 11 claims" contrast cannot separate an effect from the growth trajectory of the physicians reps choose to visit.

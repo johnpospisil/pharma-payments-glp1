@@ -265,3 +265,5 @@ Each deviation after locking gets a dated entry: what changed, why, and whether 
   - otherwise meals only.
 - **Spline:** a natural cubic spline (4 df) of log10(cumulative dollars, years 0–3), fitted to unit-level regression-adjusted effects. Each treated physician's change from g − 1 minus the change predicted by the outcome model fitted on not-yet-paid controls, averaged over their event years 0–3. Descriptive.
 - **Estimation:** each group is estimated with the panel-form CS-DR as its own treated group, against the same not-yet-paid controls (D27). Each also gets a matched (CEM) version (D28). §3 still holds: higher bins are more selected, so a gradient is described, not interpreted as a causal dose-response.
+
+**DEV-7 addendum (2026-10-23, after the P16 estimates were seen):** H4's single test for the secondary Holm family (§7) is the difference between the ≥ $100 and < $100 first-year-dollar groups. It is pooled over the three brands with cohort-size weights and an SE that accounts for the shared controls. It is computed when the H2–H7 family is assembled (P19). The test was chosen after the bin estimates were seen, so this is disclosed here.

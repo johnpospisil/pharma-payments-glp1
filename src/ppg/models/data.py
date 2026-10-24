@@ -103,3 +103,41 @@ def _log(x: float) -> float:
 def cohort_table(df: pd.DataFrame) -> pd.DataFrame:
     u = df.groupby("npi").g.first()
     return u.value_counts().sort_index().rename("npis").to_frame()
+
+
+def physician_frame(con: duckdb.DuckDBPyConnection | None = None) -> pd.DataFrame:
+    """Physician x year rows (P10 diabetes-prescriber physicians, years in Part D, 2013-2024)
+    with the registered covariates and no exposure, for exposures that are not a GLP-1 brand
+    (P17: negative-control exposures). Same sample rules as `frame` (D25, DEV-2)."""
+    con = con or duckdb.connect()
+    df = con.execute(
+        f"""
+        SELECT y.npi, y.year, y.state, y.ruca, y.tot_clms, y.dm_load,
+               coalesce(y.clms_glp1, 0) AS glp1_claims_all, y.clms_statin,
+               d.org_pac_id, d.specialty_group
+        FROM '{P}/panel/npi_year.parquet' y
+        JOIN '{P}/panel/npi_dims.parquet' d USING (npi)
+        WHERE {SAMPLE} AND d.physician AND y.tot_clms IS NOT NULL
+          AND y.year BETWEEN 2013 AND {LAST_YEAR}"""
+    ).df()
+    df["region"] = df.state.map(STATE_REGION)
+    territory = df.groupby("npi").region.transform(lambda r: r.isna().any())
+    df = df[~territory].copy()
+    df["urban"] = (df.ruca < 4).astype(int)
+    df["cluster"] = df.org_pac_id.fillna("npi" + df.npi.astype(str))
+    return df.reset_index(drop=True)
+
+
+def first_promo_year(class_group: str, con: duckdb.DuckDBPyConnection | None = None) -> pd.Series:
+    """First program year with a promotional contact for a drug class (npi_class_year)."""
+    con = con or duckdb.connect()
+    return (
+        con.execute(
+            f"""SELECT npi, min(year) AS g FROM '{P}/payments/npi_class_year.parquet'
+            WHERE class_group = ? AND promo_contacts > 0 GROUP BY 1""",
+            [class_group],
+        )
+        .df()
+        .set_index("npi")
+        .g
+    )

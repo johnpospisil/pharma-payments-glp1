@@ -127,3 +127,24 @@ def test_p16_dose(key):
     rows = json.loads(f.read_text())["families"][key[1]]
     att = next(r["att"] for r in rows if r["group"] == key[2])
     assert att == pytest.approx(PINNED_P16[key], abs=5e-6)
+
+
+PINNED_P17 = {  # falsification estimates (deterministic): (file stem, key path) -> value
+    ("falsification_Trulicity", ("statin_binary", "att")): 0.064021,
+    ("falsification_Victoza", ("statin_binary", "att")): 0.079306,
+    ("falsification_Ozempic", ("statin_binary", "att")): 0.070682,
+    ("falsification_Ozempic", ("placebo_brand", "att")): 0.082591,
+    ("falsification_nc_exposure", ("anticoagulant", "att")): 0.050246,
+    ("falsification_nc_exposure", ("glp1", "att")): 0.133791,
+}
+
+
+@pytest.mark.parametrize("key", list(PINNED_P17), ids=lambda k: k[0] + "-" + "-".join(k[1]))
+def test_p17_falsification(key):
+    f = config.QA_DIR / "es" / f"{key[0]}.json"
+    if not f.exists():
+        pytest.skip("run python -m ppg.models.falsification all first")
+    x = json.loads(f.read_text())
+    for k in key[1]:
+        x = x[k]
+    assert x == pytest.approx(PINNED_P17[key], abs=5e-6)
