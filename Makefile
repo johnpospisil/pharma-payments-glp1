@@ -7,9 +7,9 @@ PY := uv run python -I
 # Ignore any other active virtualenv (e.g. ~/tf): uv always uses this project's .venv.
 unexport VIRTUAL_ENV
 
-.PHONY: all check-env check-env-local data build models figures report app test lint test-fast progress data-open-payments data-partd data-reference
+.PHONY: all check-env check-env-local data build models figures report app qa test lint test-fast progress data-open-payments data-partd data-reference
 
-all: check-env data build models figures report app
+all: check-env data build models figures report app qa
 
 check-env:
 	$(PY) -m ppg.check_env
@@ -57,6 +57,12 @@ report:
 
 app:
 	@echo "app: added in P23"
+
+# P20: article claims vs report/qa, and the disclosure audit of everything public
+qa:
+	$(PY) -m ppg.qa.claims
+	$(PY) -m ppg.qa.disclosure > /dev/null
+	@$(PY) -c "import json; d = json.load(open('report/qa/disclosure_audit.json')); print('disclosure audit:', 'PASS' if d['pass'] else 'FAIL'); raise SystemExit(0 if d['pass'] else 1)"
 
 test:
 	uv run pytest -q
