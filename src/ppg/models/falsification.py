@@ -315,7 +315,13 @@ def table() -> pd.DataFrame:
                 )
             )
         o = r["other_glp1_pretrend"]
-        x = _row("Pre-trend, second outcome (any other GLP-1)", b, o, None, unit="p")
+        x = _row(
+            "Pre-trend, second outcome (any other GLP-1)",
+            b,
+            o,
+            None,
+            unit="pp; verdict = pre-trend p",
+        )
         x["verdict"] = "pass" if o["pretrend_wald"]["p"] >= 0.05 else "FAIL"
         mp = (o.get("matched_pretrend_wald") or {}).get("p")
         x["matched_verdict"] = None if mp is None else ("pass" if mp >= 0.05 else "FAIL")
