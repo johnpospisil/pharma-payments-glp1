@@ -59,7 +59,9 @@ class Wide:
         self.spec = u.specialty_group.astype("category").cat.codes.to_numpy()
         self.specialty = u.specialty_group.to_numpy()
         self.region = u.region.to_numpy()
-        self.cluster = u.cluster.astype("category").cat.codes.to_numpy()
+        cl = u.cluster.astype("category")
+        self.cluster = cl.cat.codes.to_numpy()
+        self.cluster_labels = cl.cat.categories
 
     def col(self, year: int) -> int:
         return int(year - self.y0)
@@ -275,6 +277,12 @@ def estimate(
         "overall_1_3": lin(((es >= 1) & (es <= 3)).astype(float)),
         "pretrend_wald": wald,
     }
+
+
+def cluster_if(w: Wide, v: np.ndarray) -> pd.Series:
+    """Influence function summed by practice label, for combining estimates across fits (P19)."""
+    s = np.bincount(w.cluster, weights=v, minlength=len(w.cluster_labels))
+    return pd.Series(s, index=w.cluster_labels)
 
 
 def _se(w: Wide, v: np.ndarray) -> float:

@@ -45,7 +45,8 @@ models:
 	$(PY) -m ppg.models.sensitivity all
 	$(PY) -m ppg.models.sensitivity report
 	$(PY) -m ppg.models.matched report
-	@echo "models: P19 added later"
+	$(PY) -m ppg.models.heterogeneity all
+	$(PY) -m ppg.models.heterogeneity report
 
 figures:
 	$(PY) -m ppg.viz.figures

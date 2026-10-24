@@ -30,7 +30,7 @@ import pandas as pd
 from ppg import config
 from ppg.models.cs_panel import fit
 from ppg.models.event_study import QA, _p
-from ppg.models.matched import Wide, _se, estimate, load, strata
+from ppg.models.matched import Wide, _se, cluster_if, estimate, load, strata
 
 GROUPS = ("Ozempic", "Trulicity", "Victoza", "Mounjaro", "Rybelsus", "Other GLP-1")
 EXPOSURES = {"Trulicity": {}, "Victoza": {}, "Ozempic": {}, "Mounjaro": {"first_cohort": 2022}}
@@ -90,7 +90,7 @@ def _cell(w: Wide, s: np.ndarray, g: int, t: int, m: pd.DataFrame | None):
     return c.i.to_numpy(), c.treated.to_numpy(), wt
 
 
-def frac_fit(w: Wide, s: np.ndarray, matched: bool = False) -> dict:
+def frac_fit(w: Wide, s: np.ndarray, matched: bool = False, return_if: bool = False) -> dict:
     """Fractional-response DiD (H5): parallel trends in the log-odds of the mean share,
     ATT(g,t) = m_T1 - expit(logit m_T0 + logit m_C1 - logit m_C0), no covariates; with
     matched=True the controls are CEM-weighted (registered strata). Delta-method influence
@@ -137,8 +137,11 @@ def frac_fit(w: Wide, s: np.ndarray, matched: bool = False) -> dict:
     if not atts:
         return {"att": None, "se": None, "skipped_cells": skipped,
                 "note": "undefined: every cell has a mean share of 0 or 1"}  # fmt: skip
-    return {"att": float(np.mean(atts)), "se": _se(w, sum(ifs) / len(ifs)),
-            "skipped_cells": skipped}  # fmt: skip
+    v = sum(ifs) / len(ifs)
+    out = {"att": float(np.mean(atts)), "se": _se(w, v), "skipped_cells": skipped}
+    if return_if:
+        out["if"] = cluster_if(w, v)
+    return out
 
 
 def _logit(p: float) -> float:

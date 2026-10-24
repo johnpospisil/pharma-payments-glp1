@@ -30,7 +30,7 @@ from ppg import config
 from ppg.models.cs_panel import fit
 from ppg.models.data import LAST_YEAR, PRIMARY_BRANDS, first_promo_year, frame, physician_frame
 from ppg.models.event_study import QA, _p
-from ppg.models.matched import Wide, _se, estimate, load, strata
+from ppg.models.matched import Wide, _se, cluster_if, estimate, load, strata
 from ppg.models.switching import _cell, claims
 
 PLACEBO_BRAND = {"Trulicity": "Ozempic", "Ozempic": "Trulicity"}
@@ -52,7 +52,7 @@ def array(w: Wide, df: pd.DataFrame, values: pd.Series) -> np.ndarray:
 # ------------------------------------------------------------------ ratio (PPML) scale
 
 
-def ppml_fit(w: Wide, y: np.ndarray, matched: bool = False) -> dict:
+def ppml_fit(w: Wide, y: np.ndarray, matched: bool = False, return_if: bool = False) -> dict:
     """Multiplicative parallel trends in means, the PPML two-period estimand:
     log ratio(g,t) = log m_T1 - log m_T0 - log m_C1 + log m_C0 (CEM-weighted controls when
     matched). Cohort-size aggregation over e = 0..3 of the log ratios; returns the proportional
@@ -94,8 +94,9 @@ def ppml_fit(w: Wide, y: np.ndarray, matched: bool = False) -> dict:
         tot = sum(sizes[g] for g, *_ in by_e[e])
         taus.append(sum(sizes[g] / tot * a for g, a, _ in by_e[e]))
         ifs.append(sum(sizes[g] / tot * x for g, _, x in by_e[e]))
-    tau, se = float(np.mean(taus)), _se(w, sum(ifs) / len(ifs))
-    return {
+    v = sum(ifs) / len(ifs)
+    tau, se = float(np.mean(taus)), _se(w, v)
+    out = {
         "tau_log": tau,
         "se_log": se,
         "att": float(np.expm1(tau)),
@@ -104,6 +105,9 @@ def ppml_fit(w: Wide, y: np.ndarray, matched: bool = False) -> dict:
         "lo90": float(np.expm1(tau - 1.645 * se)),
         "hi90": float(np.expm1(tau + 1.645 * se)),
     }
+    if return_if:
+        out["if"] = cluster_if(w, v)
+    return out
 
 
 # ------------------------------------------------------------------ helpers

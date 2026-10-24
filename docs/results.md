@@ -1,6 +1,6 @@
 # Results log (P13–P19)
 
-Internal running record of model results against [PREREGISTRATION.md](../PREREGISTRATION.md) (`prereg-v1`, deviations DEV-1 to DEV-9). Every number comes from `report/qa/` (event study: [event_study.json](../report/qa/event_study.json), [event_study_estimates.csv](../report/qa/event_study_estimates.csv), [event_study_event_time.csv](../report/qa/event_study_event_time.csv)). The article (P22) words these cautiously. This file states them plainly.
+Internal running record of model results against [PREREGISTRATION.md](../PREREGISTRATION.md) (`prereg-v1`, deviations DEV-1 to DEV-10). Every number comes from `report/qa/` (event study: [event_study.json](../report/qa/event_study.json), [event_study_estimates.csv](../report/qa/event_study_estimates.csv), [event_study_event_time.csv](../report/qa/event_study_event_time.csv)). The article (P22) words these cautiously. This file states them plainly.
 
 ## P13: Primary event study (2026-10-23)
 
@@ -478,3 +478,65 @@ Specification: [PREREGISTRATION.md](../PREREGISTRATION.md) §9, DEV-8 and DEV-9.
 **Not estimable:** the never-suppressed sample and the volume-normalised bounds.
 
 **The brand-specific claim still rests on the share outcome (H5, P15; D34).**
+
+## P19: Heterogeneity, geography, H7 and the secondary family (2026-10-23)
+
+Specification: [PREREGISTRATION.md](../PREREGISTRATION.md) §7, §9 and DEV-10. Numbers: [heterogeneity.csv](../report/qa/heterogeneity.csv), [heterogeneity_comparisons.csv](../report/qa/heterogeneity_comparisons.csv), [secondary_family.csv](../report/qa/secondary_family.csv), [state_specialty_2024.csv](../report/qa/state_specialty_2024.csv).
+
+### Secondary family (H2–H7), one pooled test each, Holm-adjusted
+
+| Hypothesis | Pooled estimate | SE | p | Holm p | Reading |
+|---|---|---|---|---|---|
+| H2 speaker/consulting − meals only | +5.6 pp | 2.9 | 0.058 | 0.12 | Not supported (71–109 fee recipients per brand) |
+| H3 endocrinology + cardiology − primary care | −0.4 pp | 0.5 | 0.44 | 0.44 | **Not supported:** specialists do not respond more |
+| H4 ≥ $100 − < $100 in the first year | +5.1 pp | 0.5 | < 0.001 | < 0.001 | Gradient present; descriptive (selection, P16) |
+| H5 own-brand share (log-odds, matched; 4 brands) | +3.2 pp | 1.2 | 0.007 | 0.021 | **Supported**, pooled; per brand only Mounjaro is clear (P15) |
+| H6 fills, PPML matched, suppressed = cap | +28.7% | (log 0.006) | < 0.001 | < 0.001 | Supported at the most conservative bound |
+| H7 NPs/PAs, Pr(≥ 11 claims), cohorts 2022+ | +15.0 pp | 0.4 | < 0.001 | < 0.001 | Supported; Trulicity +9.9, Ozempic +16.9, Victoza n/a (19 treated) |
+
+H7 is subject to the same targeting caveats as H1. It has no matched or falsification versions, and NPs/PAs entered Open Payments only in 2021, so their pre-period is short.
+
+### Subgroups (ATT over years 0–3, pp; each estimated within its own sample)
+
+| | Trulicity | Victoza | Ozempic |
+|---|---|---|---|
+| Primary care (MD/DO) | 12.1 | 5.2 | 14.2 |
+| Endocrinology | 14.0 | **13.5** | 10.6 |
+| Cardiology | 9.5 | 1.9 | 10.2 |
+| Nephrology | 12.6 (441 treated)† | 1.9 (292)† | 12.9 |
+| Other physician | 10.2 | 4.3 | 15.8 |
+| South | **13.7** | **7.0** | **16.2** |
+| Northeast | 11.4 | 3.5 | 11.5 |
+| Midwest | 10.1 | 4.9 | 11.4 |
+| West | 10.7 | 4.7 | 12.6 |
+| Urban | 11.5 | 5.1 | 13.5 |
+| Rural | **14.6** | **7.5** | 15.0 |
+
+† fragile: < 500 treated or a CI wider than 10 pp.
+
+**Holm family of 24 comparisons (DEV-10):**
+- **The South is larger than every other region for all three brands.** All 9 contrasts survive Holm, by 2.1–4.9 pp.
+- **Rural exceeds urban for Trulicity (+3.1) and Victoza (+2.4)**, both surviving Holm. Ozempic is +1.5, Holm p = 0.13.
+- **Specialty contrasts that survive Holm:**
+  - Victoza: endocrinology +8.3, cardiology −3.3, nephrology −3.2;
+  - Ozempic: endocrinology −3.6, cardiology −4.0.
+- **No specialty contrast for Trulicity survives Holm.**
+
+There is no consistent specialist advantage, which is H3's null result.
+
+**Fragile results:**
+- nephrology for Trulicity and Victoza;
+- Victoza in NPs/PAs (19 treated);
+- the H2 speaker groups.
+
+The South/rural pattern matches where GLP-1 adoption and promotion grew fastest. It is subject to the same targeting reading as H1.
+
+### Geography: promotional dollars relative to diabetes workload, 2024 (state × specialty)
+
+**Measure:** GLP-1 promotional $ per 1,000 non-GLP-1 diabetes claims ([p19_state_specialty_heatmap.png](../report/figures/p19_state_specialty_heatmap.png)). Endocrinology dominates in most states. Cardiology is high in a few states (MD, KY, NV, AZ).
+
+**Disclosure control (new).** Cells need ≥ 11 prescribers, *and* no single prescriber may hold more than 50% of the cell's dollars (a dominance rule):
+- **86 of 357 cells are masked by dominance,** including large primary-care cells.
+- **8 cells are masked for having fewer than 11 prescribers.**
+
+The same issue affects the P11 state map (chart 6). In 2024, one prescriber holds more than 50% of the state's GLP-1 promotional dollars in VT (92%), ID (64%), ME (55%) and OR (53%). This is flagged for P20.

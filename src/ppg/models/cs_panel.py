@@ -25,7 +25,7 @@ import pandas as pd
 from ppg import config
 from ppg.models.data import LAST_YEAR, PRIMARY_BRANDS, frame
 from ppg.models.event_study import QA, _p
-from ppg.models.matched import Wide, _se, _vcov
+from ppg.models.matched import Wide, _se, _vcov, cluster_if
 
 EVENTS = tuple(range(-9, 6))
 
@@ -106,6 +106,7 @@ def fit(
     control: str = "notyettreated",
     skip_base: tuple[int, ...] = (),
     geo: str = "region",
+    return_if: bool = False,
 ) -> dict:
     """outcome: physician x year array replacing w.y (NaN = not defined that year).
     start: first year usable as a base year (default: the P13 window start).
@@ -165,7 +166,7 @@ def fit(
         stat = float(bvec @ np.linalg.solve(Vp, bvec))
         wald = {"stat": stat, "df": int(pre.sum()), "p": float(chi2.sf(stat, pre.sum()))}
 
-    return {
+    res = {
         "base": base,
         "covariates": covariates,
         "cohort_sizes": {
@@ -179,6 +180,10 @@ def fit(
         "pretrend_wald": wald,
         "event_vcov": {"e": es.tolist(), "beta": ev.att.tolist(), "V": V.tolist()},
     }
+    if return_if:  # influence function of overall_0_3 by practice (not serialised; P19)
+        sel = ((es >= 0) & (es <= 3)).astype(float)
+        res["if_overall"] = cluster_if(w, np.column_stack(cols) @ (sel / sel.sum()))
+    return res
 
 
 def run(brand: str, df: pd.DataFrame | None = None, tag: str = "panel", **kw) -> dict:

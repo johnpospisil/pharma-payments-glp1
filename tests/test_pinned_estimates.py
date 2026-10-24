@@ -166,3 +166,34 @@ def test_p18_sensitivity(key):
         pytest.skip("run python -m ppg.models.sensitivity all first")
     att = json.loads(f.read_text())["binary"][key[1]]["att"]
     assert att == pytest.approx(PINNED_P18[key], abs=5e-5)
+
+
+PINNED_P19 = {  # secondary family (DEV-10): pooled estimate (deterministic)
+    "H2 speaker/consulting − meals only": 0.055767,
+    "H3 endocrinology + cardiology − primary care": -0.003855,
+    "H4 ≥ $100 − < $100 in the first year": 0.051245,
+    "H5 own-brand share (log-odds, matched)": 0.032024,
+    "H6 fills, PPML matched, suppressed = cap (log ratio)": 0.252038,
+    "H7 NPs/PAs, Pr(≥ 11 claims)": 0.149703,
+}
+
+
+@pytest.mark.parametrize("test", list(PINNED_P19))
+def test_p19_secondary_family(test):
+    f = config.QA_DIR / "secondary_family.json"
+    if not f.exists():
+        pytest.skip("run python -m ppg.models.heterogeneity all and report first")
+    fam = json.loads(f.read_text())["family"]
+    assert fam[test]["att"] == pytest.approx(PINNED_P19[test], abs=5e-6)
+
+
+def test_geography_cells_disclosure_safe():
+    import pandas as pd
+
+    f = config.QA_DIR / "state_specialty_2024.csv"
+    if not f.exists():
+        pytest.skip("run python -m ppg.models.heterogeneity report first")
+    d = pd.read_csv(f)
+    shown = d.usd_per_1000_dm.notna()
+    assert (d.loc[shown, "prescribers"] >= config.MIN_CELL).all()
+    assert d.loc[shown, "masked"].fillna("").eq("").all()
