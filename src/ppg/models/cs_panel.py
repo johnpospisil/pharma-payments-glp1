@@ -69,9 +69,12 @@ def drdid_panel(dy: np.ndarray, D: np.ndarray, X: np.ndarray) -> tuple[float, np
     return float(eta_t - eta_c), inf_t - inf_c
 
 
-def design(w: Wide, i: np.ndarray, year: int, covariates: bool) -> np.ndarray:
+def design(
+    w: Wide, i: np.ndarray, year: int, covariates: bool, extra: tuple[np.ndarray, ...] = ()
+) -> np.ndarray:
     """Registered covariates (§6) measured in `year`: specialty, region, log diabetes claims,
-    log total claims, any other GLP-1, urban; constant columns dropped."""
+    log total claims, any other GLP-1, urban; plus any `extra` physician x year arrays (P15:
+    the outcome's own base-year share); constant columns dropped."""
     if not covariates:
         return np.ones((len(i), 1))
     c = w.col(year)
@@ -80,31 +83,43 @@ def design(w: Wide, i: np.ndarray, year: int, covariates: bool) -> np.ndarray:
         for k in np.unique(codes)[1:]:
             cols.append((codes == k).astype(float))
     cols += [np.log1p(w.dm[i, c]), np.log1p(w.tot[i, c]), w.other[i, c], w.urban[i, c]]
+    cols += [x[i, c] for x in extra]
     X = np.column_stack(cols)
     keep = np.r_[True, X[:, 1:].std(0) > 0]
     return X[:, keep]
 
 
-def fit(w: Wide, base: str = "varying", covariates: bool = True) -> dict:
+def fit(
+    w: Wide,
+    base: str = "varying",
+    covariates: bool = True,
+    outcome: np.ndarray | None = None,
+    start: int | None = None,
+    extra: tuple[np.ndarray, ...] = (),
+) -> dict:
+    """outcome: physician x year array replacing w.y (NaN = not defined that year).
+    start: first year usable as a base year (default: the P13 window start)."""
+    start = w.start if start is None else start
+    yy = w.y if outcome is None else outcome
     nunit = len(w.npi)
     sizes = pd.Series(w.g[w.g > 0]).value_counts()
     cells, ife = [], {}
     for g in w.cohorts():
-        for t in range(w.start + 1, LAST_YEAR + 1):
+        for t in range(start + 1, LAST_YEAR + 1):
             e = t - g
             if e == -1 and base == "universal":
                 continue
             b = g - 1 if (t >= g or base == "universal") else t - 1
-            if b < w.start:
+            if b < start:
                 continue
-            y1, y0 = w.y[:, w.col(t)], w.y[:, w.col(b)]
+            y1, y0 = yy[:, w.col(t)], yy[:, w.col(b)]
             ok = ~np.isnan(y1) & ~np.isnan(y0)
             ok &= (w.g == g) | (w.g == 0) | (w.g > max(t, b))
             i = np.flatnonzero(ok)
             D = (w.g[i] == g).astype(float)
             if D.sum() < 1 or (1 - D).sum() < 1:
                 continue
-            X = design(w, i, min(b, t), covariates)
+            X = design(w, i, min(b, t), covariates, extra)
             att, inf = drdid_panel(y1[i] - y0[i], D, X)
             v = np.zeros(nunit)
             np.add.at(v, i, inf / len(i))
@@ -126,10 +141,14 @@ def fit(w: Wide, base: str = "varying", covariates: bool = True) -> dict:
         lv = sel / sel.sum()
         return {"att": float(lv @ ev.att), "se": float(np.sqrt(lv @ V @ lv))}
 
-    pre = es <= -2
-    bvec, Vp = ev.att[pre].to_numpy(), V[np.ix_(pre, pre)]
-    stat = float(bvec @ np.linalg.solve(Vp, bvec))
-    from scipy.stats import chi2
+    pre = (es <= -2) & (np.diag(V) > 1e-14)  # drop mechanically zero cells (pre-launch)
+    wald = None
+    if pre.any():
+        from scipy.stats import chi2
+
+        bvec, Vp = ev.att[pre].to_numpy(), V[np.ix_(pre, pre)]
+        stat = float(bvec @ np.linalg.solve(Vp, bvec))
+        wald = {"stat": stat, "df": int(pre.sum()), "p": float(chi2.sf(stat, pre.sum()))}
 
     return {
         "base": base,
@@ -142,11 +161,7 @@ def fit(w: Wide, base: str = "varying", covariates: bool = True) -> dict:
         "event": ev.to_dict("records"),
         "overall_0_3": lin(((es >= 0) & (es <= 3)).astype(float)),
         "overall_1_3": lin(((es >= 1) & (es <= 3)).astype(float)),
-        "pretrend_wald": {
-            "stat": stat,
-            "df": int(pre.sum()),
-            "p": float(chi2.sf(stat, pre.sum())),
-        },  # fmt: skip
+        "pretrend_wald": wald,
         "event_vcov": {"e": es.tolist(), "beta": ev.att.tolist(), "V": V.tolist()},
     }
 

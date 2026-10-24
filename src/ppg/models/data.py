@@ -33,12 +33,15 @@ def frame(
     con: duckdb.DuckDBPyConnection | None = None,
     sample: str = "physician",
     exposure: str = "first_promo_year",
+    first_cohort: int | None = None,
 ) -> pd.DataFrame:
     """Physician x year analysis frame for one brand (prereg §3-5).
 
     sample: 'physician' (primary), 'np_pa' (H7), 'high_volume' (physicians, D14 subsample).
     exposure: the cohort column (first_promo_year; first_year_first_listed;
               first_promo_year_molecule) for pre-registered sensitivities.
+    first_cohort: earliest cohort kept (default max(2015, launch + 1)); P15 sets the launch year
+              for brand share relative to launch (H5, Mounjaro).
     """
     con = con or duckdb.connect()
     who = {
@@ -68,7 +71,7 @@ def frame(
     launch = int(df.first_partd_year.iloc[0])
     # cohorts (prereg §3.4): first contact in 2013-14 or before launch + 1 -> already treated
     g = df.first_year.fillna(0).astype(int)
-    first_eligible = max(2015, launch + 1)
+    first_eligible = first_cohort or max(2015, launch + 1)
     already = (g > 0) & (g < first_eligible)
     n_already = int(df.loc[already, "npi"].nunique())
     df = df[~already].copy()

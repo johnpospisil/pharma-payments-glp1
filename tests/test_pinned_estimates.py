@@ -84,3 +84,24 @@ def test_matched_design_passes_registered_check():
     m = json.loads((config.QA_DIR / "matched.json").read_text())["brands"]
     assert all(m[b]["registered"]["half_primary_and_significant"] for b in PINNED)
     assert all(m[b]["registered"]["max_abs_smd_after"] < 0.1 for b in PINNED)
+
+
+PINNED_P15 = {  # (estimate, brand): own-share ATT 0-3 (H5, DEV-6); deterministic
+    ("shares", "Trulicity"): 0.041405,
+    ("shares", "Victoza"): -0.047594,
+    ("shares", "Ozempic"): 0.030399,
+    ("shares", "Mounjaro"): 0.053237,
+    ("matched", "Trulicity"): 0.047955,
+    ("matched", "Victoza"): -0.040924,
+    ("matched", "Ozempic"): 0.034609,
+    ("matched", "Mounjaro"): 0.045039,
+}
+
+
+@pytest.mark.parametrize("key", list(PINNED_P15), ids=lambda k: "-".join(k))
+def test_p15_own_share(key):
+    f = config.QA_DIR / "es" / f"switching_{key[1]}.json"
+    if not f.exists():
+        pytest.skip("run python -m ppg.models.switching all first")
+    r = json.loads(f.read_text())
+    assert r[key[0]][key[1]]["att"] == pytest.approx(PINNED_P15[key], abs=5e-6)

@@ -18,7 +18,7 @@ import numpy as np
 import pandas as pd
 
 from ppg import config
-from ppg.models.data import LAST_YEAR, PRIMARY_BRANDS, frame
+from ppg.models.data import LAST_YEAR, PRIMARY_BRANDS, STATE_REGION, frame
 from ppg.models.event_study import QA, _p, holm
 
 SPECS = {"unmatched": 2, "registered": 2, "trajectory": 3}  # pre-period years required
@@ -181,12 +181,15 @@ def balance(w: Wide, spec: str) -> tuple[pd.DataFrame, list[dict]]:
 # ------------------------------------------------------------------ estimation
 
 
-def cell(w: Wide, m: pd.DataFrame, g: int, e: int) -> tuple[float, int, np.ndarray, np.ndarray]:
+def cell(
+    w: Wide, m: pd.DataFrame, g: int, e: int, outcome: np.ndarray | None = None
+) -> tuple[float, int, np.ndarray, np.ndarray]:
     """ATT(g, g+e) on the matched set m, universal base g-1, not-yet-treated controls.
 
     Returns (att, treated in cell, unit indices, influence function on the sum scale)."""
     t = g + e
-    d = w.y[m.i, w.col(t)] - w.y[m.i, w.col(g - 1)]
+    yy = w.y if outcome is None else outcome
+    d = yy[m.i, w.col(t)] - yy[m.i, w.col(g - 1)]
     gi = w.g[m.i]
     ok = ~np.isnan(d) & (m.treated.to_numpy() | (gi == 0) | (gi > max(t, g - 1)))
     c = m.assign(d=d)[ok]
@@ -205,7 +208,7 @@ def cell(w: Wide, m: pd.DataFrame, g: int, e: int) -> tuple[float, int, np.ndarr
     return att, nt, c.i.to_numpy(), inf
 
 
-def estimate(w: Wide, spec: str) -> dict:
+def estimate(w: Wide, spec: str, outcome: np.ndarray | None = None) -> dict:
     """Event-time and overall (e = 0..3) ATTs with practice-clustered influence-function SEs."""
     nunit = len(w.npi)
     cells, ife, ng = [], {}, {}
@@ -218,7 +221,7 @@ def estimate(w: Wide, spec: str) -> dict:
             t = g + e
             if e == -1 or t < w.start or t > LAST_YEAR:
                 continue
-            att, nt, idx, inf = cell(w, m, g, e)
+            att, nt, idx, inf = cell(w, m, g, e, outcome)
             if nt == 0:
                 continue
             v = np.zeros(nunit)
@@ -243,6 +246,7 @@ def estimate(w: Wide, spec: str) -> dict:
 
     # matched event times are zero by construction, so the pre-test starts below them
     pre = (es < -SPECS[spec]) if spec != "unmatched" else (es <= -2)
+    pre &= np.diag(V) > 1e-14  # drop mechanically zero cells (e.g. pre-launch shares)
     wald = None
     if pre.any():
         b, Vp = ev.att[pre].to_numpy(), V[np.ix_(pre, pre)]
@@ -278,18 +282,22 @@ def _vcov(w: Wide, m: np.ndarray) -> np.ndarray:
 # ------------------------------------------------------------------ run
 
 
-def load(brand: str) -> Wide:
+def load(brand: str, **frame_kw) -> Wide:
     """The P13 frame plus physician-level rows for 2013 .. window start - 1 (npi_year), where the
-    brand is pre-launch (y = 0), so cohorts near launch can be matched on g - 2 and g - 3."""
+    brand is pre-launch (y = 0), so cohorts near launch can be matched on g - 2 and g - 3 (and,
+    in P15, Mounjaro's launch cohort gets base-year covariates for 2021)."""
     import duckdb
 
-    df = frame(brand)
+    df = frame(brand, **frame_kw)
     early = duckdb.sql(
-        f"""SELECT npi, year, 0 AS y, clms_glp1 AS glp1_claims_all, dm_load, tot_clms, state
+        f"""SELECT npi, year, 0 AS y, clms_glp1 AS glp1_claims_all, dm_load, tot_clms, state,
+                   (coalesce(clms_glp1, 0) > 0)::INT AS other_glp1,
+                   (coalesce(ruca, 99) < 4)::INT AS urban
             FROM '{config.PARQUET_DIR}/panel/npi_year.parquet'
             WHERE year >= 2013 AND year < {int(df.year.min())}"""
     ).df()
     early = early[early.npi.isin(df.npi.unique())]
+    early["region"] = early.state.map(STATE_REGION)
     return Wide(df, early)
 
 

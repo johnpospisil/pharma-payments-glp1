@@ -241,3 +241,14 @@ Each deviation after locking gets a dated entry: what changed, why, and whether 
 - **Effect on the results:** ATT(0–3) moves from +8.4 / +1.2 / +7.4 pp (Trulicity / Victoza / Ozempic, as reported in P13) to **+12.0 / +5.5 / +13.7 pp**. The correction makes the estimates larger. Because it was found after the results were seen, the P13 numbers stay in the record and in the article's robustness section as "as first reported".
 - **HonestDiD and smoothness** are recomputed from the panel-form universal-base event study, with the same window and grid (DEV-3).
 - **Cross-checks** (Sun & Abraham, imputation, TWFE; P13) are unchanged.
+
+**DEV-6 (2026-10-23, P15, written after the first H5 estimates were seen): implementation of H5 (brand share).** All versions below are reported. None is dropped.
+- **Gap in the registration:** §5 registers H5 as B's share of the physician's observed GLP-1 claims, estimated by a "fractional-response DiD", without saying how covariates enter.
+- **Registered form, as implemented:** CS-style cells (cohort g, year t, base g − 1, not-yet-paid controls), with parallel trends in the **log-odds** of the mean share, on the CEM-matched sample (registered strata, DEV-4). Matching supplies the covariate adjustment that §6 requires of every estimate. Inference uses delta-method influence functions clustered by practice; a Monte Carlo check found SE 0.0058 vs simulation SD 0.0054.
+  - **Cells where a mean share is 0 or 1 are skipped and counted.** The log-odds is undefined there. This includes Mounjaro's 2022 launch cohort, whose base-year share is 0 for everyone.
+- **Reported alongside:**
+  - **Linear share DiD:** panel-form CS-DR with covariates at g − 1 (D27), plus the matched linear version (D28).
+  - **Base-share sensitivity (added after the cross-brand estimates were seen):** the DR with the outcome brand's own base-year share as an extra covariate. Paid and unpaid physicians started from different brand portfolios, and level parallel trends then mechanically credit mean reversion to payment. The cross-brand effects for Mounjaro exposure showed this.
+  - **Unadjusted fractional DiD (no covariates, no matching).**
+- **Sample:** physicians with a defined share (any observed GLP-1 claims) in both the base year and t. This is the intensive margin among existing GLP-1 prescribers.
+- **Mounjaro (D7):** analysed relative to launch. Cohorts start in 2022 (the launch year) with base year 2021, using covariates from `npi_year` because the panel has no Mounjaro rows before 2022. Payments before 2022 count as already treated.

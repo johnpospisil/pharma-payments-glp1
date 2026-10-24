@@ -1,6 +1,6 @@
 # Results log (P13–P19)
 
-Internal running record of model results against [PREREGISTRATION.md](../PREREGISTRATION.md) (`prereg-v1`, deviations DEV-1 to DEV-5). Every number comes from `report/qa/` (event study: [event_study.json](../report/qa/event_study.json), [event_study_estimates.csv](../report/qa/event_study_estimates.csv), [event_study_event_time.csv](../report/qa/event_study_event_time.csv)). The article (P22) words these cautiously. This file states them plainly.
+Internal running record of model results against [PREREGISTRATION.md](../PREREGISTRATION.md) (`prereg-v1`, deviations DEV-1 to DEV-6). Every number comes from `report/qa/` (event study: [event_study.json](../report/qa/event_study.json), [event_study_estimates.csv](../report/qa/event_study_estimates.csv), [event_study_event_time.csv](../report/qa/event_study_event_time.csv)). The article (P22) words these cautiously. This file states them plainly.
 
 ## P13: Primary event study (2026-10-23)
 
@@ -172,3 +172,85 @@ That gap is what P17's negative controls must test. Matching cannot exclude targ
 - Matching on observed history does not rule out targeting on unobserved intentions.
 - Year 0 partly reflects payments that follow first prescriptions in the same year.
 - None of this says the prescribing was inappropriate, or describes any individual physician.
+
+## P15: Brand switching (2026-10-23)
+
+Specification: H5, [PREREGISTRATION.md](../PREREGISTRATION.md) §5 and DEV-6. Numbers: [switching.json](../report/qa/switching.json), [switching_estimates.csv](../report/qa/switching_estimates.csv).
+
+**Outcome:** the brand's share of the physician's observed GLP-1 claims.
+
+**Sample:** physicians with GLP-1 claims in both the base year and the outcome year. This is switching among physicians who already prescribe GLP-1s. Starting to prescribe GLP-1s at all is P13's outcome.
+
+**Mounjaro** is measured relative to launch: cohorts from 2022, base year 2021, when its share was 0 for everyone.
+
+### Own-brand share (ATT, event years 0–3, percentage points)
+
+| Brand | **Linear DR (covariates at g − 1)** | + base-year share | Matched (CEM) | **Fractional, matched (registered form)** | Fractional, unadjusted |
+|---|---|---|---|---|---|
+| Trulicity | **+4.1** (3.5 to 4.8) | +4.3 | +4.8 (4.1 to 5.4) | **+3.9** (−0.2 to 8.0) | +0.6 (−1.8 to 3.0) |
+| Victoza | **−4.8** (−6.1 to −3.4) | −4.5 | −4.1 (−5.7 to −2.5) | **−4.1** (−6.2 to −1.9) | −5.0 (−6.5 to −3.4) |
+| Ozempic | **+3.0** (2.5 to 3.5) | +3.5 | +3.5 (3.0 to 4.0) | **+3.1** (−2.1 to 8.2) | −0.9 (−4.8 to 2.9) |
+| Mounjaro | **+5.3** (5.0 to 5.6) | +5.3 | +4.5 (4.2 to 4.8) | **+5.7** (0.9 to 10.4)¹ | −0.4 (−4.3 to 3.5)¹ |
+
+¹ The 2023–2024 cohorts only. The launch cohort's base share is 0, so its log-odds is undefined.
+
+**Trulicity, Ozempic and Mounjaro:**
+- **The paid brand's share rises by 3–5 pp** under the linear estimators, precisely, and robust to matching and to adjusting for the base-year share.
+- **Under the registered log-odds form, the matched point estimates are about the same** (+3.9, +3.1, +5.7). But they are far less precise, because shares near zero in the base year amplify noise on the log-odds scale. Only Mounjaro's interval excludes 0.
+- **The unadjusted fractional version is near 0.** It has neither matching nor covariates, and paid physicians start with different brand mixes.
+
+**Victoza:** its share **falls** after a Victoza payment under every estimator, although P(≥ 11 Victoza claims) rises (P13/P14).
+
+### Pre-trends (own share)
+
+| Brand | Primary, joint pre-test p | Matched pre-test p | Pattern before payment |
+|---|---|---|---|
+| Trulicity | 0.32 | 0.007 | Matched paid physicians' Trulicity share was slightly *falling* (+2.6 → 0 pp from e = −5 to −1): opposite in sign to the effect |
+| Victoza | < 0.001 | 0.27 | Share already falling faster among paid physicians |
+| Ozempic | 0.009 | 0.19 | Mildly rising (about 0.5 pp a year) without matching; flat with matching |
+| Mounjaro | 0.53 (one cell) | — | Pre-launch |
+
+### Where the share comes from (each brand's share; linear DR + base-year share)
+
+| Paid for | Ozempic | Trulicity | Victoza | Mounjaro | Rybelsus | Other |
+|---|---|---|---|---|---|---|
+| Trulicity | +0.7 | **+4.3** | **−5.6** | +0.4 | +0.2 | −0.2 |
+| Victoza | +1.4 | +2.7 | **−4.5** | 0.0 | +0.1 | +0.3 |
+| Ozempic | **+3.5** | **−5.0** | −2.7 | +1.5 | +1.8 | +0.6 |
+| Mounjaro | −1.9 | **−4.8** | −0.6 | **+5.3** | +1.0 | +0.4 |
+
+- **Trulicity's gain comes out of Victoza**, its main competitor in 2015–2018.
+- **Ozempic's gain comes out of Trulicity**, and out of Novo's own Victoza.
+- **Mounjaro's gain comes mostly out of Lilly's own Trulicity**, and less from Ozempic.
+
+**Why the base-year adjustment is needed:** without it, Mounjaro exposure appears to *raise* Victoza's share (+2.9). Mounjaro-paid physicians started with less Victoza (8.3% vs 12.2%). Victoza collapsed after 2021, so physicians with more of it lost more in level terms. That is mean reversion, not switching.
+
+### Class growth vs switching (Part D claims of the paid brand per physician-year, all physicians in Part D in both years)
+
+| Brand | ATT on brand claims | Class growth at pre-payment share | Switching (share shift) | Switching share of the total |
+|---|---|---|---|---|
+| Trulicity | +4.6 | +2.0 | +2.6 | 56% |
+| Ozempic | +8.1 | +3.4 | +4.7 | 58% |
+| Victoza | +1.9 | +4.3 | −2.4 | share lost |
+| Mounjaro | +13.2 | +0.4 | +12.8 | (launch brand: by construction almost all share shift) |
+
+**Decomposition:** brand claims = pre-payment share × class claims + (brand claims − pre-payment share × class claims). Both parts are estimated with the same panel-form DR.
+
+**For the established brands, a bit over half of the extra claims after payment come from switching between brands**, and the rest from paid physicians prescribing more GLP-1s overall.
+
+### Reading
+
+The brief calls this the cleanest test, because the physician's overall diabetes caseload cancels out of a share.
+
+**It supports a brand-specific association for Trulicity, Ozempic and Mounjaro:**
+- after a first payment for B, B's share of the physician's GLP-1 prescribing rises by 3–5 pp more than among comparable not-yet-paid physicians;
+- the share comes from B's direct competitors.
+
+**Victoza is the exception.** Its payments came while Novo Nordisk was moving the market from Victoza to Ozempic. Paid physicians expanded GLP-1 use but kept less of it on Victoza.
+
+**What this doesn't mean:**
+- A share shift after a payment is not proof the payment caused it. Reps also call on physicians when a brand gains formulary or guideline position.
+- Under the registered log-odds form, the evidence is weak (CIs include 0) for Trulicity and Ozempic.
+- Nothing here concerns individual physicians or whether the switches were clinically appropriate.
+
+**Holm adjustment:** H5 joins the secondary-family Holm adjustment (H2–H7) once P16 and P19 are in.
