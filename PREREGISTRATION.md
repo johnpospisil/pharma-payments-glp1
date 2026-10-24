@@ -252,3 +252,16 @@ Each deviation after locking gets a dated entry: what changed, why, and whether 
   - **Unadjusted fractional DiD (no covariates, no matching).**
 - **Sample:** physicians with a defined share (any observed GLP-1 claims) in both the base year and t. This is the intensive margin among existing GLP-1 prescribers.
 - **Mounjaro (D7):** analysed relative to launch. Cohorts start in 2022 (the launch year) with base year 2021, using covariates from `npi_year` because the panel has no Mounjaro rows before 2022. Payments before 2022 count as already treated.
+
+**DEV-7 (2026-10-23, P16, before any dose or payment-type estimate was computed): H4 and payment-type implementation.**
+- **The gap:** H4 registers "cumulative-dollar bins" without a window. Dollars received after the first payment respond to the physician's prescribing (high prescribers get more meals and speaker invitations), so a long window builds reverse causality into the bins.
+- **What the bin counts showed** (looked at before any estimate): newly paid physicians in the event-study cohorts are almost all meal recipients. In the first exposure year, 91–97% received < $100, and only 13–83 per brand received ≥ $1k. Speakers were mostly first paid in 2013–2014, so they are excluded as already treated (§3).
+- **H4 bins, primary:** brand-B promotional dollars in the first exposure year (year g), in the registered bins < $100, $100–1k, $1k–10k, > $10k. Any bin with fewer than 100 treated physicians is merged into the bin below it.
+- **H4, registered-literal:** cumulative brand-B promotional dollars over event years 0–3, for cohorts g ≤ 2021 (four years observed). Reported as descriptive, because these bins are partly outcomes.
+- **Exploratory dose:** the number of promotional contacts for B in year g (1, 2–3, ≥ 4).
+- **Payment type (H2 as far as estimable):** natures received for B over event years 0–1, in mutually exclusive groups:
+  - any speaker/faculty or consulting fee;
+  - otherwise any travel, education or other promotional nature;
+  - otherwise meals only.
+- **Spline:** a natural cubic spline (4 df) of log10(cumulative dollars, years 0–3), fitted to unit-level regression-adjusted effects. Each treated physician's change from g − 1 minus the change predicted by the outcome model fitted on not-yet-paid controls, averaged over their event years 0–3. Descriptive.
+- **Estimation:** each group is estimated with the panel-form CS-DR as its own treated group, against the same not-yet-paid controls (D27). Each also gets a matched (CEM) version (D28). §3 still holds: higher bins are more selected, so a gradient is described, not interpreted as a causal dose-response.
