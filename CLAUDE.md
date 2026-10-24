@@ -80,6 +80,9 @@ Project brief: [02-pharma-payments-glp1.md](02-pharma-payments-glp1.md) (the sou
 | D35 | H6 and non-estimable sensitivities | **Decided 2026-10-23:** DEV-9 accepted (matched two-period PPML is the H6 estimate; never-suppressed sample and volume-normalised bounds reported as not estimable) |
 | D36 | P19 scope | **Decided 2026-10-23:** P19 also estimates H7 (NPs/PAs) and assembles the H2–H7 Holm family (DEV-10) |
 | D37 | Dominance rule | **Decided 2026-10-23:** every public geography output (chart 6 state map, P19 heatmap, P23 explorer, P25 released panel) masks cells where one prescriber holds > 50% of the dollars, in addition to ≥ 11 prescribers; chart 6 rebuilt in P20 with a note |
+| D38 | Weak-claim wording | **Decided 2026-10-24:** docs/qa.md W1–W10 are binding for P22, P23 and P27: every headline number travels with its caveat sentence (e.g. the ≥ 11-claims contrast always with the statin result) |
+| D39 | Rebuild keeps the Mac awake | **Decided 2026-10-24:** `make all` runs under `caffeinate -s` on macOS |
+| D40 | National complementary disclosure | **Decided 2026-10-24:** accepted: a masked national brand-year nature subtotal derivable by subtraction (≤ 10 unnamed prescribers, no geography) is not identifying; noted in docs/qa.md |
 | D11 | Positioning | **Decided 2026-10-22:** the article names Khunte et al. 2026 (*Mayo Clin Proc*, cross-sectional) as the baseline; our headline is the within-prescriber, brand-level change and switching, not the cross-sectional association |
 
 ## Prompt list
@@ -147,7 +150,7 @@ Project brief: [02-pharma-payments-glp1.md](02-pharma-payments-glp1.md) (the sou
 - [x] **P16: Dose-response and payment type.** _Done 2026-10-23: newly paid physicians are meal recipients (91–97% < $100 in year g; speakers mostly first paid 2013–14, excluded); gradient in point estimates (year-g $ < $100 vs ≥ $100: +11.9 vs +16.8 Trulicity, +13.2 vs +19.1 Ozempic; contacts 1 / ≥ 4: +9 / +18, +11 / +21), same when matched; descriptive, not dose-response; H2 not resolvable (71–109 speakers); DEV-7._ Effects by payment bin ($0, < $100, $100–1k, $1k–10k, > $10k) and by nature (meals, speaking, consulting, travel), with intervals. Add a continuous spline on cumulative $. State plainly that higher bins are more selected (the doctors in them differ). Produce **chart 2**.
   **Deliverables:** chart 2, the gradient table, the interpretation caveats.
 
-### Phase 5: Robustness and falsification
+### Phase 5: Robustness and falsification ✅ DONE
 
 - [x] **P17: Falsification tests.** _Done 2026-10-23: statin NC outcome fails all three (+6.4/+7.9/+7.1 pp) via practice growth (total Part D claims +6–12%, statins in proportion, 5-year pre-trend); Ozempic→Trulicity placebo brand fails in levels (share falls); anticoagulant NC exposure passes (37% of GLP-1 effect), inhaled fails (68%); placebo timing passes; H1 stays "partly targeting"; brand-specific evidence = share (P15)._ Negative-control outcome (statin fills should not respond to GLP-1 payments); negative-control exposure (payments for unrelated drugs should not predict GLP-1 growth); placebo timing (fake first-payment years 1–2 years early); a placebo brand (does a Trulicity payment move Ozempic volume upward? It should not, or it should move it down).
   **Deliverables:** falsification table with pass/fail, the placebo event-study charts, and what any failures mean for the headline.
@@ -158,7 +161,7 @@ Project brief: [02-pharma-payments-glp1.md](02-pharma-payments-glp1.md) (the sou
 - [x] **P19: Heterogeneity and geography.** _Done 2026-10-23: H2–H7 Holm family (DEV-10): H4 +5.1 pp, H5 +3.2 pp share, H6 +28.7% fills, H7 NPs/PAs +15.0 pp (Holm < 0.05); H2 +5.6 (Holm 0.12) and H3 −0.4 not supported; South > other regions, rural > urban (Trulicity, Victoza); no consistent specialist advantage; 50% dominance rule masks 86 of 357 state × specialty cells (D37)._ Effects by specialty group (endocrinology, primary care MD/DO, NP/PA), region and urban/rural; payments relative to diabetes load by state × specialty. Holm-adjust the comparisons. Enforce ≥ 11 prescribers in every cell shown.
   **Deliverables:** heterogeneity chart and table, the adjusted p-values, any subgroup results that are fragile.
 
-- [ ] **P20: QA and validation pass.** Rebuild with `make all` from raw on a clean checkout; check every number destined for the article against `report/qa/*.json`; review the methodology for overstated claims (data:validate-data style); confirm that no output exposes an individual prescriber.
+- [x] **P20: QA and validation pass.** _Done 2026-10-24: clean-checkout `make all` from raw passes (~2 h compute); two rebuilds agree (129 files identical, 23 within 1e-6) after determinism fixes; 51 article claims match report/qa; disclosure audit passes (0 real NPIs in 269 files; small cells blanked in 5 QA tables; chart 6 masks ID/ME/OR/VT); weak claims W1–W10 in docs/qa.md._ Rebuild with `make all` from raw on a clean checkout; check every number destined for the article against `report/qa/*.json`; review the methodology for overstated claims (data:validate-data style); confirm that no output exposes an individual prescriber.
   **Deliverables:** QA checklist with pass/fail, the rebuild time, the list of claims that are still weak.
 
 ### Phase 6: Write, build, review

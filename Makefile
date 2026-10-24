@@ -9,7 +9,15 @@ unexport VIRTUAL_ENV
 
 .PHONY: all check-env check-env-local data build models figures report app qa test lint test-fast progress data-open-payments data-partd data-reference
 
+# On macOS the ~2 h rebuild runs under caffeinate -s so the machine can't sleep mid-run (D39)
+CAFFEINATE := $(shell command -v caffeinate >/dev/null 2>&1 && echo "caffeinate -s -i")
+
+all:
+ifeq ($(PPG_AWAKE),)
+	PPG_AWAKE=1 $(CAFFEINATE) $(MAKE) all
+else
 all: check-env data build models figures report app qa
+endif
 
 check-env:
 	$(PY) -m ppg.check_env
