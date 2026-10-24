@@ -197,3 +197,12 @@ def test_geography_cells_disclosure_safe():
     shown = d.usd_per_1000_dm.notna()
     assert (d.loc[shown, "prescribers"] >= config.MIN_CELL).all()
     assert d.loc[shown, "masked"].fillna("").eq("").all()
+
+
+def test_cs_panel_reproduces_r_did_on_balanced_panel():
+    """On a balanced panel, ppg.models.cs_panel must equal R did (panel mode): 0.12582940704."""
+    f = config.QA_DIR / "es" / "validate_balanced_Ozempic.json"
+    if not f.exists():
+        pytest.skip("run python -m ppg.models.cs_panel validate first")
+    att = json.loads(f.read_text())["overall_0_3"]["att"]
+    assert att == pytest.approx(0.12582940704, abs=1e-8)

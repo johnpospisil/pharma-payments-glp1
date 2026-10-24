@@ -32,6 +32,7 @@ models:
 	$(PY) -m ppg.models.event_study diagnostics
 	$(PY) -m ppg.models.event_study report
 	$(PY) -m ppg.models.cs_panel all
+	$(PY) -m ppg.models.cs_panel validate
 	for b in Trulicity Victoza Ozempic; do /opt/homebrew/bin/Rscript src/ppg/models/r/honest.R \
 	  report/qa/es/panel_universal_$$b.json report/qa/es/honest_panel_$$b.json; done
 	$(PY) -m ppg.models.matched all
