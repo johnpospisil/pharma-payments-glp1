@@ -279,3 +279,20 @@ Each deviation after locking gets a dated entry: what changed, why, and whether 
   - **The matched version is the H6 estimate.** Without matching, the multiplicative counterfactual is unreliable when the paid and unpaid groups start from very different brand levels near zero. Ozempic with suppressed = 0 shows this: −0.5% unmatched vs +59% matched.
 - **"Physicians never suppressed for B"** (§9) is not estimable. A missing Part D row means 0–10 claims *including none*, so "never suppressed" means ≥ 11 claims of the brand in every Part D year. That is 63 Trulicity, 105 Victoza and 3,752 Ozempic physicians, with 23, 34 and 131 treated. Counts are reported.
 - **Volume-normalised outcome (DEV-8): its suppression bounds are uninformative.** In the base year, 94% of paid physicians' brand cells are suppressed. The cap bound credits every non-prescriber with about 10 claims, and the bounds span zero (+129% to −96% for Trulicity). It is reported, but it cannot discriminate.
+
+**DEV-10 (2026-10-23, P19, before any pooled secondary test or subgroup estimate was computed): single tests for the secondary family, H7, and the P19 comparisons.** The component estimates for H2, H4, H5 and H6 were seen in P15–P18. The pooled tests below were not.
+- **Pooling:** each secondary hypothesis gets one test, pooled over brands with weights equal to the number of treated physicians in the estimates being combined. SEs come from influence functions summed by practice, across brands too, so shared physicians and shared controls are accounted for. All p-values are two-sided.
+- **The six tests:**
+  - **H2:** ATT(speaker or consulting fee, years 0–1) − ATT(meals only), panel-form CS-DR (P16 groups), pooled over the three primary brands.
+  - **H3:** ATT(endocrinology + cardiology) − ATT(primary care MD/DO), each estimated within its own specialty sample (treated and controls), pooled over the three brands.
+  - **H4:** ATT(≥ $100 in year g) − ATT(< $100 in year g) (D32), pooled over the three brands. For Victoza the upper group is $100–1k plus ≥ $1k.
+  - **H5:** own-brand share effect, registered log-odds form on the matched sample (DEV-6, D29), pooled over Trulicity, Victoza, Ozempic and Mounjaro.
+  - **H6:** matched PPML fills (DEV-9), with suppressed cells at the cap (the most conservative bound), pooled log ratio over the three brands.
+  - **H7:** NPs and PAs, binary primary outcome, panel-form CS-DR, cohorts 2022–2024 (2021 is a washout year: first contact in 2021 or earlier counts as already treated), pooled over the three brands.
+- **H7 sample:** the P10 NP/PA diabetes prescribers (`frame(sample="np_pa")`), with the registered covariates.
+- **P19 heterogeneity family (§9, its own Holm family):** subgroup ATTs are estimated within each subgroup's own sample. The comparisons, for each of the three brands, are each subgroup minus a reference:
+  - specialty: endocrinology, cardiology, nephrology and other MD/DO vs primary care;
+  - region: Northeast, Midwest and West vs South;
+  - rural vs urban.
+
+  That is 24 tests. Region and urbanicity are each physician's modal value. Every reported cell has ≥ 11 treated physicians.
