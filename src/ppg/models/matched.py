@@ -68,10 +68,11 @@ class Wide:
         return sorted(int(c) for c in np.unique(self.g) if c > 0)
 
 
-def strata(w: Wide, g: int, spec: str) -> pd.DataFrame:
+def strata(w: Wide, g: int, spec: str, keep: np.ndarray | None = None) -> pd.DataFrame:
     """CEM strata for cohort g: candidate rows (unit index, treated, stratum, CEM weight)."""
     k = SPECS[spec]
-    cand = (w.g == g) | (w.g == 0) | (w.g > g)
+    treated = (w.g == g) if keep is None else ((w.g == g) & keep)  # keep: treated subgroup
+    cand = treated | (w.g == 0) | (w.g > g)
     pre = [g - j for j in range(1, k + 1)]  # g-1, g-2 (, g-3)
     if pre[-1] < w.y0:
         return pd.DataFrame(columns=["i", "treated", "s", "w"])
@@ -208,12 +209,14 @@ def cell(
     return att, nt, c.i.to_numpy(), inf
 
 
-def estimate(w: Wide, spec: str, outcome: np.ndarray | None = None) -> dict:
+def estimate(
+    w: Wide, spec: str, outcome: np.ndarray | None = None, keep: np.ndarray | None = None
+) -> dict:
     """Event-time and overall (e = 0..3) ATTs with practice-clustered influence-function SEs."""
     nunit = len(w.npi)
     cells, ife, ng = [], {}, {}
     for g in w.cohorts():
-        m = strata(w, g, spec)
+        m = strata(w, g, spec, keep)
         if m.empty:
             continue
         ng[g] = int(m.treated.sum())

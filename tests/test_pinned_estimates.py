@@ -105,3 +105,25 @@ def test_p15_own_share(key):
         pytest.skip("run python -m ppg.models.switching all first")
     r = json.loads(f.read_text())
     assert r[key[0]][key[1]]["att"] == pytest.approx(PINNED_P15[key], abs=5e-6)
+
+
+PINNED_P16 = {  # (brand, family, group): ATT 0-3 (H4 / DEV-7); deterministic
+    ("Trulicity", "dose_g", "< $100"): 0.118727,
+    ("Trulicity", "dose_g", "≥ $100"): 0.168103,
+    ("Victoza", "dose_g", "< $100"): 0.052162,
+    ("Victoza", "dose_g", "$100–1k"): 0.095699,
+    ("Ozempic", "dose_g", "< $100"): 0.131607,
+    ("Ozempic", "dose_g", "≥ $100"): 0.191447,
+    ("Trulicity", "contacts_g", "≥ 4 contacts"): 0.182790,
+    ("Ozempic", "contacts_g", "≥ 4 contacts"): 0.212875,
+}
+
+
+@pytest.mark.parametrize("key", list(PINNED_P16), ids=lambda k: "-".join(k))
+def test_p16_dose(key):
+    f = config.QA_DIR / "es" / f"dose_{key[0]}.json"
+    if not f.exists():
+        pytest.skip("run python -m ppg.models.dose_response all first")
+    rows = json.loads(f.read_text())["families"][key[1]]
+    att = next(r["att"] for r in rows if r["group"] == key[2])
+    assert att == pytest.approx(PINNED_P16[key], abs=5e-6)

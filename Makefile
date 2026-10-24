@@ -37,7 +37,10 @@ models:
 	$(PY) -m ppg.models.matched report
 	$(PY) -m ppg.models.switching all
 	$(PY) -m ppg.models.switching report
-	@echo "models: P16-P19 added later"
+	$(PY) -m ppg.models.dose_response all
+	$(PY) -m ppg.models.dose_response pretrends
+	$(PY) -m ppg.models.dose_response report
+	@echo "models: P17-P19 added later"
 
 figures:
 	$(PY) -m ppg.viz.figures

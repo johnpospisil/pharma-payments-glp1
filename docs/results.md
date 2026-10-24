@@ -1,6 +1,6 @@
 # Results log (P13–P19)
 
-Internal running record of model results against [PREREGISTRATION.md](../PREREGISTRATION.md) (`prereg-v1`, deviations DEV-1 to DEV-6). Every number comes from `report/qa/` (event study: [event_study.json](../report/qa/event_study.json), [event_study_estimates.csv](../report/qa/event_study_estimates.csv), [event_study_event_time.csv](../report/qa/event_study_event_time.csv)). The article (P22) words these cautiously. This file states them plainly.
+Internal running record of model results against [PREREGISTRATION.md](../PREREGISTRATION.md) (`prereg-v1`, deviations DEV-1 to DEV-7). Every number comes from `report/qa/` (event study: [event_study.json](../report/qa/event_study.json), [event_study_estimates.csv](../report/qa/event_study_estimates.csv), [event_study_event_time.csv](../report/qa/event_study_event_time.csv)). The article (P22) words these cautiously. This file states them plainly.
 
 ## P13: Primary event study (2026-10-23)
 
@@ -254,3 +254,89 @@ The brief calls this the cleanest test, because the physician's overall diabetes
 - Nothing here concerns individual physicians or whether the switches were clinically appropriate.
 
 **Holm adjustment:** H5 joins the secondary-family Holm adjustment (H2–H7) once P16 and P19 are in.
+
+## P16: Dose-response and payment type (2026-10-23)
+
+Specification: H4 and H2, [PREREGISTRATION.md](../PREREGISTRATION.md) §1 and DEV-7. Numbers: [dose_response.json](../report/qa/dose_response.json), [dose_response.csv](../report/qa/dose_response.csv).
+
+Each group of paid physicians is estimated as its own treated group, against the same not-yet-paid controls. Each gets the panel-form CS-DR and a matched (CEM) version.
+
+**Who is in the event study:**
+- **Newly paid physicians are meal recipients.** In their first payment year, 91–97% received under $100 for the brand, and only 13–83 per brand received $1k or more.
+- **Speakers are almost absent.** Most were first paid in 2013–2014, so they are excluded as already treated (prereg §3).
+
+**These results describe physicians whose first contact was a sponsored meal**, not the speaker bureau.
+
+### ATT over event years 0–3 (pp, Pr(≥ 11 claims of the brand)); matched in brackets
+
+| Brand | Group | Physicians | ATT (95% CI) | Matched | Pre-period gap at e = −3 |
+|---|---|---|---|---|---|
+| Trulicity | < $100 in first year | 65,407 | **+11.9** (11.5 to 12.2) | [+12.3] | −4.9 |
+| Trulicity | ≥ $100 in first year | 2,188 | **+16.8** (15.3 to 18.3) | [+18.3] | −5.1 |
+| Victoza | < $100 | 20,603 | **+5.2** (4.8 to 5.7) | [+6.4] | −1.8 |
+| Victoza | $100–1k | 1,304 | **+9.6** (7.9 to 11.3) | [+11.1] | −1.8 |
+| Victoza | ≥ $1k | 104 | +2.5 (−3.6 to 8.6) | [+4.7] | −0.5 |
+| Ozempic | < $100 | 44,295 | **+13.2** (12.6 to 13.7) | [+14.1] | −5.3 |
+| Ozempic | ≥ $100 | 3,832 | **+19.1** (17.9 to 20.4) | [+20.2] | −4.7 |
+
+**Bin merging:** for Trulicity and Ozempic, the $1k–10k and > $10k bins had fewer than 100 physicians each, so they merged into "≥ $100" under the DEV-7 rule.
+
+**Contacts in the first payment year:**
+
+| Brand | 1 contact | 2–3 contacts | ≥ 4 contacts |
+|---|---|---|---|
+| Trulicity | **+9.1** | **+13.2** | **+18.3** |
+| Victoza | **+3.7** | **+6.9** | **+11.1** |
+| Ozempic | **+11.0** | **+14.6** | **+21.3** |
+
+- **Matched estimates** are within 2 pp of these and show the same gradient.
+- **Pre-period gap at e = −3** (unmatched, relative to e = −1):
+  - Trulicity: −4.6 / −5.6 / −4.8;
+  - Victoza: −1.5 / −1.8 / −2.8;
+  - Ozempic: −4.5 / −6.0 / −7.0.
+
+**Cumulative dollars over years 0–3** (cohorts ≤ 2021; partly an outcome):
+
+| Brand | < $100 | $100–1k | ≥ $1k |
+|---|---|---|---|
+| Trulicity | +9.5 | +19.9 | +19.8 (n = 160) |
+| Victoza | +4.3 | +12.9 | +6.7 (n = 164) |
+| Ozempic | +8.8 | +20.7 | +35.6 (n = 111) |
+
+**Spline on cumulative dollars** (regression-adjusted unit effects, natural cubic spline): the curve rises steadily with log dollars.
+
+| Brand | 10th percentile | Median | 90th percentile |
+|---|---|---|---|
+| Trulicity | $7: +4.9 | $39: +11.4 | $174: +20.9 |
+| Victoza | $6: +2.3 | $21: +3.5 | $122: +11.3 |
+| Ozempic | $11: +5.0 | $52: +11.0 | $228: +23.5 |
+
+**Payment type over years 0–1 (H2 as far as estimable):**
+
+| Brand | Meals only | Travel, education or other (no fee) | Speaker or consulting fee |
+|---|---|---|---|
+| Trulicity | +12.0 | +12.9 (n = 72) | +17.2 (n = 71) |
+| Victoza | +5.2 | +11.7 (n = 899) | +2.3 (n = 109) |
+| Ozempic | +13.6 | +17.2 (n = 784) | +23.6 (n = 80) |
+
+- **Speaker/consulting groups are 71–109 physicians**, with CIs about ±8–10 pp.
+- **H2 ordering (fees > meals):** it holds in point estimates for Trulicity and Ozempic, but the CIs overlap meals-only. It does not hold for Victoza.
+
+### Reading
+
+**There is a consistent gradient in point estimates:**
+- more first-year contacts and more dollars go with larger increases in prescribing the paid brand;
+- with ≥ 4 contacts, about twice the increase seen with one contact.
+
+The gradient survives matching on the pre-payment trajectory.
+
+**It is not a dose-response:**
+1. **Reps choose how often to visit, and they visit physicians they expect to adopt.** For Ozempic, higher-contact groups were rising faster before payment (−4.5 vs −7.0 pp at e = −3).
+2. **Contacts and dollars within year g can follow the first prescriptions in the same year.**
+3. **Cumulative dollars after year 0 respond to prescribing.** Speaker invitations go to adopters.
+
+The first-year-dollar bins, the least contaminated measure, show the gradient from < $100 to ≥ $100 (+4.9, +4.4 and +5.9 pp for Trulicity, Victoza and Ozempic). Their pre-period gaps are near-identical across bins, which is the more informative result.
+
+**What this doesn't mean:**
+- It does not show that a larger meal causes more prescribing, or that speaker fees work better than meals. The speaker groups are too small, and too selected, to say.
+- It does not describe any individual physician.

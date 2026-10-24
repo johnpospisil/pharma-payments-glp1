@@ -96,13 +96,15 @@ def fit(
     outcome: np.ndarray | None = None,
     start: int | None = None,
     extra: tuple[np.ndarray, ...] = (),
+    keep: np.ndarray | None = None,
 ) -> dict:
     """outcome: physician x year array replacing w.y (NaN = not defined that year).
     start: first year usable as a base year (default: the P13 window start)."""
     start = w.start if start is None else start
     yy = w.y if outcome is None else outcome
     nunit = len(w.npi)
-    sizes = pd.Series(w.g[w.g > 0]).value_counts()
+    keep = np.ones(len(w.npi), bool) if keep is None else keep  # treated subgroup (P16)
+    sizes = pd.Series(w.g[(w.g > 0) & keep]).value_counts()
     cells, ife = [], {}
     for g in w.cohorts():
         for t in range(start + 1, LAST_YEAR + 1):
@@ -114,7 +116,8 @@ def fit(
                 continue
             y1, y0 = yy[:, w.col(t)], yy[:, w.col(b)]
             ok = ~np.isnan(y1) & ~np.isnan(y0)
-            ok &= (w.g == g) | (w.g == 0) | (w.g > max(t, b))
+            # cohort g is never its own control, even members outside the `keep` subgroup
+            ok &= ((w.g == g) & keep) | (w.g == 0) | ((w.g > max(t, b)) & (w.g != g))
             i = np.flatnonzero(ok)
             D = (w.g[i] == g).astype(float)
             if D.sum() < 1 or (1 - D).sum() < 1:
