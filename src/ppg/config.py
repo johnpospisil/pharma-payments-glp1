@@ -37,3 +37,5 @@ QA_DIR = REPORT_DIR / "qa"
 
 # Smallest number of prescribers in any cell shown publicly (matches CMS's < 11 suppression).
 MIN_CELL = 11
+# Geography cells are also masked if one prescriber holds more than this share of the dollars (D37)
+DOMINANCE = 0.5

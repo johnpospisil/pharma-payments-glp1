@@ -209,19 +209,25 @@ def state_rates(con, year: int = 2024) -> pd.DataFrame:
              s AS (SELECT r.*, o.recipient_state AS state
                    FROM r JOIN read_parquet('{P}/open_payments/general/*/*.parquet',
                                             hive_partitioning = true) o
-                     ON o.record_id = r.record_id AND o.program_year = r.program_year)
-        SELECT state, sum(usd) AS usd, count(DISTINCT npi) AS npis_paid
-        FROM s GROUP BY 1""").df()
+                     ON o.record_id = r.record_id AND o.program_year = r.program_year),
+             n AS (SELECT state, npi, sum(usd) AS usd FROM s GROUP BY ALL)
+        SELECT state, sum(usd) AS usd, count(DISTINCT npi) AS npis_paid, max(usd) AS max_npi_usd
+        FROM n GROUP BY 1""").df()
     den = pd.read_parquet(P / "reference" / "state_diabetic_partd.parquet")
     den = den[den.year == year][["state", "est_diabetic_partd", "partd_enrollees"]]
     df = df.merge(den, on="state", how="inner")
     df["usd_per_diabetic"] = df.usd / df.est_diabetic_partd
-    df["shown"] = df.npis_paid >= MIN_CELL
+    # disclosure control (D37): >= 11 paid prescribers and no one prescriber > 50% of the state's $
+    df["top_npi_share"] = df.max_npi_usd / df.usd
+    df["masked"] = np.select([df.npis_paid < MIN_CELL, df.top_npi_share > config.DOMINANCE],
+                             ["< 11 prescribers", "dominance"], "")  # fmt: skip
+    df["shown"] = df.masked == ""
     return df.sort_values("usd_per_diabetic", ascending=False)
 
 
 def chart6(df: pd.DataFrame, year: int = 2024) -> dict:
     d = df[df.state.isin(HEX) & df.shown].set_index("state")
+    masked = set(df[df.state.isin(HEX) & ~df.shown].state)
     cmap = LinearSegmentedColormap.from_list("seq", SEQUENTIAL)
     lo, hi = d.usd_per_diabetic.min(), d.usd_per_diabetic.max()
     fig, ax = plt.subplots(figsize=(9.2, 6.2))
@@ -253,11 +259,12 @@ def chart6(df: pd.DataFrame, year: int = 2024) -> dict:
                  f"{year} (US ${us:.2f})", loc="left", fontsize=11)  # fmt: skip
     _save(fig, "chart6_state_payments_per_diabetic",
           "Payments by recipient's state; denominator = Part D enrollees × BRFSS diabetes "
-          "prevalence, adults 65+ (pooled 3 years).\nStates with fewer than 11 paid prescribers "
-          f"would be greyed out (none are). {SOURCE_OP} CMS Medicare Enrollment; "
+          "prevalence, adults 65+ (pooled 3 years).\nGrey: not shown because one prescriber "
+          f"received more than half of the state's dollars ({', '.join(sorted(masked))}), so "
+          f"the value would describe one person.\n{SOURCE_OP} CMS Medicare Enrollment; "
           "CDC BRFSS.")  # fmt: skip
     top = d.sort_values("usd_per_diabetic", ascending=False)
-    return {"usd_per_diabetic_us": us,
+    return {"usd_per_diabetic_us": us, "masked_states": sorted(masked),
             "top5_states": top.usd_per_diabetic.head(5).round(3).to_dict(),
             "bottom5_states": top.usd_per_diabetic.tail(5).round(3).to_dict(),
             "max_to_min_ratio": float(hi / lo)}  # fmt: skip
@@ -386,7 +393,10 @@ def build() -> dict:
     b = payments_by_brand_type()
     out["chart4"] = chart4(b)
     st = state_rates(con)
-    _csv(st, "state_payments_per_diabetic")
+    pub = st.drop(columns=["max_npi_usd", "top_npi_share"])  # the CSV is public: no top-payee $
+    pub.loc[~pub.shown, ["usd", "usd_per_diabetic"]] = np.nan
+    pub["npis_paid"] = pub.npis_paid.where(pub.npis_paid >= MIN_CELL)
+    _csv(pub, "state_payments_per_diabetic")
     out["chart6"] = chart6(st)
     lz = lorenz_data(con)
     out["chart7"] = chart7(lz)

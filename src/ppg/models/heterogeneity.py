@@ -32,7 +32,7 @@ SPECIALTY_REF = "primary_care_physician"
 SPECIALTIES = (SPECIALTY_REF, "endocrinology", "cardiology", "nephrology", "other_physician")
 REGIONS = ("South", "Northeast", "Midwest", "West")  # reference first
 URBAN = ("Urban", "Rural")
-DOMINANCE = 0.5  # mask a geography cell if one prescriber holds > 50% of its dollars
+DOMINANCE = config.DOMINANCE  # mask a geography cell if one prescriber holds > 50% of its $
 
 
 def combine(parts: list[tuple[float, dict]]) -> dict:
