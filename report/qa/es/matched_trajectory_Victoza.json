@@ -1,0 +1,674 @@
+{
+ "spec": "trajectory",
+ "cohort_matched_treated": {
+  "2016": 4582,
+  "2017": 5142,
+  "2018": 2694,
+  "2019": 874,
+  "2020": 27,
+  "2021": "<11",
+  "2022": "<11",
+  "2023": "<11",
+  "2024": "<11"
+ },
+ "att_gt": [
+  {
+   "g": 2016,
+   "e": -3,
+   "t": 2013,
+   "att": 0.0,
+   "treated": 4582,
+   "se": 0.0
+  },
+  {
+   "g": 2016,
+   "e": -2,
+   "t": 2014,
+   "att": 0.0,
+   "treated": 4582,
+   "se": 0.0
+  },
+  {
+   "g": 2016,
+   "e": 0,
+   "t": 2016,
+   "att": 0.03954481754033548,
+   "treated": 4576,
+   "se": 0.004269440314772882
+  },
+  {
+   "g": 2016,
+   "e": 1,
+   "t": 2017,
+   "att": 0.08895979021776405,
+   "treated": 4551,
+   "se": 0.005383061429537941
+  },
+  {
+   "g": 2016,
+   "e": 2,
+   "t": 2018,
+   "att": 0.10223176190214657,
+   "treated": 4499,
+   "se": 0.006041189445267969
+  },
+  {
+   "g": 2016,
+   "e": 3,
+   "t": 2019,
+   "att": 0.09171862023809048,
+   "treated": 4426,
+   "se": 0.006095349953129925
+  },
+  {
+   "g": 2017,
+   "e": -4,
+   "t": 2013,
+   "att": -0.00030282651398259126,
+   "treated": 4740,
+   "se": 0.0023278223080049135
+  },
+  {
+   "g": 2017,
+   "e": -3,
+   "t": 2014,
+   "att": 0.0,
+   "treated": 5142,
+   "se": 0.0
+  },
+  {
+   "g": 2017,
+   "e": -2,
+   "t": 2015,
+   "att": 0.0,
+   "treated": 5142,
+   "se": 0.0
+  },
+  {
+   "g": 2017,
+   "e": 0,
+   "t": 2017,
+   "att": 0.03631420288965806,
+   "treated": 5136,
+   "se": 0.003956987148469164
+  },
+  {
+   "g": 2017,
+   "e": 1,
+   "t": 2018,
+   "att": 0.07011510656975013,
+   "treated": 5114,
+   "se": 0.005088507415213085
+  },
+  {
+   "g": 2017,
+   "e": 2,
+   "t": 2019,
+   "att": 0.07661273039443381,
+   "treated": 5049,
+   "se": 0.005424788392770799
+  },
+  {
+   "g": 2017,
+   "e": 3,
+   "t": 2020,
+   "att": 0.06556149605143531,
+   "treated": 4943,
+   "se": 0.005352965872872751
+  },
+  {
+   "g": 2018,
+   "e": -5,
+   "t": 2013,
+   "att": 0.004049914818129505,
+   "treated": 2219,
+   "se": 0.0035464989002353445
+  },
+  {
+   "g": 2018,
+   "e": -4,
+   "t": 2014,
+   "att": 0.00200562012075551,
+   "treated": 2478,
+   "se": 0.003266092066561656
+  },
+  {
+   "g": 2018,
+   "e": -3,
+   "t": 2015,
+   "att": 0.0,
+   "treated": 2694,
+   "se": 0.0
+  },
+  {
+   "g": 2018,
+   "e": -2,
+   "t": 2016,
+   "att": 0.0,
+   "treated": 2694,
+   "se": 0.0
+  },
+  {
+   "g": 2018,
+   "e": 0,
+   "t": 2018,
+   "att": 0.03422274656232115,
+   "treated": 2684,
+   "se": 0.005590781619790412
+  },
+  {
+   "g": 2018,
+   "e": 1,
+   "t": 2019,
+   "att": 0.05867130493202842,
+   "treated": 2672,
+   "se": 0.006644987625979302
+  },
+  {
+   "g": 2018,
+   "e": 2,
+   "t": 2020,
+   "att": 0.05379719211081699,
+   "treated": 2631,
+   "se": 0.006846271499920117
+  },
+  {
+   "g": 2018,
+   "e": 3,
+   "t": 2021,
+   "att": 0.051220858793966456,
+   "treated": 2565,
+   "se": 0.006938995348089134
+  },
+  {
+   "g": 2019,
+   "e": -5,
+   "t": 2014,
+   "att": -0.004446557810901524,
+   "treated": 709,
+   "se": 0.005462107201338695
+  },
+  {
+   "g": 2019,
+   "e": -4,
+   "t": 2015,
+   "att": -0.008275208426219816,
+   "treated": 802,
+   "se": 0.0056383382287422505
+  },
+  {
+   "g": 2019,
+   "e": -3,
+   "t": 2016,
+   "att": 0.0,
+   "treated": 874,
+   "se": 0.0
+  },
+  {
+   "g": 2019,
+   "e": -2,
+   "t": 2017,
+   "att": 0.0,
+   "treated": 874,
+   "se": 0.0
+  },
+  {
+   "g": 2019,
+   "e": 0,
+   "t": 2019,
+   "att": 0.026253511731516254,
+   "treated": 873,
+   "se": 0.008983921389984805
+  },
+  {
+   "g": 2019,
+   "e": 1,
+   "t": 2020,
+   "att": 0.04209336883672383,
+   "treated": 872,
+   "se": 0.01068128874391839
+  },
+  {
+   "g": 2019,
+   "e": 2,
+   "t": 2021,
+   "att": 0.033411145714861964,
+   "treated": 865,
+   "se": 0.01052520609798991
+  },
+  {
+   "g": 2019,
+   "e": 3,
+   "t": 2022,
+   "att": 0.031967509275117954,
+   "treated": 834,
+   "se": 0.010876421413923153
+  },
+  {
+   "g": 2020,
+   "e": -5,
+   "t": 2015,
+   "att": -0.048866759963376874,
+   "treated": 19,
+   "se": 0.040628268258786966
+  },
+  {
+   "g": 2020,
+   "e": -4,
+   "t": 2016,
+   "att": -0.0039022871472625073,
+   "treated": 24,
+   "se": 0.05499986427887658
+  },
+  {
+   "g": 2020,
+   "e": -3,
+   "t": 2017,
+   "att": 0.0,
+   "treated": 27,
+   "se": 0.0
+  },
+  {
+   "g": 2020,
+   "e": -2,
+   "t": 2018,
+   "att": 0.0,
+   "treated": 27,
+   "se": 0.0
+  },
+  {
+   "g": 2020,
+   "e": 0,
+   "t": 2020,
+   "att": 0.03427807018923076,
+   "treated": 27,
+   "se": 0.03882266484459778
+  },
+  {
+   "g": 2020,
+   "e": 1,
+   "t": 2021,
+   "att": 0.03975256027657013,
+   "treated": 27,
+   "se": 0.03849403659534307
+  },
+  {
+   "g": 2020,
+   "e": 2,
+   "t": 2022,
+   "att": 0.08809305587094723,
+   "treated": 27,
+   "se": 0.05397062380177545
+  },
+  {
+   "g": 2020,
+   "e": 3,
+   "t": 2023,
+   "att": 0.10695921559891754,
+   "treated": 26,
+   "se": 0.06165454614748055
+  }
+ ],
+ "event": [
+  {
+   "e": -5,
+   "att": 0.0008570540977957723,
+   "se": 0.0030129806511867336,
+   "cohorts": 7
+  },
+  {
+   "e": -4,
+   "att": -0.00038478063090491873,
+   "se": 0.0018038491065655673,
+   "cohorts": 8
+  },
+  {
+   "e": -3,
+   "att": 0.0,
+   "se": 0.0,
+   "cohorts": 9
+  },
+  {
+   "e": -2,
+   "att": 0.0,
+   "se": 0.0,
+   "cohorts": 9
+  },
+  {
+   "e": 0,
+   "att": 0.03627648849500383,
+   "se": 0.002494809310433333,
+   "cohorts": 9
+  },
+  {
+   "e": 1,
+   "att": 0.07228584972780121,
+   "se": 0.003169285381636216,
+   "cohorts": 8
+  },
+  {
+   "e": 2,
+   "att": 0.07790357061034942,
+   "se": 0.0034224077805666024,
+   "cohorts": 7
+  },
+  {
+   "e": 3,
+   "att": 0.06948882923599874,
+   "se": 0.0034320114317650924,
+   "cohorts": 6
+  }
+ ],
+ "overall_0_3": {
+  "att": 0.0639886845172883,
+  "se": 0.0024145044755919894
+ },
+ "overall_1_3": {
+  "att": 0.07322608319138312,
+  "se": 0.0028012545795485914
+ },
+ "pretrend_wald": {
+  "stat": 0.170377701678826,
+  "df": 2,
+  "p": 0.9183388389637107,
+  "events": [
+   -5,
+   -4
+  ]
+ },
+ "brand": "Victoza",
+ "match": [
+  {
+   "g": 2015,
+   "treated": 6720,
+   "treated_eligible": 0,
+   "treated_matched": 0,
+   "controls_matched": 0,
+   "strata": 0
+  },
+  {
+   "g": 2016,
+   "treated": 5273,
+   "treated_eligible": 4877,
+   "treated_matched": 4582,
+   "controls_matched": 118052,
+   "strata": 989
+  },
+  {
+   "g": 2017,
+   "treated": 5900,
+   "treated_eligible": 5438,
+   "treated_matched": 5142,
+   "controls_matched": 121405,
+   "strata": 1082
+  },
+  {
+   "g": 2018,
+   "treated": 3155,
+   "treated_eligible": 2893,
+   "treated_matched": 2694,
+   "controls_matched": 114004,
+   "strata": 852
+  },
+  {
+   "g": 2019,
+   "treated": 993,
+   "treated_eligible": 914,
+   "treated_matched": 874,
+   "controls_matched": 86113,
+   "strata": 408
+  },
+  {
+   "g": 2020,
+   "treated": 40,
+   "treated_eligible": 32,
+   "treated_matched": 27,
+   "controls_matched": 7988,
+   "strata": 26
+  },
+  {
+   "g": 2021,
+   "treated": 11,
+   "treated_eligible": "<11",
+   "treated_matched": "<11",
+   "controls_matched": 3317,
+   "strata": "<11"
+  },
+  {
+   "g": 2022,
+   "treated": "<11",
+   "treated_eligible": "<11",
+   "treated_matched": "<11",
+   "controls_matched": 2974,
+   "strata": "<11"
+  },
+  {
+   "g": 2023,
+   "treated": "<11",
+   "treated_eligible": "<11",
+   "treated_matched": "<11",
+   "controls_matched": "<11",
+   "strata": "<11"
+  },
+  {
+   "g": 2024,
+   "treated": "<11",
+   "treated_eligible": "<11",
+   "treated_matched": "<11",
+   "controls_matched": 91,
+   "strata": "<11"
+  }
+ ],
+ "balance": [
+  {
+   "variable": "Brand \u2265 11 claims, g \u2212 1",
+   "stage": "after",
+   "mean_treated": 0.06531683539557555,
+   "mean_control": 0.06531683539557555,
+   "smd": 0.0
+  },
+  {
+   "variable": "Brand \u2265 11 claims, g \u2212 1",
+   "stage": "before",
+   "mean_treated": 0.09480143895041264,
+   "mean_control": 0.04708656442395687,
+   "smd": 0.186658691760063
+  },
+  {
+   "variable": "Brand \u2265 11 claims, g \u2212 2",
+   "stage": "after",
+   "mean_treated": 0.04401949756280465,
+   "mean_control": 0.04401949756280465,
+   "smd": 0.0
+  },
+  {
+   "variable": "Brand \u2265 11 claims, g \u2212 2",
+   "stage": "before",
+   "mean_treated": 0.07166537349227622,
+   "mean_control": 0.044449512821893127,
+   "smd": 0.11657570089194831
+  },
+  {
+   "variable": "Brand \u2265 11 claims, g \u2212 3",
+   "stage": "after",
+   "mean_treated": 0.033445819272590924,
+   "mean_control": 0.033445819272590924,
+   "smd": 0.0
+  },
+  {
+   "variable": "Brand \u2265 11 claims, g \u2212 3",
+   "stage": "before",
+   "mean_treated": 0.05565352331240742,
+   "mean_control": 0.03957631512589566,
+   "smd": 0.07554983380390203
+  },
+  {
+   "variable": "log(1 + GLP-1 class claims), g \u2212 1",
+   "stage": "after",
+   "mean_treated": 0.31055732318632717,
+   "mean_control": 0.30665767604930677,
+   "smd": 0.0031240349234652933
+  },
+  {
+   "variable": "log(1 + GLP-1 class claims), g \u2212 1",
+   "stage": "before",
+   "mean_treated": 0.46273202588682166,
+   "mean_control": 0.5517933113036485,
+   "smd": -0.07134762612995406
+  },
+  {
+   "variable": "Class growth g \u2212 2 \u2192 g \u2212 1 (log)",
+   "stage": "after",
+   "mean_treated": 0.11878020583197797,
+   "mean_control": 0.1179758530830235,
+   "smd": 0.0009257996498149766
+  },
+  {
+   "variable": "Class growth g \u2212 2 \u2192 g \u2212 1 (log)",
+   "stage": "before",
+   "mean_treated": 0.13830510916506453,
+   "mean_control": 0.15053843591137522,
+   "smd": -0.014080401456361065
+  },
+  {
+   "variable": "Class growth g \u2212 3 \u2192 g \u2212 1 (log)",
+   "stage": "after",
+   "mean_treated": 0.1590593114289999,
+   "mean_control": 0.1578478659561326,
+   "smd": 0.0011653097632177267
+  },
+  {
+   "variable": "Class growth g \u2212 3 \u2192 g \u2212 1 (log)",
+   "stage": "before",
+   "mean_treated": 0.20677374487056477,
+   "mean_control": 0.25924139771796567,
+   "smd": -0.05046951718881995
+  },
+  {
+   "variable": "log(1 + diabetes claims), g \u2212 1",
+   "stage": "after",
+   "mean_treated": 4.379235663175993,
+   "mean_control": 4.298745687440974,
+   "smd": 0.03443164136765127
+  },
+  {
+   "variable": "log(1 + diabetes claims), g \u2212 1",
+   "stage": "before",
+   "mean_treated": 4.469966817708461,
+   "mean_control": 3.098561120207603,
+   "smd": 0.5866537878127244
+  },
+  {
+   "variable": "log(1 + total claims), g \u2212 1",
+   "stage": "after",
+   "mean_treated": 7.720717193449575,
+   "mean_control": 7.6857044765322575,
+   "smd": 0.023613788777432483
+  },
+  {
+   "variable": "log(1 + total claims), g \u2212 1",
+   "stage": "before",
+   "mean_treated": 7.738437271672599,
+   "mean_control": 7.096648828910192,
+   "smd": 0.4328443508962024
+  },
+  {
+   "variable": "Total claims growth g \u2212 3 \u2192 g \u2212 1 (log)",
+   "stage": "after",
+   "mean_treated": 0.4446539581601956,
+   "mean_control": 0.17369217659874522,
+   "smd": 0.23898372654171626
+  },
+  {
+   "variable": "Total claims growth g \u2212 3 \u2192 g \u2212 1 (log)",
+   "stage": "before",
+   "mean_treated": 0.4363688201510119,
+   "mean_control": 0.05530017479992556,
+   "smd": 0.336096125473522
+  },
+  {
+   "variable": "Specialty: endocrinology",
+   "stage": "after",
+   "mean_treated": 0.02924634420697413,
+   "mean_control": 0.02924634420697413,
+   "smd": 0.0
+  },
+  {
+   "variable": "Specialty: endocrinology",
+   "stage": "before",
+   "mean_treated": 0.0519856104958736,
+   "mean_control": 0.015850642157126626,
+   "smd": 0.20061675273167467
+  },
+  {
+   "variable": "Specialty: primary care physician",
+   "stage": "after",
+   "mean_treated": 0.8800149981252343,
+   "mean_control": 0.8800149981252343,
+   "smd": 0.0
+  },
+  {
+   "variable": "Specialty: primary care physician",
+   "stage": "before",
+   "mean_treated": 0.8568808633702476,
+   "mean_control": 0.7190240288311975,
+   "smd": 0.3421527225347347
+  },
+  {
+   "variable": "Region: Northeast",
+   "stage": "after",
+   "mean_treated": 0.17892763404574427,
+   "mean_control": 0.1724853703314789,
+   "smd": 0.015906274696466945
+  },
+  {
+   "variable": "Region: Northeast",
+   "stage": "before",
+   "mean_treated": 0.18029202228962404,
+   "mean_control": 0.23594564117965383,
+   "smd": -0.1374115977210104
+  },
+  {
+   "variable": "Region: Midwest",
+   "stage": "after",
+   "mean_treated": 0.2494188226471691,
+   "mean_control": 0.24278688575747673,
+   "smd": 0.015526724790178201
+  },
+  {
+   "variable": "Region: Midwest",
+   "stage": "before",
+   "mean_treated": 0.2487127036749665,
+   "mean_control": 0.23169575946802815,
+   "smd": 0.03984015738774692
+  },
+  {
+   "variable": "Region: South",
+   "stage": "after",
+   "mean_treated": 0.39752530933633295,
+   "mean_control": 0.40418909177640366,
+   "smd": -0.014059543746649226
+  },
+  {
+   "variable": "Region: South",
+   "stage": "before",
+   "mean_treated": 0.39683995203498623,
+   "mean_control": 0.29979373907426243,
+   "smd": 0.20475240433471525
+  },
+  {
+   "variable": "Region: West",
+   "stage": "after",
+   "mean_treated": 0.17412823397075367,
+   "mean_control": 0.18053865213464063,
+   "smd": -0.015968414506664773
+  },
+  {
+   "variable": "Region: West",
+   "stage": "before",
+   "mean_treated": 0.17415532200042322,
+   "mean_control": 0.2325648602780556,
+   "smd": -0.1454987326122557
+  }
+ ]
+}

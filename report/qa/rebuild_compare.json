@@ -1,0 +1,16 @@
+{
+ "rtol": 1e-06,
+ "counts": {
+  "identical": 129,
+  "numerically equal": 23,
+  "different (binary)": 1
+ },
+ "not_equal": [
+  {
+   "file": "figures/p04_suppression_gap.png",
+   "status": "different (binary)",
+   "max_rel_diff": NaN,
+   "where": NaN
+  }
+ ]
+}

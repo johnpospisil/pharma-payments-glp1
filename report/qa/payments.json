@@ -1,0 +1,110 @@
+{
+ "glp1_record_brand_rows": 9484317,
+ "glp1_records": 7504591,
+ "glp1_rows_via_ndc": 1569,
+ "glp1_paid_npis": 320153,
+ "glp1_promo_usd": {
+  "split": 424495686.6223341,
+  "full": 470296574.04,
+  "first": 424991355.93
+ },
+ "glp1_promo_usd_split_by_nature": {
+  "food_beverage": 118234596.46033373,
+  "speaker": 251550206.1700001,
+  "consulting": 26149133.15833334,
+  "travel": 27937240.121999994,
+  "education": 606152.4716666602,
+  "other_promotional": 18358.239999999998
+ },
+ "classes": {
+  "anticoagulant": {
+   "npis": 326547,
+   "contacts": 5931579,
+   "usd_split": 337064830.5926642
+  },
+  "antidiabetic_other": {
+   "npis": 59756,
+   "contacts": 234126,
+   "usd_split": 15587780.175166652
+  },
+  "dpp4": {
+   "npis": 119514,
+   "contacts": 1764441,
+   "usd_split": 41890473.14999994
+  },
+  "glp1": {
+   "npis": 320153,
+   "contacts": 7504591,
+   "usd_split": 424495686.6223376
+  },
+  "inhaled_respiratory": {
+   "npis": 267264,
+   "contacts": 5966005,
+   "usd_split": 222328390.73683283
+  },
+  "insulin": {
+   "npis": 143933,
+   "contacts": 3511442,
+   "usd_split": 125676702.43049929
+  },
+  "metformin": {
+   "npis": 7766,
+   "contacts": 16404,
+   "usd_split": 312457.5738333333
+  },
+  "sglt2": {
+   "npis": 278958,
+   "contacts": 6153696,
+   "usd_split": 341449983.9768352
+  },
+  "statin": {
+   "npis": 90110,
+   "contacts": 654527,
+   "usd_split": 21046742.717833333
+  },
+  "sulfonylurea": {
+   "npis": 13,
+   "contacts": 70,
+   "usd_split": 192531.07833333334
+  },
+  "tzd": {
+   "npis": 179,
+   "contacts": 286,
+   "usd_split": 57699.2815
+  }
+ },
+ "makers": {
+  "AstraZeneca": {
+   "contacts": 6156151,
+   "glp1_contacts": 453753,
+   "no_product_contacts": 380275,
+   "promo_usd": 589691195.9,
+   "promo_usd_no_product": 86976960.02
+  },
+  "Eli Lilly": {
+   "contacts": 4232938,
+   "glp1_contacts": 1888215,
+   "no_product_contacts": 219377,
+   "promo_usd": 403319693.64,
+   "promo_usd_no_product": 105149373.85
+  },
+  "Novo Nordisk": {
+   "contacts": 5746899,
+   "glp1_contacts": 4538680,
+   "no_product_contacts": 526275,
+   "promo_usd": 358887757.93,
+   "promo_usd_no_product": 78276894.1
+  },
+  "Sanofi": {
+   "contacts": 3304948,
+   "glp1_contacts": 332248,
+   "no_product_contacts": 123004,
+   "promo_usd": 513239146.84,
+   "promo_usd_no_product": 76494491.24
+  }
+ },
+ "npis_with_any_payment": 1859884,
+ "npis_ever_glp1_speaker": 3288,
+ "npis_ever_speaker_any": 142336,
+ "npis_ever_glp1_promo": 320152
+}

@@ -1,0 +1,713 @@
+{
+ "estimates": [
+  {
+   "brand": "Trulicity",
+   "estimator": "CS (R did, primary)",
+   "att_0_3": 0.08382351809,
+   "se": 0.0018407581971,
+   "ci_low": 0.080215632023684,
+   "ci_high": 0.08743140415631599,
+   "att_e0": 0.02105671559,
+   "se_e0": 0.0011168656424,
+   "att_1_3": 0.10474578559,
+   "se_1_3": 0.0023163758568,
+   "relative_to_pre_mean": 1.510198590440734,
+   "pre_mean": 0.055504963797865195,
+   "pretrend_p_varying": 4.4697929825e-05,
+   "pretrend_p_universal": 3.7076415652e-05,
+   "honest_robust_mbar": 2.0,
+   "physicians": 272735.0,
+   "treated": 67741.0,
+   "p": 0.0,
+   "p_holm": 0.0,
+   "agrees_with_primary": null
+  },
+  {
+   "brand": "Trulicity",
+   "estimator": "CS without covariates (exploratory)",
+   "att_0_3": 0.16846432087,
+   "se": 0.0017690892812,
+   "ci_low": 0.164996905878848,
+   "ci_high": 0.17193173586115199,
+   "att_e0": NaN,
+   "se_e0": NaN,
+   "att_1_3": NaN,
+   "se_1_3": NaN,
+   "relative_to_pre_mean": NaN,
+   "pre_mean": NaN,
+   "pretrend_p_varying": NaN,
+   "pretrend_p_universal": NaN,
+   "honest_robust_mbar": NaN,
+   "physicians": NaN,
+   "treated": NaN,
+   "p": NaN,
+   "p_holm": NaN,
+   "agrees_with_primary": false
+  },
+  {
+   "brand": "Trulicity",
+   "estimator": "Imputation (BJS / did2s)",
+   "att_0_3": 0.16971848128608163,
+   "se": NaN,
+   "ci_low": NaN,
+   "ci_high": NaN,
+   "att_e0": NaN,
+   "se_e0": NaN,
+   "att_1_3": NaN,
+   "se_1_3": NaN,
+   "relative_to_pre_mean": NaN,
+   "pre_mean": NaN,
+   "pretrend_p_varying": NaN,
+   "pretrend_p_universal": NaN,
+   "honest_robust_mbar": NaN,
+   "physicians": NaN,
+   "treated": NaN,
+   "p": NaN,
+   "p_holm": NaN,
+   "agrees_with_primary": false
+  },
+  {
+   "brand": "Trulicity",
+   "estimator": "Sun & Abraham",
+   "att_0_3": 0.1556426765652533,
+   "se": 0.0008918036613636015,
+   "ci_low": 0.15389474138898063,
+   "ci_high": 0.15739061174152597,
+   "att_e0": NaN,
+   "se_e0": NaN,
+   "att_1_3": NaN,
+   "se_1_3": NaN,
+   "relative_to_pre_mean": NaN,
+   "pre_mean": NaN,
+   "pretrend_p_varying": NaN,
+   "pretrend_p_universal": NaN,
+   "honest_robust_mbar": NaN,
+   "physicians": NaN,
+   "treated": NaN,
+   "p": NaN,
+   "p_holm": NaN,
+   "agrees_with_primary": false
+  },
+  {
+   "brand": "Trulicity",
+   "estimator": "TWFE (diagnostic)",
+   "att_0_3": 0.177277603708339,
+   "se": 0.002700975687918071,
+   "ci_low": 0.1719836913600196,
+   "ci_high": 0.18257151605665842,
+   "att_e0": NaN,
+   "se_e0": NaN,
+   "att_1_3": NaN,
+   "se_1_3": NaN,
+   "relative_to_pre_mean": NaN,
+   "pre_mean": NaN,
+   "pretrend_p_varying": NaN,
+   "pretrend_p_universal": NaN,
+   "honest_robust_mbar": NaN,
+   "physicians": NaN,
+   "treated": NaN,
+   "p": NaN,
+   "p_holm": NaN,
+   "agrees_with_primary": null
+  },
+  {
+   "brand": "Victoza",
+   "estimator": "CS (R did, primary)",
+   "att_0_3": 0.012122127148,
+   "se": 0.0028090613743,
+   "ci_low": 0.006616366854371999,
+   "ci_high": 0.017627887441628,
+   "att_e0": 0.0038370159429,
+   "se_e0": 0.0021808737435,
+   "att_1_3": 0.014883830883,
+   "se_1_3": 0.0029646737745,
+   "relative_to_pre_mean": 0.13608672828293317,
+   "pre_mean": 0.08907648307039395,
+   "pretrend_p_varying": 0.16006168781,
+   "pretrend_p_universal": 0.045761877605,
+   "honest_robust_mbar": 0.25,
+   "physicians": 218481.0,
+   "treated": 22105.0,
+   "p": 1.593388888358919e-05,
+   "p_holm": 1.593388888358919e-05,
+   "agrees_with_primary": null
+  },
+  {
+   "brand": "Victoza",
+   "estimator": "CS without covariates (exploratory)",
+   "att_0_3": 0.065978339778,
+   "se": 0.002197327886,
+   "ci_low": 0.061671577121439995,
+   "ci_high": 0.07028510243456,
+   "att_e0": NaN,
+   "se_e0": NaN,
+   "att_1_3": NaN,
+   "se_1_3": NaN,
+   "relative_to_pre_mean": NaN,
+   "pre_mean": NaN,
+   "pretrend_p_varying": NaN,
+   "pretrend_p_universal": NaN,
+   "honest_robust_mbar": NaN,
+   "physicians": NaN,
+   "treated": NaN,
+   "p": NaN,
+   "p_holm": NaN,
+   "agrees_with_primary": false
+  },
+  {
+   "brand": "Victoza",
+   "estimator": "Imputation (BJS / did2s)",
+   "att_0_3": 0.07146921264572734,
+   "se": NaN,
+   "ci_low": NaN,
+   "ci_high": NaN,
+   "att_e0": NaN,
+   "se_e0": NaN,
+   "att_1_3": NaN,
+   "se_1_3": NaN,
+   "relative_to_pre_mean": NaN,
+   "pre_mean": NaN,
+   "pretrend_p_varying": NaN,
+   "pretrend_p_universal": NaN,
+   "honest_robust_mbar": NaN,
+   "physicians": NaN,
+   "treated": NaN,
+   "p": NaN,
+   "p_holm": NaN,
+   "agrees_with_primary": false
+  },
+  {
+   "brand": "Victoza",
+   "estimator": "Sun & Abraham",
+   "att_0_3": 0.05792731639418819,
+   "se": 0.001270320964307336,
+   "ci_low": 0.05543748730414581,
+   "ci_high": 0.060417145484230564,
+   "att_e0": NaN,
+   "se_e0": NaN,
+   "att_1_3": NaN,
+   "se_1_3": NaN,
+   "relative_to_pre_mean": NaN,
+   "pre_mean": NaN,
+   "pretrend_p_varying": NaN,
+   "pretrend_p_universal": NaN,
+   "honest_robust_mbar": NaN,
+   "physicians": NaN,
+   "treated": NaN,
+   "p": NaN,
+   "p_holm": NaN,
+   "agrees_with_primary": false
+  },
+  {
+   "brand": "Victoza",
+   "estimator": "TWFE (diagnostic)",
+   "att_0_3": 0.039805727408475274,
+   "se": 0.001767690764441424,
+   "ci_low": 0.036341053510170085,
+   "ci_high": 0.04327040130678046,
+   "att_e0": NaN,
+   "se_e0": NaN,
+   "att_1_3": NaN,
+   "se_1_3": NaN,
+   "relative_to_pre_mean": NaN,
+   "pre_mean": NaN,
+   "pretrend_p_varying": NaN,
+   "pretrend_p_universal": NaN,
+   "honest_robust_mbar": NaN,
+   "physicians": NaN,
+   "treated": NaN,
+   "p": NaN,
+   "p_holm": NaN,
+   "agrees_with_primary": null
+  },
+  {
+   "brand": "Ozempic",
+   "estimator": "CS (R did, primary)",
+   "att_0_3": 0.073596326479,
+   "se": 0.002082037089,
+   "ci_low": 0.06951553378455999,
+   "ci_high": 0.07767711917344,
+   "att_e0": 0.032276113502,
+   "se_e0": 0.0017399897271,
+   "att_1_3": 0.087369730804,
+   "se_1_3": 0.002480186816,
+   "relative_to_pre_mean": 0.6859050861807761,
+   "pre_mean": 0.10729812034022893,
+   "pretrend_p_varying": 8.0025811366e-11,
+   "pretrend_p_universal": 2.6611093628e-18,
+   "honest_robust_mbar": 2.0,
+   "physicians": 239805.0,
+   "treated": 48378.0,
+   "p": 1.0673723940339572e-273,
+   "p_holm": 2.1347447880679144e-273,
+   "agrees_with_primary": null
+  },
+  {
+   "brand": "Ozempic",
+   "estimator": "CS without covariates (exploratory)",
+   "att_0_3": 0.19972770119,
+   "se": 0.0025762860597,
+   "ci_low": 0.194678180512988,
+   "ci_high": 0.204777221867012,
+   "att_e0": NaN,
+   "se_e0": NaN,
+   "att_1_3": NaN,
+   "se_1_3": NaN,
+   "relative_to_pre_mean": NaN,
+   "pre_mean": NaN,
+   "pretrend_p_varying": NaN,
+   "pretrend_p_universal": NaN,
+   "honest_robust_mbar": NaN,
+   "physicians": NaN,
+   "treated": NaN,
+   "p": NaN,
+   "p_holm": NaN,
+   "agrees_with_primary": false
+  },
+  {
+   "brand": "Ozempic",
+   "estimator": "Imputation (BJS / did2s)",
+   "att_0_3": 0.20318252438192763,
+   "se": NaN,
+   "ci_low": NaN,
+   "ci_high": NaN,
+   "att_e0": NaN,
+   "se_e0": NaN,
+   "att_1_3": NaN,
+   "se_1_3": NaN,
+   "relative_to_pre_mean": NaN,
+   "pre_mean": NaN,
+   "pretrend_p_varying": NaN,
+   "pretrend_p_universal": NaN,
+   "honest_robust_mbar": NaN,
+   "physicians": NaN,
+   "treated": NaN,
+   "p": NaN,
+   "p_holm": NaN,
+   "agrees_with_primary": false
+  },
+  {
+   "brand": "Ozempic",
+   "estimator": "Sun & Abraham",
+   "att_0_3": 0.18660042621895373,
+   "se": 0.0014096660931064717,
+   "ci_low": 0.18383748067646505,
+   "ci_high": 0.1893633717614424,
+   "att_e0": NaN,
+   "se_e0": NaN,
+   "att_1_3": NaN,
+   "se_1_3": NaN,
+   "relative_to_pre_mean": NaN,
+   "pre_mean": NaN,
+   "pretrend_p_varying": NaN,
+   "pretrend_p_universal": NaN,
+   "honest_robust_mbar": NaN,
+   "physicians": NaN,
+   "treated": NaN,
+   "p": NaN,
+   "p_holm": NaN,
+   "agrees_with_primary": false
+  },
+  {
+   "brand": "Ozempic",
+   "estimator": "TWFE (diagnostic)",
+   "att_0_3": 0.19729790668324698,
+   "se": 0.0025824561945975186,
+   "ci_low": 0.19223629254183586,
+   "ci_high": 0.2023595208246581,
+   "att_e0": NaN,
+   "se_e0": NaN,
+   "att_1_3": NaN,
+   "se_1_3": NaN,
+   "relative_to_pre_mean": NaN,
+   "pre_mean": NaN,
+   "pretrend_p_varying": NaN,
+   "pretrend_p_universal": NaN,
+   "honest_robust_mbar": NaN,
+   "physicians": NaN,
+   "treated": NaN,
+   "p": NaN,
+   "p_holm": NaN,
+   "agrees_with_primary": null
+  }
+ ],
+ "holm": {
+  "Trulicity": 0.0,
+  "Ozempic": 2.1347447880679144e-273,
+  "Victoza": 1.593388888358919e-05
+ },
+ "sesoi_pp": 0.02,
+ "types": {
+  "Trulicity": {
+   "first_year_type_counts": {
+    "meals_only": 67493,
+    "speaker_consulting": 52,
+    "other": 50
+   },
+   "estimable": false,
+   "meals_only": {
+    "att": 0.083968988515,
+    "se": 0.0019333686004,
+    "treated": 67493
+   }
+  },
+  "Victoza": {
+   "first_year_type_counts": {
+    "meals_only": 21315,
+    "other": 605,
+    "speaker_consulting": 91
+   },
+   "estimable": false,
+   "meals_only": {
+    "att": 0.013069950035,
+    "se": 0.0027618562428,
+    "treated": 21315
+   }
+  },
+  "Ozempic": {
+   "first_year_type_counts": {
+    "meals_only": 47409,
+    "other": 656,
+    "speaker_consulting": 62
+   },
+   "estimable": false,
+   "meals_only": {
+    "att": 0.073726395639,
+    "se": 0.0022449132503,
+    "treated": 47409
+   }
+  }
+ },
+ "honestdid_rm": {
+  "Trulicity": [
+   {
+    "lb": 0.08014833,
+    "ub": 0.0874987,
+    "method": "C-LF",
+    "Delta": "DeltaRM",
+    "Mbar": 0
+   },
+   {
+    "lb": 0.07649815,
+    "ub": 0.09159891,
+    "method": "C-LF",
+    "Delta": "DeltaRM",
+    "Mbar": 0.25
+   },
+   {
+    "lb": 0.0714479,
+    "ub": 0.09689917,
+    "method": "C-LF",
+    "Delta": "DeltaRM",
+    "Mbar": 0.5
+   },
+   {
+    "lb": 0.06594762,
+    "ub": 0.10254945,
+    "method": "C-LF",
+    "Delta": "DeltaRM",
+    "Mbar": 0.75
+   },
+   {
+    "lb": 0.06029734,
+    "ub": 0.10819974,
+    "method": "C-LF",
+    "Delta": "DeltaRM",
+    "Mbar": 1
+   },
+   {
+    "lb": 0.05459706,
+    "ub": 0.11395002,
+    "method": "C-LF",
+    "Delta": "DeltaRM",
+    "Mbar": 1.25
+   },
+   {
+    "lb": 0.04884677,
+    "ub": 0.11970031,
+    "method": "C-LF",
+    "Delta": "DeltaRM",
+    "Mbar": 1.5
+   },
+   {
+    "lb": 0.04304648,
+    "ub": 0.1255006,
+    "method": "C-LF",
+    "Delta": "DeltaRM",
+    "Mbar": 1.75
+   },
+   {
+    "lb": 0.03729619,
+    "ub": 0.13130089,
+    "method": "C-LF",
+    "Delta": "DeltaRM",
+    "Mbar": 2
+   }
+  ],
+  "Victoza": [
+   {
+    "lb": 0.00704687,
+    "ub": 0.01719738,
+    "method": "C-LF",
+    "Delta": "DeltaRM",
+    "Mbar": 0
+   },
+   {
+    "lb": 0.00339669,
+    "ub": 0.02109758,
+    "method": "C-LF",
+    "Delta": "DeltaRM",
+    "Mbar": 0.25
+   },
+   {
+    "lb": -0.00180357,
+    "ub": 0.02644784,
+    "method": "C-LF",
+    "Delta": "DeltaRM",
+    "Mbar": 0.5
+   },
+   {
+    "lb": -0.00750385,
+    "ub": 0.03219813,
+    "method": "C-LF",
+    "Delta": "DeltaRM",
+    "Mbar": 0.75
+   },
+   {
+    "lb": -0.01340415,
+    "ub": 0.03814843,
+    "method": "C-LF",
+    "Delta": "DeltaRM",
+    "Mbar": 1
+   },
+   {
+    "lb": -0.01940445,
+    "ub": 0.04414873,
+    "method": "C-LF",
+    "Delta": "DeltaRM",
+    "Mbar": 1.25
+   },
+   {
+    "lb": -0.02545475,
+    "ub": 0.05024903,
+    "method": "C-LF",
+    "Delta": "DeltaRM",
+    "Mbar": 1.5
+   },
+   {
+    "lb": -0.03155506,
+    "ub": 0.05634934,
+    "method": "C-LF",
+    "Delta": "DeltaRM",
+    "Mbar": 1.75
+   },
+   {
+    "lb": -0.03770536,
+    "ub": 0.06249965,
+    "method": "C-LF",
+    "Delta": "DeltaRM",
+    "Mbar": 2
+   }
+  ],
+  "Ozempic": [
+   {
+    "lb": 0.06932111,
+    "ub": 0.07787154,
+    "method": "C-LF",
+    "Delta": "DeltaRM",
+    "Mbar": 0
+   },
+   {
+    "lb": 0.06467088,
+    "ub": 0.08252177,
+    "method": "C-LF",
+    "Delta": "DeltaRM",
+    "Mbar": 0.25
+   },
+   {
+    "lb": 0.0590706,
+    "ub": 0.08817206,
+    "method": "C-LF",
+    "Delta": "DeltaRM",
+    "Mbar": 0.5
+   },
+   {
+    "lb": 0.0530703,
+    "ub": 0.09417236,
+    "method": "C-LF",
+    "Delta": "DeltaRM",
+    "Mbar": 0.75
+   },
+   {
+    "lb": 0.04697,
+    "ub": 0.10027266,
+    "method": "C-LF",
+    "Delta": "DeltaRM",
+    "Mbar": 1
+   },
+   {
+    "lb": 0.04076969,
+    "ub": 0.10647297,
+    "method": "C-LF",
+    "Delta": "DeltaRM",
+    "Mbar": 1.25
+   },
+   {
+    "lb": 0.03451937,
+    "ub": 0.11272328,
+    "method": "C-LF",
+    "Delta": "DeltaRM",
+    "Mbar": 1.5
+   },
+   {
+    "lb": 0.02821906,
+    "ub": 0.1190236,
+    "method": "C-LF",
+    "Delta": "DeltaRM",
+    "Mbar": 1.75
+   },
+   {
+    "lb": 0.02186874,
+    "ub": 0.12532391,
+    "method": "C-LF",
+    "Delta": "DeltaRM",
+    "Mbar": 2
+   }
+  ]
+ },
+ "honestdid_robust_mbar": {
+  "Trulicity": 2,
+  "Victoza": 0.25,
+  "Ozempic": 2
+ },
+ "honestdid_smoothness": {
+  "Trulicity": [
+   {
+    "lb": 0.0658030796,
+    "ub": 0.080010230127,
+    "method": "FLCI",
+    "Delta": "DeltaSD",
+    "M": 0
+   },
+   {
+    "lb": 0.054453321912,
+    "ub": 0.09135635129,
+    "method": "FLCI",
+    "Delta": "DeltaSD",
+    "M": 0.0025
+   },
+   {
+    "lb": 0.041953321912,
+    "ub": 0.10385635129,
+    "method": "FLCI",
+    "Delta": "DeltaSD",
+    "M": 0.005
+   },
+   {
+    "lb": 0.016953321911,
+    "ub": 0.12885635129,
+    "method": "FLCI",
+    "Delta": "DeltaSD",
+    "M": 0.01
+   }
+  ],
+  "Victoza": [
+   {
+    "lb": -0.0021327346629,
+    "ub": 0.019483315605,
+    "method": "FLCI",
+    "Delta": "DeltaSD",
+    "M": 0
+   },
+   {
+    "lb": -0.012886226459,
+    "ub": 0.030236807401,
+    "method": "FLCI",
+    "Delta": "DeltaSD",
+    "M": 0.0025
+   },
+   {
+    "lb": -0.025419399598,
+    "ub": 0.042707512428,
+    "method": "FLCI",
+    "Delta": "DeltaSD",
+    "M": 0.005
+   },
+   {
+    "lb": -0.050419399598,
+    "ub": 0.067707512428,
+    "method": "FLCI",
+    "Delta": "DeltaSD",
+    "M": 0.01
+   }
+  ],
+  "Ozempic": [
+   {
+    "lb": 0.048346507417,
+    "ub": 0.063557968026,
+    "method": "FLCI",
+    "Delta": "DeltaSD",
+    "M": 0
+   },
+   {
+    "lb": 0.037081941517,
+    "ub": 0.074825299821,
+    "method": "FLCI",
+    "Delta": "DeltaSD",
+    "M": 0.0025
+   },
+   {
+    "lb": 0.024581941516,
+    "ub": 0.087325299821,
+    "method": "FLCI",
+    "Delta": "DeltaSD",
+    "M": 0.005
+   },
+   {
+    "lb": -0.00041805848356,
+    "ub": 0.11232529982,
+    "method": "FLCI",
+    "Delta": "DeltaSD",
+    "M": 0.01
+   }
+  ]
+ },
+ "pretrend_wald": {
+  "Trulicity": {
+   "varying": {
+    "stat": 31.7755208407,
+    "df": 7,
+    "p": 4.4697929825e-05
+   },
+   "universal": {
+    "stat": 34.2190471344,
+    "df": 8,
+    "p": 3.7076415652e-05
+   }
+  },
+  "Victoza": {
+   "varying": {
+    "stat": 6.5760428095,
+    "df": 4,
+    "p": 0.16006168781
+   },
+   "universal": {
+    "stat": 11.2990971285,
+    "df": 5,
+    "p": 0.045761877605
+   }
+  },
+  "Ozempic": {
+   "varying": {
+    "stat": 56.0324230387,
+    "df": 5,
+    "p": 8.0025811366e-11
+   },
+   "universal": {
+    "stat": 95.0796707159,
+    "df": 6,
+    "p": 2.6611093628e-18
+   }
+  }
+ }
+}

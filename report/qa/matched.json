@@ -1,0 +1,347 @@
+{
+ "brands": {
+  "Trulicity": {
+   "primary": {
+    "att": 0.12033194434623763,
+    "se": 0.00180184854170325,
+    "p": 0.0,
+    "treated": 67741,
+    "pretrend_wald": {
+     "stat": 212.47429492018244,
+     "df": 8,
+     "p": 1.4955177755250212e-41
+    },
+    "honest_breakdown_mbar": 1.75,
+    "smoothness_m0": {
+     "lb": 0.05201896,
+     "ub": 0.07078497
+    }
+   },
+   "p13_as_reported": {
+    "att": 0.08382351809,
+    "se": 0.0018407581971
+   },
+   "no_covariates": {
+    "att": 0.16622783784642364,
+    "se": 0.0017347035597556387,
+    "p": 0.0
+   },
+   "unmatched": {
+    "att": 0.16520175354105132,
+    "se": 0.0017465276505579635,
+    "p": 0.0,
+    "matched_treated": 66072,
+    "pretrend_wald": {
+     "stat": 879.6172867427567,
+     "df": 4,
+     "p": 4.342933626283323e-189,
+     "events": [
+      -5,
+      -4,
+      -3,
+      -2
+     ]
+    }
+   },
+   "registered": {
+    "att": 0.1250399620544158,
+    "se": 0.0017589225615465543,
+    "p": 0.0,
+    "matched_treated": 64305,
+    "pretrend_wald": {
+     "stat": 2.176325738794829,
+     "df": 3,
+     "p": 0.5366265033151789,
+     "events": [
+      -5,
+      -4,
+      -3
+     ]
+    },
+    "treated": 67741,
+    "share_matched": 0.9492773947830708,
+    "max_abs_smd_after": 0.0272313453326488,
+    "growth_smd_after": 0.18819679860179345,
+    "ratio_to_primary": 1.039125252515089,
+    "ratio_to_p13": 1.4917050119533561,
+    "half_primary_and_significant": true
+   },
+   "trajectory": {
+    "att": 0.13185905508259493,
+    "se": 0.002462944860506846,
+    "p": 0.0,
+    "matched_treated": 35134,
+    "pretrend_wald": {
+     "stat": 0.4285298598294521,
+     "df": 2,
+     "p": 0.807134522614409,
+     "events": [
+      -5,
+      -4
+     ]
+    },
+    "treated": 67741,
+    "share_matched": 0.5186519242408586,
+    "max_abs_smd_after": 0.042241103147543896,
+    "growth_smd_after": 0.19317707338971762,
+    "ratio_to_primary": 1.0957942697509293,
+    "ratio_to_p13": 1.5730556064351766,
+    "half_primary_and_significant": true
+   },
+   "volume_growth": {
+    "att": 0.12656839858929742,
+    "se": 0.002499431656056944,
+    "p": 0.0,
+    "matched_treated": 34893,
+    "pretrend_wald": {
+     "stat": 1.8785512866334526,
+     "df": 2,
+     "p": 0.39091089174625226,
+     "events": [
+      -5,
+      -4
+     ]
+    },
+    "treated": 67741,
+    "share_matched": 0.5150942560635361,
+    "max_abs_smd_after": 0.042547351796457494,
+    "growth_smd_after": 0.042547351796457494,
+    "ratio_to_primary": 1.0518270877857279,
+    "ratio_to_p13": 1.5099389941305363,
+    "half_primary_and_significant": true
+   }
+  },
+  "Victoza": {
+   "primary": {
+    "att": 0.05462408138290879,
+    "se": 0.002208966776948775,
+    "p": 5.302717204647804e-135,
+    "treated": 22105,
+    "pretrend_wald": {
+     "stat": 36.67830601625373,
+     "df": 9,
+     "p": 3.0033891603824952e-05
+    },
+    "honest_breakdown_mbar": 1.5,
+    "smoothness_m0": {
+     "lb": 0.02433433,
+     "ub": 0.04125998
+    }
+   },
+   "p13_as_reported": {
+    "att": 0.012122127148,
+    "se": 0.0028090613743
+   },
+   "no_covariates": {
+    "att": 0.06319617567401124,
+    "se": 0.00214310516642927,
+    "p": 4.0867792074170186e-191
+   },
+   "unmatched": {
+    "att": 0.06203686947284,
+    "se": 0.0021707347461821097,
+    "p": 1.2346572152790375e-179,
+    "matched_treated": 21076,
+    "pretrend_wald": {
+     "stat": 167.00694561061158,
+     "df": 4,
+     "p": 4.589623898047652e-35,
+     "events": [
+      -5,
+      -4,
+      -3,
+      -2
+     ]
+    }
+   },
+   "registered": {
+    "att": 0.06638983583134353,
+    "se": 0.0019987870015381647,
+    "p": 6.525346431913661e-242,
+    "matched_treated": 20431,
+    "pretrend_wald": {
+     "stat": 4.8789449398845655,
+     "df": 3,
+     "p": 0.18087905468055693,
+     "events": [
+      -5,
+      -4,
+      -3
+     ]
+    },
+    "treated": 22092,
+    "share_matched": 0.924814412456998,
+    "max_abs_smd_after": 0.028728328119348324,
+    "growth_smd_after": 0.23389818657912287,
+    "ratio_to_primary": 1.215395008036073,
+    "ratio_to_p13": 5.476748017966222,
+    "half_primary_and_significant": true
+   },
+   "trajectory": {
+    "att": 0.0639886845172883,
+    "se": 0.0024145044755919894,
+    "p": 9.243280914165352e-155,
+    "matched_treated": 13319,
+    "pretrend_wald": {
+     "stat": 0.170377701678826,
+     "df": 2,
+     "p": 0.9183388389637107,
+     "events": [
+      -5,
+      -4
+     ]
+    },
+    "treated": 22092,
+    "share_matched": 0.6028879232301285,
+    "max_abs_smd_after": 0.03443164136765127,
+    "growth_smd_after": 0.23898372654171626,
+    "ratio_to_primary": 1.1714372653470302,
+    "ratio_to_p13": 5.278667987560718,
+    "half_primary_and_significant": true
+   },
+   "volume_growth": {
+    "att": 0.06024004562526274,
+    "se": 0.0024511863409357806,
+    "p": 2.2883496832905572e-133,
+    "matched_treated": 13252,
+    "pretrend_wald": {
+     "stat": 1.6606833150360358,
+     "df": 2,
+     "p": 0.4359003322517254,
+     "events": [
+      -5,
+      -4
+     ]
+    },
+    "treated": 22092,
+    "share_matched": 0.5998551511859497,
+    "max_abs_smd_after": 0.05748071752562441,
+    "growth_smd_after": 0.05748071752562441,
+    "ratio_to_primary": 1.1028111430009533,
+    "ratio_to_p13": 4.969428623358533,
+    "half_primary_and_significant": true
+   }
+  },
+  "Ozempic": {
+   "primary": {
+    "att": 0.1370971240682673,
+    "se": 0.0025724652348516498,
+    "p": 0.0,
+    "treated": 48378,
+    "pretrend_wald": {
+     "stat": 187.70173303862904,
+     "df": 5,
+     "p": 1.2106827167652929e-38
+    },
+    "honest_breakdown_mbar": 2,
+    "smoothness_m0": {
+     "lb": 0.0578843,
+     "ub": 0.07732736
+    }
+   },
+   "p13_as_reported": {
+    "att": 0.073596326479,
+    "se": 0.002082037089
+   },
+   "no_covariates": {
+    "att": 0.1983804220672517,
+    "se": 0.0027297831842351865,
+    "p": 0.0
+   },
+   "unmatched": {
+    "att": 0.19723584210507783,
+    "se": 0.0027407647220818636,
+    "p": 0.0,
+    "matched_treated": 46744,
+    "pretrend_wald": {
+     "stat": 669.8265805104011,
+     "df": 4,
+     "p": 1.1891408896053694e-143,
+     "events": [
+      -5,
+      -4,
+      -3,
+      -2
+     ]
+    }
+   },
+   "registered": {
+    "att": 0.14585920991443785,
+    "se": 0.002498042813831513,
+    "p": 0.0,
+    "matched_treated": 45170,
+    "pretrend_wald": {
+     "stat": 0.9673303061927627,
+     "df": 3,
+     "p": 0.8091563516253004,
+     "events": [
+      -5,
+      -4,
+      -3
+     ]
+    },
+    "treated": 48378,
+    "share_matched": 0.9336888668402993,
+    "max_abs_smd_after": 0.03634495962697665,
+    "growth_smd_after": 0.16647168064948079,
+    "ratio_to_primary": 1.0639115218916444,
+    "ratio_to_p13": 1.9818816630210119,
+    "half_primary_and_significant": true
+   },
+   "trajectory": {
+    "att": 0.14496748123166975,
+    "se": 0.0025092156868968935,
+    "p": 0.0,
+    "matched_treated": 42820,
+    "pretrend_wald": {
+     "stat": 0.29754522517941356,
+     "df": 2,
+     "p": 0.8617650471442024,
+     "events": [
+      -5,
+      -4
+     ]
+    },
+    "treated": 48378,
+    "share_matched": 0.8851130679234362,
+    "max_abs_smd_after": 0.03935916859335741,
+    "growth_smd_after": 0.1703734206518635,
+    "ratio_to_primary": 1.0574071645695748,
+    "ratio_to_p13": 1.9697651794214868,
+    "half_primary_and_significant": true
+   },
+   "volume_growth": {
+    "att": 0.14116744030116313,
+    "se": 0.0024849774601619075,
+    "p": 0.0,
+    "matched_treated": 42501,
+    "pretrend_wald": {
+     "stat": 0.6147411948466383,
+     "df": 2,
+     "p": 0.7353780212018819,
+     "events": [
+      -5,
+      -4
+     ]
+    },
+    "treated": 48378,
+    "share_matched": 0.8785191616023812,
+    "max_abs_smd_after": 0.04758288140016419,
+    "growth_smd_after": 0.04758288140016419,
+    "ratio_to_primary": 1.0296892896955958,
+    "ratio_to_p13": 1.9181316113847597,
+    "half_primary_and_significant": true
+   }
+  }
+ },
+ "holm_primary": {
+  "Trulicity": 0.0,
+  "Ozempic": 0.0,
+  "Victoza": 5.302717204647804e-135
+ },
+ "holm_registered": {
+  "Trulicity": 0.0,
+  "Ozempic": 0.0,
+  "Victoza": 6.525346431913661e-242
+ }
+}

@@ -1,0 +1,16 @@
+brand,estimator,att_0_3,se,ci_low,ci_high,att_e0,se_e0,att_1_3,se_1_3,relative_to_pre_mean,pre_mean,pretrend_p_varying,pretrend_p_universal,honest_robust_mbar,physicians,treated,p,p_holm,agrees_with_primary
+Trulicity,"CS (R did, primary)",0.083824,0.001841,0.080216,0.087431,0.021057,0.001117,0.104746,0.002316,1.510199,0.055505,0.000045,0.000037,2.000000,272735.000000,67741.000000,0.000000,0.000000,
+Trulicity,CS without covariates (exploratory),0.168464,0.001769,0.164997,0.171932,,,,,,,,,,,,,,False
+Trulicity,Imputation (BJS / did2s),0.169718,,,,,,,,,,,,,,,,,False
+Trulicity,Sun & Abraham,0.155643,0.000892,0.153895,0.157391,,,,,,,,,,,,,,False
+Trulicity,TWFE (diagnostic),0.177278,0.002701,0.171984,0.182572,,,,,,,,,,,,,,
+Victoza,"CS (R did, primary)",0.012122,0.002809,0.006616,0.017628,0.003837,0.002181,0.014884,0.002965,0.136087,0.089076,0.160062,0.045762,0.250000,218481.000000,22105.000000,0.000016,0.000016,
+Victoza,CS without covariates (exploratory),0.065978,0.002197,0.061672,0.070285,,,,,,,,,,,,,,False
+Victoza,Imputation (BJS / did2s),0.071469,,,,,,,,,,,,,,,,,False
+Victoza,Sun & Abraham,0.057927,0.001270,0.055437,0.060417,,,,,,,,,,,,,,False
+Victoza,TWFE (diagnostic),0.039806,0.001768,0.036341,0.043270,,,,,,,,,,,,,,
+Ozempic,"CS (R did, primary)",0.073596,0.002082,0.069516,0.077677,0.032276,0.001740,0.087370,0.002480,0.685905,0.107298,0.000000,0.000000,2.000000,239805.000000,48378.000000,0.000000,0.000000,
+Ozempic,CS without covariates (exploratory),0.199728,0.002576,0.194678,0.204777,,,,,,,,,,,,,,False
+Ozempic,Imputation (BJS / did2s),0.203183,,,,,,,,,,,,,,,,,False
+Ozempic,Sun & Abraham,0.186600,0.001410,0.183837,0.189363,,,,,,,,,,,,,,False
+Ozempic,TWFE (diagnostic),0.197298,0.002582,0.192236,0.202360,,,,,,,,,,,,,,

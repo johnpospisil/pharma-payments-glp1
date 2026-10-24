@@ -1,0 +1,259 @@
+{
+ "brand": "Victoza",
+ "binary": {
+  "Primary (reference)": {
+   "att": 0.05462408138290879,
+   "se": 0.002208966776948775,
+   "p": 5.302717204647804e-135,
+   "treated": 22105,
+   "physicians": 218481,
+   "matched_att": 0.06638983583134353,
+   "matched_se": 0.0019987870015381647
+  },
+  "Never-treated controls": {
+   "att": 0.055121066373940736,
+   "se": 0.0021958612222818907,
+   "p": 4.699319391708048e-139,
+   "treated": 22105,
+   "physicians": 218481
+  },
+  "Never-treated controls in practices with no paid member (D-3)": {
+   "att": 0.06954689824073401,
+   "se": 0.0022519976763622214,
+   "p": 2.063946894931726e-209,
+   "treated": 22105,
+   "physicians": 111372
+  },
+  "g + 1 when the first payment is in Jul\u2013Dec (D-1)": {
+   "att": 0.050732443823728116,
+   "se": 0.0022733049532759095,
+   "p": 2.5494009293953e-110,
+   "treated": 22101,
+   "physicians": 218481,
+   "matched_att": 0.06525024851047123,
+   "matched_se": 0.0020566591390730857
+  },
+  "Manufacturer-level exposure (D-2)": {
+   "att": 0.03184920426543654,
+   "se": 0.0012920853757034936,
+   "p": 3.7296932847469585e-134,
+   "treated": 59338,
+   "physicians": 209331,
+   "matched_att": 0.03594527373888738,
+   "matched_se": 0.001132764395082265
+  },
+  "Molecule-level exposure (any semaglutide / liraglutide / dulaglutide brand)": {
+   "att": 0.05462408138290879,
+   "se": 0.002208966776948775,
+   "p": 5.302717204647804e-135,
+   "treated": 22105,
+   "physicians": 218481,
+   "matched_att": 0.06638983583134353,
+   "matched_se": 0.0019987870015381647
+  },
+  "D8 first-listed product rule": {
+   "att": 0.045884805324748146,
+   "se": 0.002149054195343517,
+   "p": 3.8035898480271786e-101,
+   "treated": 30476,
+   "physicians": 237072,
+   "matched_att": 0.07233910129026257,
+   "matched_se": 0.0019578483143655903
+  },
+  "Drop top 1% of GLP-1 payees": {
+   "att": 0.054151679415966034,
+   "se": 0.0021950883287986155,
+   "p": 2.274768913506063e-134,
+   "treated": 21822,
+   "physicians": 217988,
+   "matched_att": 0.06530401460370541,
+   "matched_se": 0.001989772240737759
+  },
+  "Diabetes-prescriber filter met before payment (D24)": {
+   "att": 0.043005951138857856,
+   "se": 0.002575422820121446,
+   "p": 1.3418004175785431e-62,
+   "treated": 17322,
+   "physicians": 213698,
+   "matched_att": 0.05975909200442898,
+   "matched_se": 0.002259122936584589
+  },
+  "2020 not used as a base year": {
+   "att": 0.05464727919456057,
+   "se": 0.0022102062770924954,
+   "p": 5.764597290777402e-135,
+   "treated": 22105,
+   "physicians": 218481
+  },
+  "State instead of region in covariates": {
+   "att": 0.05549843452193435,
+   "se": 0.002188528100854756,
+   "p": 7.187807376631273e-142,
+   "treated": 22105,
+   "physicians": 218481
+  },
+  "Balanced panel (in Part D every year)": {
+   "att": 0.05270240527998248,
+   "se": 0.00264447988787804,
+   "p": 2.271011030046122e-88,
+   "treated": 16230,
+   "physicians": 122458,
+   "matched_att": 0.06647536465179775,
+   "matched_se": 0.0023886830373320597
+  },
+  "High-volume diabetes prescribers": {
+   "att": 0.05717717516869308,
+   "se": 0.004074568479584043,
+   "p": 9.834271849619779e-45,
+   "treated": 10059,
+   "physicians": 41857,
+   "matched_att": 0.07085742965991507,
+   "matched_se": 0.0037238562459840567
+  },
+  "Matched also on total-claims growth (DEV-8)": {
+   "att": 0.06024004562526274,
+   "se": 0.0024511863409357806,
+   "matched_only": true,
+   "pretrend_wald": {
+    "stat": 1.6606833150360358,
+    "df": 2,
+    "p": 0.4359003322517254,
+    "events": [
+     -5,
+     -4
+    ]
+   }
+  }
+ },
+ "relative": {
+  "Claims of the brand (suppressed = 0)": {
+   "att": 1.9038986086873027,
+   "se": 0.09298562970349962,
+   "matched_att": 2.009648580197502,
+   "matched_se": 0.08470410008691504,
+   "base_mean": 2.5983946858566287,
+   "unit": "relative"
+  },
+  "Beneficiaries of the brand (suppressed = 0)": {
+   "att": 0.21265415529166576,
+   "se": 0.02075944922123938,
+   "matched_att": 0.1874542072368572,
+   "matched_se": 0.018577042311558208,
+   "base_mean": 0.2093366546729403,
+   "unit": "relative"
+  },
+  "Cost of the brand (suppressed = 0)": {
+   "att": 2131.374384491571,
+   "se": 103.1034077811049,
+   "matched_att": 2103.1649440567335,
+   "matched_se": 94.78250968215137,
+   "base_mean": 2027.5553561214133,
+   "unit": "relative"
+  },
+  "log(1 + fills) (D9)": {
+   "att": 0.20028739356980665,
+   "se": 0.007604757085114533,
+   "matched_att": 0.2318959755668751,
+   "matched_se": 0.0070511314526723635,
+   "base_mean": 1.0,
+   "unit": "log points"
+  },
+  "Fills, PPML, suppressed = 0 (H6)": {
+   "unmatched": {
+    "tau_log": 0.17832437996324121,
+    "se_log": 0.027360353941772747,
+    "att": 0.1952129614965505,
+    "lo": 0.13280639159287036,
+    "hi": 0.2610575239787035,
+    "lo90": 0.14261168933859933,
+    "hi90": 0.25023578583924827
+   },
+   "matched": {
+    "tau_log": 0.5402097430129804,
+    "se_log": 0.03328595142554117,
+    "att": 0.716366820382467,
+    "lo": 0.6079647971844702,
+    "hi": 0.8320768385403007,
+    "lo90": 0.624913125168739,
+    "hi90": 0.8129677313080363
+   },
+   "unit": "ratio"
+  },
+  "Fills, PPML, suppressed = 5 (H6)": {
+   "unmatched": {
+    "tau_log": 0.2711501088079356,
+    "se_log": 0.011457618286608974,
+    "att": 0.3114719190962722,
+    "lo": 0.2823485186403517,
+    "hi": 0.3412567407195171,
+    "lo90": 0.28698506845737154,
+    "hi90": 0.33642466935507326
+   },
+   "matched": {
+    "tau_log": 0.2579538325453138,
+    "se_log": 0.01298431725772557,
+    "att": 0.2942790636748579,
+    "lo": 0.261756213480383,
+    "hi": 0.3276402182687655,
+    "lo90": 0.2669274401228832,
+    "hi90": 0.32222117985272153
+   },
+   "unit": "ratio"
+  },
+  "Fills, PPML, suppressed = cap (H6)": {
+   "unmatched": {
+    "tau_log": 0.1843001055577873,
+    "se_log": 0.0076195426615726855,
+    "att": 0.20237660885955952,
+    "lo": 0.18455337160313565,
+    "hi": 0.22046802127289408,
+    "lo90": 0.1873998991007632,
+    "hi90": 0.21754222029787346
+   },
+   "matched": {
+    "tau_log": 0.15529124023573368,
+    "se_log": 0.008407027239825386,
+    "att": 0.1679980796106664,
+    "lo": 0.14890977025094546,
+    "hi": 0.1874035274991448,
+    "lo90": 0.15195636093827405,
+    "hi90": 0.18426318933040242
+   },
+   "unit": "ratio"
+  },
+  "Never suppressed for the brand (not estimable)": {
+   "physicians": 105,
+   "treated": 34,
+   "unit": "count"
+  },
+  "Claims per 1,000 Part D claims, suppressed = 0 (DEV-8)": {
+   "att": 0.4219404049668562,
+   "se": 0.03920103260100382,
+   "matched_att": 0.46806586663897837,
+   "matched_se": 0.032072405403002435,
+   "base_mean": 0.8740644900564203,
+   "unit": "relative"
+  },
+  "Claims per 1,000 Part D claims, suppressed = cap (DEV-8)": {
+   "att": -13.767805297057103,
+   "se": 0.5185501635009482,
+   "matched_att": -14.49425944999103,
+   "matched_se": 0.49653607815521045,
+   "base_mean": 20.87292239332401,
+   "unit": "relative"
+  }
+ },
+ "statin_binary_volume_growth_matched": {
+  "att": 0.07963220902769924,
+  "se": 0.0026270820196452093,
+  "pretrend_wald": {
+   "stat": 101.43506750933564,
+   "df": 2,
+   "p": 9.41141565840314e-23,
+   "events": [
+    -5,
+    -4
+   ]
+  }
+ }
+}

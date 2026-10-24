@@ -1,0 +1,45 @@
+{
+ "profiles": {
+  "supplement_profiles_with_valid_npi": 1681786,
+  "merged_secondary_profiles": 3064,
+  "learned_profiles": 1859535,
+  "learned_profiles_ambiguous": 11,
+  "learned_vs_supplement_disagree": 2,
+  "profile_npi_rows": 1864872,
+  "npis_with_several_profiles": 3096
+ },
+ "records_by_method": {
+  "invalid_npi": 4,
+  "supplement": 14254422,
+  "none": 233216,
+  "learned": 1015953,
+  "direct": 132763552,
+  "out_of_scope": 529993
+ },
+ "records_where_profile_npi_differs_from_direct": 36,
+ "overlap": {
+  "op_linked_npis": 1859884,
+  "op_linked_npis_in_partd": 1338660,
+  "partd_npis": 1721486,
+  "glp1_paid_npis": 320154,
+  "glp1_paid_npis_in_partd": 293734,
+  "glp1_paid_npis_glp1_prescribers": 159036,
+  "glp1_unlinked_promo_usd": 2420432.0500000003
+ },
+ "specialty": {
+  "npis_compared": 1338660,
+  "agree_share": 0.914,
+  "agree_share_glp1_prescribers": 0.9413,
+  "endocrinology_agree": 0.9013,
+  "top_disagreements": {
+   "primary_care_physician (OP) vs other_physician (Part D)": 31199,
+   "other_physician (OP) vs primary_care_physician (Part D)": 29138,
+   "primary_care_physician (OP) vs other_nonphysician (Part D)": 13540,
+   "other_physician (OP) vs other_nonphysician (Part D)": 11485,
+   "cardiology (OP) vs primary_care_physician (Part D)": 5578,
+   "other_nonphysician (OP) vs other_physician (Part D)": 3804,
+   "nephrology (OP) vs primary_care_physician (Part D)": 2266,
+   "endocrinology (OP) vs primary_care_physician (Part D)": 2260
+  }
+ }
+}

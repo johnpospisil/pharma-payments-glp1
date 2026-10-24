@@ -1,0 +1,10 @@
+op_group,cardiology,endocrinology,nephrology,nurse_practitioner,other_nonphysician,other_physician,physician_assistant,primary_care_physician
+cardiology,28789,,0,29,489,912,22,5578
+endocrinology,0,6446,,,107,947,,2260
+missing,,0,0,0,150,78,0,13
+nephrology,0,,8909,,124,462,,2266
+nurse_practitioner,,,,239650,1663,383,293,790
+other_nonphysician,11,,,2065,225065,3804,282,770
+other_physician,242,73,145,462,11485,382160,389,29138
+physician_assistant,,,,192,173,209,114795,269
+primary_care_physician,1489,618,1039,613,13540,31199,252,217758

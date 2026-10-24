@@ -1,0 +1,541 @@
+{
+ "subgroups": {
+  "Trulicity": {
+   "Specialty": {
+    "primary_care_physician": {
+     "att": 0.1208001981225698,
+     "se": 0.0018608885648854585,
+     "treated": 62463
+    },
+    "endocrinology": {
+     "att": 0.14015742135424186,
+     "se": 0.00999198864260652,
+     "treated": 2243
+    },
+    "cardiology": {
+     "att": 0.09470242610892977,
+     "se": 0.011514258781528303,
+     "treated": 782
+    },
+    "nephrology": {
+     "att": 0.12620778818982295,
+     "se": 0.015779045732846293,
+     "treated": 441
+    },
+    "other_physician": {
+     "att": 0.10193843381936718,
+     "se": 0.007413653269193289,
+     "treated": 1812
+    }
+   },
+   "Region": {
+    "South": {
+     "att": 0.13716179512674825,
+     "se": 0.0027585219364998003,
+     "treated": 29927
+    },
+    "Northeast": {
+     "att": 0.11397500091208414,
+     "se": 0.003838595938338237,
+     "treated": 11824
+    },
+    "Midwest": {
+     "att": 0.10135992117331875,
+     "se": 0.003276405884332734,
+     "treated": 14591
+    },
+    "West": {
+     "att": 0.10708155303546148,
+     "se": 0.004643652272843188,
+     "treated": 11399
+    }
+   },
+   "Urbanicity": {
+    "Urban": {
+     "att": 0.11539229430877675,
+     "se": 0.001980034113571047,
+     "treated": 56892
+    },
+    "Rural": {
+     "att": 0.14630165001191006,
+     "se": 0.0039019057340856605,
+     "treated": 10849
+    }
+   },
+   "H3 specialists": {
+    "att": 0.12511863291317762,
+    "se": 0.008132064792327977,
+    "treated": 3025
+   }
+  },
+  "Victoza": {
+   "Specialty": {
+    "primary_care_physician": {
+     "att": 0.05155215186924012,
+     "se": 0.002321165024181759,
+     "treated": 19166
+    },
+    "endocrinology": {
+     "att": 0.13462687523260947,
+     "se": 0.014724919537079882,
+     "treated": 1110
+    },
+    "cardiology": {
+     "att": 0.018858299733565127,
+     "se": 0.0055977990825463635,
+     "treated": 709
+    },
+    "nephrology": {
+     "att": 0.019180474908805478,
+     "se": 0.011081793947072422,
+     "treated": 292
+    },
+    "other_physician": {
+     "att": 0.042973542832349935,
+     "se": 0.007841232404165505,
+     "treated": 828
+    }
+   },
+   "Region": {
+    "South": {
+     "att": 0.07007912130202373,
+     "se": 0.0037302231591795363,
+     "treated": 9131
+    },
+    "Northeast": {
+     "att": 0.034610763310326365,
+     "se": 0.004926711911914947,
+     "treated": 3655
+    },
+    "Midwest": {
+     "att": 0.04875298218921237,
+     "se": 0.004454027024260943,
+     "treated": 5053
+    },
+    "West": {
+     "att": 0.04646727871093784,
+     "se": 0.004691936115095613,
+     "treated": 4266
+    }
+   },
+   "Urbanicity": {
+    "Urban": {
+     "att": 0.05071224396005732,
+     "se": 0.0023105900745362786,
+     "treated": 18484
+    },
+    "Rural": {
+     "att": 0.07467493984938962,
+     "se": 0.006019101436212179,
+     "treated": 3621
+    }
+   },
+   "H3 specialists": {
+    "att": 0.09478116541989556,
+    "se": 0.009292574426248234,
+    "treated": 1819
+   }
+  },
+  "Ozempic": {
+   "Specialty": {
+    "primary_care_physician": {
+     "att": 0.14182796426615635,
+     "se": 0.0028540009462883448,
+     "treated": 38980
+    },
+    "endocrinology": {
+     "att": 0.1060107750902643,
+     "se": 0.011749183993822448,
+     "treated": 1548
+    },
+    "cardiology": {
+     "att": 0.1018597608583523,
+     "se": 0.00603189163114512,
+     "treated": 4861
+    },
+    "nephrology": {
+     "att": 0.1285143843869854,
+     "se": 0.012929731329781088,
+     "treated": 1353
+    },
+    "other_physician": {
+     "att": 0.15785147822233564,
+     "se": 0.009246902901174574,
+     "treated": 1636
+    }
+   },
+   "Region": {
+    "South": {
+     "att": 0.16234772060603403,
+     "se": 0.004179672709319397,
+     "treated": 21205
+    },
+    "Northeast": {
+     "att": 0.11485155887761639,
+     "se": 0.005535206833086669,
+     "treated": 8335
+    },
+    "Midwest": {
+     "att": 0.11371146541903487,
+     "se": 0.0053556731182680915,
+     "treated": 10072
+    },
+    "West": {
+     "att": 0.12549354099764148,
+     "se": 0.0046596088166718725,
+     "treated": 8766
+    }
+   },
+   "Urbanicity": {
+    "Urban": {
+     "att": 0.13521223057145665,
+     "se": 0.002721180719421174,
+     "treated": 41835
+    },
+    "Rural": {
+     "att": 0.14982437388174163,
+     "se": 0.005920052635507108,
+     "treated": 6543
+    }
+   },
+   "H3 specialists": {
+    "att": 0.10441187775086463,
+    "se": 0.0055427547703700885,
+    "treated": 6409
+   }
+  }
+ },
+ "comparisons": [
+  {
+   "brand": "Trulicity",
+   "dimension": "Specialty",
+   "group": "endocrinology",
+   "reference": "primary_care_physician",
+   "att": 0.019357223231672063,
+   "se": 0.010037126464145849,
+   "p": 0.053785228854393255,
+   "p_holm": 0.26892614427196626
+  },
+  {
+   "brand": "Trulicity",
+   "dimension": "Specialty",
+   "group": "cardiology",
+   "reference": "primary_care_physician",
+   "att": -0.026097772013640025,
+   "se": 0.011641140979658912,
+   "p": 0.024970623569021726,
+   "p_holm": 0.14982374141413035
+  },
+  {
+   "brand": "Trulicity",
+   "dimension": "Specialty",
+   "group": "nephrology",
+   "reference": "primary_care_physician",
+   "att": 0.005407590067253151,
+   "se": 0.01590211524879447,
+   "p": 0.733815286039303,
+   "p_holm": 0.8774097125697987
+  },
+  {
+   "brand": "Trulicity",
+   "dimension": "Specialty",
+   "group": "other_physician",
+   "reference": "primary_care_physician",
+   "att": -0.01886176430320262,
+   "se": 0.007544181551064754,
+   "p": 0.012413242636347705,
+   "p_holm": 0.09930594109078164
+  },
+  {
+   "brand": "Trulicity",
+   "dimension": "Region",
+   "group": "Northeast",
+   "reference": "South",
+   "att": -0.023186794214664116,
+   "se": 0.004701500607365354,
+   "p": 8.148121507521617e-07,
+   "p_holm": 1.1407370110530264e-05
+  },
+  {
+   "brand": "Trulicity",
+   "dimension": "Region",
+   "group": "Midwest",
+   "reference": "South",
+   "att": -0.0358018739534295,
+   "se": 0.004273448191877394,
+   "p": 5.3949796948299797e-17,
+   "p_holm": 1.294795126759195e-15
+  },
+  {
+   "brand": "Trulicity",
+   "dimension": "Region",
+   "group": "West",
+   "reference": "South",
+   "att": -0.030080242091286777,
+   "se": 0.005393378227218288,
+   "p": 2.4434449704996947e-08,
+   "p_holm": 3.916598798695122e-07
+  },
+  {
+   "brand": "Trulicity",
+   "dimension": "Urbanicity",
+   "group": "Rural",
+   "reference": "Urban",
+   "att": 0.030909355703133315,
+   "se": 0.004321468830400256,
+   "p": 8.520436252064603e-13,
+   "p_holm": 1.8744959754542126e-11
+  },
+  {
+   "brand": "Victoza",
+   "dimension": "Specialty",
+   "group": "endocrinology",
+   "reference": "primary_care_physician",
+   "att": 0.08307472336336935,
+   "se": 0.01486801242317373,
+   "p": 2.3038816462912482e-08,
+   "p_holm": 3.916598798695122e-07
+  },
+  {
+   "brand": "Victoza",
+   "dimension": "Specialty",
+   "group": "cardiology",
+   "reference": "primary_care_physician",
+   "att": -0.032693852135674994,
+   "se": 0.006030578574026975,
+   "p": 5.915199179308895e-08,
+   "p_holm": 8.872798768963343e-07
+  },
+  {
+   "brand": "Victoza",
+   "dimension": "Specialty",
+   "group": "nephrology",
+   "reference": "primary_care_physician",
+   "att": -0.032371676960434644,
+   "se": 0.011334075115363745,
+   "p": 0.0042882937787296046,
+   "p_holm": 0.038594644008566444
+  },
+  {
+   "brand": "Victoza",
+   "dimension": "Specialty",
+   "group": "other_physician",
+   "reference": "primary_care_physician",
+   "att": -0.008578609036890186,
+   "se": 0.008149003603518825,
+   "p": 0.2924699041899329,
+   "p_holm": 0.8774097125697987
+  },
+  {
+   "brand": "Victoza",
+   "dimension": "Region",
+   "group": "Northeast",
+   "reference": "South",
+   "att": -0.03546835799169737,
+   "se": 0.006210798873580583,
+   "p": 1.1247529522326215e-08,
+   "p_holm": 2.0245553140187186e-07
+  },
+  {
+   "brand": "Victoza",
+   "dimension": "Region",
+   "group": "Midwest",
+   "reference": "South",
+   "att": -0.021326139112811365,
+   "se": 0.005880100367813181,
+   "p": 0.0002869192836484425,
+   "p_holm": 0.0031561121201328676
+  },
+  {
+   "brand": "Victoza",
+   "dimension": "Region",
+   "group": "West",
+   "reference": "South",
+   "att": -0.023611842591085896,
+   "se": 0.006013553740546589,
+   "p": 8.621330023866447e-05,
+   "p_holm": 0.0011207729031026382
+  },
+  {
+   "brand": "Victoza",
+   "dimension": "Urbanicity",
+   "group": "Rural",
+   "reference": "Urban",
+   "att": 0.0239626958893323,
+   "se": 0.006353707347531986,
+   "p": 0.00016230103546162114,
+   "p_holm": 0.0019476124255394535
+  },
+  {
+   "brand": "Ozempic",
+   "dimension": "Specialty",
+   "group": "endocrinology",
+   "reference": "primary_care_physician",
+   "att": -0.03581718917589205,
+   "se": 0.011927879148860796,
+   "p": 0.002674968456408218,
+   "p_holm": 0.02674968456408218
+  },
+  {
+   "brand": "Ozempic",
+   "dimension": "Specialty",
+   "group": "cardiology",
+   "reference": "primary_care_physician",
+   "att": -0.03996820340780405,
+   "se": 0.006671492768846364,
+   "p": 2.0869113193150873e-09,
+   "p_holm": 4.173822638630175e-08
+  },
+  {
+   "brand": "Ozempic",
+   "dimension": "Specialty",
+   "group": "nephrology",
+   "reference": "primary_care_physician",
+   "att": -0.01331357987917095,
+   "se": 0.013206133154904107,
+   "p": 0.3133891181262587,
+   "p_holm": 0.8774097125697987
+  },
+  {
+   "brand": "Ozempic",
+   "dimension": "Specialty",
+   "group": "other_physician",
+   "reference": "primary_care_physician",
+   "att": 0.01602351395617929,
+   "se": 0.009449299783254657,
+   "p": 0.0899359650111944,
+   "p_holm": 0.3597438600447776
+  },
+  {
+   "brand": "Ozempic",
+   "dimension": "Region",
+   "group": "Northeast",
+   "reference": "South",
+   "att": -0.04749616172841764,
+   "se": 0.006875989833834846,
+   "p": 4.931365537534421e-12,
+   "p_holm": 1.0355867628822285e-10
+  },
+  {
+   "brand": "Ozempic",
+   "dimension": "Region",
+   "group": "Midwest",
+   "reference": "South",
+   "att": -0.048636255186999156,
+   "se": 0.006778531057071026,
+   "p": 7.228419990151502e-13,
+   "p_holm": 1.6625365977348456e-11
+  },
+  {
+   "brand": "Ozempic",
+   "dimension": "Region",
+   "group": "West",
+   "reference": "South",
+   "att": -0.036854179608392545,
+   "se": 0.006225817184703757,
+   "p": 3.227784520670546e-09,
+   "p_holm": 6.132790589274037e-08
+  },
+  {
+   "brand": "Ozempic",
+   "dimension": "Urbanicity",
+   "group": "Rural",
+   "reference": "Urban",
+   "att": 0.014612143310284986,
+   "se": 0.006228063980860196,
+   "p": 0.01896707461354899,
+   "p_holm": 0.13276952229484293
+  }
+ ],
+ "secondary": {
+  "H7 by brand": {
+   "Trulicity": {
+    "att": 0.09939418324963017,
+    "se": 0.005537211095780772,
+    "treated": 7656
+   },
+   "Victoza": {
+    "att": 0.015442551965349122,
+    "se": 0.09182148162571127,
+    "treated": 19
+   },
+   "Ozempic": {
+    "att": 0.16943191556309892,
+    "se": 0.004439855823927928,
+    "treated": 19652
+   }
+  },
+  "family": {
+   "H2 speaker/consulting \u2212 meals only": {
+    "att": 0.05576669540801728,
+    "se": 0.029416411618548736,
+    "p": 0.0579907129055671,
+    "p_holm": 0.1159814258111342
+   },
+   "H3 endocrinology + cardiology \u2212 primary care": {
+    "att": -0.0038548804349603834,
+    "se": 0.005042478905946221,
+    "p": 0.4445805228966302,
+    "p_holm": 0.4445805228966302
+   },
+   "H4 \u2265 $100 \u2212 < $100 in the first year": {
+    "att": 0.051244800286509254,
+    "se": 0.004616792004544047,
+    "p": 1.2592848338402337e-28,
+    "p_holm": 5.037139335360935e-28
+   },
+   "H5 own-brand share (log-odds, matched)": {
+    "att": 0.03202383415045599,
+    "se": 0.011887184266130262,
+    "p": 0.007060444608682864,
+    "p_holm": 0.02118133382604859
+   },
+   "H6 fills, PPML matched, suppressed = cap (log ratio)": {
+    "att": 0.25203792933111363,
+    "se": 0.006137723340819546,
+    "p": 0.0,
+    "p_holm": 0.0,
+    "ratio": 0.28664483793743045
+   },
+   "H7 NPs/PAs, Pr(\u2265 11 claims)": {
+    "att": 0.1497029048227954,
+    "se": 0.0036896292796437333,
+    "p": 0.0,
+    "p_holm": 0.0
+   }
+  },
+  "weights_n": {
+   "H2": {
+    "Trulicity": 67669,
+    "Victoza": 21206,
+    "Ozempic": 47594
+   },
+   "H3": {
+    "Trulicity": 65488,
+    "Victoza": 20985,
+    "Ozempic": 45389
+   },
+   "H4": {
+    "Trulicity": 67595,
+    "Victoza": 22011,
+    "Ozempic": 48127
+   },
+   "H5": {
+    "Trulicity": 67741,
+    "Victoza": 22105,
+    "Ozempic": 48378,
+    "Mounjaro": 47582
+   },
+   "H6": {
+    "Trulicity": 67741,
+    "Victoza": 22105,
+    "Ozempic": 48378
+   },
+   "H7": {
+    "Trulicity": 7656,
+    "Victoza": 19,
+    "Ozempic": 19652
+   }
+  }
+ }
+}

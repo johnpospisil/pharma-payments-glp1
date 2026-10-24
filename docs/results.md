@@ -121,6 +121,7 @@ Diagnostic on the balanced Ozempic subsample (169,181 physicians):
 | Victoza | 92.5% / 60.3% | 0.029 / 0.034 | 0.18 / 0.92 | 1.22 |
 | Ozempic | 93.4% / 88.5% | 0.036 / 0.039 | 0.81 / 0.86 | 1.06 |
 
+- **P20 note (2026-10-23):** max |SMD| is over each spec's own matching variables. Total-claims growth (g − 3 → g − 1), added to the balance table in P18, is *not* balanced by these specs: |SMD| after matching 0.19 / 0.23 / 0.17 (registered) and 0.19 / 0.24 / 0.17 (trajectory). Only the DEV-8 volume-growth match balances it (0.04 / 0.06 / 0.05), and its estimates barely move (+12.7 / +6.0 / +14.1 pp). Paid physicians' practices were growing faster than their matches, which supports the targeting reading (P17).
 - **Coverage of the trajectory spec:** it cannot use the 2015 cohorts of Trulicity and Victoza, because g − 3 = 2012 is before the data begin. Those cohorts are 42% of Trulicity's treated physicians, which explains its lower match share.
 - **Pre-trend test on matched samples:** it uses only the pre-periods not matched on (e = −5…−3, or −5…−4), because matched event times are zero by construction. Brand status is persistent, so this test has less independent information than the unmatched one.
 
@@ -540,3 +541,16 @@ The South/rural pattern matches where GLP-1 adoption and promotion grew fastest.
 - **8 cells are masked for having fewer than 11 prescribers.**
 
 The same issue affects the P11 state map (chart 6). In 2024, one prescriber holds more than 50% of the state's GLP-1 promotional dollars in VT (92%), ID (64%), ME (55%) and OR (53%). This is flagged for P20.
+
+## P20: QA and validation (2026-10-24)
+
+Full checklist, weak claims and disclosure findings: [docs/qa.md](qa.md). Re-run with `make qa`.
+
+- **Rebuild:** `make all` from raw on a clean checkout succeeds in about 2 h of compute. Two independent rebuilds produce the same `report/`: 129 files byte-identical and 23 equal within 1e-6.
+- **Article numbers:** all 51 match `report/qa` ([claims.json](../report/qa/claims.json)).
+- **Disclosure:**
+  - No real NPI appears in any tracked file.
+  - Every public cell has ≥ 11 prescribers. Five QA tables had to be fixed for this.
+  - Chart 6 masks ID, ME, OR and VT under the dominance rule (D37).
+- **Unchanged:** the headline estimates. The only movements are the D-3 sensitivity (≤ 0.005 pp) and the superseded P13 bootstrap SEs, both from the deterministic practice tie-break.
+- **New caveat (W10):** registered and trajectory matching leave pre-period practice growth imbalanced (|SMD| 0.17–0.24). That supports the targeting reading of the ≥ 11-claims contrast.

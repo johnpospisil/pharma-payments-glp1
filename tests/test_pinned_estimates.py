@@ -21,9 +21,12 @@ PINNED = {  # brand: (ATT 0-3, SE), panel-form primary (DEV-5, D27)
     "Ozempic": (0.137097, 0.00257),
 }
 PINNED_P13_AS_REPORTED = {  # R did cross-section mode, kept as "first reported"
-    "Trulicity": (0.083824, 0.00190),
-    "Victoza": (0.012122, 0.00249),
-    "Ozempic": (0.073596, 0.00226),
+    # SEs re-pinned in P20 (were 0.00190 / 0.00249 / 0.00226): the bootstrap clusters by
+    # practice, and the deterministic practice tie-break moved some of 2,340 tied physicians.
+    # ATTs unchanged.
+    "Trulicity": (0.083824, 0.00184),
+    "Victoza": (0.012122, 0.00281),
+    "Ozempic": (0.073596, 0.00208),
 }
 
 pytestmark = pytest.mark.data

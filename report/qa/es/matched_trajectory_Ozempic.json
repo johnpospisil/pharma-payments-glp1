@@ -1,0 +1,631 @@
+{
+ "spec": "trajectory",
+ "cohort_matched_treated": {
+  "2019": 12654,
+  "2020": 6608,
+  "2021": 6817,
+  "2022": 6226,
+  "2023": 5565,
+  "2024": 4950
+ },
+ "att_gt": [
+  {
+   "g": 2019,
+   "e": -2,
+   "t": 2017,
+   "att": 0.0,
+   "treated": 12654,
+   "se": 0.0
+  },
+  {
+   "g": 2019,
+   "e": 0,
+   "t": 2019,
+   "att": 0.04051409229367472,
+   "treated": 12638,
+   "se": 0.0025269936269986595
+  },
+  {
+   "g": 2019,
+   "e": 1,
+   "t": 2020,
+   "att": 0.11729017321048699,
+   "treated": 12554,
+   "se": 0.003885950765521496
+  },
+  {
+   "g": 2019,
+   "e": 2,
+   "t": 2021,
+   "att": 0.15385139121542699,
+   "treated": 12356,
+   "se": 0.004578956053810686
+  },
+  {
+   "g": 2019,
+   "e": 3,
+   "t": 2022,
+   "att": 0.17133229585357382,
+   "treated": 12080,
+   "se": 0.005585225052245118
+  },
+  {
+   "g": 2020,
+   "e": -3,
+   "t": 2017,
+   "att": 0.0,
+   "treated": 6608,
+   "se": 0.0
+  },
+  {
+   "g": 2020,
+   "e": -2,
+   "t": 2018,
+   "att": 0.0,
+   "treated": 6608,
+   "se": 0.0
+  },
+  {
+   "g": 2020,
+   "e": 0,
+   "t": 2020,
+   "att": 0.05329634083178477,
+   "treated": 6596,
+   "se": 0.0039370884843452905
+  },
+  {
+   "g": 2020,
+   "e": 1,
+   "t": 2021,
+   "att": 0.1074906795628681,
+   "treated": 6549,
+   "se": 0.005352608450857477
+  },
+  {
+   "g": 2020,
+   "e": 2,
+   "t": 2022,
+   "att": 0.16094430039398,
+   "treated": 6457,
+   "se": 0.006612544131649296
+  },
+  {
+   "g": 2020,
+   "e": 3,
+   "t": 2023,
+   "att": 0.2128852646904238,
+   "treated": 6305,
+   "se": 0.00713836162520578
+  },
+  {
+   "g": 2021,
+   "e": -4,
+   "t": 2017,
+   "att": 0.0,
+   "treated": 6430,
+   "se": 0.0
+  },
+  {
+   "g": 2021,
+   "e": -3,
+   "t": 2018,
+   "att": 0.0,
+   "treated": 6817,
+   "se": 0.0
+  },
+  {
+   "g": 2021,
+   "e": -2,
+   "t": 2019,
+   "att": 0.0,
+   "treated": 6817,
+   "se": 0.0
+  },
+  {
+   "g": 2021,
+   "e": 0,
+   "t": 2021,
+   "att": 0.04732506608755624,
+   "treated": 6797,
+   "se": 0.003969693331902978
+  },
+  {
+   "g": 2021,
+   "e": 1,
+   "t": 2022,
+   "att": 0.13869125666020762,
+   "treated": 6754,
+   "se": 0.005882552932553112
+  },
+  {
+   "g": 2021,
+   "e": 2,
+   "t": 2023,
+   "att": 0.200104684257916,
+   "treated": 6651,
+   "se": 0.006540053525718771
+  },
+  {
+   "g": 2021,
+   "e": 3,
+   "t": 2024,
+   "att": 0.1996198995620251,
+   "treated": 6502,
+   "se": 0.007253689740959289
+  },
+  {
+   "g": 2022,
+   "e": -5,
+   "t": 2017,
+   "att": 0.0,
+   "treated": 5188,
+   "se": 0.0
+  },
+  {
+   "g": 2022,
+   "e": -4,
+   "t": 2018,
+   "att": -0.00016103127286181586,
+   "treated": 5690,
+   "se": 0.0004259861591234718
+  },
+  {
+   "g": 2022,
+   "e": -3,
+   "t": 2019,
+   "att": 0.0,
+   "treated": 6226,
+   "se": 0.0
+  },
+  {
+   "g": 2022,
+   "e": -2,
+   "t": 2020,
+   "att": 0.0,
+   "treated": 6226,
+   "se": 0.0
+  },
+  {
+   "g": 2022,
+   "e": 0,
+   "t": 2022,
+   "att": 0.0881275041255325,
+   "treated": 6209,
+   "se": 0.005218410351755308
+  },
+  {
+   "g": 2022,
+   "e": 1,
+   "t": 2023,
+   "att": 0.2118707384595069,
+   "treated": 6169,
+   "se": 0.006977370771897901
+  },
+  {
+   "g": 2022,
+   "e": 2,
+   "t": 2024,
+   "att": 0.21732919205347218,
+   "treated": 6071,
+   "se": 0.007373702940531219
+  },
+  {
+   "g": 2023,
+   "e": -5,
+   "t": 2018,
+   "att": 0.00012072004667131629,
+   "treated": 4814,
+   "se": 0.0003292244472355208
+  },
+  {
+   "g": 2023,
+   "e": -4,
+   "t": 2019,
+   "att": -0.0006128355551416955,
+   "treated": 5207,
+   "se": 0.0013523527338741566
+  },
+  {
+   "g": 2023,
+   "e": -3,
+   "t": 2020,
+   "att": 0.0,
+   "treated": 5565,
+   "se": 0.0
+  },
+  {
+   "g": 2023,
+   "e": -2,
+   "t": 2021,
+   "att": 0.0,
+   "treated": 5565,
+   "se": 0.0
+  },
+  {
+   "g": 2023,
+   "e": 0,
+   "t": 2023,
+   "att": 0.11989732970692286,
+   "treated": 5558,
+   "se": 0.006084522067125008
+  },
+  {
+   "g": 2023,
+   "e": 1,
+   "t": 2024,
+   "att": 0.19510042984458922,
+   "treated": 5519,
+   "se": 0.007044661762130845
+  },
+  {
+   "g": 2024,
+   "e": -5,
+   "t": 2019,
+   "att": 0.0005818259792223436,
+   "treated": 4329,
+   "se": 0.0020559224205760965
+  },
+  {
+   "g": 2024,
+   "e": -4,
+   "t": 2020,
+   "att": 6.554962716270697e-05,
+   "treated": 4627,
+   "se": 0.002532173809939616
+  },
+  {
+   "g": 2024,
+   "e": -3,
+   "t": 2021,
+   "att": 0.0,
+   "treated": 4950,
+   "se": 0.0
+  },
+  {
+   "g": 2024,
+   "e": -2,
+   "t": 2022,
+   "att": 0.0,
+   "treated": 4950,
+   "se": 0.0
+  },
+  {
+   "g": 2024,
+   "e": 0,
+   "t": 2024,
+   "att": 0.0932033604276555,
+   "treated": 4939,
+   "se": 0.006094013041562233
+  }
+ ],
+ "event": [
+  {
+   "e": -5,
+   "att": 0.00021216448580589428,
+   "se": 0.000619134042327821,
+   "cohorts": 3
+  },
+  {
+   "e": -4,
+   "att": -0.00017355208059876908,
+   "se": 0.0006185675618485166,
+   "cohorts": 4
+  },
+  {
+   "e": -3,
+   "att": 0.0,
+   "se": 0.0,
+   "cohorts": 5
+  },
+  {
+   "e": -2,
+   "att": 0.0,
+   "se": 0.0,
+   "cohorts": 6
+  },
+  {
+   "e": 0,
+   "att": 0.06690167291548225,
+   "se": 0.0018263043248017176,
+   "cohorts": 6
+  },
+  {
+   "e": 1,
+   "att": 0.14641636305105887,
+   "se": 0.002762851120639182,
+   "cohorts": 5
+  },
+  {
+   "e": 2,
+   "att": 0.17729641305539587,
+   "se": 0.0034632725585770885,
+   "cohorts": 4
+  },
+  {
+   "e": 3,
+   "att": 0.18925547590474207,
+   "se": 0.004236932634288904,
+   "cohorts": 3
+  }
+ ],
+ "overall_0_3": {
+  "att": 0.14496748123166975,
+  "se": 0.0025092156868968935
+ },
+ "overall_1_3": {
+  "att": 0.17098941733706557,
+  "se": 0.003034331056077335
+ },
+ "pretrend_wald": {
+  "stat": 0.29754522517941356,
+  "df": 2,
+  "p": 0.8617650471442024,
+  "events": [
+   -5,
+   -4
+  ]
+ },
+ "brand": "Ozempic",
+ "match": [
+  {
+   "g": 2019,
+   "treated": 13902,
+   "treated_eligible": 13351,
+   "treated_matched": 12654,
+   "controls_matched": 160789,
+   "strata": 2284
+  },
+  {
+   "g": 2020,
+   "treated": 7408,
+   "treated_eligible": 6978,
+   "treated_matched": 6608,
+   "controls_matched": 146407,
+   "strata": 1722
+  },
+  {
+   "g": 2021,
+   "treated": 7704,
+   "treated_eligible": 7233,
+   "treated_matched": 6817,
+   "controls_matched": 139620,
+   "strata": 1765
+  },
+  {
+   "g": 2022,
+   "treated": 7355,
+   "treated_eligible": 6752,
+   "treated_matched": 6226,
+   "controls_matched": 128340,
+   "strata": 1872
+  },
+  {
+   "g": 2023,
+   "treated": 6366,
+   "treated_eligible": 5974,
+   "treated_matched": 5565,
+   "controls_matched": 114044,
+   "strata": 1979
+  },
+  {
+   "g": 2024,
+   "treated": 5643,
+   "treated_eligible": 5436,
+   "treated_matched": 4950,
+   "controls_matched": 100073,
+   "strata": 2116
+  }
+ ],
+ "balance": [
+  {
+   "variable": "Brand \u2265 11 claims, g \u2212 1",
+   "stage": "after",
+   "mean_treated": 0.08741242410088744,
+   "mean_control": 0.08741242410088744,
+   "smd": 0.0
+  },
+  {
+   "variable": "Brand \u2265 11 claims, g \u2212 1",
+   "stage": "before",
+   "mean_treated": 0.1095267255708162,
+   "mean_control": 0.07500808716457695,
+   "smd": 0.1194871949574164
+  },
+  {
+   "variable": "Brand \u2265 11 claims, g \u2212 2",
+   "stage": "after",
+   "mean_treated": 0.03297524521251752,
+   "mean_control": 0.03297524521251751,
+   "smd": 3.4858393241193844e-17
+  },
+  {
+   "variable": "Brand \u2265 11 claims, g \u2212 2",
+   "stage": "before",
+   "mean_treated": 0.04772110926428134,
+   "mean_control": 0.03503175122813187,
+   "smd": 0.06374656228038435
+  },
+  {
+   "variable": "Brand \u2265 11 claims, g \u2212 3",
+   "stage": "after",
+   "mean_treated": 0.012354040168145727,
+   "mean_control": 0.012354040168145727,
+   "smd": 0.0
+  },
+  {
+   "variable": "Brand \u2265 11 claims, g \u2212 3",
+   "stage": "before",
+   "mean_treated": 0.0192896509491733,
+   "mean_control": 0.01580712816771565,
+   "smd": 0.026524990621307233
+  },
+  {
+   "variable": "log(1 + GLP-1 class claims), g \u2212 1",
+   "stage": "after",
+   "mean_treated": 1.1373048071067025,
+   "mean_control": 1.1272875300281069,
+   "smd": 0.006140052784535624
+  },
+  {
+   "variable": "log(1 + GLP-1 class claims), g \u2212 1",
+   "stage": "before",
+   "mean_treated": 1.2907848356501563,
+   "mean_control": 0.7071448351917735,
+   "smd": 0.35773997083879094
+  },
+  {
+   "variable": "Class growth g \u2212 2 \u2192 g \u2212 1 (log)",
+   "stage": "after",
+   "mean_treated": 0.33779147598203435,
+   "mean_control": 0.3406151068697135,
+   "smd": -0.002574826196870868
+  },
+  {
+   "variable": "Class growth g \u2212 2 \u2192 g \u2212 1 (log)",
+   "stage": "before",
+   "mean_treated": 0.3458188710667931,
+   "mean_control": 0.16936947104344413,
+   "smd": 0.16090153269845073
+  },
+  {
+   "variable": "Class growth g \u2212 3 \u2192 g \u2212 1 (log)",
+   "stage": "after",
+   "mean_treated": 0.551294905345746,
+   "mean_control": 0.5546557107392441,
+   "smd": -0.002540606143673792
+  },
+  {
+   "variable": "Class growth g \u2212 3 \u2192 g \u2212 1 (log)",
+   "stage": "before",
+   "mean_treated": 0.5838752769273466,
+   "mean_control": 0.2952038381617894,
+   "smd": 0.21822162992530686
+  },
+  {
+   "variable": "log(1 + diabetes claims), g \u2212 1",
+   "stage": "after",
+   "mean_treated": 4.3834029229054705,
+   "mean_control": 4.289828154525434,
+   "smd": 0.03935916859335741
+  },
+  {
+   "variable": "log(1 + diabetes claims), g \u2212 1",
+   "stage": "before",
+   "mean_treated": 4.458360697673963,
+   "mean_control": 3.1205536064189463,
+   "smd": 0.5627048376571665
+  },
+  {
+   "variable": "log(1 + total claims), g \u2212 1",
+   "stage": "after",
+   "mean_treated": 7.871179183719273,
+   "mean_control": 7.831438817857565,
+   "smd": 0.02663302861976139
+  },
+  {
+   "variable": "log(1 + total claims), g \u2212 1",
+   "stage": "before",
+   "mean_treated": 7.88104311360334,
+   "mean_control": 7.0663546481490265,
+   "smd": 0.5459844353758448
+  },
+  {
+   "variable": "Total claims growth g \u2212 3 \u2192 g \u2212 1 (log)",
+   "stage": "after",
+   "mean_treated": 0.2901701155792273,
+   "mean_control": 0.10631121337748922,
+   "smd": 0.1703734206518635
+  },
+  {
+   "variable": "Total claims growth g \u2212 3 \u2192 g \u2212 1 (log)",
+   "stage": "before",
+   "mean_treated": 0.28330132435437694,
+   "mean_control": -0.04774029062566809,
+   "smd": 0.3067607368849735
+  },
+  {
+   "variable": "Specialty: endocrinology",
+   "stage": "after",
+   "mean_treated": 0.016697804764128913,
+   "mean_control": 0.016697804764128913,
+   "smd": 0.0
+  },
+  {
+   "variable": "Specialty: endocrinology",
+   "stage": "before",
+   "mean_treated": 0.03138395590936926,
+   "mean_control": 0.015146554965033334,
+   "smd": 0.10787027901086943
+  },
+  {
+   "variable": "Specialty: primary care physician",
+   "stage": "after",
+   "mean_treated": 0.8185894441849603,
+   "mean_control": 0.8185894441849603,
+   "smd": 0.0
+  },
+  {
+   "variable": "Specialty: primary care physician",
+   "stage": "before",
+   "mean_treated": 0.8009579214416936,
+   "mean_control": 0.746279661436805,
+   "smd": 0.13093550512660088
+  },
+  {
+   "variable": "Region: Northeast",
+   "stage": "after",
+   "mean_treated": 0.18449322746380195,
+   "mean_control": 0.1816653029947253,
+   "smd": 0.007025883947623706
+  },
+  {
+   "variable": "Region: Northeast",
+   "stage": "before",
+   "mean_treated": 0.1842358498819001,
+   "mean_control": 0.22380705822467067,
+   "smd": -0.09831334624517853
+  },
+  {
+   "variable": "Region: Midwest",
+   "stage": "after",
+   "mean_treated": 0.22034096216721158,
+   "mean_control": 0.2174281150989418,
+   "smd": 0.0069800831409212874
+  },
+  {
+   "variable": "Region: Midwest",
+   "stage": "before",
+   "mean_treated": 0.2207374682879888,
+   "mean_control": 0.22847867077128722,
+   "smd": -0.01855031715627474
+  },
+  {
+   "variable": "Region: South",
+   "stage": "after",
+   "mean_treated": 0.4224427837459131,
+   "mean_control": 0.4244962456013396,
+   "smd": -0.004306637107318933
+  },
+  {
+   "variable": "Region: South",
+   "stage": "before",
+   "mean_treated": 0.4225789519727058,
+   "mean_control": 0.3017333246552148,
+   "smd": 0.25344432938329436
+  },
+  {
+   "variable": "Region: West",
+   "stage": "after",
+   "mean_treated": 0.17272302662307332,
+   "mean_control": 0.1764103363049933,
+   "smd": -0.009102566013600174
+  },
+  {
+   "variable": "Region: West",
+   "stage": "before",
+   "mean_treated": 0.1724477298574053,
+   "mean_control": 0.24598094634882733,
+   "smd": -0.1815255606513078
+  }
+ ]
+}

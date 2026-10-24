@@ -1,0 +1,79 @@
+brand,group,spec,att,lo,hi,matched_att,ratio_to_primary,treated,excludes_zero
+Trulicity,"Pr(≥ 11 claims), pp",Primary (reference),12.033194434623763,11.680032120449926,12.3863567487976,12.503996205441581,1.0,67741.0,True
+Trulicity,"Pr(≥ 11 claims), pp",Never-treated controls,12.467742349530209,12.10621042735183,12.829274271708588,,1.0361124319288066,67741.0,True
+Trulicity,"Pr(≥ 11 claims), pp",Never-treated controls in practices with no paid member (D-3),14.896798514946417,14.551027568358265,15.242569461534567,,1.2379753851631492,67741.0,True
+Trulicity,"Pr(≥ 11 claims), pp",g + 1 when the first payment is in Jul–Dec (D-1),11.98396709712775,11.605038605400395,12.362895588855102,12.810543162895552,0.9959090383053755,67725.0,True
+Trulicity,"Pr(≥ 11 claims), pp",Manufacturer-level exposure (D-2),9.90039772746298,9.509410875668358,10.291384579257604,10.462494453501986,0.8227572305302431,59696.0,True
+Trulicity,"Pr(≥ 11 claims), pp",Molecule-level exposure (any semaglutide / liraglutide / dulaglutide brand),12.033194434623763,11.680032120449926,12.3863567487976,12.503996205441581,1.0,67741.0,True
+Trulicity,"Pr(≥ 11 claims), pp",D8 first-listed product rule,12.626230629471813,12.212478377774472,13.039982881169154,13.94069792765184,1.0492833551448046,59843.0,True
+Trulicity,"Pr(≥ 11 claims), pp",Drop top 1% of GLP-1 payees,11.874050066853039,11.52134347491315,12.226756658792928,12.378039764195584,0.9867745536203745,66543.0,True
+Trulicity,"Pr(≥ 11 claims), pp",Diabetes-prescriber filter met before payment (D24),10.484021433433274,9.958719186247492,11.009323680619056,12.00964512453249,0.8712583753543474,33057.0,True
+Trulicity,"Pr(≥ 11 claims), pp",2020 not used as a base year,11.956629176569699,11.605248596833544,12.308009756305854,,0.9936371627276495,67741.0,True
+Trulicity,"Pr(≥ 11 claims), pp",State instead of region in covariates,12.126591971592397,11.780862732829508,12.472321210355286,,1.0077616577606272,67741.0,True
+Trulicity,"Pr(≥ 11 claims), pp",Balanced panel (in Part D every year),11.407846471794944,11.010324808391909,11.80536813519798,11.936469716555937,0.9480314253853098,53289.0,True
+Trulicity,"Pr(≥ 11 claims), pp",High-volume diabetes prescribers,12.597270396278134,12.091947991066633,13.102592801489637,12.516248607089572,1.0468766597863095,37996.0,True
+Trulicity,"Pr(≥ 11 claims), pp",Matched also on total-claims growth (DEV-8),12.656839858929741,12.166951254342582,13.146728463516903,,1.0518270877857279,,True
+Trulicity,"Proportional change, %",Claims of the brand (suppressed = 0),236.18706535461828,224.85830769518626,247.5158230140503,228.8200597152278,,,True
+Trulicity,"Proportional change, %",Beneficiaries of the brand (suppressed = 0),241.5947696849645,220.96216916942114,262.22737020050783,211.6407178620811,,,True
+Trulicity,"Proportional change, %",Cost of the brand (suppressed = 0),234.9484716449279,223.8993431625843,245.99760012727154,223.22710909266186,,,True
+Trulicity,"Proportional change, %",log(1 + fills) (D9),43.84759774964777,42.548038055212764,45.14715744408278,44.80350709599558,,,True
+Trulicity,"Proportional change, %","Fills, PPML, suppressed = 0 (H6) [unmatched]",31.07909661902879,18.35848272341593,45.16686235841268,,,,True
+Trulicity,"Proportional change, %","Fills, PPML, suppressed = 0 (H6) [matched]",110.8693959502362,65.98267036358426,167.8948474019314,,,,True
+Trulicity,"Proportional change, %","Fills, PPML, suppressed = 5 (H6) [unmatched]",77.06667644560873,74.33180330936615,79.84445357830724,,,,True
+Trulicity,"Proportional change, %","Fills, PPML, suppressed = 5 (H6) [matched]",44.48689561172278,41.86196978385566,47.16039143768243,,,,True
+Trulicity,"Proportional change, %","Fills, PPML, suppressed = cap (H6) [unmatched]",46.491394372433504,44.86103501280703,48.140102846031766,,,,True
+Trulicity,"Proportional change, %","Fills, PPML, suppressed = cap (H6) [matched]",27.608681763534886,25.975713710081305,29.262817267325254,,,,True
+Trulicity,"Proportional change, %","Claims per 1,000 Part D claims, suppressed = 0 (DEV-8)",128.94284581509842,120.90430119698765,136.98139043320924,119.02312518499338,,,True
+Trulicity,"Proportional change, %","Claims per 1,000 Part D claims, suppressed = cap (DEV-8)",-96.38563370244077,-101.27737427480378,-91.49389313007777,-99.483988655884,,,True
+Victoza,"Pr(≥ 11 claims), pp",Primary (reference),5.462408138290879,5.029450650008919,5.895365626572839,6.638983583134353,1.0,22105.0,True
+Victoza,"Pr(≥ 11 claims), pp",Never-treated controls,5.512106637394074,5.081717837826822,5.942495436961324,,1.0090982764094125,22105.0,True
+Victoza,"Pr(≥ 11 claims), pp",Never-treated controls in practices with no paid member (D-3),6.954689824073402,6.513298279506406,7.396081368640396,,1.2731911728312266,22105.0,True
+Victoza,"Pr(≥ 11 claims), pp",g + 1 when the first payment is in Jul–Dec (D-1),5.0732443823728115,4.627676611530733,5.51881215321489,6.525024851047123,0.9287560090594343,22101.0,True
+Victoza,"Pr(≥ 11 claims), pp",Manufacturer-level exposure (D-2),3.184920426543654,2.9316716929057693,3.438169160181539,3.594527373888738,0.5830615995567436,59338.0,True
+Victoza,"Pr(≥ 11 claims), pp",Molecule-level exposure (any semaglutide / liraglutide / dulaglutide brand),5.462408138290879,5.029450650008919,5.895365626572839,6.638983583134353,1.0,22105.0,True
+Victoza,"Pr(≥ 11 claims), pp",D8 first-listed product rule,4.588480532474815,4.167265910187485,5.009695154762144,7.233910129026257,0.8400105624312603,30476.0,True
+Victoza,"Pr(≥ 11 claims), pp",Drop top 1% of GLP-1 payees,5.415167941596604,4.984930629152075,5.845405254041132,6.530401460370541,0.9913517636364212,21822.0,True
+Victoza,"Pr(≥ 11 claims), pp",Diabetes-prescriber filter met before payment (D24),4.300595113885786,3.7958122411419826,4.805377986629589,5.9759092004428975,0.7873075400095221,17322.0,True
+Victoza,"Pr(≥ 11 claims), pp",2020 not used as a base year,5.464727919456057,5.031527489145928,5.897928349766186,,1.0004246810392867,22105.0,True
+Victoza,"Pr(≥ 11 claims), pp",State instead of region in covariates,5.549843452193435,5.120891944425902,5.978794959960967,,1.0160067339695187,22105.0,True
+Victoza,"Pr(≥ 11 claims), pp",Balanced panel (in Part D every year),5.270240527998248,4.7519224699741525,5.788558586022344,6.647536465179775,0.9648199831598893,16230.0,True
+Victoza,"Pr(≥ 11 claims), pp",High-volume diabetes prescribers,5.717717516869308,4.919102094870835,6.51633293886778,7.085742965991507,1.046739345013189,10059.0,True
+Victoza,"Pr(≥ 11 claims), pp",Matched also on total-claims growth (DEV-8),6.024004562526274,5.543572039702862,6.504437085349688,,1.1028111430009533,,True
+Victoza,"Proportional change, %",Claims of the brand (suppressed = 0),73.27210985499813,66.25809326964728,80.28612644034898,77.34192927411137,,,True
+Victoza,"Proportional change, %",Beneficiaries of the brand (suppressed = 0),101.58476814483761,82.14788522665043,121.02165106302478,89.54676739710425,,,True
+Victoza,"Proportional change, %",Cost of the brand (suppressed = 0),105.12040413874357,95.15358973632266,115.08721854116449,103.7291010431378,,,True
+Victoza,"Proportional change, %",log(1 + fills) (D9),20.028739356980665,18.53820696829822,21.51927174566311,23.18959755668751,,,True
+Victoza,"Proportional change, %","Fills, PPML, suppressed = 0 (H6) [unmatched]",19.52129614965505,13.280639159287036,26.10575239787035,,,,True
+Victoza,"Proportional change, %","Fills, PPML, suppressed = 0 (H6) [matched]",71.6366820382467,60.79647971844702,83.20768385403007,,,,True
+Victoza,"Proportional change, %","Fills, PPML, suppressed = 5 (H6) [unmatched]",31.14719190962722,28.23485186403517,34.125674071951714,,,,True
+Victoza,"Proportional change, %","Fills, PPML, suppressed = 5 (H6) [matched]",29.42790636748579,26.1756213480383,32.76402182687655,,,,True
+Victoza,"Proportional change, %","Fills, PPML, suppressed = cap (H6) [unmatched]",20.23766088595595,18.455337160313565,22.046802127289407,,,,True
+Victoza,"Proportional change, %","Fills, PPML, suppressed = cap (H6) [matched]",16.79980796106664,14.890977025094546,18.74035274991448,,,,True
+Victoza,"Proportional change, %","Claims per 1,000 Part D claims, suppressed = 0 (DEV-8)",48.273372247352164,39.48294261978453,57.0638018749198,53.55049564006027,,,True
+Victoza,"Proportional change, %","Claims per 1,000 Part D claims, suppressed = cap (DEV-8)",-65.96012306096915,-70.82939005343844,-61.09085606849985,-69.44048934243568,,,True
+Ozempic,"Pr(≥ 11 claims), pp",Primary (reference),13.70971240682673,13.205509220795806,14.213915592857655,14.585920991443786,1.0,48378.0,True
+Ozempic,"Pr(≥ 11 claims), pp",Never-treated controls,14.146147382977468,13.62815343074204,14.664141335212893,,1.0318339993721104,48378.0,True
+Ozempic,"Pr(≥ 11 claims), pp",Never-treated controls in practices with no paid member (D-3),20.14294096729025,19.63484162193381,20.651040312646693,,1.469246062175608,48378.0,True
+Ozempic,"Pr(≥ 11 claims), pp",g + 1 when the first payment is in Jul–Dec (D-1),12.994007099582419,12.453741749165061,13.534272449999776,14.370294783908493,0.9477957461100405,46029.0,True
+Ozempic,"Pr(≥ 11 claims), pp",Manufacturer-level exposure (D-2),15.5420841652172,14.919757709650957,16.164410620783446,16.686085021802242,1.1336550106972372,32233.0,True
+Ozempic,"Pr(≥ 11 claims), pp",Molecule-level exposure (any semaglutide / liraglutide / dulaglutide brand),13.644760773022199,13.143012832444928,14.14650871359947,14.70772033796254,0.9952623635071887,54114.0,True
+Ozempic,"Pr(≥ 11 claims), pp",D8 first-listed product rule,13.402246536983586,12.896300669822953,13.90819240414422,14.309669084212812,0.9775731349630616,44227.0,True
+Ozempic,"Pr(≥ 11 claims), pp",Drop top 1% of GLP-1 payees,13.644471582649425,13.138434522138015,14.150508643160837,14.5099641986805,0.9952412696750067,47994.0,True
+Ozempic,"Pr(≥ 11 claims), pp",Diabetes-prescriber filter met before payment (D24),11.952031195684135,11.407400992928995,12.496661398439274,13.411057165963303,0.8717929917868036,37664.0,True
+Ozempic,"Pr(≥ 11 claims), pp",2020 not used as a base year,13.66138150791536,13.122841175973912,14.199921839856808,,0.9964746963701949,48378.0,True
+Ozempic,"Pr(≥ 11 claims), pp",State instead of region in covariates,13.978108990989139,13.486696030267458,14.469521951710817,,1.0195771126481663,48378.0,True
+Ozempic,"Pr(≥ 11 claims), pp",Balanced panel (in Part D every year),12.58294069984629,12.076248036250732,13.089633363441846,13.583170436419193,0.917812155824701,40242.0,True
+Ozempic,"Pr(≥ 11 claims), pp",High-volume diabetes prescribers,11.671201277425538,10.937361067813077,12.405041487038,12.431662258147808,0.8513089794366425,17907.0,True
+Ozempic,"Pr(≥ 11 claims), pp",Matched also on total-claims growth (DEV-8),14.116744030116312,13.629688447924579,14.603799612308046,,1.0296892896955958,,True
+Ozempic,"Proportional change, %",Claims of the brand (suppressed = 0),200.81081066197407,190.38443419989758,211.2371871240506,185.28381307968996,,,True
+Ozempic,"Proportional change, %",Beneficiaries of the brand (suppressed = 0),258.3859230857272,241.91563547758074,274.85621069387366,220.997407537508,,,True
+Ozempic,"Proportional change, %",Cost of the brand (suppressed = 0),208.11748723863883,196.96877055698033,219.26620392029733,189.68651590936955,,,True
+Ozempic,"Proportional change, %",log(1 + fills) (D9),56.1879868242384,54.11818325565684,58.25779039281996,57.83964188136069,,,True
+Ozempic,"Proportional change, %","Fills, PPML, suppressed = 0 (H6) [unmatched]",-0.5045957292143516,-15.028734976688812,16.502154796580555,,,,False
+Ozempic,"Proportional change, %","Fills, PPML, suppressed = 0 (H6) [matched]",58.6934487583201,16.622168127833152,115.94188380381539,,,,True
+Ozempic,"Proportional change, %","Fills, PPML, suppressed = 5 (H6) [unmatched]",92.83868463641394,88.4470516586867,97.33266169456753,,,,True
+Ozempic,"Proportional change, %","Fills, PPML, suppressed = 5 (H6) [matched]",48.498539479112864,44.22735941183304,52.896207192297894,,,,True
+Ozempic,"Proportional change, %","Fills, PPML, suppressed = cap (H6) [unmatched]",69.40417167982275,66.36503518194901,72.49882675852454,,,,True
+Ozempic,"Proportional change, %","Fills, PPML, suppressed = cap (H6) [matched]",36.040340309806155,32.93781232264902,39.215275686124556,,,,True
+Ozempic,"Proportional change, %","Claims per 1,000 Part D claims, suppressed = 0 (DEV-8)",125.37218955890047,116.26408211761394,134.480297000187,106.92134520555165,,,True
+Ozempic,"Proportional change, %","Claims per 1,000 Part D claims, suppressed = cap (DEV-8)",-74.59008627866501,-79.72043901877885,-69.45973353855116,-77.27551450755278,,,True

@@ -1,0 +1,129 @@
+{
+ "panel_rows": 48283318,
+ "panel_npis": 427286,
+ "panel_brands": 14,
+ "status_counts": {
+  "pre_launch": 4700146,
+  "suppressed": 34667272,
+  "zero_known": 30601,
+  "observed": 1674176,
+  "absent": 7211123
+ },
+ "glp1_claims_in_panel_vs_all_observed": 0.9750916794311182,
+ "flow": [
+  {
+   "step": "All Part D prescribers, 2013-2024",
+   "npis": 2027245,
+   "npi_years": 14636994,
+   "glp1_claims": 66000355.0,
+   "npis_ever_glp1_paid": 304842,
+   "share_glp1_claims": 1.0
+  },
+  {
+   "step": "Individuals (not organisations)",
+   "npis": 2020401,
+   "npi_years": 14630121,
+   "glp1_claims": 66000355.0,
+   "npis_ever_glp1_paid": 304842,
+   "share_glp1_claims": 1.0
+  },
+  {
+   "step": "Prescribing specialty (not dentist, optometrist, pharmacist...)",
+   "npis": 1496782,
+   "npi_years": 11624842,
+   "glp1_claims": 65212239.0,
+   "npis_ever_glp1_paid": 296527,
+   "share_glp1_claims": 0.988058912713424
+  },
+  {
+   "step": "Active in Part D >= 3 years",
+   "npis": 1274345,
+   "npi_years": 11294228,
+   "glp1_claims": 64771237.0,
+   "npis_ever_glp1_paid": 275125,
+   "share_glp1_claims": 0.9813771001686279
+  },
+  {
+   "step": "Diabetes prescriber (>= 2 years with >= 11 non-GLP-1 antidiabetic claims)",
+   "npis": 427286,
+   "npi_years": 4168869,
+   "glp1_claims": 64356397.0,
+   "npis_ever_glp1_paid": 199999,
+   "share_glp1_claims": 0.9750916794311182
+  },
+  {
+   "step": "  of which physicians (primary sample, D10)",
+   "npis": 280610,
+   "npi_years": 2922917,
+   "glp1_claims": 48966953.0,
+   "npis_ever_glp1_paid": 138440,
+   "share_glp1_claims": 0.7419195396752033
+  },
+  {
+   "step": "  of which high-volume (median >= 250 diabetes claims/yr, D14)",
+   "npis": 79355,
+   "npi_years": 897181,
+   "glp1_claims": 37246900.0,
+   "npis_ever_glp1_paid": 58699,
+   "share_glp1_claims": 0.5643439342106569
+  }
+ ],
+ "launch": {
+  "Victoza": {
+   "first_partd_year": 2013,
+   "first_payment_year": 2013
+  },
+  "Bydureon": {
+   "first_partd_year": 2013,
+   "first_payment_year": 2013
+  },
+  "Byetta": {
+   "first_partd_year": 2013,
+   "first_payment_year": 2013
+  },
+  "Trulicity": {
+   "first_partd_year": 2014,
+   "first_payment_year": 2014
+  },
+  "Tanzeum": {
+   "first_partd_year": 2014,
+   "first_payment_year": 2013
+  },
+  "Xultophy": {
+   "first_partd_year": 2017,
+   "first_payment_year": 2016
+  },
+  "Adlyxin": {
+   "first_partd_year": 2017,
+   "first_payment_year": 2013
+  },
+  "Soliqua": {
+   "first_partd_year": 2017,
+   "first_payment_year": 2016
+  },
+  "Ozempic": {
+   "first_partd_year": 2018,
+   "first_payment_year": 2017
+  },
+  "Rybelsus": {
+   "first_partd_year": 2019,
+   "first_payment_year": 2019
+  },
+  "Mounjaro": {
+   "first_partd_year": 2022,
+   "first_payment_year": 2022
+  },
+  "Wegovy": {
+   "first_partd_year": 2023,
+   "first_payment_year": 2021
+  },
+  "liraglutide (generic)": {
+   "first_partd_year": 2024,
+   "first_payment_year": null
+  },
+  "Zepbound": {
+   "first_partd_year": 2024,
+   "first_payment_year": 2023
+  }
+ }
+}

@@ -1,0 +1,99 @@
+{
+  "theta": 0.13709712,
+  "rm": [
+    {
+      "lb": 0.13207187,
+      "ub": 0.14212238,
+      "method": "C-LF",
+      "Delta": "DeltaRM",
+      "Mbar": 0
+    },
+    {
+      "lb": 0.11507102,
+      "ub": 0.15957325,
+      "method": "C-LF",
+      "Delta": "DeltaRM",
+      "Mbar": 0.25
+    },
+    {
+      "lb": 0.0965201,
+      "ub": 0.17837419,
+      "method": "C-LF",
+      "Delta": "DeltaRM",
+      "Mbar": 0.5
+    },
+    {
+      "lb": 0.07751915,
+      "ub": 0.19747514,
+      "method": "C-LF",
+      "Delta": "DeltaRM",
+      "Mbar": 0.75
+    },
+    {
+      "lb": 0.05826818,
+      "ub": 0.21687611,
+      "method": "C-LF",
+      "Delta": "DeltaRM",
+      "Mbar": 1
+    },
+    {
+      "lb": 0.03891722,
+      "ub": 0.23622708,
+      "method": "C-LF",
+      "Delta": "DeltaRM",
+      "Mbar": 1.25
+    },
+    {
+      "lb": 0.01951625,
+      "ub": 0.25567805,
+      "method": "C-LF",
+      "Delta": "DeltaRM",
+      "Mbar": 1.5
+    },
+    {
+      "lb": 0.00006527,
+      "ub": 0.27512903,
+      "method": "C-LF",
+      "Delta": "DeltaRM",
+      "Mbar": 1.75
+    },
+    {
+      "lb": -0.0193857,
+      "ub": 0.29463,
+      "method": "C-LF",
+      "Delta": "DeltaRM",
+      "Mbar": 2
+    }
+  ],
+  "breakdown_mbar": 2,
+  "smoothness": [
+    {
+      "lb": 0.0578843,
+      "ub": 0.07732736,
+      "method": "FLCI",
+      "Delta": "DeltaSD",
+      "M": 0
+    },
+    {
+      "lb": 0.04694713,
+      "ub": 0.08824491,
+      "method": "FLCI",
+      "Delta": "DeltaSD",
+      "M": 0.0025
+    },
+    {
+      "lb": 0.03444713,
+      "ub": 0.10074491,
+      "method": "FLCI",
+      "Delta": "DeltaSD",
+      "M": 0.005
+    },
+    {
+      "lb": 0.00944713,
+      "ub": 0.12574491,
+      "method": "FLCI",
+      "Delta": "DeltaSD",
+      "M": 0.01
+    }
+  ]
+}
