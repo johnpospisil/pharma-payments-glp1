@@ -30,7 +30,12 @@ models:
 	$(PY) -m ppg.models.event_study all
 	$(PY) -m ppg.models.event_study diagnostics
 	$(PY) -m ppg.models.event_study report
-	@echo "models: P14-P19 added later"
+	$(PY) -m ppg.models.cs_panel all
+	for b in Trulicity Victoza Ozempic; do /opt/homebrew/bin/Rscript src/ppg/models/r/honest.R \
+	  report/qa/es/panel_universal_$$b.json report/qa/es/honest_panel_$$b.json; done
+	$(PY) -m ppg.models.matched all
+	$(PY) -m ppg.models.matched report
+	@echo "models: P15-P19 added later"
 
 figures:
 	$(PY) -m ppg.viz.figures

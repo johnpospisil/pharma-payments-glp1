@@ -16,6 +16,10 @@ rm <- createSensitivityResults_relativeMagnitudes(
 ok <- !is.na(rm$lb) & !is.na(rm$ub)
 covers0 <- ok & rm$lb <= 0 & rm$ub >= 0
 bd <- if (any(covers0)) min(rm$Mbar[covers0]) else if (all(ok)) "above 2" else "not established"
-write_json(list(theta = theta, rm = rm, breakdown_mbar = bd), a[2], auto_unbox = TRUE,
-           digits = 8, pretty = TRUE)
+# smoothness (Delta^SD), supplementary: M = 0 lets the pre-trend continue linearly
+sd <- tryCatch(createSensitivityResults(
+  betahat = b[keep], sigma = V[keep, keep], numPrePeriods = npre, numPostPeriods = npost,
+  l_vec = lvec, Mvec = c(0, 0.0025, 0.005, 0.01)), error = function(err) NULL)
+write_json(list(theta = theta, rm = rm, breakdown_mbar = bd, smoothness = sd), a[2],
+           auto_unbox = TRUE, digits = 8, pretty = TRUE)
 print(rm); cat("breakdown:", bd, "\n")

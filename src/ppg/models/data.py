@@ -55,7 +55,7 @@ def frame(
                b.specialty_group, b.state, b.ruca, b.tot_clms, b.dm_load,
                (b.glp1_claims_all - coalesce(CASE WHEN b.status = 'observed'
                                                   THEN b.claims END, 0)) > 0 AS other_glp1,
-               b.clms_statin, b.contacts, b.usd, b.usd_speaker, b.usd_consulting,
+               b.glp1_claims_all, b.clms_statin, b.contacts, b.usd, b.usd_speaker, b.usd_consulting,
                b.usd_food_beverage, d.org_pac_id, d.specialty_group AS specialty_modal
         FROM '{P}/panel/panel_brand.parquet' b
         JOIN '{P}/panel/npi_dims.parquet' d USING (npi)
