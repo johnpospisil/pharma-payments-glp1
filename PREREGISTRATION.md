@@ -217,3 +217,19 @@ Each deviation after locking gets a dated entry: what changed, why, and whether 
 - **Window:** HonestDiD now uses pre-periods e = −4…−2 (e = −1 is the reference), the common practice for short, well-estimated pre-windows.
 - **Breakdown rule:** the breakdown is reported only when every row solves.
 - **Supplementary:** the smoothness restriction (ΔSD), whose M = 0 case lets the estimated pre-trend continue linearly after treatment, is reported alongside. Rising pre-trends were seen for all three brands, and the natural question is whether the post-payment change exceeds a continuation of that trend.
+
+**DEV-4 (2026-10-23, after the P13 estimates were seen, before any matched-design estimate): P14 implementation and a trajectory-matching sensitivity.** Approved by the user before P14 ran (CLAUDE.md D26).
+- **Why:** P13 found rising pre-trends for all three brands, so the matched design (§6) is now the decisive targeting test. §6 names the matching variables but not the bins or the estimator details, so these are fixed here before any post-payment outcome on the matched sample is computed.
+- **Matching (registered spec, CEM):** within each cohort g, every physician first paid in g is matched to physicians not yet paid by g (first paid after g, or never by 2024). Exact strata on:
+  - modal specialty group × state in g − 1;
+  - brand-B status (≥ 11 claims) in g − 2 and in g − 1;
+  - GLP-1 class claims in g − 1 (0, 11–49, 50–199, ≥ 200);
+  - growth of class claims from g − 2 to g − 1 (≤ −11, −10 to +10, +11 to +49, ≥ +50);
+  - non-GLP-1 diabetes claims and total Part D claims in g − 1, each in quartiles of that cohort's candidate pool.
+
+  Physicians must be in Part D in g − 2 and g − 1. Strata without both a treated and a control physician are dropped. Controls get the usual CEM weights (treated count / control count within stratum).
+- **Trajectory sensitivity (new):** adds brand-B status in g − 3 and class-claims growth from g − 3 to g − 2 to the strata, so matched physicians share a three-year trajectory (requires Part D presence in g − 3).
+- **Estimator:** CS logic on the matched sample: ATT(g, t) is the CEM-weighted difference in the change of the outcome from g − 1 to t, treated minus matched controls still unpaid in t (not-yet-treated; CEM weights recomputed among the controls present in each cell), universal base g − 1. Aggregation as in P13 (cohort-size weights, average of e = 0…3). No covariates are added, because matching replaces the covariate adjustment. Standard errors are clustered by practice from the influence functions, with CEM weights treated as fixed.
+- **Pre-trend test on the matched sample:** event times that are matched on are zero by construction (e = −2; also e = −3 in the trajectory spec), so the joint test uses the earlier pre-periods (e ≤ −3, or e ≤ −4).
+- **Design-stage rule:** if balance misses the |SMD| < 0.1 target, the bins may be coarsened or refined using pre-period data only, before any post-period estimate is computed, and the change is recorded here.
+- **§10 test unchanged:** the matched estimate must be ≥ half the primary and still significant.
