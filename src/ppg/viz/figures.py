@@ -142,7 +142,8 @@ def chart3(df: pd.DataFrame) -> dict:
 
 
 def payments_by_brand_type() -> pd.DataFrame:
-    b = pd.read_csv(config.QA_DIR / "payments_by_brand_year.csv")
+    # the public CSV blanks brand-year-nature cells with 1-10 recipients: drawn as 0 (all < $0.1M)
+    b = pd.read_csv(config.QA_DIR / "payments_by_brand_year.csv").fillna(0)
     b["usd_other"] = b.usd_education + b.usd_other_promotional
     return b
 

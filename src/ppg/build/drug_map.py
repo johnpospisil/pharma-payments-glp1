@@ -31,6 +31,7 @@ import duckdb
 import pandas as pd
 
 from ppg import config
+from ppg.disclosure import mask_small
 from ppg.ingest.quality import MAKERS, NON_PROMOTIONAL
 
 GLP1_CLASSES = ("glp1", "glp1_insulin_combo")
@@ -611,14 +612,19 @@ def coverage(con, all_strings: pd.DataFrame) -> pd.DataFrame:
 
 
 def glp1_by_brand_year(con, op_map: pd.DataFrame) -> pd.DataFrame:
-    """Records and promotional $ (split across a record's products) per GLP-1 brand-year."""
+    """Records and promotional $ (split across a record's products) per GLP-1 brand-year.
+    Public file: brand-years with fewer than 11 records (so < 11 recipients) are blanked."""
     g = op_map[op_map.is_glp1 == True][["raw_name", "brand", "molecule"]]  # noqa: E712
     con.register("glp1_names", g)
-    return con.execute(f"""
+    return mask_small(
+        con.execute(f"""
         SELECT coalesce(n.brand, n.molecule) AS brand, s.program_year, sum(s.records) AS records,
                sum(s.promo_usd_split) AS promo_usd
         FROM '{STRINGS}' s JOIN glp1_names n USING (raw_name)
-        GROUP BY ALL ORDER BY 1, 2""").df()
+        GROUP BY ALL ORDER BY 1, 2""").df(),
+        "records",
+        ["promo_usd"],
+    )
 
 
 def _counts(s: pd.Series) -> dict[str, int]:

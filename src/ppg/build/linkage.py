@@ -28,6 +28,7 @@ import pandas as pd
 
 from ppg import config
 from ppg.build.specialty import assign
+from ppg.disclosure import mask_crosstab
 from ppg.ingest.quality import NON_PROMOTIONAL, OP, PD, connect
 
 OUT = config.PARQUET_DIR / "linkage"
@@ -295,7 +296,7 @@ def build() -> dict:
     config.QA_DIR.mkdir(parents=True, exist_ok=True)
     rates.to_csv(config.QA_DIR / "linkage_match_rates.csv", index=False, float_format="%.4f")
     ov.to_csv(config.QA_DIR / "linkage_overlap_by_year.csv", index=False, float_format="%.4f")
-    xt.to_csv(config.QA_DIR / "linkage_specialty_crosstab.csv")
+    mask_crosstab(xt).to_csv(config.QA_DIR / "linkage_specialty_crosstab.csv", float_format="%.0f")
     (config.QA_DIR / "linkage.json").write_text(json.dumps(stats, indent=1, default=int))
     return stats
 

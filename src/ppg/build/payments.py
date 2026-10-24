@@ -31,6 +31,7 @@ import pandas as pd
 from ppg import config
 from ppg.build.drug_map import GLP1_CLASSES, ndc_key
 from ppg.build.linkage import RECORDS
+from ppg.disclosure import mask_small
 from ppg.ingest.quality import MAKERS, NON_PROMOTIONAL, OP, connect
 
 OUT = config.PARQUET_DIR / "payments"
@@ -240,13 +241,22 @@ def cohorts(con) -> pd.DataFrame:
 
 
 def by_brand_year(con) -> pd.DataFrame:
-    cols = ", ".join(f"sum(usd_{g}) AS usd_{g}" for g in PROMO_GROUPS)
-    return con.execute(f"""
+    """GLP-1 payments per brand-year, by nature; cells with 1-10 recipients blanked (public)."""
+    cols = ", ".join(f"sum(usd_{g}) AS usd_{g}, count(DISTINCT npi) FILTER (WHERE usd_{g} > 0) "
+                     f"AS npis_usd_{g}" for g in PROMO_GROUPS)  # fmt: skip
+    d = con.execute(f"""
         SELECT brand, year, count(DISTINCT npi) AS npis_paid, sum(contacts) AS contacts,
                sum(usd_split) AS usd_split, {cols},
                count(DISTINCT npi) FILTER (WHERE speaker_contacts > 0) AS npis_speaker
         FROM {T["npi_brand_year"]} WHERE drug_class IN {GLP1_CLASSES}
         GROUP BY 1, 2 ORDER BY 1, 2""").df()
+    for g in PROMO_GROUPS:
+        d = mask_small(d, f"npis_usd_{g}", [f"usd_{g}"])
+    d = mask_small(d, "npis_speaker")
+    usd = ["contacts", "usd_split", *(f"usd_{g}" for g in PROMO_GROUPS)]
+    return mask_small(
+        d, "npis_paid", usd + ["npis_speaker", *(f"npis_usd_{g}" for g in PROMO_GROUPS)]
+    )
 
 
 def summary(con) -> dict:
@@ -302,7 +312,10 @@ def build() -> dict:
     config.QA_DIR.mkdir(parents=True, exist_ok=True)
     d8_comparison(con).to_csv(config.QA_DIR / "payments_d8_comparison.csv", index=False,
                               float_format="%.4f")  # fmt: skip
-    cohorts(con).to_csv(config.QA_DIR / "payments_cohorts.csv", index=False)
+    c = cohorts(con)
+    for col in ("new_npis", "new_md_do", "new_md_do_in_partd_prior_year"):
+        c = mask_small(c, col)
+    c.to_csv(config.QA_DIR / "payments_cohorts.csv", index=False, float_format="%.0f")
     by_brand_year(con).to_csv(config.QA_DIR / "payments_by_brand_year.csv", index=False,
                               float_format="%.2f")  # fmt: skip
     stats = summary(con)
