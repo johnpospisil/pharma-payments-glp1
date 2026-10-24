@@ -6,6 +6,14 @@ date: 2026-10-24
 description: "Following every Medicare Part D prescriber brand by brand: does a GLP-1 maker's first payment come before a shift toward its brand, or do companies simply reach doctors whose practices were already growing?"
 ---
 
+::: {#fig-hero .column-body-outset}
+![](figures/final/hero_brand_share.png){.light-content fig-alt="{{< var alt_hero_brand_share >}}"}
+
+![](figures/final/hero_brand_share_dark.png){.dark-content fig-alt="{{< var alt_hero_brand_share >}}"}
+
+Change in the paid brand's share of the doctor's GLP-1 claims around the first payment, against not-yet-paid doctors. Data: [switching.json](qa/switching.json).
+:::
+
 ::: {.callout-note appearance="simple" icon="false"}
 ## What we found
 
@@ -71,15 +79,7 @@ Two features of the data shape every result:
 
 ## Result 1: the paid brand gains share
 
-::: {#fig-hero .column-body-outset}
-![](figures/final/hero_brand_share.png){.light-content fig-alt="{{< var alt_hero_brand_share >}}"}
-
-![](figures/final/hero_brand_share_dark.png){.dark-content fig-alt="{{< var alt_hero_brand_share >}}"}
-
-Change in the paid brand's share of the doctor's GLP-1 claims around the first payment, against not-yet-paid doctors. Data: [switching.json](qa/switching.json).
-:::
-
-Among doctors who already prescribe GLP-1s, the paid brand's share of their GLP-1 claims rises after the first payment and keeps rising for two to three years. Averaged over the four years from the payment year on, the gain is **{{< var share_trulicity >}} percentage points for Trulicity, {{< var share_ozempic >}} for Ozempic and {{< var share_mounjaro >}} for Mounjaro** (measured from its 2022 launch).
+Among doctors who already prescribe GLP-1s (@fig-hero, top of page), the paid brand's share of their GLP-1 claims rises after the first payment and keeps rising for two to three years. Averaged over the four years from the payment year on, the gain is **{{< var share_trulicity >}} percentage points for Trulicity, {{< var share_ozempic >}} for Ozempic and {{< var share_mounjaro >}} for Mounjaro** (measured from its 2022 launch).
 
 For Trulicity and Mounjaro, the paid and comparison doctors' shares moved together beforehand (pre-trend test p = {{< var share_pre_trulicity >}} and {{< var share_pre_mounjaro >}}). For Ozempic there was a mild upward drift before payment (p = {{< var share_pre_ozempic >}}) that disappears with matching.
 
