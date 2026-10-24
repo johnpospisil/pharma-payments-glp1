@@ -15,7 +15,12 @@ import pytest
 
 from ppg import config
 
-PINNED = {  # brand: (ATT 0-3, SE)
+PINNED = {  # brand: (ATT 0-3, SE), panel-form primary (DEV-5, D27)
+    "Trulicity": (0.120332, 0.00180),
+    "Victoza": (0.054624, 0.00221),
+    "Ozempic": (0.137097, 0.00257),
+}
+PINNED_P13_AS_REPORTED = {  # R did cross-section mode, kept as "first reported"
     "Trulicity": (0.083824, 0.00190),
     "Victoza": (0.012122, 0.00249),
     "Ozempic": (0.073596, 0.00226),
@@ -27,28 +32,34 @@ pytestmark = pytest.mark.data
 @pytest.fixture(scope="module")
 def results():
     f = config.QA_DIR / "es"
-    if not (f / "primary_Ozempic.json").exists():
-        pytest.skip("run python -m ppg.models.event_study all first")
-    return {b: json.loads((f / f"primary_{b}.json").read_text()) for b in PINNED}
+    if not (f / "panel_Ozempic.json").exists():
+        pytest.skip("run python -m ppg.models.event_study all and ppg.models.cs_panel all first")
+    return {(t, b): json.loads((f / f"{t}_{b}.json").read_text())
+            for t in ("panel", "primary") for b in PINNED}  # fmt: skip
 
 
 @pytest.mark.parametrize("brand", list(PINNED))
 def test_primary_att(results, brand):
     att, se = PINNED[brand]
-    o = results[brand]["overall_0_3"]
+    o = results["panel", brand]["overall_0_3"]
+    assert o["att"] == pytest.approx(att, abs=5e-6)
+    assert o["se"] == pytest.approx(se, rel=0.01)
+
+
+@pytest.mark.parametrize("brand", list(PINNED))
+def test_p13_as_reported(results, brand):
+    att, se = PINNED_P13_AS_REPORTED[brand]
+    o = results["primary", brand]["overall_0_3"]
     assert o["att"] == pytest.approx(att, abs=5e-6)
     assert o["se"] == pytest.approx(se, rel=0.10)
 
 
 def test_holm_adjusted_primary_family_significant():
-    e = json.loads((config.QA_DIR / "event_study.json").read_text())
-    assert all(p < 0.05 for p in e["holm"].values())
+    m = json.loads((config.QA_DIR / "matched.json").read_text())
+    assert all(p < 0.05 for p in m["holm_primary"].values())
 
 
 PINNED_P14 = {  # (tag, brand): (ATT 0-3, SE)
-    ("panel", "Trulicity"): (0.120332, 0.00180),
-    ("panel", "Victoza"): (0.054624, 0.00221),
-    ("panel", "Ozempic"): (0.137097, 0.00257),
     ("matched_registered", "Trulicity"): (0.125040, 0.00176),
     ("matched_registered", "Victoza"): (0.066390, 0.00200),
     ("matched_registered", "Ozempic"): (0.145859, 0.00250),

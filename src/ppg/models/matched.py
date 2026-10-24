@@ -415,6 +415,12 @@ def report() -> dict:
     (config.QA_DIR / "matched.json").write_text(json.dumps(out, indent=1, default=float))
     love_plot(bal)
     event_chart(ev)
+    event_chart(
+        ev,
+        ("primary", "registered"),
+        "hero_v2_event_study",
+        "Prescribing the paid brand before and after the first payment (event study, v2)",
+    )
     print(est.to_string(index=False))
     return out
 
@@ -465,7 +471,21 @@ def love_plot(bal: pd.DataFrame) -> None:
           "\nSource: CMS Open Payments, Medicare Part D Prescribers.")  # fmt: skip
 
 
-def event_chart(ev: pd.DataFrame) -> None:
+NOTE_EVENT = (
+    "Relative to the year before the first payment (g − 1); bars: 95% CIs clustered by "
+    "practice. Matched estimates: CEM on pre-period brand status, GLP-1 class level and "
+    "growth,\ndiabetes load, volume, specialty × state; not-yet-paid controls. Physicians. "
+    "Source: CMS Open Payments, Medicare Part D Prescribers. Associations, not proof of "
+    "causation."
+)
+
+
+def event_chart(
+    ev: pd.DataFrame,
+    specs: tuple[str, ...] = ("primary", "registered", "trajectory"),
+    name: str = "p14_matched_event_study",
+    title: str = "Primary and matched event studies",
+) -> None:
     import matplotlib
     import matplotlib.ticker
 
@@ -474,9 +494,10 @@ def event_chart(ev: pd.DataFrame) -> None:
 
     from ppg.viz.figures import AXIS, CATEGORICAL, GRID, INK, INK2, MUTED, SURFACE, _save, _style
 
-    lines = [("primary", "Primary (CS, covariates at g − 1)", MUTED, "o"),
-             ("registered", "Matched (registered)", CATEGORICAL[0], "o"),
-             ("trajectory", "Matched (trajectory)", CATEGORICAL[1], "D")]  # fmt: skip
+    lines = [("primary", "All paid vs not-yet-paid (CS, covariates at g − 1)", MUTED, "o"),
+             ("registered", "Matched on pre-payment trajectory (CEM)", CATEGORICAL[0], "o"),
+             ("trajectory", "Matched on three pre-payment years", CATEGORICAL[1], "D")]  # fmt: skip
+    lines = [x for x in lines if x[0] in specs]
     fig, axes = plt.subplots(1, 3, figsize=(11.5, 4.4), sharey=True)
     for ax, b in zip(axes, PRIMARY_BRANDS, strict=True):
         ax.axhline(0, color=AXIS, lw=1, zorder=1)
@@ -485,7 +506,7 @@ def event_chart(ev: pd.DataFrame) -> None:
             d = ev[(ev.brand == b) & (ev.spec == spec) & ev.e.between(-5, 3)].sort_values("e")
             ref = pd.DataFrame({"e": [-1], "att": [0.0], "se": [0.0]})
             d = pd.concat([d, ref]).sort_values("e")
-            x = d.e + (k - 1) * 0.12
+            x = d.e + (k - (len(lines) - 1) / 2) * 0.12
             ax.errorbar(x, d.att, yerr=1.96 * d.se, fmt="none", ecolor=col, lw=1.2, zorder=2)
             ax.plot(x, d.att, color=col, lw=2, zorder=3, label=label)
             ax.scatter(x, d.att, s=30, marker=mk, color=col, ec=SURFACE, lw=1.5, zorder=4)
@@ -496,18 +517,10 @@ def event_chart(ev: pd.DataFrame) -> None:
         ax.yaxis.set_major_locator(matplotlib.ticker.MultipleLocator(0.02))
         ax.yaxis.set_major_formatter(lambda v, _: f"{v * 100:+.0f} pp")
     axes[0].set_ylabel("Change in probability of ≥ 11 claims of the brand")
-    axes[0].legend(loc="upper left", frameon=False, fontsize=8.5)
-    fig.suptitle("Primary and matched event studies", x=0.01, ha="left", fontsize=11, color=INK)
+    axes[1].legend(loc="lower right", frameon=False, fontsize=8)
+    fig.suptitle(title, x=0.01, ha="left", fontsize=11, color=INK)
     fig.tight_layout(rect=(0, 0.09, 1, 0.93))
-    _save(
-        fig,
-        "p14_matched_event_study",
-        "Relative to the year before the first payment (g − 1); bars: 95% CIs clustered by "
-        "practice. Matched estimates: CEM on pre-period brand status, GLP-1 class level and "
-        "growth,\ndiabetes load, volume, specialty × state; not-yet-paid controls. Physicians. "
-        "Source: CMS Open Payments, Medicare Part D Prescribers. Associations, not proof of "
-        "causation.",
-    )
+    _save(fig, name, NOTE_EVENT)
 
 
 def main(argv: list[str]) -> int:
