@@ -13,6 +13,7 @@ Each CS run writes report/qa/es/<tag>_<brand>.json (aggregates only; cohort cell
 from __future__ import annotations
 
 import json
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -536,6 +537,11 @@ def _timed(p, task: str, fn):
         p.finish(task)
 
 
+# Skip fits whose output already exists only when asked (PPG_RESUME=1, after an interrupted run):
+# report/qa is committed, so by default `make models` refits everything from the current data.
+RESUME = os.environ.get("PPG_RESUME") == "1"
+
+
 def run_all() -> None:
     """All of P13 under one progress job: `make progress WATCH=1` (job event_study)."""
     import gc
@@ -579,7 +585,7 @@ def run_all() -> None:
             p.add(task, total=round(secs), unit="s")
         for task, kind, b, k, _secs in plan:
             f = done_file.get(kind)
-            if p.is_done(task) or (f and (QA / f.format(b=b, k=k)).exists()):
+            if RESUME and (p.is_done(task) or (f and (QA / f.format(b=b, k=k)).exists())):
                 if not p.is_done(task):
                     p.start(task)
                     p.finish(task)  # finished in an earlier run
@@ -645,7 +651,7 @@ def diagnostics() -> None:
         for task, *_ in plan:
             p.add(task, total=200, unit="s")
         for task, b, base, cov, tag in plan:
-            if (QA / f"{tag}_{b}.json").exists():
+            if RESUME and (QA / f"{tag}_{b}.json").exists():
                 p.start(task)
                 p.finish(task)
                 continue

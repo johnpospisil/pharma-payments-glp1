@@ -21,6 +21,7 @@ check-env-local:
 data: check-env data-open-payments data-partd data-reference
 
 build:
+	$(PY) -m ppg.ingest.quality
 	$(PY) -m ppg.build.drug_map
 	$(PY) -m ppg.build.linkage
 	$(PY) -m ppg.build.payments

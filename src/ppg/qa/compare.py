@@ -60,7 +60,8 @@ def _cmp_csv(a: Path, b: Path) -> tuple[float, str]:
         return np.inf, f"shape {da.shape} vs {db.shape}"
     worst, where = 0.0, ""
     for c in da.columns:
-        xa, xb = pd.to_numeric(da[c], errors="coerce"), pd.to_numeric(db[c], errors="coerce")
+        xa = pd.to_numeric(da[c], errors="coerce").astype(float)
+        xb = pd.to_numeric(db[c], errors="coerce").astype(float)
         if xa.notna().any():
             den = np.maximum(np.maximum(xa.abs(), xb.abs()), 1e-12)
             r = ((xa - xb).abs() / den).where(~(xa.isna() & xb.isna()), 0).fillna(1.0)

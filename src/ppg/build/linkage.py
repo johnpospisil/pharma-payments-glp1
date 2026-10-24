@@ -95,7 +95,8 @@ def build_profile_npi(con) -> dict:
             SELECT profile_id, npi, 'supplement' AS source, 1 AS rank FROM sup
             UNION ALL SELECT profile_id, npi, 'supplement', 2 FROM merged
             UNION ALL SELECT profile_id, npi, 'learned', 3 FROM learned WHERE n_npi = 1)
-        SELECT profile_id, arg_min(npi, rank) AS npi, arg_min(source, rank) AS source
+        SELECT profile_id, first(npi ORDER BY rank, npi) AS npi,
+               first(source ORDER BY rank, npi) AS source
         FROM c GROUP BY 1""")
     OUT.mkdir(parents=True, exist_ok=True)
     con.execute(f"COPY profile_npi TO '{OUT}/profile_npi.parquet' (FORMAT parquet)")
@@ -242,7 +243,7 @@ def specialty_agreement(con) -> tuple[pd.DataFrame, dict]:
                           count(*) AS n
                    FROM {OP} o JOIN {RECORDS} r USING (program_year, record_id)
                    WHERE r.npi_linked IS NOT NULL GROUP BY ALL)
-        SELECT npi, arg_max(spec, y * 1e9 + n) AS op_spec FROM s GROUP BY 1""").df()
+        SELECT npi, first(spec ORDER BY y DESC, n DESC, spec) AS op_spec FROM s GROUP BY 1""").df()
     pdt = con.execute(f"""
         SELECT prscrbr_npi AS npi, arg_max(prscrbr_type, year) AS pd_type
         FROM {PD} GROUP BY 1""").df()

@@ -149,14 +149,19 @@ def build_npi_dims(con) -> None:
                             FROM {ny} GROUP BY 1, 2) GROUP BY 1) USING (npi)
                 GROUP BY 1),  -- modal value; ties go to the latest year (deterministic)
             dac AS (
-                SELECT npi, arg_max(org_pac_id, n * 1e7 + coalesce(num_org_mem, 0)) AS org_pac_id,
-                       arg_max(num_org_mem, n * 1e7 + coalesce(num_org_mem, 0)) AS org_size,
+                -- most-listed practice, then the largest, then the lowest PAC ID (deterministic)
+                SELECT npi, first(org_pac_id ORDER BY n DESC, num_org_mem DESC NULLS LAST,
+                                  org_pac_id) AS org_pac_id,
+                       first(num_org_mem ORDER BY n DESC, num_org_mem DESC NULLS LAST,
+                             org_pac_id) AS org_size,
                        any_value(cred) AS dac_cred
                 FROM (SELECT npi, org_pac_id, num_org_mem, any_value(cred) AS cred, count(*) AS n
                       FROM '{_P}/reference/dac.parquet' WHERE org_pac_id IS NOT NULL
                       GROUP BY 1, 2, 3)
                 GROUP BY 1),
-            rc AS (SELECT npi_linked AS npi, arg_max(recipient_class, program_year) AS op_class
+            rc AS (SELECT npi_linked AS npi,
+                          first(recipient_class ORDER BY program_year DESC, recipient_class)
+                              AS op_class
                    FROM {RECORDS} WHERE npi_linked IS NOT NULL GROUP BY 1)
             SELECT a.*, dac.org_pac_id, dac.org_size, rc.op_class,
                    s.agree AS specialty_agrees_op,

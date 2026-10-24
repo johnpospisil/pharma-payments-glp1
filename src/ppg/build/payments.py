@@ -228,7 +228,8 @@ def cohorts(con) -> pd.DataFrame:
         WITH f AS (SELECT b.npi, b.brand, b.first_promo_year AS year
                    FROM {T["npi_brand_first"]} b
                    WHERE b.drug_class IN {GLP1_CLASSES} AND b.first_promo_year IS NOT NULL),
-             cls AS (SELECT npi_linked AS npi, arg_max(recipient_class, program_year) AS rc
+             cls AS (SELECT npi_linked AS npi,
+                            first(recipient_class ORDER BY program_year DESC, recipient_class) AS rc
                      FROM {RECORDS} WHERE npi_linked IS NOT NULL GROUP BY 1),
              pd AS (SELECT DISTINCT prscrbr_npi AS npi, year FROM {PARTD_PROVIDER})
         SELECT f.brand, f.year AS first_promo_year, count(*) AS new_npis,

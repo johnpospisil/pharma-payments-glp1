@@ -196,7 +196,7 @@ def state_specialty(year: int = 2024) -> pd.DataFrame:
     d["masked"] = np.select([small, dominated], ["< 11 prescribers", "dominance"], "")
     d.loc[small | dominated, ["usd", "dm", "usd_per_1000_dm", "share_paid"]] = np.nan
     d["prescribers"] = d.prescribers.where(~small)
-    return d.drop(columns="max_usd")
+    return d.drop(columns="max_usd").sort_values(["state", "specialty_group"], ignore_index=True)
 
 
 # ------------------------------------------------------------------ run / report

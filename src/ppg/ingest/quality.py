@@ -147,7 +147,7 @@ def partd_npi_luhn(con) -> dict:
 def manufacturer_jumps(con, min_records: int = 20_000, ratio: float = 2.0) -> pd.DataFrame:
     """Manufacturer-years whose record count changed by more than `ratio`x vs the year before."""
     return con.execute(f"""
-        WITH m AS (SELECT manufacturer_id, any_value(manufacturer_name) AS name, program_year,
+        WITH m AS (SELECT manufacturer_id, min(manufacturer_name) AS name, program_year,
                           count(*) AS records, sum(amount_usd) AS usd
                    FROM {OP} GROUP BY 1, 3),
              l AS (SELECT *, lag(records) OVER (PARTITION BY manufacturer_id

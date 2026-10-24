@@ -113,6 +113,9 @@ def strata(w: Wide, g: int, spec: str, keep: np.ndarray | None = None) -> pd.Dat
 # ------------------------------------------------------------------ balance (design stage)
 
 
+GROWTH_DIAGNOSTIC = "Total claims growth"
+
+
 def features(w: Wide, i: np.ndarray, g: int) -> pd.DataFrame:
     """Pre-period covariates for the balance table, measured at g-1 (and g-2, g-3)."""
     c1, c2 = w.col(g - 1), w.col(g - 2)
@@ -419,7 +422,11 @@ def report() -> dict:
             if s != "unmatched":
                 a = pd.DataFrame(r["balance"])
                 a = a[a.stage == "after"]
-                e["max_abs_smd_after"] = float(a.smd.abs().max())
+                # total-claims growth is a diagnostic (DEV-8), matched on only by volume_growth
+                diag = a.variable.str.startswith(GROWTH_DIAGNOSTIC)
+                own = a if s == "volume_growth" else a[~diag]
+                e["max_abs_smd_after"] = float(own.smd.abs().max())
+                e["growth_smd_after"] = float(a.loc[diag, "smd"].abs().max())
                 e["ratio_to_primary"] = o["att"] / po["att"]
                 e["ratio_to_p13"] = o["att"] / rc[b]["overall_0_3"]["att"]
                 e["half_primary_and_significant"] = bool(
