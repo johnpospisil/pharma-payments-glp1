@@ -267,3 +267,9 @@ Each deviation after locking gets a dated entry: what changed, why, and whether 
 - **Estimation:** each group is estimated with the panel-form CS-DR as its own treated group, against the same not-yet-paid controls (D27). Each also gets a matched (CEM) version (D28). §3 still holds: higher bins are more selected, so a gradient is described, not interpreted as a causal dose-response.
 
 **DEV-7 addendum (2026-10-23, after the P16 estimates were seen):** H4's single test for the secondary Holm family (§7) is the difference between the ≥ $100 and < $100 first-year-dollar groups. It is pooled over the three brands with cohort-size weights and an SE that accounts for the shared controls. It is computed when the H2–H7 family is assembled (P19). The test was chosen after the bin estimates were seen, so this is disclosed here.
+
+**DEV-8 (2026-10-23, after the P17 falsification results were seen, before any P18 estimate): practice-growth sensitivity.** Approved by the user (CLAUDE.md D33).
+- **Why:** P17's statin negative control failed because paid physicians' whole Part D volume grows, before and after payment. The registered matching (DEV-4) matches volume *levels* at g − 1, not growth.
+- **Matched spec "volume growth":** the registered CEM strata plus the cohort-pool quartile of log total Part D claims growth from g − 3 to g − 1. Physicians must be in Part D in g − 3. CS on the matched sample as in DEV-4.
+- **Volume-normalised outcome:** claims of brand B per 1,000 total Part D claims, estimated with the panel-form CS-DR and the matched (registered) estimator. Suppressed brand cells (0–10 claims) are bounded at 0 and at their cap.
+- **Reading:** if the brand effect survives both, practice growth does not explain it. If not, the brand-specific claim rests on the share outcome (H5).
