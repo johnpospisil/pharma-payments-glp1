@@ -36,7 +36,11 @@
 >
 > Write-up (with a "what this doesn't mean" section and the limitations): https://johnpospisil.github.io/pharma-payments-glp1/. No individual prescriber is identifiable anywhere.
 
-## r/medicine (hold: probably not eligible)
+## r/medicine (dropped, D54)
+
+Not posted: the sub requires a healthcare-role flair. If a physician who has read the article wants to share it, the draft below is a starting point for them.
+
+### Draft (for reference)
 
 **Rules to check:** r/medicine is for medical professionals, mainly physicians. Posting requires a **user flair stating your role in healthcare**, an account more than 7 days old with more than 10 comment karma, and a substantive first comment on any link post. As a non-clinician, John may not be able to post here at all. Only post if the flair options include a fitting non-clinical role, or if a moderator agrees; otherwise skip it, or ask a physician who has read the article whether they would share it.
 

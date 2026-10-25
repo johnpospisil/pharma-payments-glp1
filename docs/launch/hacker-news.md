@@ -28,4 +28,4 @@ Avoid "bought", "bribed", "paid to prescribe" or "Ozempic doctors": the study do
 >
 > No individual doctor is named or identifiable anywhere: public tables only show groups of 11 or more prescribers, and the explorer was red-teamed with a linear-programming attack on its published totals (it found holes, which are fixed).
 >
-> Code (rebuilds everything from the raw CMS files with `make all`), pre-registration and data: https://github.com/johnpospisil/pharma-payments-glp1. Explorer: https://johnpospisil.github.io/pharma-payments-glp1/app/. Happy to answer questions.
+> Code (rebuilds everything from the raw CMS files with `make all`) and pre-registration: https://github.com/johnpospisil/pharma-payments-glp1. Aggregated data and the drug-name map: https://huggingface.co/datasets/audiofreak7/glp1-payments-prescribing-medicare. Explorer: https://johnpospisil.github.io/pharma-payments-glp1/app/. Happy to answer questions.

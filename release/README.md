@@ -1,7 +1,8 @@
 # Released datasets
 
 Two datasets from *After the Free Lunch: Drug-Maker Payments and GLP-1 Brand Choice in
-Medicare* (https://github.com/johnpospisil/pharma-payments-glp1). Both are built by `make release` from the project's pipeline; neither
+Medicare* (https://github.com/johnpospisil/pharma-payments-glp1), also on Hugging Face: https://huggingface.co/datasets/audiofreak7/glp1-payments-prescribing-medicare. Both are built by `make release` from the
+project's pipeline; neither
 contains NPIs, names or prescriber-level rows.
 
 | Folder | What it is | Data card |

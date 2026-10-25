@@ -29,6 +29,7 @@
 > Article: https://johnpospisil.github.io/pharma-payments-glp1/
 > Explorer by specialty and state: https://johnpospisil.github.io/pharma-payments-glp1/app/
 > Code and pre-registration: https://github.com/johnpospisil/pharma-payments-glp1
+> Data: https://huggingface.co/datasets/audiofreak7/glp1-payments-prescribing-medicare
 
 ## Bluesky thread (6 posts, one chart each; each post under 300 characters)
 

@@ -1,6 +1,6 @@
 # After the Free Lunch: Drug-Maker Payments and GLP-1 Brand Choice in Medicare
 
-**[Read the article](https://johnpospisil.github.io/pharma-payments-glp1/)** · **[Explore by specialty and state](https://johnpospisil.github.io/pharma-payments-glp1/app/)** · **[Released datasets](release/README.md)**
+**[Read the article](https://johnpospisil.github.io/pharma-payments-glp1/)** · **[Explore by specialty and state](https://johnpospisil.github.io/pharma-payments-glp1/app/)** · **[Datasets on Hugging Face](https://huggingface.co/datasets/audiofreak7/glp1-payments-prescribing-medicare)**
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="report/figures/final/hero_brand_share_dark.png">
@@ -44,7 +44,7 @@ Without the raw data, `make report` renders the article from the committed resul
 | [docs/qa.md](docs/qa.md) | QA checklist, rebuild checks and the claims that are still weak |
 | [docs/review-triage.md](docs/review-triage.md) | Red-team review: every point and what was done about it |
 | [docs/literature.md](docs/literature.md) | Prior work and what is new here |
-| [release/](release/README.md) | Drug-name map and the specialty × state panel, with data cards |
+| [release/](release/README.md) | Drug-name map and the specialty × state panel, with data cards; also on [Hugging Face](https://huggingface.co/datasets/audiofreak7/glp1-payments-prescribing-medicare) |
 | `src/ppg/` | The pipeline: `ingest`, `build`, `models`, `viz`, `report`, `app`, `release`, `qa` |
 
 ## Licence

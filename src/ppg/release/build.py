@@ -34,6 +34,8 @@ APP = ROOT / "app" / "data"
 OUT = ROOT / "release"
 REPO = "https://github.com/johnpospisil/pharma-payments-glp1"
 SITE = "https://johnpospisil.github.io/pharma-payments-glp1/"
+HF_REPO = "audiofreak7/glp1-payments-prescribing-medicare"
+HF_URL = f"https://huggingface.co/datasets/{HF_REPO}"
 # explorer metric -> released column (and what it counts)
 COLUMNS = {
     "n": "prescribers",
@@ -387,7 +389,8 @@ _FOLDERS = "\n".join([
 README = f"""# Released datasets
 
 Two datasets from *After the Free Lunch: Drug-Maker Payments and GLP-1 Brand Choice in
-Medicare* ({REPO}). Both are built by `make release` from the project's pipeline; neither
+Medicare* ({REPO}), also on Hugging Face: {HF_URL}. Both are built by `make release` from the
+project's pipeline; neither
 contains NPIs, names or prescriber-level rows.
 
 {_FOLDERS}
@@ -410,7 +413,6 @@ identify individual prescribers.
 """
 
 
-HF_REPO = "audiofreak7/glp1-payments-prescribing-medicare"
 HF_YAML = """---
 license: cc0-1.0
 pretty_name: GLP-1 drug-maker payments and prescribing in Medicare Part D, 2013-2024
