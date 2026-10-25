@@ -86,6 +86,7 @@ Project brief: [02-pharma-payments-glp1.md](02-pharma-payments-glp1.md) (the sou
 | D41 | Hero chart | **Decided 2026-10-24:** the hero is the brand-share event study (D34); the ≥ 11-claims event study is chart 1b, always beside the statin negative control |
 | D42 | Hero display window | **Decided 2026-10-24:** event years −4…3 shown (Victoza's e = −5 rests on one tiny cohort); all years stay in report/qa and in the pre-trend tests |
 | D43 | Social crops | **Decided 2026-10-24:** 16:9 (1200×675) only; 4:5 / square added in P27 only if a platform needs them |
+| D44 | Article layout | **Decided 2026-10-24:** hero chart directly under the byline; figures widen right only (`column-page-right`) so the left TOC stays visible; phones get the 1200×675 larger-type crops as a P24 fix; tone and length kept, P24 data-journalist reviewer flags cuts |
 | D11 | Positioning | **Decided 2026-10-22:** the article names Khunte et al. 2026 (*Mayo Clin Proc*, cross-sectional) as the baseline; our headline is the within-prescriber, brand-level change and switching, not the cross-sectional association |
 
 ## Prompt list
@@ -172,7 +173,7 @@ Project brief: [02-pharma-payments-glp1.md](02-pharma-payments-glp1.md) (the sou
 - [x] **P21: Final figures.** _Done 2026-10-24: `ppg.viz.theme` (validated light/dark palette, fixed brand colours) + `ppg.viz.final` draws hero (brand-share event study), 1b (brand vs statins) and charts 2–8 from report/qa only; light/dark PNG+SVG, 1200×675 crops, alt text, contact sheet; byte-identical re-renders._ `ppg.viz.theme` (one palette, light and dark, colour-blind safe), with final versions of the hero chart and charts 2–7, alt text for each, and social-media crops.
   **Deliverables:** `report/figures/` (all charts), a contact sheet of every figure.
 
-- [ ] **P22: Quarto article.** `report/index.qmd`: "What we found / what it doesn't mean" box first, then the question, data, method in plain English, results, falsification, limitations, an ethics note (why no individual doctors are shown), and a reproducibility section. Cite the literature from P02. Every number comes from `report/qa`. Render locally.
+- [x] **P22: Quarto article.** _Done 2026-10-24: report/index.qmd (~2,900 words), every number via `_variables.yml` from report/qa (test_article guards hand-typed numbers, undefined vars, causal wording); hero under the byline; light/dark/mobile checked; W1–W10 carried._ `report/index.qmd`: "What we found / what it doesn't mean" box first, then the question, data, method in plain English, results, falsification, limitations, an ethics note (why no individual doctors are shown), and a reproducibility section. Cite the literature from P02. Every number comes from `report/qa`. Render locally.
   **Deliverables:** the rendered article (local link), word count, claims flagged as weak.
 
 - [ ] **P23: Specialty × state explorer.** A static app in `app/` (no server, so it runs on GitHub Pages): brand selector, specialty and state filters, payments vs prescribing trends over time, cells with fewer than 11 prescribers hidden. Data is pre-aggregated JSON from the pipeline. Check it on desktop and at phone width with Playwright screenshots.

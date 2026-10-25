@@ -7,6 +7,8 @@ Checks, each pass/fail with details:
   3. prescriber counts in public tables are 0 or >= 11 (CSV columns and JSON count keys)
   4. geography cells shown pass the dominance rule (recomputed from the parquet)
   5. the masked chart-6 states cannot be recovered as one person's dollars by subtraction
+  6. the P23 explorer JSON (app/data): counts 0 or >= 11, no withheld cell is the only unknown in
+     an additive line, and shown state dollars pass the dominance rule (recomputed)
 
     python -m ppg.qa.disclosure        -> report/qa/disclosure_audit.json
 """
@@ -171,6 +173,36 @@ def check_geography() -> dict:
     return out
 
 
+def check_explorer() -> dict:
+    import numpy as np
+
+    from ppg.app import build as ex
+
+    data = ROOT / "app" / "data"
+    meta = json.loads((data / "meta.json").read_text())
+    cube = {b["key"]: json.loads((data / b["file"]).read_text()) for b in meta["brands"]}
+    arr = {m: np.array([cube[k][m] for k in ex.BRAND_KEYS]) for m in ex.METRICS}  # b, y, s, t
+    known = {m: np.where(a <= -4, 0, a) for m, a in arr.items()}  # -4 / -5 are known zeros
+    small = {m: int(((arr[m] > 0) & (arr[m] < config.MIN_CELL)).sum())
+             for m in ("n", "paid", "regular")}  # fmt: skip
+    lone = {}
+    for m in ex.METRICS:
+        for ax in ex.AXES[m]:
+            v = np.moveaxis(known[m], ax if ax == 0 else ax + 1, -1)
+            k = (v < 0).sum(-1)
+            lone[f"{m}/axis{ax}"] = int(((k == 1) & (v[..., -1] != 0)).sum())
+    # dominance: recompute each shown state cell's top-prescriber share from the parquet
+    con, dom = duckdb.connect(), 0
+    for i, y in enumerate(meta["years"]):
+        c, top, usd = ex.cells(ex.prescriber_rows(con, y))
+        shown = (arr["usd"][:, i] > 0) & ex._geo(usd.shape)
+        dom += int((shown & (top > config.DOMINANCE * usd)).sum())
+    return {"pass": not any(small.values()) and not any(lone.values()) and dom == 0,
+            "small_counts": small, "lone_withheld_in_line": lone,
+            "shown_state_usd_over_dominance": dom,
+            "bytes": sum(f.stat().st_size for f in data.glob("*.json"))}  # fmt: skip
+
+
 def audit() -> dict:
     files = tracked()
     res = {
@@ -178,6 +210,7 @@ def audit() -> dict:
         "identifier_columns": check_columns(files),
         "small_cells": check_counts(),
         "geography": check_geography(),
+        "explorer": check_explorer(),
     }
     res["pass"] = all(
         v["pass"] if "pass" in v else all(x["pass"] for x in v.values()) for v in res.values()

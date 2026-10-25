@@ -7,7 +7,7 @@ PY := uv run python -I
 # Ignore any other active virtualenv (e.g. ~/tf): uv always uses this project's .venv.
 unexport VIRTUAL_ENV
 
-.PHONY: all check-env check-env-local data build models figures report app qa test lint test-fast progress data-open-payments data-partd data-reference
+.PHONY: all check-env check-env-local data build models figures report app serve-app qa test lint test-fast progress data-open-payments data-partd data-reference
 
 # On macOS the ~2 h rebuild runs under caffeinate -s so the machine can't sleep mid-run (D39)
 CAFFEINATE := $(shell command -v caffeinate >/dev/null 2>&1 && echo "caffeinate -s -i")
@@ -67,8 +67,13 @@ report:
 	$(PY) -m ppg.report.vars > /dev/null
 	cd report && quarto render
 
+# P23: specialty x state explorer data (disclosure-controlled) -> app/data; serve with `make serve-app`
 app:
-	@echo "app: added in P23"
+	$(PY) -m ppg.app.build > /dev/null
+
+serve-app:
+	@echo "explorer: http://localhost:8766/app/"
+	$(PY) -m http.server 8766 --directory .
 
 # P20: article claims vs report/qa, and the disclosure audit of everything public
 qa:

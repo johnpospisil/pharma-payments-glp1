@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GLP-1 Payments Explorer</title>
+<meta name="description" content="Drug-maker payments and GLP-1 prescribing in Medicare Part D, by specialty and state, 2013–2024. Aggregates only: no individual prescriber is shown.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="masthead">
+  <p class="back"><a href="https://johnpospisil.github.io/pharma-payments-glp1/">Read the article: Lunch, Speaking Fees and Semaglutide</a></p>
+  <h1>GLP-1 payments and prescribing, by specialty and state</h1>
+  <p class="lede">Medicare Part D diabetes prescribers, 2013–2024. Choose a brand, a specialty and a state to see how often drug makers paid those prescribers, and how much of the brand they prescribed.</p>
+</header>
+
+<main>
+  <section class="filters" aria-label="Filters">
+    <div class="brands" role="group" aria-label="Brand" id="brands"></div>
+    <label class="field">Specialty <select id="spec"></select></label>
+    <label class="field">State <select id="state"></select></label>
+  </section>
+
+  <p class="selection" id="selection" aria-live="polite"></p>
+
+  <div class="layout">
+    <div class="charts">
+      <figure class="panel" id="pay-panel">
+        <div class="panel-head">
+          <h2>Payments</h2>
+          <div class="toggle" role="group" aria-label="Payment measure" id="pay-metric"></div>
+        </div>
+        <div class="legend" id="pay-legend"></div>
+        <div class="chart" id="pay-chart"></div>
+        <figcaption id="pay-note"></figcaption>
+      </figure>
+      <figure class="panel" id="rx-panel">
+        <div class="panel-head">
+          <h2>Prescribing</h2>
+          <div class="toggle" role="group" aria-label="Prescribing measure" id="rx-metric"></div>
+        </div>
+        <div class="legend" id="rx-legend"></div>
+        <div class="chart" id="rx-chart"></div>
+        <figcaption id="rx-note"></figcaption>
+      </figure>
+    </div>
+
+    <aside class="map-panel" aria-labelledby="map-title">
+      <h2 id="map-title">By state</h2>
+      <div class="map-controls">
+        <label class="field">Measure <select id="map-metric"></select></label>
+        <label class="field year">Year <output id="year-out"></output>
+          <input type="range" id="year" min="2013" max="2024" step="1"></label>
+      </div>
+      <div class="tiles" id="tiles" role="group" aria-label="States: select one to filter"></div>
+      <div class="map-legend" id="map-legend"></div>
+      <p class="hint">Select a state to filter the charts. Select it again to return to the United States.</p>
+    </aside>
+  </div>
+
+  <section class="caveat" aria-labelledby="caveat-title">
+    <h2 id="caveat-title">What these trends can't tell you</h2>
+    <div id="caveat"></div>
+  </section>
+
+  <details class="numbers">
+    <summary>Show the numbers for this selection</summary>
+    <div class="table-scroll"><table id="table"></table></div>
+  </details>
+
+  <section class="notes" aria-labelledby="notes-title">
+    <h2 id="notes-title">How the numbers are built</h2>
+    <div id="notes"></div>
+  </section>
+</main>
+
+<div class="tooltip" id="tooltip" role="status" hidden></div>
+<noscript><p class="noscript">This explorer needs JavaScript. The same numbers are in the data files in <code>app/data/</code>.</p></noscript>
+<script src="app.js"></script>
+</body>
+</html>
