@@ -1,0 +1,144 @@
+{
+ "npis_in_tracked_files": {
+  "pass": true,
+  "npis_checked": 2389798,
+  "files_scanned": 381,
+  "files_with_real_npis": []
+ },
+ "identifier_columns": {
+  "pass": true,
+  "identifier_columns": []
+ },
+ "small_cells": {
+  "pass": true,
+  "small_cells": [],
+  "not_checked_cms_published": [
+   "partd_glp1_brands.csv"
+  ]
+ },
+ "geography": {
+  "chart6": {
+   "pass": true,
+   "shown_states_violating": [],
+   "max_top_share_shown": 0.465,
+   "masked_states": [
+    "ID",
+    "ME",
+    "OR",
+    "VT",
+    "GU",
+    "VI"
+   ],
+   "masked_residual_top_share": 0.218,
+   "masked_residual_prescribers": 1580
+  },
+  "state_specialty": {
+   "pass": true,
+   "cells": 357,
+   "masked": 94,
+   "masked_by_reason": {
+    "dominance": 86,
+    "< 11 prescribers": 8
+   }
+  }
+ },
+ "explorer": {
+  "pass": true,
+  "shown_counts_1_to_10": 0,
+  "shown_state_or_small_national_usd_over_dominance": 0,
+  "withheld_values_recovered_exactly": 0,
+  "withheld_values_insufficiently_protected": 0,
+  "public_codes": [
+   -5,
+   -4,
+   -1
+  ],
+  "by_year": {
+   "2013": {
+    "small": 0,
+    "unprotected": 0,
+    "dominance": 0,
+    "exact": 0
+   },
+   "2014": {
+    "small": 0,
+    "unprotected": 0,
+    "dominance": 0,
+    "exact": 0
+   },
+   "2015": {
+    "small": 0,
+    "unprotected": 0,
+    "dominance": 0,
+    "exact": 0
+   },
+   "2016": {
+    "small": 0,
+    "unprotected": 0,
+    "dominance": 0,
+    "exact": 0
+   },
+   "2017": {
+    "small": 0,
+    "unprotected": 0,
+    "dominance": 0,
+    "exact": 0
+   },
+   "2018": {
+    "small": 0,
+    "unprotected": 0,
+    "dominance": 0,
+    "exact": 0
+   },
+   "2019": {
+    "small": 0,
+    "unprotected": 0,
+    "dominance": 0,
+    "exact": 0
+   },
+   "2020": {
+    "small": 0,
+    "unprotected": 0,
+    "dominance": 0,
+    "exact": 0
+   },
+   "2021": {
+    "small": 0,
+    "unprotected": 0,
+    "dominance": 0,
+    "exact": 0
+   },
+   "2022": {
+    "small": 0,
+    "unprotected": 0,
+    "dominance": 0,
+    "exact": 0
+   },
+   "2023": {
+    "small": 0,
+    "unprotected": 0,
+    "dominance": 0,
+    "exact": 0
+   },
+   "2024": {
+    "small": 0,
+    "unprotected": 0,
+    "dominance": 0,
+    "exact": 0
+   }
+  },
+  "bytes": 873668
+ },
+ "release": {
+  "pass": true,
+  "panel_matches_explorer": true,
+  "panel_small_counts": {
+   "prescribers": 0,
+   "paid_prescribers": 0,
+   "prescribers_11plus_claims": 0
+  },
+  "drug_map_small_records": 0,
+  "identifier_columns": []
+ },
+ "pass": true
+}

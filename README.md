@@ -1,4 +1,4 @@
-# Lunch, Speaking Fees and Semaglutide
+# After the Free Lunch: Drug-Maker Payments and GLP-1 Brand Choice in Medicare
 
 *Industry payments and GLP-1 prescribing in Medicare Part D.* Work in progress.
 

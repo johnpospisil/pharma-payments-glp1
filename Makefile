@@ -7,7 +7,7 @@ PY := uv run python -I
 # Ignore any other active virtualenv (e.g. ~/tf): uv always uses this project's .venv.
 unexport VIRTUAL_ENV
 
-.PHONY: all check-env check-env-local data build models figures report app serve-app qa test lint test-fast progress data-open-payments data-partd data-reference
+.PHONY: all check-env check-env-local data build models figures report app serve-app release qa test lint test-fast progress data-open-payments data-partd data-reference
 
 # On macOS the ~2 h rebuild runs under caffeinate -s so the machine can't sleep mid-run (D39)
 CAFFEINATE := $(shell command -v caffeinate >/dev/null 2>&1 && echo "caffeinate -s -i")
@@ -16,7 +16,7 @@ all:
 ifeq ($(PPG_AWAKE),)
 	PPG_AWAKE=1 $(CAFFEINATE) $(MAKE) all
 else
-all: check-env data build models figures report app qa
+all: check-env data build models figures report app release qa
 endif
 
 check-env:
@@ -70,6 +70,10 @@ report:
 # P23: specialty x state explorer data (disclosure-controlled) -> app/data; serve with `make serve-app`
 app:
 	$(PY) -m ppg.app.build > /dev/null
+
+# P25: released datasets (drug-name map; the explorer cube as one table) -> release/
+release:
+	$(PY) -m ppg.release.build > /dev/null
 
 serve-app:
 	@echo "explorer: http://localhost:8766/app/"

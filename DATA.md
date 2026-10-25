@@ -481,3 +481,12 @@ Caveats:
 - **Spending is gross**, before manufacturer rebates (large for GLP-1s).
 - **The state map uses the recipient's state** in Open Payments. Its denominator applies 65+ diabetes prevalence to all Part D enrollees (DATA.md §8).
 - **The Lorenz curve covers paid prescribers only.** Most diabetes prescribers receive nothing in a given year.
+
+## 15. Released datasets (P25, 2026-10-24)
+
+Code: `src/ppg/release/build.py` (`make release`, part of `make all`); tests: `tests/test_release.py`. Output in [release/](release/README.md), each folder with a data card (column dictionary, coverage, limitations, licence):
+
+- **`release/drug_name_map/`**: the P07 maps (`drug_name_map.csv`, `partd_drug_map.csv`). Record and dollar totals are blank for product strings with fewer than 11 records, as in the QA tables.
+- **`release/specialty_state_panel/`**: `panel.csv`, the P23 explorer cube as one table (brand × year × specialty × state; prescribers, total Part D claims, paid prescribers, promotional $, prescribers with ≥ 11 claims, visible brand claims), each value with a status (`shown`, `withheld`, `not_reported_before_2021`, `brand_not_in_partd`); `brand_visibility.csv`, the share of national claims visible per brand-year. The panel is read from `app/data`, never recomputed, so it carries exactly the explorer's disclosure control (D47); the disclosure audit checks the two are identical value for value.
+- Sizes, row counts and SHA-256 checksums: `release/manifest.json`, `release/SHA256SUMS`, and [report/qa/release.json](report/qa/release.json).
+- Licence: source data US public domain; released datasets CC0 1.0; code MIT ([LICENSE](LICENSE)).

@@ -23,7 +23,7 @@ Six independent reviews ran on 2026-10-24: a health economist, a clinical pharma
 | A3 | Journalist, economist | First lead bullet overstates the share result (W2, D29) | **Fix** | Rewritten with the bound, the log-odds caveat and Victoza; new "not a precise effect size" line |
 | A4 | All three | Mounjaro's flat pre-trend is near-automatic; its window is only 2022–24, during shortages | **Fix** | Called "rests on about one year"; follow-up window stated; shortages named |
 | A5 | Journalist, economist | Pre-trends quoted selectively (Victoza; matched Trulicity p = 0.007) | **Fix** | Result 1 and the table give all four, matched and unmatched |
-| A6 | Journalist | Title oversells ("Speaking Fees", "Semaglutide") | **Your call** | Title unchanged pending your decision |
+| A6 | Journalist | Title oversells ("Speaking Fees", "Semaglutide") | **Fix** | Retitled *After the Free Lunch: Drug-Maker Payments and GLP-1 Brand Choice in Medicare* (D48) |
 | A7 | Journalist | Hero title temporal-causal; endpoint labels differ from text; "keeps rising" wrong; band clipped | **Fix** | Title "tilted toward the paying brand, except Victoza"; labels show the 0–3 average; text "rises for one to two years, then levels off"; axis unclipped |
 | A8 | Journalist | Hero and 1b alt text misdescribe | **Fix** | Hero alt rewritten (pre-trends per brand, averages, bound) |
 | A9 | Journalist | Chart 5 uses e = 2, the peak year | **Disclose** | Caption: e = 2 is the latest year observed for Mounjaro's 2022 cohort. Re-estimating at e = 3 would drop Mounjaro |
@@ -50,7 +50,7 @@ Six independent reviews ran on 2026-10-24: a health economist, a clinical pharma
 | A30 | Economist | Treatment is "entering a paid relationship"; report e = 1…3 | **Disclose** | Definition stated; e = 0 stays in the average as pre-registered (Limitations: annual timing) |
 | A31 | Economist | Spillover direction not established | **Fix** | Reworded |
 | A32 | Economist | NC exposure comparator unnamed; 37% vs 38% | **Fix** | "association with any GLP-1 prescribing"; docs/qa.md now 38% |
-| A33 | Journalist | Five cuts to reach about 2,000 words | **Your call** | Not applied (D44 kept length); the article grew to about 3,800 words with the new caveats |
+| A33 | Journalist | Five cuts to reach about 2,000 words | **Fix, in part** | Three applied (D49): subgroup detail and chart 8 moved to docs/results.md, chart 3 dropped; robustness rows and "What is new" kept |
 
 ## Explorer
 

@@ -1,6 +1,6 @@
 ---
-title: "Lunch, Speaking Fees and Semaglutide"
-subtitle: "Industry payments and GLP-1 prescribing in Medicare Part D, 2013–2024"
+title: "After the Free Lunch"
+subtitle: "Drug-maker payments and GLP-1 brand choice in Medicare Part D, 2013–2024"
 author: "John Pospisil"
 date: 2026-10-24
 description: "Following {{< var n_physicians >}} Medicare physicians brand by brand: does a GLP-1 maker's first payment come before a shift toward its brand, or do companies simply reach doctors whose practices were already growing?"
@@ -40,13 +40,6 @@ Between 2013 and 2024, Medicare Part D gross spending on GLP-1 drugs (before man
 Two decades of research find that doctors who take industry money prescribe more of the payer's drugs [@dejong2016; @yeh2016; @fleischman2016; @hadland2018; @mitchell2021]. Almost all of that work compares paid and unpaid doctors at one point in time, so it cannot tell influence from targeting: drug representatives visit the doctors who already prescribe, or are about to prescribe, the most. The one GLP-1 study so far is also a cross-sectional snapshot [@khunte2026].
 
 This project asks a narrower, harder question: **when a doctor receives a first promotional payment for a specific GLP-1 brand, does their prescribing of *that brand* change afterwards, compared with similar doctors who have not yet been paid — and does it change in ways that targeting alone would not produce?**
-
-::: {.column-page-right}
-![](figures/final/chart3_partd_spending.png){.light-content .d-only fig-alt="{{< var alt_chart3_partd_spending >}}"}
-![](figures/social/chart3_partd_spending_1200x675.png){.light-content .m-only fig-alt="{{< var alt_chart3_partd_spending >}}"}
-![](figures/final/chart3_partd_spending_dark.png){.dark-content .d-only fig-alt="{{< var alt_chart3_partd_spending >}}"}
-![](figures/social/chart3_partd_spending_1200x675_dark.png){.dark-content .m-only fig-alt="{{< var alt_chart3_partd_spending >}}"}
-:::
 
 ## The data
 
@@ -164,13 +157,6 @@ GLP-1 promotional money is extremely concentrated. Of {{< var n_paid_lorenz >}} 
 
 Per Medicare Part D enrollee with diabetes, GLP-1 promotional payments in 2024 ranged from ${{< var state_min >}} to ${{< var state_max >}} across the states shown, against ${{< var state_us >}} nationally. Because the money is so concentrated, state values largely reflect where a small number of speakers practise, not what a typical doctor there receives. {{< var masked_states >}} are withheld to protect privacy.
 
-::: {.column-page-right}
-![](figures/final/chart8_specialty.png){.light-content .d-only fig-alt="{{< var alt_chart8_specialty >}}"}
-![](figures/social/chart8_specialty_1200x675.png){.light-content .m-only fig-alt="{{< var alt_chart8_specialty >}}"}
-![](figures/final/chart8_specialty_dark.png){.dark-content .d-only fig-alt="{{< var alt_chart8_specialty >}}"}
-![](figures/social/chart8_specialty_1200x675_dark.png){.dark-content .m-only fig-alt="{{< var alt_chart8_specialty >}}"}
-:::
-
 Relative to diabetes workload, endocrinologists receive about {{< var endo_ratio >}} times as much per claim as primary-care physicians (${{< var endo_per_1000 >}} vs ${{< var pc_per_1000 >}} per 1,000 other diabetes-drug claims in 2024), consistent with speakers being concentrated among specialists.
 
 ## Who responds
@@ -185,16 +171,12 @@ The pre-registered secondary questions, each adjusted together for multiple test
 | First-year $100 or more vs under $100 | {{< var h4 >}} pp | {{< var h4_holm_fmt >}} | Gradient; higher-paid doctors are more selected |
 | Paid brand's share (log-odds, matched) | {{< var h5 >}} pp | {{< var h5_holm >}} | Supported, pooled; rests on matching and on how hidden counts are treated |
 | 30-day fills (matched, hidden cells at their cap) | {{< var h6 >}}% | {{< var h6_holm_fmt >}} | Volume rises, but much of it matches overall practice growth ({{< var matched_claims_growth >}}% in total claims); {{< var h6_min >}}% to {{< var h6_max >}}% depending on how hidden cells are bounded |
-| Nurse practitioners and physician assistants | {{< var h7 >}} pp | {{< var h7_holm_fmt >}} | Supported, with the same targeting caveat |
+| Nurse practitioners and physician assistants | {{< var h7 >}} pp | {{< var h7_holm_fmt >}} | Supported, with the same targeting caveat; payments reported only from 2021, no matched version |
 
 : Secondary hypotheses. Data: [secondary_family.csv](qa/secondary_family.csv). {tbl-colwidths="[30,13,13,44]"}
 :::
 
-**Region and setting.** The increase is larger in the South than in every other region, for every brand (by {{< var south_gap >}} points), and larger in rural than urban practices for Trulicity ({{< var rural_trulicity >}}) and Victoza ({{< var rural_victoza >}}). These subgroup estimates inherit the targeting caveat above: they may reflect where practices were growing, or regional formularies, rather than who responds to payments.
-
-**Specialty.** There is no consistent specialist advantage. Victoza's increase is larger among endocrinologists ({{< var victoza_endo >}} points relative to primary care), while Ozempic's is smaller among endocrinologists ({{< var oz_endo >}}) and cardiologists ({{< var oz_cardio >}}).
-
-**Nurse practitioners and physician assistants**, whose payments are reported only from 2021, show increases of {{< var h7_trulicity >}} (Trulicity) and {{< var h7_ozempic >}} (Ozempic) points; Victoza has only {{< var h7_victoza_n >}} newly paid NPs and PAs. There is no matched or negative-control version of this estimate.
+Subgroup estimates by region, rural or urban setting and specialty, which inherit the same targeting caveat, are in the [results log](https://github.com/johnpospisil/pharma-payments-glp1/blob/main/docs/results.md) with the specialty payment chart.
 
 ## Falsification and robustness
 

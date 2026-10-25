@@ -2,7 +2,7 @@
 
 Project brief: [02-pharma-payments-glp1.md](02-pharma-payments-glp1.md) (the source of truth for scope, method and charts). Data provenance: `DATA.md` (created in P01).
 
-**Working title:** *Lunch, Speaking Fees and Semaglutide: Industry Payments and GLP-1 Prescribing in Medicare*
+**Title (D48):** *After the Free Lunch: Drug-Maker Payments and GLP-1 Brand Choice in Medicare* (working title until P24: *Lunch, Speaking Fees and Semaglutide*)
 
 **Core claim to test:** Medicare Part D prescribers who start receiving payments tied to a GLP-1 brand then prescribe more of *that brand* than similar prescribers who did not receive payments. The pre-trend must be flat, the effect must show up in brand share as well as volume, and the negative controls must come out null. The finding is **wrong**, or only shows targeting, if paid prescribers were already rising before their first payment, if the effect appears just as strongly for unrelated drugs (statins) or for payments about unrelated drugs, or if it disappears once prescribers are matched on their pre-period trajectory.
 
@@ -89,6 +89,9 @@ Project brief: [02-pharma-payments-glp1.md](02-pharma-payments-glp1.md) (the sou
 | D44 | Article layout | **Decided 2026-10-24:** hero chart directly under the byline; figures widen right only (`column-page-right`) so the left TOC stays visible; phones get the 1200×675 larger-type crops as a P24 fix; tone and length kept, P24 data-journalist reviewer flags cuts |
 | D45 | Explorer disclosure | **Decided 2026-10-24:** the 50% dominance rule applies to state cells only (national cells are not geographic, D40); ≥ 11 applies everywhere; secondary suppression in every additive line (brand, specialty, state totals), residual categories withheld first; nonphysician payments before 2021 set to zero (not reported) |
 | D46 | Site layout | **Decided 2026-10-24:** the app links to the article at the Pages root; P26 publishes the article at `/` and the explorer at `/app/` |
+| D47 | Explorer disclosure v2 | **Decided 2026-10-24:** amends D45: one public "withheld" code; no cross-brand total; specialty total = All physicians (NPs, PAs outside every total); LP attack audit with complementary suppression (counts need a feasible range ≥ 10, amounts a feasible minimum ≤ half the true value; `ppg.app.protect`); the 50% dominance rule also applies to national cells with < 50 paid prescribers; a count equal to its group size is withheld when the group has < 20. The same protection applies to the P25 released panel |
+| D48 | Title | **Decided 2026-10-24:** *After the Free Lunch: Drug-Maker Payments and GLP-1 Brand Choice in Medicare* (P24 journalist: speakers are outside the event study; "semaglutide" points at weight loss) |
+| D49 | Article cuts | **Decided 2026-10-24:** three of the journalist's five cuts: "Who responds" detail and chart 8 move to the repo, one context chart dropped; robustness-table rows and "What is new" kept; no caveat removed |
 | D11 | Positioning | **Decided 2026-10-22:** the article names Khunte et al. 2026 (*Mayo Clin Proc*, cross-sectional) as the baseline; our headline is the within-prescriber, brand-level change and switching, not the cross-sectional association |
 
 ## Prompt list
@@ -170,7 +173,7 @@ Project brief: [02-pharma-payments-glp1.md](02-pharma-payments-glp1.md) (the sou
 - [x] **P20: QA and validation pass.** _Done 2026-10-24: clean-checkout `make all` from raw passes (~2 h compute); two rebuilds agree (129 files identical, 23 within 1e-6) after determinism fixes; 51 article claims match report/qa; disclosure audit passes (0 real NPIs in 269 files; small cells blanked in 5 QA tables; chart 6 masks ID/ME/OR/VT); weak claims W1–W10 in docs/qa.md._ Rebuild with `make all` from raw on a clean checkout; check every number destined for the article against `report/qa/*.json`; review the methodology for overstated claims (data:validate-data style); confirm that no output exposes an individual prescriber.
   **Deliverables:** QA checklist with pass/fail, the rebuild time, the list of claims that are still weak.
 
-### Phase 6: Write, build, review
+### Phase 6: Write, build, review ✅ DONE
 
 - [x] **P21: Final figures.** _Done 2026-10-24: `ppg.viz.theme` (validated light/dark palette, fixed brand colours) + `ppg.viz.final` draws hero (brand-share event study), 1b (brand vs statins) and charts 2–8 from report/qa only; light/dark PNG+SVG, 1200×675 crops, alt text, contact sheet; byte-identical re-renders._ `ppg.viz.theme` (one palette, light and dark, colour-blind safe), with final versions of the hero chart and charts 2–7, alt text for each, and social-media crops.
   **Deliverables:** `report/figures/` (all charts), a contact sheet of every figure.
@@ -181,7 +184,7 @@ Project brief: [02-pharma-payments-glp1.md](02-pharma-payments-glp1.md) (the sou
 - [x] **P23: Specialty × state explorer.** _Done 2026-10-24: static app/ (brand chips, specialty + state filters, payments and prescribing trends, state tile picker, table, caveat from claims registry); `ppg.app.build` → app/data 1.06 MB (9 JSON, ~45 KB gzipped each) with primary (1–10 counts, state $ dominance) and secondary suppression (no withheld cell recoverable from published totals); audit re-checks it; desktop/tablet/mobile/dark screenshots, 0 overflow._ A static app in `app/` (no server, so it runs on GitHub Pages): brand selector, specialty and state filters, payments vs prescribing trends over time, cells with fewer than 11 prescribers hidden. Data is pre-aggregated JSON from the pipeline. Check it on desktop and at phone width with Playwright screenshots.
   **Deliverables:** local app link, screenshots (desktop + mobile), JSON size.
 
-- [ ] **P24: Red-team review.** Fresh agents review the article and app separately as (a) a skeptical health economist (identification, targeting, staggered-DiD pitfalls), (b) a clinical pharmacist (GLP-1 indications, formulary and coverage changes, shortages in 2022–2024, Wegovy CV coverage from 2024, compounding), and (c) a data journalist (claims vs evidence, ethics, fairness to physicians). Triage every point into fix / disclose / reject (with reason) and apply the fixes. Also write `docs/review-checklist.md` that the user could send to a real clinician.
+- [x] **P24: Red-team review.** _Done 2026-10-24: 6 reviews (3 roles × article/app), 60 points triaged in docs/review-triage.md; DEV-11 bounds the share gain at +1.7–1.8 pp (below SESOI) vs +3.0–5.3 measured; explorer LP attack recovered 251 hidden counts → rebuilt with LP-audited complementary suppression (D47), 0 recoverable; title changed (D48), three cuts (D49); docs/review-checklist.md (14 questions)._ Fresh agents review the article and app separately as (a) a skeptical health economist (identification, targeting, staggered-DiD pitfalls), (b) a clinical pharmacist (GLP-1 indications, formulary and coverage changes, shortages in 2022–2024, Wegovy CV coverage from 2024, compounding), and (c) a data journalist (claims vs evidence, ethics, fairness to physicians). Triage every point into fix / disclose / reject (with reason) and apply the fixes. Also write `docs/review-checklist.md` that the user could send to a real clinician.
   **Deliverables:** review triage table, the changes made, the review checklist.
 
 ### Phase 7: Publish (portfolio + socials)

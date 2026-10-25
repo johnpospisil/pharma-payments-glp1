@@ -1,6 +1,6 @@
 # Clinical review checklist
 
-**What this is.** *Lunch, Speaking Fees and Semaglutide* is an independent data project that compares drug-maker payments to Medicare prescribers (CMS Open Payments) with the same prescribers' GLP-1 prescribing in Medicare Part D, 2013–2024. Before it is shared publicly, I would value a clinician's read of the parts that depend on clinical and market knowledge. The statistics have been reviewed separately.
+**What this is.** *After the Free Lunch: Drug-Maker Payments and GLP-1 Brand Choice in Medicare* is an independent data project that compares drug-maker payments to Medicare prescribers (CMS Open Payments) with the same prescribers' GLP-1 prescribing in Medicare Part D, 2013–2024. Before it is shared publicly, I would value a clinician's read of the parts that depend on clinical and market knowledge. The statistics have been reviewed separately.
 
 **What I'm asking for.** About 45–60 minutes. Read the article, then go through the questions below. Short answers are fine: "fine", "wrong because…", or "you're missing…". Disagreement is the most useful thing you can give me.
 

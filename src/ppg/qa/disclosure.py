@@ -9,6 +9,8 @@ Checks, each pass/fail with details:
   5. the masked chart-6 states cannot be recovered as one person's dollars by subtraction
   6. the P23 explorer JSON (app/data): counts 0 or >= 11, shown dollars pass the dominance rule,
      and an LP attack over every published line sum cannot pin down a withheld value (D47)
+  7. the P25 released panel (release/) is value for value the explorer cube, so check 6 covers
+     it; its counts are 0 or >= 11 and the drug-map totals are blank below 11 records
 
     python -m ppg.qa.disclosure        -> report/qa/disclosure_audit.json
 """
@@ -234,6 +236,35 @@ def check_explorer() -> dict:
             "bytes": sum(f.stat().st_size for f in data.glob("*.json"))}  # fmt: skip
 
 
+def check_release() -> dict:
+    """The released panel must publish exactly the explorer's values and statuses (D47)."""
+    import numpy as np
+
+    from ppg.release import build as rel
+
+    out = ROOT / "release"
+    if not (out / "manifest.json").exists():
+        return {"pass": False, "error": "release/ not built (make release)"}
+    want, _, _ = rel.panel()
+    got = pd.read_csv(out / "specialty_state_panel" / "panel.csv", dtype={"state": str})
+    vals = list(rel.COLUMNS.values())
+    same = (
+        len(got) == len(want)
+        and all((got[c] == want[c]).all() for c in [*rel.KEYS, *(f"{v}_status" for v in vals)])
+        and all(np.array_equal(got[v].to_numpy(float), want[v].to_numpy(float, na_value=np.nan),
+                               equal_nan=True) for v in vals)
+    )  # fmt: skip
+    small = {c: int(((got[c] > 0) & (got[c] < config.MIN_CELL)).sum())
+             for c in ("prescribers", "paid_prescribers", "prescribers_11plus_claims")}  # fmt: skip
+    dm = pd.read_csv(out / "drug_name_map" / "drug_name_map.csv")
+    dm_small = int(((dm.records > 0) & (dm.records < config.MIN_CELL)).sum())
+    ids = [c for f in out.rglob("*.csv") for c in pd.read_csv(f, nrows=0).columns
+           if ID_COLUMNS.match(str(c))]  # fmt: skip
+    return {"pass": same and not any(small.values()) and not dm_small and not ids,
+            "panel_matches_explorer": same, "panel_small_counts": small,
+            "drug_map_small_records": dm_small, "identifier_columns": ids}  # fmt: skip
+
+
 def audit() -> dict:
     files = tracked()
     res = {
@@ -242,6 +273,7 @@ def audit() -> dict:
         "small_cells": check_counts(),
         "geography": check_geography(),
         "explorer": check_explorer(),
+        "release": check_release(),
     }
     res["pass"] = all(
         v["pass"] if "pass" in v else all(x["pass"] for x in v.values()) for v in res.values()

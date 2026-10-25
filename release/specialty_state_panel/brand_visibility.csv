@@ -1,0 +1,85 @@
+brand,year,visible_claims_pct
+Ozempic,2013,
+Ozempic,2014,
+Ozempic,2015,
+Ozempic,2016,
+Ozempic,2017,
+Ozempic,2018,38
+Ozempic,2019,74
+Ozempic,2020,82
+Ozempic,2021,84
+Ozempic,2022,86
+Ozempic,2023,90
+Ozempic,2024,90
+Trulicity,2013,
+Trulicity,2014,0
+Trulicity,2015,44
+Trulicity,2016,73
+Trulicity,2017,80
+Trulicity,2018,83
+Trulicity,2019,86
+Trulicity,2020,87
+Trulicity,2021,89
+Trulicity,2022,89
+Trulicity,2023,89
+Trulicity,2024,85
+Mounjaro,2013,
+Mounjaro,2014,
+Mounjaro,2015,
+Mounjaro,2016,
+Mounjaro,2017,
+Mounjaro,2018,
+Mounjaro,2019,
+Mounjaro,2020,
+Mounjaro,2021,
+Mounjaro,2022,31
+Mounjaro,2023,81
+Mounjaro,2024,87
+Victoza,2013,65
+Victoza,2014,68
+Victoza,2015,69
+Victoza,2016,70
+Victoza,2017,70
+Victoza,2018,70
+Victoza,2019,68
+Victoza,2020,65
+Victoza,2021,60
+Victoza,2022,54
+Victoza,2023,47
+Victoza,2024,21
+Rybelsus,2013,
+Rybelsus,2014,
+Rybelsus,2015,
+Rybelsus,2016,
+Rybelsus,2017,
+Rybelsus,2018,
+Rybelsus,2019,0
+Rybelsus,2020,32
+Rybelsus,2021,59
+Rybelsus,2022,66
+Rybelsus,2023,69
+Rybelsus,2024,69
+Bydureon,2013,65
+Bydureon,2014,63
+Bydureon,2015,58
+Bydureon,2016,61
+Bydureon,2017,63
+Bydureon,2018,56
+Bydureon,2019,59
+Bydureon,2020,59
+Bydureon,2021,50
+Bydureon,2022,58
+Bydureon,2023,51
+Bydureon,2024,47
+Other GLP-1s,2013,58
+Other GLP-1s,2014,52
+Other GLP-1s,2015,46
+Other GLP-1s,2016,47
+Other GLP-1s,2017,41
+Other GLP-1s,2018,36
+Other GLP-1s,2019,48
+Other GLP-1s,2020,54
+Other GLP-1s,2021,55
+Other GLP-1s,2022,57
+Other GLP-1s,2023,63
+Other GLP-1s,2024,56
