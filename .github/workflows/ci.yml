@@ -1,4 +1,4 @@
-# Lint and unit tests. The real CMS data (~150 GB raw) is not available here;
+# Lint and unit tests. The real CMS data (~70 GB raw) is not available here;
 # tests marked `data` skip themselves, and fixture-based tests cover the pipeline logic.
 name: ci
 

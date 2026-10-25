@@ -25,6 +25,7 @@ format:
     footnotes-hover: true
     link-external-newwindow: true
     embed-resources: false
+    include-in-header: _social.html
 
 bibliography: references.bib
 lang: en-US

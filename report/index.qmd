@@ -155,7 +155,7 @@ GLP-1 promotional money is extremely concentrated. Of {{< var n_paid_lorenz >}} 
 ![](figures/social/chart6_state_map_1200x675_dark.png){.dark-content .m-only fig-alt="{{< var alt_chart6_state_map >}}"}
 :::
 
-Per Medicare Part D enrollee with diabetes, GLP-1 promotional payments in 2024 ranged from ${{< var state_min >}} to ${{< var state_max >}} across the states shown, against ${{< var state_us >}} nationally. Because the money is so concentrated, state values largely reflect where a small number of speakers practise, not what a typical doctor there receives. {{< var masked_states >}} are withheld to protect privacy.
+Per Medicare Part D enrollee with diabetes, GLP-1 promotional payments in 2024 ranged from ${{< var state_min >}} to ${{< var state_max >}} across the states shown, against ${{< var state_us >}} nationally. Because the money is so concentrated, state values largely reflect where a small number of speakers practise, not what a typical doctor there receives. {{< var masked_states >}} are withheld to protect privacy. To look up payments and prescribing for one specialty and state, brand by brand, use the [companion explorer](app/).
 
 Relative to diabetes workload, endocrinologists receive about {{< var endo_ratio >}} times as much per claim as primary-care physicians (${{< var endo_per_1000 >}} vs ${{< var pc_per_1000 >}} per 1,000 other diabetes-drug claims in 2024), consistent with speakers being concentrated among specialists.
 

@@ -1,0 +1,60 @@
+# Publishes the article (report/index.qmd) and the explorer (app/) to GitHub Pages (D46):
+#   https://johnpospisil.github.io/pharma-payments-glp1/       article
+#   https://johnpospisil.github.io/pharma-payments-glp1/app/   specialty x state explorer
+# Built from the committed results and figures (report/qa, report/figures, app/data), so the raw
+# CMS files are not needed. Runs only once the repository is public (Pages needs a public repo on
+# the free plan); enable it under Settings > Pages > Source: GitHub Actions.
+name: pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    if: ${{ !github.event.repository.private }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+      - run: uv sync --frozen
+      - uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: 1.10.19
+      - name: Render the article
+        run: make report
+      - name: Check the article's numbers are the committed ones
+        run: git diff --exit-code report/_variables.yml
+      - name: Assemble the site
+        run: |
+          mkdir -p _site/app/data
+          cp -R report/_site/. _site/
+          cp app/index.html app/app.js app/style.css _site/app/
+          cp app/data/*.json _site/app/data/
+          touch _site/.nojekyll
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
