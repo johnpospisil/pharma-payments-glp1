@@ -33,6 +33,7 @@ ROOT = config.REPORT_DIR.parent
 APP = ROOT / "app" / "data"
 OUT = ROOT / "release"
 REPO = "https://github.com/johnpospisil/pharma-payments-glp1"
+SITE = "https://johnpospisil.github.io/pharma-payments-glp1/"
 # explorer metric -> released column (and what it counts)
 COLUMNS = {
     "n": "prescribers",
@@ -409,6 +410,64 @@ identify individual prescribers.
 """
 
 
+HF_REPO = "audiofreak7/glp1-payments-prescribing-medicare"
+HF_YAML = """---
+license: cc0-1.0
+pretty_name: GLP-1 drug-maker payments and prescribing in Medicare Part D, 2013-2024
+language:
+  - en
+tags:
+  - medicare
+  - open-payments
+  - part-d
+  - glp-1
+  - pharmaceutical-industry
+  - health-policy
+size_categories:
+  - 10K<n<100K
+configs:
+  - config_name: specialty_state_panel
+    data_files: specialty_state_panel/panel.csv
+    default: true
+  - config_name: brand_visibility
+    data_files: specialty_state_panel/brand_visibility.csv
+  - config_name: drug_name_map
+    data_files: drug_name_map/drug_name_map.csv
+  - config_name: partd_drug_map
+    data_files: drug_name_map/partd_drug_map.csv
+---
+"""
+
+
+def _demote(card: str) -> str:
+    """A data card as a section of the Hugging Face page: its title becomes an H2."""
+    lines = card.splitlines()
+    title = lines[0].removeprefix("# Data card: ")
+    body = [("#" + x if x.startswith("## ") else x) for x in lines[1:]]
+    return "\n".join([f"## {title}", *body])
+
+
+def hf_card(op: pd.DataFrame, pdm: pd.DataFrame, p: pd.DataFrame, meta: dict) -> str:
+    """README.md for the Hugging Face dataset repo (YAML header, one config per CSV)."""
+    return "\n".join([
+        HF_YAML,
+        "# GLP-1 drug-maker payments and prescribing in Medicare Part D, 2013–2024",
+        "",
+        "Two datasets from *After the Free Lunch: Drug-Maker Payments and GLP-1 Brand Choice in "
+        f"Medicare* (John Pospisil, 2026). Article: {SITE}. Code, method and pre-registration: "
+        f"{REPO}. Built from CMS Open Payments and Medicare Part D; **aggregates only**, no NPIs, "
+        "names or prescriber-level rows. Not affiliated with or endorsed by CMS.",
+        "",
+        _FOLDERS,
+        "",
+        "Checksums: `SHA256SUMS` (this page itself is the only file not listed in it).",
+        "",
+        _demote(panel_card(p, meta)),
+        "",
+        _demote(drug_card(op, pdm)),
+    ])  # fmt: skip
+
+
 def build() -> dict:
     p, vis, meta = panel()
     op, pdm = drug_maps()
@@ -430,6 +489,9 @@ def build() -> dict:
     }
     for name, t in texts.items():
         (OUT / name).write_text(t)
+    # the Hugging Face page replaces README.md there, so it is kept outside the checksummed set
+    (OUT / "huggingface").mkdir(exist_ok=True)
+    (OUT / "huggingface" / "README.md").write_text(hf_card(op, pdm, p, meta))
     every = sorted([*files, *texts])
     sums = {f: sha256(OUT / f) for f in every}
     (OUT / "SHA256SUMS").write_text("".join(f"{h}  {f}\n" for f, h in sums.items()))
