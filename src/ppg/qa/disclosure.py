@@ -7,8 +7,8 @@ Checks, each pass/fail with details:
   3. prescriber counts in public tables are 0 or >= 11 (CSV columns and JSON count keys)
   4. geography cells shown pass the dominance rule (recomputed from the parquet)
   5. the masked chart-6 states cannot be recovered as one person's dollars by subtraction
-  6. the P23 explorer JSON (app/data): counts 0 or >= 11, no withheld cell is the only unknown in
-     an additive line, and shown state dollars pass the dominance rule (recomputed)
+  6. the P23 explorer JSON (app/data): counts 0 or >= 11, shown dollars pass the dominance rule,
+     and an LP attack over every published line sum cannot pin down a withheld value (D47)
 
     python -m ppg.qa.disclosure        -> report/qa/disclosure_audit.json
 """
@@ -173,7 +173,41 @@ def check_geography() -> dict:
     return out
 
 
+def _explorer_year(args) -> dict:
+    """LP attack on one published year: every withheld cell solved from the published totals."""
+
+    from ppg.app import build as ex
+    from ppg.app import protect
+
+    i, y, pub = args
+    cube, top, _ = ex.cells(ex.prescriber_rows(duckdb.connect(), y))
+    k = len(ex.PUBLISHED)
+    true = {m: cube[m][:k] for m in ex.METRICS}
+    code = ex.primary(cube, top, y)
+    out = {"small": 0, "unprotected": 0, "dominance": 0, "exact": 0}
+    hid = {m: pub[m] == -1 for m in ex.METRICS}
+    for m in ex.METRICS:
+        sensitive = (code[m][:k] == -1) | (code[m][:k] == -2)
+        bad = protect.violations(m, true, hid, sensitive, ex.LINES)
+        out["unprotected"] += int(bad.sum())
+        if m in protect.COUNTS:
+            shown = pub[m] >= 0
+            out["small"] += int((shown & (pub[m] > 0) & (pub[m] < config.MIN_CELL)).sum())
+            lo, hi = protect.attacker_bounds(m, true, hid)
+            mn, mx = protect.ranges(true[m], hid[m], lo, hi, ex.LINES, hid[m] & sensitive, True)
+            out["exact"] += int((hid[m] & sensitive & (true[m] > 0) & (mx - mn < 0.5)).sum())
+    shown_usd = pub["usd"] > 0
+    scope = ex._geo(shown_usd.shape) | (true["paid"] < ex.NATIONAL_DOMINANCE_MAX_PAID)
+    out["dominance"] = int((shown_usd & scope & (top[:k] > config.DOMINANCE * true["usd"])).sum())
+    return out
+
+
 def check_explorer() -> dict:
+    """Recompute the cube from the parquet, take the withheld pattern from the published JSON,
+    and attack it: no shown count of 1-10, no shown dollars over the dominance rule, and no
+    primarily withheld value pinned down by the LP over all published line sums (D47)."""
+    from concurrent.futures import ProcessPoolExecutor
+
     import numpy as np
 
     from ppg.app import build as ex
@@ -181,25 +215,22 @@ def check_explorer() -> dict:
     data = ROOT / "app" / "data"
     meta = json.loads((data / "meta.json").read_text())
     cube = {b["key"]: json.loads((data / b["file"]).read_text()) for b in meta["brands"]}
-    arr = {m: np.array([cube[k][m] for k in ex.BRAND_KEYS]) for m in ex.METRICS}  # b, y, s, t
-    known = {m: np.where(a <= -4, 0, a) for m, a in arr.items()}  # -4 / -5 are known zeros
-    small = {m: int(((arr[m] > 0) & (arr[m] < config.MIN_CELL)).sum())
-             for m in ("n", "paid", "regular")}  # fmt: skip
-    lone = {}
-    for m in ex.METRICS:
-        for ax in ex.AXES[m]:
-            v = np.moveaxis(known[m], ax if ax == 0 else ax + 1, -1)
-            k = (v < 0).sum(-1)
-            lone[f"{m}/axis{ax}"] = int(((k == 1) & (v[..., -1] != 0)).sum())
-    # dominance: recompute each shown state cell's top-prescriber share from the parquet
-    con, dom = duckdb.connect(), 0
-    for i, y in enumerate(meta["years"]):
-        c, top, usd = ex.cells(ex.prescriber_rows(con, y))
-        shown = (arr["usd"][:, i] > 0) & ex._geo(usd.shape)
-        dom += int((shown & (top > config.DOMINANCE * usd)).sum())
-    return {"pass": not any(small.values()) and not any(lone.values()) and dom == 0,
-            "small_counts": small, "lone_withheld_in_line": lone,
-            "shown_state_usd_over_dominance": dom,
+    assert [b["key"] for b in meta["brands"]] == ex.PUBLISHED, "published brands changed"
+    codes = {int(c) for c in meta["codes"]}
+    jobs = [(i, y, {m: np.array([cube[b][m][i] for b in ex.PUBLISHED]) for m in ex.METRICS})
+            for i, y in enumerate(meta["years"])]  # fmt: skip
+    with ProcessPoolExecutor(6) as pool:
+        per_year = dict(zip(meta["years"], pool.map(_explorer_year, jobs), strict=True))
+    tot = {
+        k: sum(r[k] for r in per_year.values())
+        for k in ("small", "unprotected", "dominance", "exact")
+    }
+    return {"pass": not any(tot.values()) and codes == {-1, -4, -5},
+            "shown_counts_1_to_10": tot["small"],
+            "shown_state_or_small_national_usd_over_dominance": tot["dominance"],
+            "withheld_values_recovered_exactly": tot["exact"],
+            "withheld_values_insufficiently_protected": tot["unprotected"],
+            "public_codes": sorted(codes), "by_year": per_year,
             "bytes": sum(f.stat().st_size for f in data.glob("*.json"))}  # fmt: skip
 
 

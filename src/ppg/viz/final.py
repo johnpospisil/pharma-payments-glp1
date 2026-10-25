@@ -5,6 +5,7 @@ chart is a `draw(t, social)` function; `render` writes, for each one:
     report/figures/final/<name>.png / .svg            light, 2000 px wide
     report/figures/final/<name>_dark.png / _dark.svg  dark
     report/figures/social/<name>_1200x675.png         16:9 crop (light), larger type
+    report/figures/social/<name>_1200x675_dark.png    the same in dark (the article on phones)
 plus report/figures/final/alt_text.json and contact_sheet.png. Captions follow docs/qa.md W1-W10
 (D38): every headline chart carries its "what this doesn't mean" line.
 
@@ -69,20 +70,32 @@ def _note(social: bool, full: str, short: str) -> str:
 HERO = ["Trulicity", "Ozempic", "Mounjaro", "Victoza"]
 
 
+def _signed(x: float, d: int = 1) -> str:
+    """+1.8 / −4.8, with a typographic minus."""
+    return f"{x:+.{d}f}".replace("-", "\u2212")
+
+
 def hero(t, social=False):
     sw = _j("switching.json")
+    bounds = _j("review_p24.json")["share_sensitivity"]
+    bound = "paid brand at cap, competitors 0, registered sample"
     fig, axs = plt.subplots(1, 4, figsize=_size(social), sharey=True)
+    lo_all, hi_all = 0.0, 0.0
     for ax, b in zip(axs, HERO, strict=True):
         d = _events(_j(f"es/switching_{b}.json")["own_event"], lo=-4)
         c = t.brand(b)
-        ax.fill_between(d.e, d.att - 1.96 * d.se, d.att + 1.96 * d.se, color=c, alpha=0.14, lw=0)
+        lo, hi = d.att - 1.96 * d.se, d.att + 1.96 * d.se
+        lo_all, hi_all = min(lo_all, lo.min()), max(hi_all, hi.max())
+        ax.fill_between(d.e, lo, hi, color=c, alpha=0.14, lw=0)
         ax.plot(d.e, d.att, color=c, zorder=3)
         dot(ax, d.e, d.att, c, t)
         ax.axhline(0, color=t.axis, lw=0.9, zorder=1)
         ax.axvline(-0.5, color=t.muted, lw=0.8, zorder=1)
+        # label the 0-3 average the text quotes, not the last point
+        avg = sw[b]["own_share"]["att"] * 100
         last = d.iloc[-1]
         ax.annotate(
-            f"{last.att:+.1f}",
+            f"avg {_signed(avg)}",
             (last.e, last.att),
             xytext=(8, 0),
             va="center",
@@ -94,65 +107,65 @@ def hero(t, social=False):
         axes(ax, t)
         p = sw[b]["pretrend_wald"]["p"]
         ax.set_title(b, loc="left", fontweight="bold", pad=16)
-        ax.text(
-            0,
-            1.02,
+        pre = (
             f"pre-payment trend test p = {p:.2f}"
             if p >= 0.01
-            else "pre-payment trend test p < 0.01",
-            transform=ax.transAxes,
-            color=t.ink2,
-            fontsize=plt.rcParams["font.size"] * 0.82,
+            else "pre-payment trend test p < 0.01"
         )
-        ax.set_xlim(-4.5, 4.6)
+        if b == "Mounjaro":
+            pre = "pre-trend test rests on one year"
+        ax.text(0, 1.02, pre, transform=ax.transAxes, color=t.ink2,
+                fontsize=plt.rcParams["font.size"] * 0.82)  # fmt: skip
+        ax.set_xlim(-4.5, 4.9)
         ax.set_xticks(range(-4, 4))
-        ax.text(
-            -0.3,
-            10.4,
-            "first payment",
-            color=t.muted,
-            ha="left",
-            fontsize=plt.rcParams["font.size"] * 0.8,
-        )
+        ax.text(-0.3, 0.97, "first payment", color=t.muted, ha="left", va="top",
+                transform=ax.get_xaxis_transform(),
+                fontsize=plt.rcParams["font.size"] * 0.8)  # fmt: skip
     axs[0].yaxis.set_major_locator(plt.MultipleLocator(4))
     axs[0].yaxis.set_major_formatter(_pp)
-    axs[0].set_ylim(-9, 11)
+    axs[0].set_ylim(np.floor(lo_all - 1), np.ceil(hi_all + 2))
     heading(
         fig,
         t,
-        "After a company's first payment, its brand gains share of the doctor's GLP-1 prescribing",
+        "Paid physicians' GLP-1 prescribing tilted toward the paying brand, except Victoza",
         "Change in the paid brand's share of the physician's GLP-1 "
         "claims, percentage points, vs the year before the first payment",
     )
     fr = {b: sw[b]["own_share_fractional_matched"] for b in ("Trulicity", "Ozempic", "Mounjaro")}
     clear = [b for b, r in fr.items() if r["att"] - 1.96 * r["se"] > 0]
+    bd = ", ".join(_signed(bounds[b][bound]["linear"]["att"] * 100) for b in fr)
     full = (
         "Physicians already prescribing GLP-1s. Callaway–Sant'Anna doubly robust estimator, "
         "not-yet-paid comparison physicians with similar diabetes workload, volume, specialty and "
-        "region; bands: 95% CIs clustered by practice. Mounjaro measured from its 2022 launch. "
-        "Victoza's payments came as its maker moved patients to Ozempic. In the pre-registered "
-        "log-odds form (matched), the gains are similar ("
-        + ", ".join(f"{fr[b]['att'] * 100:+.1f}" for b in fr)
-        + f" pp) but only {' and '.join(clear) or 'none'} clears zero. "
-        "Companies also call on doctors when a brand gains formulary position. Shown from 4 "
-        f"years before payment; every year is in report/qa. {NOT_CAUSAL}\n"
+        "region; bands: 95% CIs clustered by practice; labels: average of years 0–3. Mounjaro "
+        "measured from its 2022 launch. Victoza's share was already falling before payment. "
+        "If Medicare's hidden small counts (0–10 claims) are bounded against the result, the "
+        f"gains shrink to {bd} pp. In the pre-registered log-odds form (matched) they are "
+        + ", ".join(_signed(fr[b]["att"] * 100) for b in fr)
+        + f" pp, and only {' and '.join(clear) or 'none'} clears zero. "
+        "Companies also call on doctors when a brand gains a label or formulary position. "
+        f"Shown from 4 years before payment; every year is in report/qa. {NOT_CAUSAL}\n"
         f"Source: {SRC_OP}; {SRC_PD}, 2013–2024."
     )
     fh = footnote(
-        fig, t, _note(social, full, f"Bands: 95% CIs. {NOT_CAUSAL} Source: {SRC_OP}; {SRC_PD}.")
-    )
+        fig,
+        t,
+        _note(social, full, f"Bands: 95% CIs; labels: average of years 0–3. With hidden small "
+              f"counts bounded against the result: {bd} pp. {NOT_CAUSAL} "
+              f"Source: {SRC_OP}; {SRC_PD}."),
+    )  # fmt: skip
     _xlabel(fig, t, fh)
-    fig.subplots_adjust(left=0.07, right=0.975, top=0.77, bottom=fh + 0.13, wspace=0.12)
+    fig.subplots_adjust(left=0.07, right=0.96, top=0.77, bottom=fh + 0.13, wspace=0.14)
     alt = (
         "Four small line charts, one per brand, of the change in the paid brand's share of a "
         "physician's GLP-1 prescriptions from four years before to three years after the first "
-        "payment. Before payment the lines stay near zero. After it, the share rises by "
-        + ", ".join(
-            f"{b} {_events(_j(f'es/switching_{b}.json')['own_event'], lo=-4).att.iloc[-1]:+.1f}"
-            for b in HERO[:3]
-        )
-        + " percentage points by the last year shown, while Victoza's share falls "
-        f"({_events(_j('es/switching_Victoza.json')['own_event']).att.iloc[-1]:+.1f})."
+        "payment. Before payment, Trulicity's line stays near zero, Ozempic's drifts upward, "
+        "Mounjaro has only the years around its launch and Victoza's falls steeply. After payment, "
+        "the share rises for one to two years and then levels off, averaging "
+        + ", ".join(f"{b} {_signed(sw[b]['own_share']['att'] * 100)}" for b in HERO[:3])
+        + " percentage points over years 0 to 3, while Victoza's share keeps falling "
+        f"({_signed(sw['Victoza']['own_share']['att'] * 100)}). With hidden small counts bounded "
+        f"against the result, the gains shrink to {bd} points."
     )
     return fig, alt
 
@@ -198,10 +211,12 @@ def targeting(t, social=False):
         "claims in a year, percentage points, vs the year before the first payment",
     )
     full = (
-        "Statins (hollow markers) are a negative control: GLP-1 payments should not move them. "
-        "That they rise before and after the first payment means the paid physicians' practices "
-        "were growing, so this contrast reflects, at least partly, which physicians companies "
-        "reach rather than the payment. Brand share (hero chart) cancels practice size out. "
+        "Statins (hollow markers) are a negative control: GLP-1 payments should not move them "
+        "directly (GLP-1 promotion does stress cardiovascular risk, which could also prompt statin "
+        "prescribing). That they rise before and after the first payment, with paid physicians' "
+        "total Part D claims, means the paid practices were growing, so this contrast reflects, at "
+        "least partly, which physicians companies reach rather than the payment. Brand share (hero "
+        "chart) largely removes practice size. "
         "Callaway–Sant'Anna "
         "doubly robust, not-yet-paid controls, base year = year before payment; bands: 95% CIs "
         f"clustered by practice. Physicians first paid 2015–2024.\nSource: {SRC_OP}; {SRC_PD}."
@@ -508,7 +523,7 @@ def dumbbells(t, social=False):
     heading(
         fig,
         t,
-        "Paid physicians moved more of their GLP-1 prescribing to the paying brand",
+        "The paying brand's share rose more among paid physicians than matched comparisons",
         "Brand's share of the physician's GLP-1 claims before and after the first payment, "
         "paid vs matched comparison physicians",
     )
@@ -516,7 +531,8 @@ def dumbbells(t, social=False):
         "Physicians prescribing GLP-1s in both years, first-payment cohorts with two follow-up "
         "years; comparison physicians not yet paid by then, matched on prior brand prescribing, "
         "GLP-1 volume and growth, diabetes workload, specialty and state. Mounjaro: share relative "
-        "to its launch. Victoza is the exception: its maker was moving patients to Ozempic. "
+        "to its launch. Two years after is the latest year observed for Mounjaro's 2022 cohort. "
+        "Victoza is the exception: its share was already falling before payment. "
         f"{NOT_CAUSAL}\nSource: {SRC_OP}; {SRC_PD}."
     )
     fh = footnote(fig, t, _note(social, full, f"{NOT_CAUSAL} Source: {SRC_OP}; {SRC_PD}."))
@@ -657,11 +673,11 @@ def state_map(t, social=False):
     )
     masked = ", ".join(sorted(set(e["masked_states"]) & set(HEX)))
     full = (
-        f"Grey ({masked}): not shown because one prescriber received more than half of the "
-        "state's dollars, so the value would describe one person. Payments by the recipient's "
+        f"Grey ({masked}): withheld to protect privacy (too few recipients, or dollars too "
+        "concentrated). State values largely reflect where a small number of speakers practise: "
+        "the top 1% of paid prescribers received most of the dollars. Payments by the recipient's "
         "Open Payments state. Denominator: Part D enrollees × BRFSS diabetes prevalence, adults "
-        f"65+, pooled 3 years. Highest: {top}.\nSource: {SRC_OP}; CMS Medicare Enrollment; "
-        "CDC BRFSS."
+        f"65+, pooled 3 years.\nSource: {SRC_OP}; CMS Medicare Enrollment; CDC BRFSS."
     )
     fh = footnote(
         fig,
@@ -669,7 +685,7 @@ def state_map(t, social=False):
         _note(
             social,
             full,
-            f"Grey: withheld ({masked}), one prescriber > half the state's $. Source: {SRC_OP}.",
+            f"Grey: withheld to protect privacy ({masked}). Source: {SRC_OP}.",
         ),
     )
     fig.subplots_adjust(left=0.02, right=0.98, top=0.84, bottom=fh + 0.06)
@@ -677,8 +693,8 @@ def state_map(t, social=False):
         "Hexagon tile map of US states shaded by GLP-1 promotional payments per Medicare Part D "
         f"enrollee with diabetes in 2024. Values range from ${lo:.2f} ({shown.idxmin()}) to "
         f"${hi:.2f} ({top}); the US figure is ${e['usd_per_diabetic_us']:.2f}. Higher values "
-        f"cluster in the South and mid-Atlantic. {masked} are grey: withheld because one "
-        "prescriber received most of the state's dollars."
+        f"cluster in the South and mid-Atlantic. {masked} are grey: withheld to protect "
+        "privacy."
     )
     return fig, alt
 
@@ -822,10 +838,13 @@ def render(name: str, draw) -> str:
             fig.savefig(OUT / f"{stem}.png", dpi=200)
             fig.savefig(OUT / f"{stem}.svg", metadata={"Date": None})
             plt.close(fig)
-    with use("light", scale=1.25) as t:
-        fig, _ = draw(t, social=True)
-        fig.savefig(SOCIAL / f"{name}_1200x675.png", dpi=100)
-        plt.close(fig)
+    # 16:9 crops with larger type: social posts (light) and the article on phones (both, D44)
+    for mode in ("light", "dark"):
+        with use(mode, scale=1.25) as t:
+            fig, _ = draw(t, social=True)
+            suffix = "" if mode == "light" else "_dark"
+            fig.savefig(SOCIAL / f"{name}_1200x675{suffix}.png", dpi=100)
+            plt.close(fig)
     return alt
 
 

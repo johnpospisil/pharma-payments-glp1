@@ -1,0 +1,532 @@
+{
+ "years": [
+  2013,
+  2014,
+  2015,
+  2016,
+  2017,
+  2018,
+  2019,
+  2020,
+  2021,
+  2022,
+  2023,
+  2024
+ ],
+ "brands": [
+  {
+   "key": "Ozempic",
+   "file": "ozempic.json",
+   "approved": 2017,
+   "first_partd": 2018,
+   "visible_pct": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    38,
+    74,
+    82,
+    84,
+    86,
+    90,
+    90
+   ]
+  },
+  {
+   "key": "Trulicity",
+   "file": "trulicity.json",
+   "approved": 2014,
+   "first_partd": 2015,
+   "visible_pct": [
+    null,
+    0,
+    44,
+    73,
+    80,
+    83,
+    86,
+    87,
+    89,
+    89,
+    89,
+    85
+   ]
+  },
+  {
+   "key": "Mounjaro",
+   "file": "mounjaro.json",
+   "approved": 2022,
+   "first_partd": 2022,
+   "visible_pct": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    31,
+    81,
+    87
+   ]
+  },
+  {
+   "key": "Victoza",
+   "file": "victoza.json",
+   "approved": 2010,
+   "first_partd": 2013,
+   "visible_pct": [
+    65,
+    68,
+    69,
+    70,
+    70,
+    70,
+    68,
+    65,
+    60,
+    54,
+    47,
+    21
+   ]
+  },
+  {
+   "key": "Rybelsus",
+   "file": "rybelsus.json",
+   "approved": 2019,
+   "first_partd": 2020,
+   "visible_pct": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    0,
+    32,
+    59,
+    66,
+    69,
+    69
+   ]
+  },
+  {
+   "key": "Bydureon",
+   "file": "bydureon.json",
+   "approved": 2012,
+   "first_partd": 2013,
+   "visible_pct": [
+    65,
+    63,
+    58,
+    61,
+    63,
+    56,
+    59,
+    59,
+    50,
+    58,
+    51,
+    47
+   ]
+  },
+  {
+   "key": "Other GLP-1s",
+   "file": "other-glp-1s.json",
+   "approved": null,
+   "first_partd": null,
+   "visible_pct": [
+    58,
+    52,
+    46,
+    47,
+    41,
+    36,
+    48,
+    54,
+    55,
+    57,
+    63,
+    56
+   ]
+  }
+ ],
+ "specialties": [
+  {
+   "key": "primary_care_physician",
+   "label": "Primary care (MD/DO)",
+   "physician": true
+  },
+  {
+   "key": "endocrinology",
+   "label": "Endocrinology",
+   "physician": true
+  },
+  {
+   "key": "cardiology",
+   "label": "Cardiology",
+   "physician": true
+  },
+  {
+   "key": "nephrology",
+   "label": "Nephrology",
+   "physician": true
+  },
+  {
+   "key": "other_physician",
+   "label": "Other physician",
+   "physician": true
+  },
+  {
+   "key": "nurse_practitioner",
+   "label": "Nurse practitioner",
+   "physician": false
+  },
+  {
+   "key": "physician_assistant",
+   "label": "Physician assistant",
+   "physician": false
+  },
+  {
+   "key": "all_physicians",
+   "label": "All physicians",
+   "physician": true
+  }
+ ],
+ "states": [
+  "AK",
+  "AL",
+  "AR",
+  "AZ",
+  "CA",
+  "CO",
+  "CT",
+  "DC",
+  "DE",
+  "FL",
+  "GA",
+  "HI",
+  "IA",
+  "ID",
+  "IL",
+  "IN",
+  "KS",
+  "KY",
+  "LA",
+  "MA",
+  "MD",
+  "ME",
+  "MI",
+  "MN",
+  "MO",
+  "MS",
+  "MT",
+  "NC",
+  "ND",
+  "NE",
+  "NH",
+  "NJ",
+  "NM",
+  "NV",
+  "NY",
+  "OH",
+  "OK",
+  "OR",
+  "PA",
+  "RI",
+  "SC",
+  "SD",
+  "TN",
+  "TX",
+  "UT",
+  "VA",
+  "VT",
+  "WA",
+  "WI",
+  "WV",
+  "WY",
+  "Territories and other",
+  "US"
+ ],
+ "tiles": {
+  "AK": [
+   0,
+   0
+  ],
+  "ME": [
+   11,
+   0
+  ],
+  "VT": [
+   10,
+   1
+  ],
+  "NH": [
+   11,
+   1
+  ],
+  "WA": [
+   1,
+   2
+  ],
+  "ID": [
+   2,
+   2
+  ],
+  "MT": [
+   3,
+   2
+  ],
+  "ND": [
+   4,
+   2
+  ],
+  "MN": [
+   5,
+   2
+  ],
+  "IL": [
+   6,
+   2
+  ],
+  "WI": [
+   7,
+   2
+  ],
+  "MI": [
+   8,
+   2
+  ],
+  "NY": [
+   9,
+   2
+  ],
+  "RI": [
+   10,
+   2
+  ],
+  "MA": [
+   11,
+   2
+  ],
+  "OR": [
+   1,
+   3
+  ],
+  "NV": [
+   2,
+   3
+  ],
+  "WY": [
+   3,
+   3
+  ],
+  "SD": [
+   4,
+   3
+  ],
+  "IA": [
+   5,
+   3
+  ],
+  "IN": [
+   6,
+   3
+  ],
+  "OH": [
+   7,
+   3
+  ],
+  "PA": [
+   8,
+   3
+  ],
+  "NJ": [
+   9,
+   3
+  ],
+  "CT": [
+   10,
+   3
+  ],
+  "CA": [
+   1,
+   4
+  ],
+  "UT": [
+   2,
+   4
+  ],
+  "CO": [
+   3,
+   4
+  ],
+  "NE": [
+   4,
+   4
+  ],
+  "MO": [
+   5,
+   4
+  ],
+  "KY": [
+   6,
+   4
+  ],
+  "WV": [
+   7,
+   4
+  ],
+  "VA": [
+   8,
+   4
+  ],
+  "MD": [
+   9,
+   4
+  ],
+  "DE": [
+   10,
+   4
+  ],
+  "AZ": [
+   2,
+   5
+  ],
+  "NM": [
+   3,
+   5
+  ],
+  "KS": [
+   4,
+   5
+  ],
+  "AR": [
+   5,
+   5
+  ],
+  "TN": [
+   6,
+   5
+  ],
+  "NC": [
+   7,
+   5
+  ],
+  "SC": [
+   8,
+   5
+  ],
+  "DC": [
+   9,
+   5
+  ],
+  "OK": [
+   4,
+   6
+  ],
+  "LA": [
+   5,
+   6
+  ],
+  "MS": [
+   6,
+   6
+  ],
+  "AL": [
+   7,
+   6
+  ],
+  "GA": [
+   8,
+   6
+  ],
+  "HI": [
+   0,
+   7
+  ],
+  "TX": [
+   4,
+   7
+  ],
+  "FL": [
+   9,
+   7
+  ]
+ },
+ "codes": {
+  "-1": "withheld to protect privacy",
+  "-4": "payments to this group were not reported before 2021",
+  "-5": "brand not yet in Part D"
+ },
+ "events": [
+  {
+   "brand": "Victoza",
+   "year": 2017,
+   "label": "Cardiovascular indication (Aug 2017)"
+  },
+  {
+   "brand": "Ozempic",
+   "year": 2020,
+   "label": "Cardiovascular indication (Jan 2020)"
+  },
+  {
+   "brand": "Trulicity",
+   "year": 2020,
+   "label": "Cardiovascular indication (Feb 2020)"
+  },
+  {
+   "brand": "*",
+   "year": 2020,
+   "label": "COVID-19 curbs in-person sales visits"
+  },
+  {
+   "brand": "Ozempic",
+   "year": 2022,
+   "label": "Semaglutide shortage (Aug 2022 \u2013 Feb 2025)"
+  },
+  {
+   "brand": "Mounjaro",
+   "year": 2022,
+   "label": "Launch (May 2022); shortage Dec 2022 \u2013 Oct 2024"
+  },
+  {
+   "brand": "Trulicity",
+   "year": 2022,
+   "label": "Lilly launches Mounjaro; Trulicity supply limited from Dec 2022"
+  },
+  {
+   "brand": "Victoza",
+   "year": 2024,
+   "label": "Generic liraglutide (June 2024)"
+  }
+ ],
+ "other_brands": [
+  "Soliqua",
+  "Byetta",
+  "Xultophy",
+  "Tanzeum",
+  "Adlyxin",
+  "liraglutide (generic)"
+ ],
+ "excluded_brands": [
+  "Wegovy",
+  "Saxenda",
+  "Zepbound"
+ ],
+ "min_cell": 11,
+ "dominance": 0.5,
+ "op_nonphysician_from": 2021,
+ "caveat": {
+  "att_trulicity": "+12.0",
+  "att_victoza": "+5.5",
+  "att_ozempic": "+13.7",
+  "statin_trulicity": "+6.4",
+  "statin_victoza": "+7.9",
+  "statin_ozempic": "+7.1"
+ }
+}

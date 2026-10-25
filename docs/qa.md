@@ -27,7 +27,7 @@ Overall assessment (validate-data scale): **share with noted caveats.** The two 
 |---|---|---|---|
 | W1 | Paid physicians become more likely to prescribe ≥ 11 claims of the brand (+12.0 / +5.5 / +13.7 pp) | Unmatched pre-trends are steep and rejected. Statins rise almost as much (+6.4 / +7.9 / +7.1 pp), even after volume-growth matching (DEV-8). The pre-trend in other GLP-1 prescribing is rejected for all three brands without matching (with matching, only Ozempic passes). The Ozempic → Trulicity placebo brand fails in levels. §10 verdict: "explained at least partly by targeting". | As targeting of growing practices (D34), never as an effect of payments. Every sentence quoting it is paired with the statin result. |
 | W2 | The paid brand gains 3–5 pp of the physician's GLP-1 share (H5) | Precise under the linear estimators. Under the registered log-odds form, per-brand CIs include 0 except Mounjaro, and the unmatched log-odds estimates are ≈ 0. The pooled H5 test (+3.2 pp, Holm p = 0.021) rests on matching. The matched Trulicity share pre-trend is rejected (p = 0.007), although it runs opposite in sign to the effect. | "Consistent with a brand-specific shift", with the registered-form imprecision in the same paragraph (D29). Victoza's share falls (−4.8 pp) and is reported alongside. |
-| W3 | Negative-control exposure | Anticoagulant payments pass the fail rule, but are still associated with 37% of the GLP-1 binary effect. Inhaled-respiratory payments (68%) fail. | "Part of the association appears with payments for unrelated drugs too." |
+| W3 | Negative-control exposure | Anticoagulant payments pass the fail rule, but are still associated with 38% of the GLP-1 binary effect. Inhaled-respiratory payments (68%) fail. | "Part of the association appears with payments for unrelated drugs too." |
 | W4 | Fills rise +28.7% (H6) | The size depends on how suppressed cells are bounded: matched PPML gives +17% to +111% across the 0 / 5 / cap bounds. The unmatched Ozempic estimate at the 0 bound is −0.5%. | Quote only the conservative (cap) bound, with the range. |
 | W5 | Gradient by first-year dollars and contacts (H4, +5.1 pp) | Higher bins are more selected. This is descriptive, not a dose-response. | "Physicians who received more were also more likely to…", with the selection caveat (DEV-7). |
 | W6 | NPs/PAs +15.0 pp (H7) | No matched or falsification versions. The pre-period is short (payments observed from 2021, with 2021 as washout). Victoza has only 19 treated. | Secondary, with the same targeting caveat as W1. |
@@ -49,7 +49,7 @@ Overall assessment (validate-data scale): **share with noted caveats.** The two 
 | Part D GLP-1 spending 2013 / 2024 | $0.55B / $27.9B (via drug map) | National geography rows selected by generic name, without the drug map | $0.550B / $27.895B: **match** |
 | Ozempic share of 2024 spending | 46.5% | Same | 46.48%: **match** |
 | Top 1% share of GLP-1 promotional $ (2013–2024) | 75.7% of 279,833 NPIs (from `npi_class_year`) | Record-level `record_brand`, de-duplicated by record | 75.7% of 279,833: **match** |
-| Negative-control exposure ratios | 37% / 68% | 0.0502 ÷ 0.1338 and 0.0904 ÷ 0.1338 from falsification.csv | 37.6% / 67.5%: **match** |
+| Negative-control exposure ratios | 38% / 68% | 0.0502 ÷ 0.1338 and 0.0904 ÷ 0.1338 from falsification.csv | 37.6% / 67.5%: **match** |
 
 ## Disclosure
 

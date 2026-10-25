@@ -11,17 +11,18 @@
 <header class="masthead">
   <p class="back"><a href="https://johnpospisil.github.io/pharma-payments-glp1/">Read the article: Lunch, Speaking Fees and Semaglutide</a></p>
   <h1>GLP-1 payments and prescribing, by specialty and state</h1>
-  <p class="lede">Medicare Part D diabetes prescribers, 2013–2024. Choose a brand, a specialty and a state to see how often drug makers paid those prescribers, and how much of the brand they prescribed.</p>
+  <p class="lede">Medicare Part D diabetes prescribers, 2013–2024. Choose a brand, a group of prescribers and a state to see how often drug makers paid them, and how much of the brand they prescribed.</p>
 </header>
 
 <main>
   <section class="filters" aria-label="Filters">
     <div class="brands" role="group" aria-label="Brand" id="brands"></div>
-    <label class="field">Specialty <select id="spec"></select></label>
+    <label class="field">Prescribers <select id="spec"></select></label>
     <label class="field">State <select id="state"></select></label>
   </section>
 
   <p class="selection" id="selection" aria-live="polite"></p>
+  <p class="banner">These panels sit side by side for comparison, not as cause and effect: drug makers tend to reach prescribers whose practices are already growing, and promote a brand most at launch. <a href="#caveat-title">Read what these trends can't tell you</a>, or <a href="#numbers">skip to the numbers</a>.</p>
 
   <div class="layout">
     <div class="charts">
@@ -43,6 +44,7 @@
         <div class="chart" id="rx-chart"></div>
         <figcaption id="rx-note"></figcaption>
       </figure>
+      <div class="events" id="events"></div>
     </div>
 
     <aside class="map-panel" aria-labelledby="map-title">
@@ -54,7 +56,8 @@
       </div>
       <div class="tiles" id="tiles" role="group" aria-label="States: select one to filter"></div>
       <div class="map-legend" id="map-legend"></div>
-      <p class="hint">Select a state to filter the charts. Select it again to return to the United States.</p>
+      <p class="hint" id="readout" aria-live="polite"></p>
+      <p class="hint">Shades are fixed across years for the chosen brand, group and measure.</p>
     </aside>
   </div>
 
@@ -63,7 +66,7 @@
     <div id="caveat"></div>
   </section>
 
-  <details class="numbers">
+  <details class="numbers" id="numbers">
     <summary>Show the numbers for this selection</summary>
     <div class="table-scroll"><table id="table"></table></div>
   </details>

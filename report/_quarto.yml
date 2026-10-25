@@ -6,6 +6,7 @@ project:
   resources:
     - figures/final/*.png
     - figures/final/*.svg
+    - figures/social/*.png
 
 format:
   html:

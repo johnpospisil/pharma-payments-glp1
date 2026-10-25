@@ -131,6 +131,8 @@ def derived() -> dict[str, str]:
         a = s[s.brand == b].att
         v[f"sens_{b.lower()}"] = f"{a.min():.1f}–{a.max():.1f}"
     v["n_specs"] = str(s.spec.nunique() - 1)  # alternatives to the primary
+    mol = s[s.spec.str.startswith("Molecule-level") & (s.brand == "Ozempic")].att
+    v["molecule_ozempic"] = f"{mol.iloc[0]:+.1f}".replace("-", "−")
     # heterogeneity (P19)
     hc = pd.read_csv(QA / "heterogeneity_comparisons.csv")
     reg = hc[hc.dimension == "Region"]
@@ -149,6 +151,40 @@ def derived() -> dict[str, str]:
     for k, r in fam["family"].items():
         p = r["p_holm"]
         v[f"{k.split()[0].lower()}_holm_fmt"] = "< 0.001" if p < 0.001 else f"{p:.3f}"
+    # P24 review: share under suppression bounds (DEV-11), obesity-brand dollars, matched growth
+    rv = _j("review_p24.json")
+    ss = rv["share_sensitivity"]
+    bound = "paid brand at cap, competitors 0, registered sample"
+    gain = ("Trulicity", "Ozempic", "Mounjaro")
+    for b in (*gain, "Victoza"):
+        k = b.lower()
+        v[f"bound_{k}"] = _pp(ss[b][bound]["linear"]["att"])
+        v[f"fills_{k}"] = _pp(ss[b]["30-day fills (observed rows)"]["linear"]["att"])
+        v[f"hv_{k}"] = _pp(ss[b]["high-volume physicians"]["linear"]["att"])
+    v["bound_range"] = _range([ss[b][bound]["linear"]["att"] for b in gain],
+                              lambda x: _pp(x, sign=False))  # fmt: skip
+    v["share_range"] = _range(
+        [sw[b]["own_share"]["att"] for b in gain], lambda x: _pp(x, sign=False)
+    )
+    pu = rv["promo_usd"]
+    v["obesity_usd_m"] = f"{pu['obesity_brands_2013_2025'] / 1e6:.1f}"
+    v["obesity_pct"] = _pct(pu["obesity_share_2013_2025"])
+    v["promo_2024_m"] = f"{pu['total_2013_2024'] / 1e6:.1f}"
+    mg = f[f.test.str.startswith("Diagnostic: total Part D claims, ratio (matched)")]
+    v["matched_claims_growth"] = _range(mg.att.tolist(), _pct)
+    ms = f[f.test.str.startswith("Negative-control outcome: statin claims, ratio (matched)")]
+    v["matched_statin_growth"] = _range(ms.att.tolist(), _pct)
+    for b in ("Trulicity", "Victoza"):
+        s = _j(f"es/switching_{b}.json")
+        p_m, p_u = s["matched_own_pretrend_wald"]["p"], s["own_pretrend_wald"]["p"]
+        v[f"share_pre_{b.lower()}_matched"] = "< 0.001" if p_m < 0.001 else f"{p_m:.3f}"
+        v[f"share_pre_{b.lower()}_fmt"] = "< 0.001" if p_u < 0.001 else f"{p_u:.2f}"
+    es = pd.read_csv(QA / "event_study_estimates.csv")
+    first = es[es.estimator == "CS (R did, primary)"].set_index("brand").att_0_3
+    for b in PRIMARY:
+        v[f"first_{b.lower()}"] = _pp(first[b])
+        sm = _j(f"es/honest_panel_{b}.json")["smoothness"][0]  # M = 0: the pre-trend continues
+        v[f"trend_adj_{b.lower()}"] = f"{_pp(sm['lb'], sign=False)} to {_pp(sm['ub'], sign=False)}"
     return v
 
 

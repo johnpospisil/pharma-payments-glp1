@@ -12,3 +12,10 @@ $callout-color-warning: #c98500;
 .table-scroll { overflow-x: auto; }
 @media (max-width: 767px) { .table-scroll table { min-width: 560px; } }
 main a { overflow-wrap: anywhere; }
+
+/* phones get the larger-type 16:9 crops (D44) */
+.m-only { display: none !important; }
+@media (max-width: 600px) {
+  .light-content.d-only { display: none !important; }
+  .light-content.m-only { display: inline !important; }
+}

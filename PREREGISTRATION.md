@@ -296,3 +296,9 @@ Each deviation after locking gets a dated entry: what changed, why, and whether 
   - rural vs urban.
 
   That is 24 tests. Region and urbanicity are each physician's modal value. Every reported cell has ≥ 11 treated physicians.
+
+**DEV-11 (2026-10-24, P24 red-team review, after every registered estimate was seen): suppression bounds for the share outcome (H5).** Two reviewers pointed out that the share is built from visible rows only: a hidden brand row (0–10 claims) counts as 0, so a paid brand that crosses the 11-claim line shows a share gain even if brand choice is unchanged. This sensitivity was not registered and is reported as such.
+- **Variants** (`ppg.models.switching sensitivity`, panel-form CS-DR and CEM-matched, e = 0…3): hidden rows at min(5, cap) and at cap; the paid brand's hidden rows at cap with competitors' at 0 (the bound least favourable to a gain from crossing the line); each of these also on the registered sample (physicians with visible GLP-1 claims in both years), so only the value of hidden rows changes; share of 30-day fills instead of claims; high-volume physicians.
+- **Result:** on the registered sample the least favourable bound leaves +1.8 / +1.7 / +1.8 pp (Trulicity / Ozempic / Mounjaro), below the 2 pp smallest effect of interest; fills and the high-volume subsample reproduce the registered estimates. Variants that impute hidden rows for physicians with no visible GLP-1 claims change the sample and reject parallel trends; they are reported but not used.
+- **Reading:** the direction of H5 is robust; its size is bounded between about 2 and 5 pp. The article states the range.
+

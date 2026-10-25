@@ -1,0 +1,49 @@
+{
+ "cells_by_code": {
+  "n:withheld so another hidden cell cannot be worked out by subtraction": 497,
+  "n:fewer than 11 prescribers": 721,
+  "n:shown": 34398,
+  "tot:withheld so another hidden cell cannot be worked out by subtraction": 497,
+  "tot:fewer than 11 prescribers": 721,
+  "tot:shown": 34398,
+  "paid:payments to this group were not reported before 2021": 5936,
+  "paid:withheld so another hidden cell cannot be worked out by subtraction": 4077,
+  "paid:fewer than 11 prescribers": 6160,
+  "paid:shown": 19443,
+  "usd:payments to this group were not reported before 2021": 5936,
+  "usd:withheld so another hidden cell cannot be worked out by subtraction": 3756,
+  "usd:one prescriber holds more than half the dollars": 5590,
+  "usd:fewer than 11 prescribers": 2320,
+  "usd:shown": 18014,
+  "regular:withheld so another hidden cell cannot be worked out by subtraction": 4080,
+  "regular:fewer than 11 prescribers": 8309,
+  "regular:shown": 23227,
+  "claims:withheld so another hidden cell cannot be worked out by subtraction": 4103,
+  "claims:fewer than 11 prescribers": 8309,
+  "claims:shown": 23204
+ },
+ "years": [
+  2013,
+  2014,
+  2015,
+  2016,
+  2017,
+  2018,
+  2019,
+  2020,
+  2021,
+  2022,
+  2023,
+  2024
+ ],
+ "bytes": {
+  "bydureon.json": 119161,
+  "meta.json": 5737,
+  "mounjaro.json": 123560,
+  "other-glp-1s.json": 121164,
+  "ozempic.json": 128149,
+  "rybelsus.json": 124467,
+  "trulicity.json": 127746,
+  "victoza.json": 123684
+ }
+}

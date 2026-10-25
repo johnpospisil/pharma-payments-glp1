@@ -65,6 +65,107 @@ def claims(w: Wide) -> dict[str, np.ndarray]:
     return out
 
 
+def claims_bounded(w: Wide, own: str, hidden: str) -> dict[str, np.ndarray]:
+    """As `claims`, with suppressed brand rows (0-10 claims) given a value instead of 0 (DEV-11):
+    hidden = 'mid' (min(5, cap)), 'cap' (the cell's cap, <= 10), or 'own_cap' (the paid brand at
+    its cap, competitors at 0: the bound least favourable to a share gain from the paid brand
+    crossing the 11-claim line)."""
+    npis = pd.DataFrame({"npi": w.npi})
+    con = duckdb.connect()
+    con.register("npis", npis)
+    named = ", ".join(f"'{g}'" for g in GROUPS[:-1])
+    val = {"mid": "least(5, b.supp_cap)", "cap": "b.supp_cap",
+           "own_cap": f"CASE WHEN b.brand = '{own}' THEN b.supp_cap ELSE 0 END",
+           }[hidden]  # fmt: skip
+    d = con.execute(
+        f"""SELECT b.npi, b.year,
+                   CASE WHEN b.brand IN ({named}) THEN b.brand ELSE 'Other GLP-1' END AS grp,
+                   sum(CASE WHEN b.status = 'observed' THEN b.claims
+                            WHEN b.status = 'suppressed' THEN {val} ELSE 0 END) AS v
+            FROM '{config.PARQUET_DIR}/panel/panel_brand.parquet' b JOIN npis USING (npi)
+            WHERE b.year >= {w.y0} AND b.status IN ('observed', 'suppressed')
+            GROUP BY ALL"""
+    ).df()
+    present = ~np.isnan(w.tot)
+    out = {}
+    for g in GROUPS:
+        a = np.where(present, 0.0, np.nan)
+        x = d[d.grp == g]
+        a[np.searchsorted(w.npi, x.npi.to_numpy()), x.year.to_numpy() - w.y0] = x.v
+        out[g] = np.where(present, a, np.nan)
+    return out
+
+
+SHARE_VARIANTS = {
+    "observed claims (registered)": {},
+    "hidden rows at min(5, cap)": {"hidden": "mid"},
+    "hidden rows at cap (<= 10)": {"hidden": "cap"},
+    "paid brand hidden at cap, competitors at 0": {"hidden": "own_cap"},
+    # the same bounds on the registered sample (observed GLP-1 claims in the year), so only the
+    # value of hidden rows changes, not who is in the comparison
+    "hidden at min(5, cap), registered sample": {"hidden": "mid", "same": True},
+    "hidden at cap, registered sample": {"hidden": "cap", "same": True},
+    "paid brand at cap, competitors 0, registered sample": {"hidden": "own_cap", "same": True},
+    "30-day fills (observed rows)": {"col": "fills"},
+    "high-volume physicians": {"sample": "high_volume"},
+}
+
+
+def share_sensitivity(brand: str) -> dict:
+    """DEV-11 (P24 review): the paid brand's share under suppression bounds, on 30-day fills, and
+    in the high-volume subsample; linear DR (cs_panel) and CEM-matched, e = 0..3."""
+    out = {}
+    for name, kw in SHARE_VARIANTS.items():
+        w = load(brand, **EXPOSURES[brand], **({"sample": kw["sample"]} if "sample" in kw else {}))
+        if "hidden" in kw:
+            c = claims_bounded(w, brand, kw["hidden"])
+        elif kw.get("col") == "fills":
+            c = _fills(w)
+        else:
+            c = claims(w)
+        tot = sum(c.values())
+        own = shares(c, tot)[brand]
+        if kw.get("same"):
+            own = np.where(w.cls > 0, own, np.nan)
+        r = fit(w, outcome=own, start=FIT_START.get(brand))
+        m = estimate(w, "registered", outcome=own)
+        out[name] = {
+            "linear": r["overall_0_3"] | {"p": _p(**r["overall_0_3"])},
+            "pretrend_p": r["pretrend_wald"]["p"],
+            "matched": m["overall_0_3"] | {"p": _p(**m["overall_0_3"])},
+            "physicians": int(len(w.npi)),
+        }
+        print(f"{brand} | {name}: linear {r['overall_0_3']['att']:+.4f} "
+              f"matched {m['overall_0_3']['att']:+.4f}", flush=True)  # fmt: skip
+    (QA / f"switching_sensitivity_{brand}.json").write_text(
+        json.dumps(out, indent=1, default=float)
+    )
+    return out
+
+
+def _fills(w: Wide) -> dict[str, np.ndarray]:
+    npis = pd.DataFrame({"npi": w.npi})
+    con = duckdb.connect()
+    con.register("npis", npis)
+    named = ", ".join(f"'{g}'" for g in GROUPS[:-1])
+    d = con.execute(
+        f"""SELECT b.npi, b.year,
+                   CASE WHEN b.brand IN ({named}) THEN b.brand ELSE 'Other GLP-1' END AS grp,
+                   sum(b.fills) AS v
+            FROM '{config.PARQUET_DIR}/panel/panel_brand.parquet' b JOIN npis USING (npi)
+            WHERE b.status = 'observed' AND b.year >= {w.y0}
+            GROUP BY ALL"""
+    ).df()
+    present = ~np.isnan(w.tot)
+    out = {}
+    for g in GROUPS:
+        a = np.where(present, 0.0, np.nan)
+        x = d[d.grp == g]
+        a[np.searchsorted(w.npi, x.npi.to_numpy()), x.year.to_numpy() - w.y0] = x.v
+        out[g] = a
+    return out
+
+
 def shares(c: dict[str, np.ndarray], cls: np.ndarray) -> dict[str, np.ndarray]:
     with np.errstate(invalid="ignore", divide="ignore"):
         return {g: np.where(cls > 0, a / cls, np.nan) for g, a in c.items()}
@@ -434,6 +535,9 @@ def main(argv: list[str]) -> int:
             run_brand(b)
     elif cmd == "report":
         report()
+    elif cmd == "sensitivity":  # DEV-11
+        for b in argv[1:] or EXPOSURES:
+            share_sensitivity(b)
     else:
         raise SystemExit(f"unknown command {cmd}")
     return 0

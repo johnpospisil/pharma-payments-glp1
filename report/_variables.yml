@@ -4,13 +4,18 @@ alt_chart2_dose: 'Three dot charts, one per brand, comparing groups of newly pai
 alt_chart3_partd_spending: Stacked column chart of Medicare Part D spending on GLP-1 drugs by brand, 2013 to 2024. Total spending rises from $0.55 billion to $27.9 billion. Ozempic is the largest brand in 2024 (46%), followed by Trulicity and Mounjaro.
 alt_chart4_payments_by_type: Six small stacked column charts of industry payments naming each GLP-1 brand per year, 2013 to 2025, split into speaker and consulting fees and other payments such as meals. Fees are 65% of all GLP-1 promotional dollars and meals 28%. Victoza and Trulicity peak before 2019; Ozempic, Rybelsus and Mounjaro dominate after.
 alt_chart5_share_dumbbells: Dumbbell chart, two rows per brand, of the brand's share of a physician's GLP-1 prescriptions the year before the first payment and two years after. For Trulicity, Ozempic and Mounjaro, paid physicians' share rises more than matched comparison physicians' (Trulicity 35% vs 29%; Ozempic 34% vs 29%; Mounjaro 26% vs 18%). Victoza's share falls in both groups, more among paid physicians.
-alt_chart6_state_map: 'Hexagon tile map of US states shaded by GLP-1 promotional payments per Medicare Part D enrollee with diabetes in 2024. Values range from $0.41 (MT) to $4.25 (CO); the US figure is $2.59. Higher values cluster in the South and mid-Atlantic. ID, ME, OR, VT are grey: withheld because one prescriber received most of the state''s dollars.'
+alt_chart6_state_map: 'Hexagon tile map of US states shaded by GLP-1 promotional payments per Medicare Part D enrollee with diabetes in 2024. Values range from $0.41 (MT) to $4.25 (CO); the US figure is $2.59. Higher values cluster in the South and mid-Atlantic. ID, ME, OR, VT are grey: withheld to protect privacy.'
 alt_chart7_lorenz: 'Lorenz curve of GLP-1 promotional dollars across paid prescribers. The curve hugs the bottom axis until the top few percent: the top 1% received 76% of dollars, the top 10% 88%, and the bottom half 1.5%. Gini coefficient 0.92.'
 alt_chart8_specialty: 'Two horizontal bar charts by specialty for 2024: the share of diabetes prescribers paid for a GLP-1, and GLP-1 promotional dollars per 1,000 other diabetes-drug claims. Endocrinology is highest on both ($1,421 per 1,000 claims) versus $234 for primary care.'
-alt_hero_brand_share: Four small line charts, one per brand, of the change in the paid brand's share of a physician's GLP-1 prescriptions from four years before to three years after the first payment. Before payment the lines stay near zero. After it, the share rises by Trulicity +3.9, Ozempic +3.2, Mounjaro +8.6 percentage points by the last year shown, while Victoza's share falls (-6.0).
+alt_hero_brand_share: Four small line charts, one per brand, of the change in the paid brand's share of a physician's GLP-1 prescriptions from four years before to three years after the first payment. Before payment, Trulicity's line stays near zero, Ozempic's drifts upward, Mounjaro has only the years around its launch and Victoza's falls steeply. After payment, the share rises for one to two years and then levels off, averaging Trulicity +4.1, Ozempic +3.0, Mounjaro +5.3 percentage points over years 0 to 3, while Victoza's share keeps falling (−4.8). With hidden small counts bounded against the result, the gains shrink to +1.8, +1.7, +1.8 points.
 att_ozempic: '+13.7'
 att_trulicity: '+12.0'
 att_victoza: '+5.5'
+bound_mounjaro: '+1.8'
+bound_ozempic: '+1.7'
+bound_range: 1.7–1.8
+bound_trulicity: '+1.8'
+bound_victoza: −4.8
 contacts1_ozempic: '+11.0'
 contacts1_trulicity: '+9.1'
 contacts1_victoza: '+3.7'
@@ -39,8 +44,15 @@ dose_lt100_trulicity: '+11.9'
 endo_per_1000: 1,421
 endo_ratio: '6'
 fees_share: '65'
+fills_mounjaro: '+4.8'
+fills_ozempic: '+3.1'
 fills_paid_2013: '88'
 fills_paid_2024: '78'
+fills_trulicity: '+4.1'
+fills_victoza: −4.7
+first_ozempic: '+7.4'
+first_trulicity: '+8.4'
+first_victoza: '+1.2'
 frac_mounjaro: '+5.7'
 frac_ozempic: '+3.1'
 frac_trulicity: '+3.9'
@@ -72,14 +84,21 @@ h7_victoza_n: '19'
 honest_ozempic: '2'
 honest_trulicity: '1.75'
 honest_victoza: '1.5'
+hv_mounjaro: '+4.8'
+hv_ozempic: '+3.2'
+hv_trulicity: '+4.6'
+hv_victoza: −5.1
 link_2013: '98.5'
 link_2015: '99.9'
 masked_states: ID, ME, OR, VT
+matched_claims_growth: 15–19
 matched_ozempic: '+14.6'
+matched_statin_growth: 15–19
 matched_trulicity: '+12.5'
 matched_victoza: '+6.6'
 meal_share: '28'
 median_usd: '109'
+molecule_ozempic: '+13.6'
 n_diabetes: 427,286
 n_fee_first: 71–109
 n_paid_lorenz: 279,833
@@ -90,6 +109,8 @@ nc_anticoag: '+5.0'
 nc_anticoag_ratio: '38'
 nc_inhaled: '+9.0'
 nc_inhaled_ratio: '68'
+obesity_pct: '16'
+obesity_usd_m: '66.7'
 own_smd: '0.04'
 oz_cardio: −4.0
 oz_endo: −3.6
@@ -98,6 +119,7 @@ paid_npis_k: '320'
 pc_per_1000: '234'
 placebo_brand_oz: '+8.3'
 placebo_max: '+3.0'
+promo_2024_m: '376.2'
 promo_usd_m: '424.5'
 rural_trulicity: '+3.1'
 rural_victoza: '+2.4'
@@ -114,7 +136,12 @@ share_ozempic: '+3.0'
 share_pre_mounjaro: '0.53'
 share_pre_ozempic: '0.01'
 share_pre_trulicity: '0.32'
+share_pre_trulicity_fmt: '0.32'
+share_pre_trulicity_matched: '0.007'
 share_pre_victoza: '0.00'
+share_pre_victoza_fmt: < 0.001
+share_pre_victoza_matched: '0.271'
+share_range: 3.0–5.3
 share_trulicity: '+4.1'
 share_under_100: 92–97
 share_victoza: −4.8
@@ -143,4 +170,7 @@ total_claims_growth: 6–12
 treated_ozempic: 48,378
 treated_trulicity: 67,741
 treated_victoza: 22,105
+trend_adj_ozempic: 5.8 to 7.7
+trend_adj_trulicity: 5.2 to 7.1
+trend_adj_victoza: 2.4 to 4.1
 victoza_endo: '+8.3'
