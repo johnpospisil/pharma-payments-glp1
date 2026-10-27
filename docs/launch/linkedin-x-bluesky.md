@@ -1,4 +1,4 @@
-# LinkedIn and Bluesky
+# LinkedIn, X and Bluesky
 
 **Status:** drafts. Nothing is posted without John. Same day as Hacker News, after it.
 
@@ -31,24 +31,15 @@
 > Code and pre-registration: https://github.com/johnpospisil/pharma-payments-glp1
 > Data: https://huggingface.co/datasets/audiofreak7/glp1-payments-prescribing-medicare
 
-## Bluesky thread (6 posts, one chart each; each post under 300 characters)
+## X and Bluesky thread (3 posts, one chart each; each post fits X's 280 characters, links counted as 23)
 
-**1/6** · image: `hero_brand_share_1200x675.png`
+**1/3** · image: `hero_brand_share_1200x675.png`
 > After a GLP-1 maker's first payment to a Medicare physician (usually a sponsored meal), the paid brand's share of their GLP-1 claims rises a few points: +4.1 Trulicity, +3.0 Ozempic, +5.3 Mounjaro. Victoza falls. 🧵
 > https://johnpospisil.github.io/pharma-payments-glp1/
 
-**2/6** · image: `chart1b_targeting_statins_1200x675.png`
-> But paid doctors' practices were already growing. After a GLP-1 payment they're more likely to write 11+ claims of the brand (+12.0 to +13.7 points for Trulicity and Ozempic), and their statin prescribing rises too. Companies reach growing practices.
+**2/3** · image: `chart1b_targeting_statins_1200x675.png`
+> The catch: paid doctors' practices were already growing, and their statin prescribing rises too. Medicare also hides small counts; bounding them shrinks the share gain to 1.7–1.8 points. None of this shows that payments caused prescribing.
 
-**3/6** · image: `chart5_share_dumbbells_1200x675.png`
-> That's why brand share is the better test: it asks whether paid doctors move toward the paying brand and away from its competitors. They do, by a few points. Medicare hides small counts, though; bounding them shrinks the gain to 1.7–1.8 points.
-
-**4/6** · image: `chart7_lorenz_1200x675.png`
-> The money is concentrated. Of $376.2M in GLP-1 promotional payments through 2024, the top 1% of paid prescribers got 76%, mostly as speaker fees. The median paid prescriber got $109 over twelve years.
-
-**5/6** · image: `chart2_dose_1200x675.png`
-> Bigger payments go with bigger changes, but the doctors who get bigger payments are different doctors. None of this shows that payments caused prescribing. The plan was pre-registered and every deviation is public.
-
-**6/6** · image: screenshot of the explorer
-> No individual doctor is named anywhere. Explore payments and prescribing by specialty and state: https://johnpospisil.github.io/pharma-payments-glp1/app/
-> Code, pre-registration and data: https://github.com/johnpospisil/pharma-payments-glp1
+**3/3** · image: `chart7_lorenz_1200x675.png`
+> The top 1% of paid prescribers got 76% of the money. Pre-registered, every deviation public, no doctor named. Explore by specialty and state: https://johnpospisil.github.io/pharma-payments-glp1/app/
+> Code and data: https://github.com/johnpospisil/pharma-payments-glp1

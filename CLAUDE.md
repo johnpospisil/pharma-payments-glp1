@@ -98,6 +98,7 @@ Project brief: [02-pharma-payments-glp1.md](02-pharma-payments-glp1.md) (the sou
 | D53 | Hugging Face upload | **Decided 2026-10-24:** done in P27, before the launch posts link to it |
 | D54 | r/medicine | **Decided 2026-10-24:** dropped (healthcare-role flair required); a physician reader may share it instead |
 | D55 | Clinician review before launch | **Decided 2026-10-24:** not sent before launch; docs/review-checklist.md stays available |
+| D56 | X / Bluesky thread | **Decided 2026-10-27:** one 3-post thread for both X and Bluesky (was 6 Bluesky posts); each post fits X's 280 characters; draft is docs/launch/linkedin-x-bluesky.md |
 | D11 | Positioning | **Decided 2026-10-22:** the article names Khunte et al. 2026 (*Mayo Clin Proc*, cross-sectional) as the baseline; our headline is the within-prescriber, brand-level change and switching, not the cross-sectional association |
 
 ## Prompt list

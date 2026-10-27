@@ -1,4 +1,4 @@
-"""P27: launch drafts use only the article's numbers, and Bluesky posts fit the limit."""
+"""P27: launch drafts use only the article's numbers, and thread posts fit X's limit."""
 
 import re
 
@@ -34,13 +34,15 @@ def test_draft_numbers_come_from_the_article_variables():
     assert not bad, f"not in report/_variables.yml: {bad}"
 
 
-def test_bluesky_posts_fit_300_characters():
-    text = (LAUNCH / "linkedin-bluesky.md").read_text().split("## Bluesky", 1)[1]
+def test_thread_is_three_posts_that_fit_x():
+    text = (LAUNCH / "linkedin-x-bluesky.md").read_text().split("## X and Bluesky", 1)[1]
     posts = re.split(r"\*\*\d/\d\*\*[^\n]*\n", text)[1:]
-    assert len(posts) == 6
+    assert len(posts) == 3
     for i, p in enumerate(posts, 1):
         body = " ".join(line.removeprefix("> ") for line in p.strip().splitlines())
-        assert len(body) <= 300, (i, len(body))
+        assert len(body) <= 300, (i, len(body))  # Bluesky
+        x_len = len(re.sub(r"https?://\S+", "x" * 23, body))  # X counts each link as 23
+        assert x_len <= 280, (i, x_len)
 
 
 def test_no_causal_or_accusatory_wording_without_negation():

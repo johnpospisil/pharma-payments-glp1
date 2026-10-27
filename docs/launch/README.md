@@ -1,12 +1,12 @@
 # Launch kit
 
-Drafts for the launch. **Nothing is posted or uploaded without John.** Every number in these drafts is a value from the article's `report/_variables.yml` (`tests/test_launch.py` checks, and checks Bluesky's 300-character limit).
+Drafts for the launch. **Nothing is posted or uploaded without John.** Every number in these drafts is a value from the article's `report/_variables.yml` (`tests/test_launch.py` checks, and checks that the thread fits X's 280 characters).
 
 | File | What |
 |---|---|
 | [hacker-news.md](hacker-news.md) | Title options and the author's first comment |
 | [reddit.md](reddit.md) | r/dataisbeautiful ([OC], hero chart), r/pharmacy (asking for a professional read), r/medicine (dropped, D54) |
-| [linkedin-bluesky.md](linkedin-bluesky.md) | LinkedIn post framed around the method; a 6-post Bluesky thread, one chart each |
+| [linkedin-x-bluesky.md](linkedin-x-bluesky.md) | LinkedIn post framed around the method; a 3-post thread for X and Bluesky, one chart each |
 | [reviewer-questions.md](reviewer-questions.md) | 15 likely questions with short answers |
 | [project-page.md](project-page.md) | Card and longer blurb for johnpospisil.com/data-science/ |
 
@@ -31,7 +31,7 @@ Charts for posts: `report/figures/social/*_1200x675.png` (dark versions `*_1200x
 
 **Launch day**
 6. Post to Hacker News (weekday, 8–10 am US Eastern), then the first comment right away.
-7. Same day, after HN: Bluesky thread and LinkedIn (link in the first comment).
+7. Same day, after HN: the thread on X and Bluesky, and LinkedIn (link in the first comment).
 8. Next day or two: r/dataisbeautiful. Another day: r/pharmacy (after checking with the moderators if the rules are unclear).
 9. Update the project page on johnpospisil.com/data-science/ ([project-page.md](project-page.md)).
 10. Answer comments for the first day or two; [reviewer-questions.md](reviewer-questions.md) has short answers. If someone finds an error, fix it in the pipeline (never by hand), note it in the article, and say so in the thread.
